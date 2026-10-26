@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mise — Kitchen Operations, Handmade | Antigravity Analytics</title>
+<meta name="description" content="Mise gives quick-service kitchens a 10-minute morning routine that flags low stock before the 4 PM rush. Founding pilot — book a call.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://antigrav.si/mise">
+<meta property="og:title" content="Mise — See what's running low before 4 PM on a Friday.">
+<meta property="og:description" content="A 10-minute morning routine for quick-service kitchens. Founding pilot — an inner circle, not a launch.">
+<meta property="og:image" content="https://antigrav.si/mise-og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mise — See what's running low before 4 PM on a Friday.">
+<meta name="twitter:description" content="A 10-minute morning routine for quick-service kitchens. Founding pilot — an inner circle, not a launch.">
+<meta name="twitter:image" content="https://antigrav.si/mise-og.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%2305070A'/%3E%3Crect x='31.4' y='18.3' width='37.5' height='3.9' fill='%23FFFFFF'/%3E%3Cpath d='M50 27.5L22.95 83.3L31.37 83.3L50 36.3L68.63 83.3L77.05 83.3Z' fill='%23FFFFFF'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script data-collect-dnt="true" async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="mise-form.css">
+<noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif?collect-dnt=true" alt="" referrerpolicy="no-referrer-when-downgrade"></noscript>
+<style>
+/* ============ TOKENS ============ */
+:root, [data-theme="dark"]{
+  --bg:#05070A; --surface:#090C12; --surface2:#0E131C;
+  --line:#171E2B; --line-hi:rgba(255,255,255,.24);
+  --ink:#FFFFFF; --grey:#8A919C; --red:#C8102E;
+  --mark:#FFFFFF; --matrix:255,255,255;
+  --navbg:rgba(5,7,10,.82);
+  --shadow:0 20px 60px rgba(0,0,0,.5);
+  --sg:'Space Grotesk',sans-serif; --mono:'IBM Plex Mono',monospace; --body:'Inter',sans-serif;
+}
+[data-theme="light"]{
+  --bg:#FFFFFF; --surface:#F5F6F8; --surface2:#ECEEF2;
+  --line:#E2E5EA; --line-hi:rgba(5,7,10,.28);
+  --ink:#05070A; --grey:#5B6270; --red:#C8102E;
+  --mark:#05070A; --matrix:5,7,10;
+  --navbg:rgba(255,255,255,.85);
+  --shadow:0 20px 60px rgba(5,7,10,.12);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;transition:background .4s,color .4s}
+::selection{background:var(--red);color:#fff}
+.wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+section{padding:110px 0;position:relative}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.32em;color:var(--grey);text-transform:uppercase;margin-bottom:22px}
+h1,h2{font-family:var(--sg);font-weight:700;letter-spacing:-.04em;line-height:1.02}
+h1{font-size:clamp(46px,7vw,92px)}
+h2{font-size:clamp(32px,4.5vw,58px);margin-bottom:18px}
+.lede{font-size:17px;color:var(--grey);max-width:600px}
+a{color:inherit}
+/* ============ INTRO ============ */
+#intro{position:fixed;inset:0;z-index:200;background:#05070A;display:flex;align-items:center;justify-content:center;transition:opacity .35s ease;cursor:pointer}
+#intro.done{opacity:0;pointer-events:none}
+#intro svg{width:min(320px,60vw);height:auto;overflow:visible}
+#intro .mkb{fill:#fff;opacity:0;transform:translateY(14px);animation:markin .9s cubic-bezier(.16,1,.3,1) forwards}
+#intro .mkl{animation-delay:.2s}
+@keyframes markin{to{opacity:1;transform:translateY(0)}}
+/* ============ HEADER ============ */
+header{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--navbg);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);transition:background .4s,border-color .4s}
+.nav-in{max-width:1180px;margin:0 auto;padding:0 32px;height:66px;display:flex;align-items:center;gap:14px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand svg{width:30px;height:30px;display:block}
+.brand svg .mk{fill:var(--mark);transition:fill .4s}
+.brand b{font-family:var(--sg);font-weight:700;font-size:14px;letter-spacing:.14em}
+.brand-sub{font-weight:500;color:var(--grey);letter-spacing:.06em}
+.brand b i{font-style:normal;color:var(--red)}
+.nav-links{margin-left:auto;display:flex;gap:26px;align-items:center}
+.nav-links a.nl{font-family:var(--mono);font-size:10px;letter-spacing:.22em;color:var(--grey);text-decoration:none;text-transform:uppercase;transition:color .2s}
+.nav-links a.nl:hover{color:var(--ink)}
+#themeBtn{font-family:var(--mono);font-size:10px;letter-spacing:.22em;background:none;border:1px solid var(--line);color:var(--grey);padding:8px 14px;border-radius:999px;cursor:pointer;text-transform:uppercase;transition:border-color .2s,color .2s}
+#themeBtn:hover{border-color:var(--line-hi);color:var(--ink)}
+.cta{display:inline-block;font-family:var(--sg);font-weight:600;font-size:14px;letter-spacing:.02em;background:var(--ink);color:var(--bg);text-decoration:none;padding:13px 28px;border-radius:999px;border:1px solid var(--ink);transition:transform .25s cubic-bezier(.16,1,.3,1),box-shadow .25s;white-space:nowrap}
+.cta:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.cta.ghost{background:transparent;color:var(--ink);border:1px solid var(--line-hi)}
+.nav-cta{padding:10px 20px;font-size:13px}
+/* ============ HERO ============ */
+#hero{min-height:100svh;display:flex;align-items:center;padding:150px 0 90px;overflow:hidden}
+#matrix{position:absolute;inset:0;width:100%;height:100%;display:block}
+.pocket{position:relative;z-index:2;text-align:center;max-width:860px;margin:0 auto}
+.pocket h1{margin-bottom:24px}
+.pocket .lede{margin:0 auto 38px;font-size:19px}
+.hero-ctas{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.hero-note{margin-top:26px;font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--grey);text-transform:uppercase}
+.hero-note b{color:var(--red);font-weight:600}
+.badge{position:absolute;z-index:2;font-family:var(--mono);font-size:11px;letter-spacing:.14em;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 16px;color:var(--grey);white-space:nowrap;box-shadow:var(--shadow);animation:floaty 7s ease-in-out infinite}
+.badge b{color:var(--ink);font-weight:600}
+.badge .rd{color:var(--red);font-weight:600}
+.badge .pulse{ display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--red);margin-right:8px;animation:pulse 2.2s infinite;vertical-align:1px}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.2}}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+#b1{top:24%;left:6%;animation-delay:0s}
+#b2{top:58%;left:9%;animation-delay:2.4s}
+#b3{top:23%;right:5%;animation-delay:4.1s}
+#b4{top:64%;right:9%;animation-delay:1.2s}
+/* ============ SIMULATOR ============ */
+.stage{border:1px solid var(--line);border-radius:20px;background:var(--surface);box-shadow:var(--shadow);overflow:hidden;margin-top:56px;position:relative}
+.stage::before{content:"";position:absolute;inset:8px;border:1px solid var(--line);border-radius:12px;pointer-events:none}
+.tabs{display:flex;border-bottom:1px solid var(--line);position:relative;z-index:1}
+.tab{flex:1;background:none;border:none;color:var(--grey);font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;padding:20px 10px;cursor:pointer;border-bottom:2px solid transparent;transition:color .2s}
+.tab small{display:block;margin-top:6px;letter-spacing:.08em;text-transform:none;color:var(--grey);opacity:.7;font-size:11px}
+.tab.active{color:var(--ink);border-bottom-color:var(--red)}
+.tab:hover{color:var(--ink)}
+.panels{position:relative;z-index:1;min-height:380px}
+.panel{display:none;padding:48px;animation:rise .5s cubic-bezier(.16,1,.3,1)}
+.panel.active{display:block}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.panel h3{font-family:var(--sg);font-size:26px;letter-spacing:-.02em;margin-bottom:8px}
+.panel .psub{color:var(--grey);font-size:15px;margin-bottom:30px;max-width:520px}
+.kv{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:15px 4px;border-bottom:1px solid var(--line);font-size:15px;flex-wrap:wrap}
+.kv:last-child{border-bottom:none}
+.kv .it{font-weight:500}
+.kv .st{font-family:var(--mono);font-size:11px;letter-spacing:.16em;padding:6px 12px;border-radius:6px;text-transform:uppercase}
+.st.red{background:rgba(200,16,46,.13);color:var(--red);border:1px solid rgba(200,16,46,.4)}
+.st.watch{background:var(--surface2);color:var(--grey);border:1px solid var(--line)}
+.st.ok{background:rgba(255,255,255,.05);color:var(--grey);border:1px solid var(--line)}
+[data-theme="light"] .st.ok{background:rgba(5,7,10,.05)}
+.math{font-family:var(--mono);font-size:14px;line-height:2.1;background:var(--surface2);border:1px solid var(--line);border-radius:12px;padding:26px 30px;margin-bottom:24px;overflow-x:auto;white-space:nowrap}
+.math .tag{font-size:10px;letter-spacing:.14em;color:var(--grey);border:1px solid var(--line);border-radius:4px;padding:2px 8px;margin-left:10px;text-transform:uppercase}
+.math .res{color:var(--ink);font-weight:600}
+.gate{border:1px solid rgba(200,16,46,.45);border-radius:12px;padding:30px;background:rgba(200,16,46,.05)}
+.gate .amt{font-family:var(--mono);font-size:34px;font-weight:600}
+.gate .hold{display:inline-block;margin-top:12px;font-family:var(--mono);font-size:12px;letter-spacing:.24em;color:var(--red);border:1px solid var(--red);border-radius:6px;padding:8px 16px;text-transform:uppercase;animation:pulse 2.2s infinite}
+.gate p{color:var(--grey);font-size:14px;margin-top:14px;max-width:480px}
+/* ============ STEPS ============ */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:56px}
+.step{border:1px solid var(--line);border-radius:16px;padding:32px 26px;background:var(--surface);transition:border-color .25s,transform .25s cubic-bezier(.16,1,.3,1)}
+.step:hover{border-color:var(--line-hi);transform:translateY(-4px)}
+.step .n{font-family:var(--mono);font-size:11px;letter-spacing:.24em;color:var(--red);margin-bottom:16px}
+.step h4{font-family:var(--sg);font-size:19px;letter-spacing:-.01em;margin-bottom:10px}
+.step p{font-size:14px;color:var(--grey)}
+/* ============ PROOF ============ */
+.bento{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:56px}
+.tile{border:1px solid var(--line);border-radius:16px;padding:36px 30px;background:var(--surface);position:relative;overflow:hidden}
+.tile.wide{grid-column:span 3}
+.tile .fig{font-family:var(--mono);font-size:clamp(30px,3.4vw,44px);font-weight:600;letter-spacing:-.02em;margin-bottom:10px}
+.tile .fig .down{color:var(--red)}
+.tile p{font-size:14px;color:var(--grey)}
+.tile .k{font-family:var(--mono);font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--grey);margin-bottom:14px}
+.method{margin-top:22px;border:1px dashed var(--line);border-radius:12px;padding:22px 26px;font-size:13.5px;color:var(--grey)}
+.method b{color:var(--ink);font-weight:500}
+/* ============ INNER CIRCLE ============ */
+#circle{text-align:center}
+#circle .lede{margin:0 auto 44px}
+
+/* ============ FOOTER ============ */
+footer{border-top:1px solid var(--line);padding:80px 0 0;overflow:hidden}
+.desks{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;margin-bottom:70px}
+.desk .dk{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--grey);margin-bottom:8px}
+.desk a{font-size:14px;text-decoration:none;border-bottom:1px solid var(--line);transition:border-color .2s}
+.desk a:hover{border-color:var(--red)}
+.parent{margin-bottom:60px;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--grey)}
+.parent a{text-decoration:none;border-bottom:1px solid var(--line)}
+.giant{font-family:var(--sg);font-weight:700;font-size:clamp(120px,24vw,340px);letter-spacing:-.04em;line-height:.8;text-align:center;color:var(--ink);opacity:.07;transform:translateY(22%);user-select:none;white-space:nowrap}
+/* ============ HERO FILM + FLOW EXTRAS (2026-10-26 pass) ============ */
+.hero-film{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.5}
+.hero-scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,7,10,.55),rgba(5,7,10,.22) 42%,rgba(5,7,10,.8))}
+[data-theme="light"] .hero-film{opacity:.26}
+[data-theme="light"] .hero-scrim{background:linear-gradient(180deg,rgba(255,255,255,.62),rgba(255,255,255,.3) 42%,rgba(255,255,255,.86))}
+.cta:active{transform:translateY(0) scale(.98);box-shadow:none}
+.tab:active{color:var(--ink)}
+.howstrip{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:0 0 30px;text-align:left}
+.howstrip .hs{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:var(--surface)}
+.howstrip .hs b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.22em;color:var(--red);text-transform:uppercase;margin-bottom:6px;font-weight:600}
+.howstrip .hs span{font-size:13.5px;color:var(--grey);line-height:1.5;display:block}
+@media(max-width:700px){.howstrip{grid-template-columns:1fr}}
+.stickybar{position:fixed;left:0;right:0;bottom:0;z-index:90;display:none;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:var(--navbg);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .3s cubic-bezier(.16,1,.3,1)}
+.stickybar.show{transform:none}
+.stickybar .cta{flex:1;text-align:center;padding:13px 10px}
+.stickybar .ghost{flex:0 0 auto}
+@media(max-width:900px){.stickybar{display:flex}}
+/* ============ REVEAL ============ */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
+.rv.in{opacity:1;transform:none}
+/* ============ RESPONSIVE ============ */
+@media(max-width:900px){
+  .wrap{padding:0 20px}
+  .steps{grid-template-columns:1fr 1fr}
+  .bento{grid-template-columns:1fr}
+  .tile.wide{grid-column:span 1}
+  .desks{grid-template-columns:1fr 1fr}
+  .nav-links a.nl{display:none}
+  .nav-cta{padding:11px 18px;font-size:13px;white-space:nowrap}
+  #themeBtn{padding:9px 14px;font-size:12px}
+  .brand b{font-size:14px;white-space:nowrap}
+  .badge{display:none}
+  .frow{grid-template-columns:1fr}
+  .panel{padding:30px 22px}
+  section{padding:80px 0}
+}
+@media(max-width:480px){
+  .brand-sub{display:none}
+  .nav-cta{display:inline-block;padding:9px 16px;font-size:12px}
+}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px;border-radius:4px}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+  #intro{display:none}
+}
+</style>
+</head>
+<!-- ============ INTRO ============ -->
+<div id="intro" aria-hidden="true">
+  <svg viewBox="0 0 100 100">
+    <rect class="mkb" x="31.4" y="18.3" width="37.5" height="3.9"/>
+    <path class="mkb mkl" d="M50 27.5L22.95 83.3L31.37 83.3L50 36.3L68.63 83.3L77.05 83.3Z"/>
+  </svg>
+</div>
+
+<!-- ============ HEADER ============ -->
+<header>
+  <div class="nav-in">
+    <a class="brand" href="/" aria-label="Antigravity home">
+      <svg viewBox="0 0 100 100" aria-hidden="true">
+        <rect class="mk" x="31.4" y="18.3" width="37.5" height="3.9"/>
+        <path class="mk" d="M50 27.5L22.95 83.3L31.37 83.3L50 36.3L68.63 83.3L77.05 83.3Z"/>
+      </svg>
+      <b>MISE <span class="brand-sub">by Antigravity</span></b>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a class="nl" href="#routine">How it works</a>
+      <a class="nl" href="#setup">Setup</a>
+      <a class="nl" href="#proof">Proof</a>
+      <a class="nl" href="#circle">Inner circle</a>
+      <button id="themeBtn" type="button" aria-label="Toggle light and dark theme">Light</button>
+      <a class="cta nav-cta" href="#circle">Book a call</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section id="hero">
+  <video class="hero-film" autoplay muted loop playsinline preload="metadata" poster="mise-kitchen.jpg" aria-hidden="true"><source src="films/mise-film.mp4" type="video/mp4"></video>
+  <div class="hero-scrim" aria-hidden="true"></div>
+  <canvas id="matrix" aria-hidden="true"></canvas>
+  <div class="badge" id="b1"><span class="pulse"></span><b>08:15</b>&nbsp;&nbsp;Morning brief</div>
+  <div class="badge" id="b2">Panic spend&nbsp;&nbsp;<b class="rd">−CA$86.40</b>&nbsp;&nbsp;this week</div>
+  <div class="badge" id="b3"><b>CA$248.00</b>&nbsp;&nbsp;<span class="rd">ON HOLD</span>&nbsp;&nbsp;awaiting owner</div>
+  <div class="badge" id="b4">POS&nbsp;&nbsp;<b>Clover</b>&nbsp;&nbsp;connected</div>
+  <div class="wrap pocket">
+    <div class="eyebrow rv">For quick-service restaurants, cafés &amp; franchises across Canada</div>
+    <h1 class="rv">See what&rsquo;s running low before 4&nbsp;PM on a Friday.</h1>
+    <p class="lede rv">Mise is in its founding pilot — built by hand, kitchen by kitchen, with operators who want it to last. A small inner circle gets the 10-minute morning routine first and shapes what gets built.</p>
+    <div class="hero-ctas rv">
+      <a class="cta" href="#circle">Book a call</a>
+      <a class="cta ghost" href="#routine">See the 10-minute morning routine</a>
+    </div>
+    <div class="hero-note rv">Founding pilot · In development · <b>Set up with you</b> — we do it in your kitchen until the software takes over</div>
+  </div>
+</section>
+
+<!-- ============ SIMULATOR ============ -->
+<section id="routine">
+  <div class="wrap">
+    <div class="eyebrow rv">How it works</div>
+    <h2 class="rv">The 10-minute morning routine.</h2>
+    <p class="lede rv">Every morning at 08:15: what could run out today, what yesterday cost you, a two-minute stock count, one order to approve. Longer than ten minutes means something&rsquo;s wrong.</p>
+    <p class="rv" style="font-family:var(--mono);font-size:10px;letter-spacing:.22em;color:var(--grey);text-transform:uppercase;margin-top:18px">Illustrated concept — Mise is in its founding pilot</p>
+    <div class="stage rv">
+      <div class="tabs" role="tablist" aria-label="Morning routine steps">
+        <button class="tab active" data-tab="0" role="tab" id="tab-0" aria-selected="true" aria-controls="panel-0">08:15 Brief<small>The count — flagged items only</small></button>
+        <button class="tab" data-tab="1" role="tab" id="tab-1" aria-selected="false" aria-controls="panel-1" tabindex="-1">Food costs, explained<small>Explanations, not accusations</small></button>
+        <button class="tab" data-tab="2" role="tab" id="tab-2" aria-selected="false" aria-controls="panel-2" tabindex="-1">The CA$200 gate<small>Mise proposes. You approve.</small></button>
+      </div>
+      <div class="panels">
+        <div class="panel active" data-panel="0" role="tabpanel" id="panel-0" aria-labelledby="tab-0">
+          <h3>Count ten items. Not two hundred.</h3>
+          <p class="psub">Mise flags only what needs eyes. Two minutes in the walk-in, then you&rsquo;re done.</p>
+          <div class="kv"><span class="it">Soft cheese — bulk block</span><span class="st red">Red · order 2</span></div>
+          <div class="kv"><span class="it">Whole milk</span><span class="st watch">Watch · 1 day left</span></div>
+          <div class="kv"><span class="it">Burger buns</span><span class="st watch">Watch · Friday rush risk</span></div>
+          <div class="kv"><span class="it">Frying oil</span><span class="st ok">OK</span></div>
+          <div class="kv"><span class="it">12oz cups</span><span class="st ok">OK</span></div>
+        </div>
+        <div class="panel" data-panel="1" role="tabpanel" id="panel-1" aria-labelledby="tab-1">
+          <h3>Every number shows its work.</h3>
+          <p class="psub">One tap shows the invoice photo, the count record, who entered it. Nobody gets blamed — the question is <em>what happened</em>, never <em>who did it</em>.</p>
+          <div class="math">Opening <span class="tag">Confirmed</span> + Deliveries <span class="tag">Confirmed</span><br>− Recipe usage <span class="tag">From sales</span> = Expected <span class="tag">Calculated</span><br><span class="res">Expected 14.2 kg vs Counted 11.8 kg → gap −CA$12.60</span><br>Likely cause: unlogged batch waste · Next step: recount walk-in before ordering</div>
+        </div>
+        <div class="panel" data-panel="2" role="tabpanel" id="panel-2" aria-labelledby="tab-2">
+          <h3>You approve every order.</h3>
+          <p class="psub">Mise drafts the order. If it&rsquo;s over your CA$200 manager limit, it locks until the owner taps approve.</p>
+          <div class="gate">
+            <div class="amt">CA$248.00</div>
+            <div><span class="hold">On hold — awaiting owner</span></div>
+            <p>Changed the order? It needs your approval again. Nothing is ever ordered twice. You always sign off.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SETUP ============ -->
+<section id="setup">
+  <div class="wrap">
+    <div class="eyebrow rv">4-step setup</div>
+    <h2 class="rv">No same-day setup stress.</h2>
+    <p class="lede rv">You work fourteen-hour days. Setup happens in steps, at your pace — we do the heavy lifting.</p>
+    <div class="steps">
+      <div class="step rv"><div class="n">STEP 01</div><h4>Connect your POS</h4><p>Connect Clover and set a spending limit for managers — any order over CA$200 waits for the owner&rsquo;s tap.</p></div>
+      <div class="step rv"><div class="n">STEP 02</div><h4>Your recipes, as a starting point</h4><p>Tell us the recipe each dish started with. We know cooks adjust on the line — Mise measures against your original, not a guess.</p></div>
+      <div class="step rv"><div class="n">STEP 03</div><h4>We map your stock for you</h4><p>Send us your item list. Mise matches it to your recipes on its own — no weeks of typing things in.</p></div>
+      <div class="step rv"><div class="n">STEP 04</div><h4>Count when it suits you</h4><p>No full count on day one. Enter your opening stock whenever suits you — that&rsquo;s when the morning briefs start.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROOF ============ -->
+<section id="proof">
+  <div class="wrap">
+    <div class="eyebrow rv">The method</div>
+    <h2 class="rv">Worked out by hand first.</h2>
+    <p class="lede rv">Mise comes from a manual pilot, the method the app is being built on. Same math, now becoming software you can use.</p>
+    <div class="bento">
+      <div class="tile wide rv"><div class="k">Order, delivery, and bill — matched</div><div class="fig" style="font-size:clamp(22px,2.6vw,32px)">Order <span class="down">↔</span> Delivery <span class="down">↔</span> Invoice</div><p>Snap the invoice photo when the delivery arrives. If the supplier raised the price since you ordered, it gets flagged before you pay.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MID CTA ============ -->
+<section id="seenenough" style="padding:0 0 110px">
+  <div class="wrap">
+    <div class="invite rv" style="text-align:center">
+      <h3 style="margin-bottom:10px">Seen enough?</h3>
+      <p class="isub" style="margin-bottom:28px">An inner circle of kitchens, not a launch. If you do real work, book a call.</p>
+      <a class="cta" href="#circle">Book a call</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INNER CIRCLE ============ -->
+<section id="circle">
+  <div class="wrap">
+    <div class="eyebrow rv">The inner circle</div>
+    <h2 class="rv">Built for the ones usually left out.</h2>
+    <p class="lede rv">The invoices looked fine. Then someone checked. One location cut monthly inventory cost from $60K to $38K, with sales up. Counts, invoices and purchasing, checked in one place. If you run the back office, you belong in it.</p>
+<div class="mise-form rv" id="mise-form">
+  <div class="invite">
+    <div class="intro">
+      <h3>Book a call</h3>
+      <p class="isub">Tell us about your kitchen. We read every request ourselves, then you can pick a time for a call.</p>
+    </div>
+    <div class="howstrip" aria-label="How booking works">
+      <div class="hs"><b>Step 1 · Two minutes</b><span>Tell us about your kitchen in the form below.</span></div>
+      <div class="hs"><b>Step 2 · Pick a time</b><span>After the form, pick a time on the booking page.</span></div>
+      <div class="hs"><b>Step 3 · Set up with you</b><span>Setup happens in your kitchen, at your pace.</span></div>
+    </div>
+    <form novalidate>
+      <input type="hidden" name="mise_lead_source" value="Website /mise">
+      <input type="hidden" name="mise_utm_source" value="">
+      <input type="hidden" name="mise_utm_medium" value="">
+      <input type="hidden" name="mise_utm_campaign" value="">
+      <input type="hidden" name="mise_utm_content" value="">
+      <div class="hp" aria-hidden="true"><label>Leave this empty<input name="company_website" tabindex="-1" autocomplete="off"></label></div>
+      <div class="frow">
+        <div data-f><label class="fl" for="mf-fn">First name</label><input class="fi" id="mf-fn" name="firstname" autocomplete="given-name" required><div class="err"></div></div>
+        <div data-f><label class="fl" for="mf-ln">Last name</label><input class="fi" id="mf-ln" name="lastname" autocomplete="family-name" required><div class="err"></div></div>
+      </div>
+      <div class="frow">
+        <div data-f><label class="fl" for="mf-em">Work email</label><input class="fi" id="mf-em" name="email" type="email" autocomplete="email" required><div class="err"></div></div>
+        <div data-f><label class="fl" for="mf-ph">Phone <span class="opt">(optional)</span></label><input class="fi" id="mf-ph" name="phone" type="tel" autocomplete="tel"><div class="err"></div></div>
+      </div>
+      <div class="frow">
+        <div data-f><label class="fl" for="mf-co">Restaurant / company name</label><input class="fi" id="mf-co" name="company" autocomplete="organization" required><div class="err"></div></div>
+        <div data-f><label class="fl" for="mf-pr">Province</label>
+          <select class="fi" id="mf-pr" name="mise_province" required>
+            <option value="">Select…</option>
+            <option value="on">Ontario</option><option value="ab">Alberta</option><option value="bc">British Columbia</option><option value="mb">Manitoba</option><option value="nb">New Brunswick</option><option value="nl">Newfoundland and Labrador</option><option value="ns">Nova Scotia</option><option value="pe">Prince Edward Island</option><option value="qc">Quebec</option><option value="sk">Saskatchewan</option><option value="nt">Northwest Territories</option><option value="nu">Nunavut</option><option value="yt">Yukon</option>
+          </select><div class="err"></div></div>
+      </div>
+      <div class="frow full">
+        <div data-f><label class="fl" for="mf-ro">Role</label>
+          <select class="fi" id="mf-ro" name="mise_role" required>
+            <option value="">Select…</option>
+            <option value="owner">Owner</option><option value="general_manager">General Manager</option><option value="manager">Manager</option><option value="staff">Staff</option><option value="other">Other</option>
+          </select><div class="err"></div></div>
+      </div>
+      <div class="frow">
+        <div data-f><label class="fl" for="mf-bt">Business type</label>
+          <select class="fi" id="mf-bt" name="mise_business_type" required>
+            <option value="">Select…</option>
+            <option value="Independent restaurant">Independent restaurant</option>
+            <option value="qsr">QSR</option><option value="fast_casual">Fast-casual</option><option value="cafe">Cafe</option><option value="bakery">Bakery</option><option value="other">Other</option>
+          </select><div class="err"></div></div>
+        <div data-f><label class="fl" for="mf-nl">Number of locations</label><input class="fi" id="mf-nl" name="mise_number_of_locations" type="number" inputmode="numeric" min="1" step="1" placeholder="1 if single-site" required><div class="err"></div></div>
+      </div>
+      <div class="frow full">
+        <div data-f><label class="fl" for="mf-pos">POS system</label>
+          <select class="fi" id="mf-pos" name="mise_pos_system" required>
+            <option value="">Select…</option>
+            <option value="clover">Clover</option>
+            <option value="square">Square</option>
+            <option value="touchbistro">TouchBistro</option>
+            <option value="other">Other</option>
+          </select>
+          <p class="hint">Mise works with Clover today.</p><div class="err"></div></div>
+      </div>
+      <div class="frow full">
+        <div data-f><label class="fl" for="mf-bp">Biggest problem in your back office right now <span class="opt">(optional)</span></label><textarea class="fi" id="mf-bp" name="mise_biggest_problem" rows="3"></textarea><div class="err"></div></div>
+      </div>
+      <div class="frow full">
+        <fieldset data-f><legend class="fl">Ownership</legend>
+          <div class="seg">
+            <label><input type="radio" name="mise_franchisee" value="false"> Independent</label>
+            <label><input type="radio" name="mise_franchisee" value="true"> Franchisee</label>
+          </div><div class="err"></div></fieldset>
+      </div>
+      <label class="consent" data-f>
+        <input type="checkbox" name="casl_consent" value="true" required>
+        <span id="caslText"><b>Yes, email me about Mise.</b> I agree to get emails from Antigravity Analytics about Mise, including invite and product updates. I can unsubscribe at any time. <span data-addr>Antigravity Analytics Private Limited, 11 Bank Colony, Hissar Road, Sirsa, Haryana 125055, India</span> · <a href="mailto:hello@antigrav.si">hello@antigrav.si</a></span>
+      </label>
+      <div class="err consent-err" style="margin:-10px 0 14px"></div>
+      <button class="cta" type="submit">Book a call</button>
+      <p class="notice" id="processText">By submitting, you agree that Antigravity Analytics can store and use these details to reply to your request and set up your call.</p>
+      <div class="formerr" role="alert"></div>
+    </form>
+    <div class="ok" tabindex="-1" aria-live="polite">
+      <div class="okmark">Request received</div>
+      <h3>Pick a time for your call</h3>
+      <p>Thanks — pick a time on the booking page. You&rsquo;ll get a confirmation email with the video link.</p>
+      <div class="cal"><iframe title="Book a call with Antigravity" data-booking-embed></iframe></div>
+      <div class="book-actions"><a class="cta book" data-booking-link href="https://meetings-na3.hubspot.com/ganga" target="_blank" rel="noopener">Open booking page in a new tab</a></div>
+      <p class="fallback">Trouble booking? Email <a href="mailto:hello@antigrav.si">hello@antigrav.si</a>.</p>
+    </div>
+  </div>
+</div>
+    <p class="rv" style="text-align:center;font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--grey);margin-top:38px">The back office for restaurants that count.</p>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="desks">
+      <div class="desk"><div class="dk">Commercial</div><a href="mailto:hello@antigrav.si">hello@antigrav.si</a></div>
+      <div class="desk"><div class="dk">POS &amp; onboarding</div><a href="mailto:support@antigrav.si">support@antigrav.si</a></div>
+      <div class="desk"><div class="dk">Multi-unit accounts</div><a href="mailto:billing@antigrav.si">billing@antigrav.si</a></div>
+      <div class="desk"><div class="dk">Media &amp; press</div><a href="mailto:creatives@antigrav.si">creatives@antigrav.si</a></div>
+      <div class="desk"><div class="dk">Investors</div><a href="mailto:endowing@antigrav.si">endowing@antigrav.si</a></div>
+    </div>
+    <div class="parent">Built by <a href="https://antigrav.si">Antigravity Analytics</a> · Canada-wide operations · Toronto · Montreal · Vancouver<br><span style="font-size:11px">Privacy-first analytics by Simple Analytics — no cookies, no personal data, honors Do Not Track.</span></div>
+  </div>
+  <div style="text-align:center;margin-top:36px"><img src="/nvidia-inception-badge.svg" alt="NVIDIA Inception program member badge" style="width:170px;max-width:60vw;height:auto" loading="lazy"><div style="font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--grey);margin-top:10px">Built by an NVIDIA Inception program member</div></div>
+  <div class="giant" aria-hidden="true">MISE</div>
+</footer>
+<script>
+(function(){
+"use strict";
+var $=function(s,c){return (c||document).querySelector(s)};
+var $$=function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
+
+/* ---------- THEME ---------- */
+var root=document.documentElement, themeBtn=$('#themeBtn');
+function setTheme(t){root.setAttribute('data-theme',t);try{localStorage.setItem('mise-theme',t)}catch(e){}
+  themeBtn.textContent=(t==='dark')?'Light':'Dark';if(reduced)drawStatic();}
+var saved=null;try{saved=localStorage.getItem('mise-theme')}catch(e){}
+setTheme(saved||'dark');
+themeBtn.addEventListener('click',function(){setTheme(root.getAttribute('data-theme')==='dark'?'light':'dark');});
+
+/* ---------- INTRO (2.2s, skippable) ---------- */
+var intro=$('#intro'), introDone=false;
+function endIntro(){if(introDone)return;introDone=true;try{sessionStorage.setItem('mise-intro','1')}catch(e){}intro.classList.add('done');
+  setTimeout(function(){if(intro.parentNode)intro.parentNode.removeChild(intro);},400);}
+var skipIntro=false;try{skipIntro=!!sessionStorage.getItem('mise-intro')}catch(e){}
+if(skipIntro){introDone=true;intro.classList.add('done');setTimeout(function(){if(intro.parentNode)intro.parentNode.removeChild(intro);},60);}
+else setTimeout(endIntro,1200);
+intro.addEventListener('click',endIntro);
+window.addEventListener('keydown',function(e){if(e.key==='Escape')endIntro();},{once:true});
+
+/* ---------- DISCO MATRIX ---------- */
+var cv=$('#matrix'), ctx=cv.getContext('2d'), hero=$('#hero');
+var CELL=22, cols=0, rows=0, grid=[], pocket={c0:0,c1:0,r0:0,r1:0};
+var BASE="MISEANTIGRAVITY", GLYPH="·:^+—";
+var mx=-9999,my=-9999, running=true, reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+function themeDark(){return root.getAttribute('data-theme')==='dark';}
+function sizeMatrix(){
+  var w=hero.clientWidth,h=hero.clientHeight,dpr=Math.min(window.devicePixelRatio||1,2);
+  cv.width=w*dpr;cv.height=h*dpr;cv.style.width=w+'px';cv.style.height=h+'px';
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+  cols=Math.ceil(w/CELL);rows=Math.ceil(h/CELL);
+  var pr=$('.pocket').getBoundingClientRect(), hr=hero.getBoundingClientRect(), pad=1;
+  pocket.c0=Math.max(0,Math.floor((pr.left-hr.left)/CELL)-pad);
+  pocket.c1=Math.min(cols-1,Math.ceil((pr.right-hr.left)/CELL)+pad);
+  pocket.r0=Math.max(0,Math.floor((pr.top-hr.top)/CELL)-pad);
+  pocket.r1=Math.min(rows-1,Math.ceil((pr.bottom-hr.top)/CELL)+pad);
+  grid=[];
+  for(var r=0;r<rows;r++){var row=[];
+    for(var c=0;c<cols;c++){
+      row.push({ch:BASE[(Math.random()*BASE.length)|0],a:.14+Math.random()*.22,mut:0,red:0,tx:0});
+    }grid.push(row);}
+}
+function inPocket(c,r){return c>=pocket.c0&&c<=pocket.c1&&r>=pocket.r0&&r<=pocket.r1;}
+function tick(){
+  if(!running)return;
+  var dark=themeDark(),W=cv.width/(Math.min(window.devicePixelRatio||1,2)),H=cv.height/(Math.min(window.devicePixelRatio||1,2));
+  ctx.clearRect(0,0,W,H);
+  ctx.font='500 '+CELL+'px "IBM Plex Mono",monospace';
+  ctx.textAlign='center';ctx.textBaseline='middle';
+  var R=175,mr=R/CELL;
+  for(var r=0;r<rows;r++)for(var c=0;c<cols;c++){
+    if(inPocket(c,r))continue;
+    var cell=grid[r][c],x=c*CELL+CELL/2,y=r*CELL+CELL/2;
+    // autonomous mutation
+    if(!reduced&&Math.random()<0.0016){cell.mut=40+Math.random()*60;cell.ch=GLYPH[(Math.random()*GLYPH.length)|0];
+      if(Math.random()<0.12)cell.red=26;}
+    if(cell.mut>0){cell.mut--;if(cell.mut===0)cell.ch=BASE[(Math.random()*BASE.length)|0];}
+    if(cell.red>0)cell.red--;
+    // cursor ripple -> telemetry
+    var dx=x-mx,dy=y-my,d=Math.sqrt(dx*dx+dy*dy),ch=cell.ch,alpha=cell.a;
+    if(d<R&&!reduced){
+      var t=1-d/R;t=t*t*(3-2*t);alpha=Math.min(1,cell.a+t*.95);
+      ch="MISE "[c%5];
+    }
+    if(cell.red>0){ctx.fillStyle='rgba(200,16,46,'+Math.min(1,.35+cell.red/26*.65)+')';}
+    else{var rgb=dark?'255,255,255':'5,7,10';
+      ctx.fillStyle='rgba('+rgb+','+alpha.toFixed(3)+')';}
+    ctx.fillText(ch,x,y);
+  }
+  if(!reduced)requestAnimationFrame(tick);
+}
+function drawStatic(){var was=running;running=true;tick();running=was;}
+hero.addEventListener('mousemove',function(e){var r=hero.getBoundingClientRect();mx=e.clientX-r.left;my=e.clientY-r.top;});
+hero.addEventListener('mouseleave',function(){mx=-9999;my=-9999;});
+window.addEventListener('resize',function(){clearTimeout(window.__mrz);window.__mrz=setTimeout(sizeMatrix,180);});
+if(document.fonts&&document.fonts.ready){document.fonts.ready.then(function(){sizeMatrix();});}
+if('IntersectionObserver' in window){new IntersectionObserver(function(es){running=es[0].isIntersecting&&!reduced;if(running)requestAnimationFrame(tick);}).observe(hero);}
+sizeMatrix();tick();
+
+/* ---------- SIMULATOR TABS ---------- */
+var tabs=$$('.tab'),panels=$$('.panel'),cur=0,timer=null;
+function show(i){cur=i;
+  tabs.forEach(function(t,j){t.classList.toggle('active',j===i);
+    t.setAttribute('aria-selected',j===i?'true':'false');
+    t.tabIndex=(j===i)?0:-1;});
+  panels.forEach(function(p,j){p.classList.toggle('active',j===i);});}
+function auto(){clearInterval(timer);}
+tabs.forEach(function(t){t.addEventListener('click',function(){show(+t.dataset.tab);auto();});});
+$('.tabs').addEventListener('keydown',function(e){
+  var i=null;
+  if(e.key==='ArrowRight')i=(cur+1)%tabs.length;
+  else if(e.key==='ArrowLeft')i=(cur-1+tabs.length)%tabs.length;
+  else if(e.key==='Home')i=0; else if(e.key==='End')i=tabs.length-1;
+  if(i!==null){e.preventDefault();show(i);auto();tabs[i].focus();}
+});
+$('.stage').addEventListener('mouseenter',function(){clearInterval(timer);});
+$('.stage').addEventListener('mouseleave',auto);
+
+/* ---------- REVEAL ---------- */
+if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  $$('.rv').forEach(function(el){io.observe(el);});
+}else{$$('.rv').forEach(function(el){el.classList.add('in');});}
+})();
+
+</script>
+<div class="stickybar" id="stickybar" aria-hidden="true">
+  <a class="cta" href="#circle">Book a call</a>
+  <a class="cta ghost" href="#routine">The routine</a>
+</div>
+<script>
+(function(){var bar=document.getElementById('stickybar');if(!bar)return;var circle=document.getElementById('circle');var formVisible=false;
+function upd(){var on=window.scrollY>window.innerHeight*0.85&&!formVisible;bar.classList.toggle('show',on);bar.setAttribute('aria-hidden',on?'false':'true');}
+window.addEventListener('scroll',upd,{passive:true});upd();
+if('IntersectionObserver' in window&&circle){new IntersectionObserver(function(es){formVisible=es[0].isIntersecting;upd();},{threshold:.08}).observe(circle);}})();
+</script>
+<script>
+window.MISE_FORM_CONFIG = {
+  portalId: "343790256",
+  formGuid: "38d7d220-b9fd-446d-8c3f-000270bf082b",
+  bookingUrl: "https://meetings-na3.hubspot.com/ganga",
+  bookingEmbedUrl: "",
+  subscriptionTypeId: 3880517645,
+  apiHost: "api.hsforms.com",
+  leadSourceDefault: "Website /mise"
+};
+</script>
+<script src="mise-form.js" defer></script>
+</body>
+</html>
