@@ -582,6 +582,11 @@
       });
     })();
   </script>
+
+<script src="/web-vitals.js" defer></script>
+<script>
+(function(){function send(m){try{if(window.sa_event)window.sa_event('web_vital_'+m.name.toLowerCase(),{value:Math.round(m.value*1000)/1000,rating:m.rating});}catch(e){}}function wire(){if(!window.webVitals)return;webVitals.onLCP(send);webVitals.onINP(send);webVitals.onCLS(send);}if(document.readyState==='complete')wire();else window.addEventListener('load',wire);})();
+</script>
 </body>
 </html>
 
