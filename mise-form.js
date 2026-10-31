@@ -6,7 +6,7 @@ var CFG = window.MISE_FORM_CONFIG || {};
 var PORTAL = CFG.portalId || "343790256";
 var GUID   = CFG.formGuid || "";            // TODO(user): HubSpot form ID once the form exists
 var HOST   = CFG.apiHost || "api.hsforms.com"; // account UI is app-na3; if CORS/404, try the regional host shown in HubSpot embed code
-var BOOK   = CFG.bookingUrl || "https://meetings-na3.hubspot.com/ganga";   // HubSpot booking page (opens in new tab)
+var BOOK   = CFG.bookingUrl || "https://cal.com/getmise/intro-call";   // Cal.com booking page (opens in new tab)
 var BOOK_EMBED = CFG.bookingEmbedUrl || ""; // long schedules URL + ?gv=true (iframe-able)
 var SUB_ID = CFG.subscriptionTypeId || 3880517645; // "Marketing Information" (read from HubSpot 19 Oct 2026)
 
@@ -79,6 +79,7 @@ form.addEventListener("submit",function(ev){
 
 function done(){
   root.classList.add("done");
+  if(window.__agTrackLead) window.__agTrackLead();
   // No embed: the success panel sends the booker to the HubSpot booking page via the button below.
   var fr=root.querySelector("[data-booking-embed]"), cal=root.querySelector(".cal");
   if(BOOK_EMBED && fr){ fr.src=BOOK_EMBED; } else if(cal){ cal.style.display="none"; }

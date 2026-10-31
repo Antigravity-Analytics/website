@@ -423,7 +423,7 @@ footer{border-top:1px solid var(--line);padding:80px 0 0;overflow:hidden}
       <h3>Pick a time for your call</h3>
       <p>Thanks — pick a time on the booking page. You&rsquo;ll get a confirmation email with the video link.</p>
       <div class="cal"><iframe title="Book a call with Antigravity" data-booking-embed></iframe></div>
-      <div class="book-actions"><a class="cta book" data-booking-link href="https://meetings-na3.hubspot.com/ganga" target="_blank" rel="noopener">Open booking page in a new tab</a></div>
+      <div class="book-actions"><a class="cta book" data-booking-link href="https://cal.com/getmise/intro-call" target="_blank" rel="noopener">Open booking page in a new tab</a></div>
       <p class="fallback">Trouble booking? Email <a href="mailto:hello@antigrav.si">hello@antigrav.si</a>.</p>
     </div>
   </div>
@@ -571,7 +571,7 @@ if('IntersectionObserver' in window&&circle){new IntersectionObserver(function(e
 window.MISE_FORM_CONFIG = {
   portalId: "343790256",
   formGuid: "38d7d220-b9fd-446d-8c3f-000270bf082b",
-  bookingUrl: "https://meetings-na3.hubspot.com/ganga",
+  bookingUrl: "https://cal.com/getmise/intro-call",
   bookingEmbedUrl: "",
   subscriptionTypeId: 3880517645,
   apiHost: "api.hsforms.com",
@@ -579,5 +579,58 @@ window.MISE_FORM_CONFIG = {
 };
 </script>
 <script src="mise-form.js" defer></script>
+
+<style>
+.cookie-banner{position:fixed;z-index:180;left:50%;transform:translateX(-50%);bottom:16px;width:min(720px,calc(100vw - 32px));display:flex;align-items:center;gap:18px;background:#0A0D11;border:1px solid #343A44;padding:14px 18px;box-shadow:0 18px 60px rgba(0,0,0,.5);transition:opacity .25s,transform .25s;font-family:inherit}
+.cookie-banner[hidden]{display:none}.cookie-banner.is-closing{opacity:0;transform:translate(-50%,12px)}
+.cookie-banner p{margin:0;color:#C7CDD6;font-size:.86rem;line-height:1.55}
+.cookie-banner strong{display:block;margin-bottom:8px;color:#fff;font-size:.95rem}
+.cookie-actions{display:flex;justify-content:flex-end;gap:8px;flex-shrink:0}
+.cookie-actions button,.cookie-actions a{min-height:40px;border:1px solid #343A44;background:transparent;padding:0 14px;color:#fff;font-size:9px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;display:inline-flex;align-items:center;text-decoration:none}
+.cookie-actions button:last-child{background:#fff;color:#05070A;border-color:#fff}
+@media(max-width:640px){.cookie-banner{flex-direction:column;align-items:stretch;gap:10px;left:12px;right:12px;width:auto;transform:none}.cookie-actions{display:grid;grid-template-columns:1fr 1fr 1fr}}
+</style>
+<script>
+/* Antigravity advertising measurement, consent-gated (privacy notice v1.2).
+   Meta Pixel + TikTok Pixel load ONLY after the visitor accepts in the cookie banner.
+   Events: PageView on load after consent; Lead on Mise form submit; Schedule on booking click. */
+(function(){
+  var META_ID="1435060284799674", TT_ID="", loaded=false;
+  function has(id){return id && id.charAt(0)!=="_";}
+  function loadPixels(){
+    if(loaded) return; loaded=true;
+    if(has(META_ID)){
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init',META_ID); fbq('track','PageView');
+    }
+    if(has(TT_ID)){
+      !function(w,d,t){w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["track","page","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.factory=function(e){return function(){var n=ttq._v;if(n){ttq._i=ttq._i||{};var i=arguments;if(i.length){var a=ttq._i[e];if(a){a.push(i)}}}var r=ttq._i&&ttq._i[e];if(r){r.push([e].concat(Array.prototype.slice.call(arguments,0)))}else{ttq.push([e].concat(Array.prototype.slice.call(arguments,0)))}}};for(var e=0;e<ttq.methods.length;e++){var n=ttq.methods[e];ttq[n]=ttq.factory(n)}ttq.load=function(e){var n=d.createElement("script");n.type="text/javascript",n.async=!0,n.src="https://analytics.tiktok.com/i18n/pixel/events.js?sdkid="+e+"&lib="+t;var r=d.getElementsByTagName("script")[0];r.parentNode.insertBefore(n,r)};ttq.load(TT_ID);ttq.page();}(window,document,'ttq');
+    }
+  }
+  window.__agConsentLoad=loadPixels;
+  window.__agTrackLead=function(){try{if(window.fbq)fbq('track','Lead');}catch(e){} try{if(window.ttq&&ttq.track)ttq.track('SubmitForm');}catch(e){}};
+  window.__agTrackSchedule=function(){try{if(window.fbq)fbq('track','Schedule');}catch(e){} try{if(window.ttq&&ttq.track)ttq.track('ClickButton');}catch(e){}};
+  document.addEventListener('click',function(e){var a=e.target&&e.target.closest?e.target.closest('a[href*="cal.com/getmise"]'):null; if(a)window.__agTrackSchedule();});
+})();
+</script>
+
+<aside class="cookie-banner" id="cookie-banner" aria-labelledby="cookie-heading">
+  <div>
+    <strong id="cookie-heading">Cookies &amp; measurement</strong>
+    <p>Privacy-first analytics (Simple Analytics) is active for every visit: page views and anonymous interaction events only, no cookies, no personal data. With your consent, the Meta Pixel also loads, to measure ads and show them to people who visited this site. Declining keeps it off.</p>
+  </div>
+  <div class="cookie-actions"><a href="https://antigrav.si/" target="_blank" rel="noopener">Full policy</a><button type="button" id="cookie-decline">Decline</button><button type="button" id="cookie-accept">Accept</button></div>
+</aside>
+<script>
+(function(){
+  var banner=document.getElementById('cookie-banner'),acc=document.getElementById('cookie-accept'),dec=document.getElementById('cookie-decline');
+  if(!banner) return;
+  function hide(){banner.classList.add('is-closing');setTimeout(function(){banner.hidden=true;},260);}
+  var choice=null; try{choice=localStorage.getItem('ag-consent-v1');}catch(e){}
+  if(choice){banner.hidden=true; if(choice==='granted'&&window.__agConsentLoad)window.__agConsentLoad();}
+  acc.addEventListener('click',function(){try{localStorage.setItem('ag-consent-v1','granted');}catch(e){} if(window.__agConsentLoad)window.__agConsentLoad(); hide();});
+  dec.addEventListener('click',function(){try{localStorage.setItem('ag-consent-v1','denied');}catch(e){} hide();});
+})();
+</script>
 </body>
 </html>
