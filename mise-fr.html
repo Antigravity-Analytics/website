@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html lang="fr-CA" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mise : les opérations de cuisine, à la main | Antigravity Analytics</title>
+<meta name="description" content="Mise offre aux cuisines de restauration rapide une routine matinale de 10 minutes qui signale les stocks bas avant le rush de 16 h le vendredi. Pilote fondateur. Réservez un appel.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://antigrav.si/mise">
+<meta property="og:title" content="Mise : voyez ce qui va manquer avant 16 h, le vendredi.">
+<meta property="og:description" content="Une routine matinale de 10 minutes pour les cuisines de restauration rapide. Pilote fondateur. Un cercle restreint, pas un lancement.">
+<meta property="og:image" content="https://antigrav.si/mise-og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mise : voyez ce qui va manquer avant 16 h, le vendredi.">
+<meta name="twitter:description" content="Une routine matinale de 10 minutes pour les cuisines de restauration rapide. Pilote fondateur. Un cercle restreint, pas un lancement.">
+<meta name="twitter:image" content="https://antigrav.si/mise-og.png">
+<link rel="canonical" href="https://antigrav.si/mise-fr">
+<link rel="alternate" hreflang="en" href="https://antigrav.si/mise">
+<meta name="robots" content="index, follow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%2305070A'/%3E%3Crect x='31.4' y='18.3' width='37.5' height='3.9' fill='%23FFFFFF'/%3E%3Cpath d='M50 27.5L22.95 83.3L31.37 83.3L50 36.3L68.63 83.3L77.05 83.3Z' fill='%23FFFFFF'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script data-collect-dnt="true" async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="mise-form.css">
+<noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif?collect-dnt=true" alt="" referrerpolicy="no-referrer-when-downgrade"></noscript>
+<style>
+/* ============ TOKENS (preserved from live) ============ */
+:root, [data-theme="dark"]{
+  --bg:#05070A; --surface:#090C12; --surface2:#0E131C;
+  --line:#171E2B; --line-hi:rgba(255,255,255,.24);
+  --ink:#FFFFFF; --grey:#8A919C; --red:#C8102E;
+  --mark:#FFFFFF; --matrix:255,255,255;
+  --navbg:rgba(5,7,10,.82);
+  --shadow:0 20px 60px rgba(0,0,0,.5);
+  --sg:'Space Grotesk',sans-serif; --mono:'IBM Plex Mono',monospace; --body:'Inter',sans-serif;
+}
+[data-theme="light"]{
+  --bg:#FFFFFF; --surface:#F5F6F8; --surface2:#ECEEF2;
+  --line:#E2E5EA; --line-hi:rgba(5,7,10,.28);
+  --ink:#05070A; --grey:#5B6270; --red:#C8102E;
+  --mark:#05070A; --matrix:5,7,10;
+  --navbg:rgba(255,255,255,.85);
+  --shadow:0 20px 60px rgba(5,7,10,.12);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;transition:background .4s,color .4s}
+::selection{background:var(--red);color:#fff}
+.wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+section{padding:110px 0;position:relative}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.32em;color:var(--grey);text-transform:uppercase;margin-bottom:22px}
+h1,h2{font-family:var(--sg);font-weight:700;letter-spacing:-.04em;line-height:1.02}
+h1{font-size:clamp(46px,7vw,92px)}
+h2{font-size:clamp(32px,4.5vw,58px);margin-bottom:18px}
+.lede{font-size:17px;color:var(--grey);max-width:600px}
+a{color:inherit}
+/* ============ INTRO (P01/P02, preserved) ============ */
+#intro{position:fixed;inset:0;z-index:200;background:#05070A;display:flex;align-items:center;justify-content:center;transition:opacity .35s ease;cursor:pointer}
+#intro.done{opacity:0;pointer-events:none}
+#intro svg{width:min(320px,60vw);height:auto;overflow:visible}
+#intro .mkb{fill:#fff;opacity:0;transform:translateY(14px);animation:markin .9s cubic-bezier(.16,1,.3,1) forwards}
+#intro .mkl{animation-delay:.2s}
+@keyframes markin{to{opacity:1;transform:translateY(0)}}
+/* ============ HEADER (preserved) ============ */
+header{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--navbg);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);transition:background .4s,border-color .4s}
+.nav-in{max-width:1180px;margin:0 auto;padding:0 32px;height:66px;display:flex;align-items:center;gap:14px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand svg{width:30px;height:30px;display:block}
+.brand svg .mk{fill:var(--mark);transition:fill .4s}
+.brand b{font-family:var(--sg);font-weight:700;font-size:14px;letter-spacing:.14em}
+.brand-sub{font-weight:500;color:var(--grey);letter-spacing:.06em}
+.brand b i{font-style:normal;color:var(--red)}
+.nav-links{margin-left:auto;display:flex;gap:26px;align-items:center}
+.nav-links a.nl{font-family:var(--mono);font-size:10px;letter-spacing:.22em;color:var(--grey);text-decoration:none;text-transform:uppercase;transition:color .2s}
+.nav-links a.nl:hover{color:var(--ink)}
+#themeBtn{font-family:var(--mono);font-size:10px;letter-spacing:.22em;background:none;border:1px solid var(--line);color:var(--grey);padding:8px 14px;border-radius:999px;cursor:pointer;text-transform:uppercase;transition:border-color .2s,color .2s}
+#themeBtn:hover{border-color:var(--line-hi);color:var(--ink)}
+.langlink{font-family:var(--mono);font-size:10px;letter-spacing:.22em;color:var(--grey);text-decoration:none;text-transform:uppercase;transition:color .2s}
+.langlink:hover{color:var(--ink)}
+.cta{display:inline-block;font-family:var(--sg);font-weight:600;font-size:14px;letter-spacing:.02em;background:var(--ink);color:var(--bg);text-decoration:none;padding:13px 28px;border-radius:999px;border:1px solid var(--ink);transition:transform .25s cubic-bezier(.16,1,.3,1),box-shadow .25s;white-space:nowrap}
+.cta:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.cta.ghost{background:transparent;color:var(--ink);border:1px solid var(--line-hi)}
+.nav-cta{padding:10px 20px;font-size:13px}
+/* ============ RECOGNITION LINE (Stage 14, N07: opacity only) ============ */
+.recog{margin-top:66px;background:var(--surface);border-bottom:1px solid var(--line);padding:12px 20px;text-align:center;font-size:14px;color:var(--grey)}
+.recog a{color:var(--ink)}
+.recog.show{animation:fadein .24s cubic-bezier(.16,1,.3,1) both}
+@keyframes fadein{from{opacity:0}to{opacity:1}}
+/* ============ HERO (F10: film beside the text, never behind it) ============ */
+#hero{min-height:100svh;display:flex;align-items:center;padding:150px 0 90px;overflow:hidden}
+#matrix{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:0}
+.herogrid{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center;width:100%;position:relative;z-index:1}
+.pocket{position:relative;z-index:2;text-align:left;max-width:600px;margin:0}
+.pocket h1{margin-bottom:24px}
+.pocket .lede{margin:0 0 38px;font-size:19px}
+.defline{font-size:15px;color:var(--ink);max-width:520px;margin-bottom:20px}
+.hero-ctas{display:flex;gap:16px;justify-content:flex-start;flex-wrap:wrap}
+.hero-note{margin-top:26px;font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--grey);text-transform:uppercase}
+.hero-note b{color:var(--red);font-weight:600}
+.textlink{display:inline-block;margin-top:18px;font-size:15px;color:var(--ink);text-decoration:underline;text-underline-offset:4px}
+.filmwrap{position:relative;z-index:2;border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--shadow);background:var(--surface)}
+.filmwrap video{width:100%;height:100%;min-height:340px;object-fit:cover;display:block}
+.badge{position:absolute;z-index:2;font-family:var(--mono);font-size:11px;letter-spacing:.14em;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 16px;color:var(--grey);white-space:nowrap;box-shadow:var(--shadow);animation:floaty 7s ease-in-out infinite}
+.badge b{color:var(--ink);font-weight:600}
+.badge .rd{color:var(--red);font-weight:600}
+.badge .pulse{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--red);margin-right:8px;animation:pulse 2.2s infinite;vertical-align:1px}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.2}}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+#b1{top:7%;left:5%;animation-delay:0s}
+#b2{bottom:26%;left:6%;animation-delay:2.4s}
+#b3{top:36%;right:5%;animation-delay:4.1s}
+#b4{bottom:9%;right:6%;animation-delay:1.2s}
+/* ============ SIMULATOR (preserved) ============ */
+.stage{border:1px solid var(--line);border-radius:20px;background:var(--surface);box-shadow:var(--shadow);overflow:hidden;margin-top:56px;position:relative}
+.stage::before{content:"";position:absolute;inset:8px;border:1px solid var(--line);border-radius:12px;pointer-events:none}
+.tabs{display:flex;border-bottom:1px solid var(--line);position:relative;z-index:1}
+.tab{flex:1;background:none;border:none;color:var(--grey);font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;padding:20px 10px;cursor:pointer;border-bottom:2px solid transparent;transition:color .2s}
+.tab small{display:block;margin-top:6px;letter-spacing:.08em;text-transform:none;color:var(--grey);opacity:.7;font-size:11px}
+.tab.active{color:var(--ink);border-bottom-color:var(--red)}
+.tab:hover{color:var(--ink)}
+.tab svg{vertical-align:-2px;margin-right:6px}
+.panels{position:relative;z-index:1;min-height:380px}
+.panel{display:none;padding:48px;animation:rise .5s cubic-bezier(.16,1,.3,1)}
+.panel.active{display:block}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.panel h3{font-family:var(--sg);font-size:26px;letter-spacing:-.02em;margin-bottom:8px}
+.panel .psub{color:var(--grey);font-size:15px;margin-bottom:30px;max-width:520px}
+.kv{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:15px 4px;border-bottom:1px solid var(--line);font-size:15px;flex-wrap:wrap}
+.kv:last-child{border-bottom:none}
+.kv .it{font-weight:500}
+.kv .st{font-family:var(--mono);font-size:11px;letter-spacing:.16em;padding:6px 12px;border-radius:6px;text-transform:uppercase}
+.st.red{background:rgba(200,16,46,.13);color:var(--red);border:1px solid rgba(200,16,46,.4)}
+.st.watch{background:var(--surface2);color:var(--grey);border:1px solid var(--line)}
+.st.ok{background:rgba(255,255,255,.05);color:var(--grey);border:1px solid var(--line)}
+[data-theme="light"] .st.ok{background:rgba(5,7,10,.05)}
+.flagline{display:flex;gap:10px;align-items:center;margin-top:18px;font-size:14.5px;color:var(--grey)}
+.gate{border:1px solid rgba(200,16,46,.45);border-radius:12px;padding:30px;background:rgba(200,16,46,.05)}
+.gate .amt{font-family:var(--mono);font-size:34px;font-weight:600}
+.gate .hold{display:inline-block;margin-top:12px;font-family:var(--mono);font-size:12px;letter-spacing:.24em;color:var(--red);border:1px solid var(--red);border-radius:6px;padding:8px 16px;text-transform:uppercase;animation:pulse 2.2s infinite}
+.gate p{color:var(--grey);font-size:14px;margin-top:14px;max-width:480px}
+/* ============ ICONS (Part 3, section 3.4: Lucide outline, one size per surface) ============ */
+.ic{width:16px;height:16px;flex:0 0 16px;stroke:var(--ink);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;vertical-align:-3px}
+.ic.red{stroke:var(--red)}
+/* ============ FORWARD LINES ============ */
+.fwdline{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;margin-top:44px;font-size:16px;color:var(--grey)}
+.fwdline a{color:var(--ink);font-weight:500;text-decoration:none;border-bottom:1px solid var(--line-hi);white-space:nowrap}
+.fwdline a .ic{margin-left:4px}
+/* ============ V1 + ILLUSTRATION FRAMES ============ */
+.figwrap{margin-top:44px;border:1px solid var(--line);border-radius:20px;background:var(--surface);padding:34px 38px;position:relative}
+.figwrap .figcap{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--grey);margin-top:18px}
+.figwrap svg{width:100%;height:auto;display:block}
+.f-ink{fill:var(--ink)} .f-grey{fill:var(--grey)} .f-red{fill:var(--red)} .f-surf{fill:var(--surface2)} .f-surf1{fill:var(--surface)} .f-none{fill:none}
+.s-line{stroke:var(--line)} .s-hi{stroke:var(--line-hi)} .s-ink{stroke:var(--ink)} .s-red{stroke:var(--red)} .s-grey{stroke:var(--grey)}
+.t-mono{font-family:var(--mono)} .t-body{font-family:var(--body)}
+/* ============ EQUATION STRIP (V7) ============ */
+.eq{display:flex;align-items:flex-start;gap:10px;flex-wrap:nowrap;overflow:visible}
+.eq .stn{flex:1;min-width:0}
+.eq .stn .lab{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--grey);margin-bottom:6px}
+.eq .stn .fig{font-family:var(--mono);font-size:19px;font-weight:600;white-space:nowrap}
+.eq .stn .src{display:inline-block;margin-top:8px;font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;color:var(--grey);border:1px solid var(--line);border-radius:4px;padding:2px 7px}
+.eq .op{font-family:var(--sg);font-size:22px;font-weight:600;padding-top:22px;color:var(--grey)}
+.eq .gapstn{flex:1.2;margin-left:26px;border-left:1px solid var(--line);padding-left:26px}
+.eq .gapstn .fig{font-size:32px}
+.eqclose{margin-top:22px;font-size:15px;color:var(--grey)}
+.eqclose b{color:var(--ink);font-weight:500}
+/* ============ WITHOUT / WITH CONTRAST (V6/E13) ============ */
+.contrast{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:56px}
+.cpanel{border:1px solid var(--line);border-radius:16px;padding:30px;background:var(--surface)}
+.cpanel h4{font-family:var(--sg);font-size:20px;margin-bottom:20px}
+.shelfstrip{display:flex;gap:8px;margin-bottom:22px}
+.shelfstrip .slot{flex:1;height:34px;border:1px solid var(--line);border-radius:6px;background:var(--surface2);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--grey)}
+.shelfstrip .slot.empty{background:transparent;border:1px dashed var(--red);color:var(--red)}
+.tl{border-top:1px solid var(--line)}
+.tl .row{display:flex;gap:16px;padding:12px 2px;border-bottom:1px solid var(--line);font-size:14.5px}
+.tl .row:last-child{border-bottom:none}
+.tl .tm{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--grey);flex:0 0 64px;padding-top:3px}
+.cpanel .foot{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--grey);margin-top:18px}
+.minirow{font-family:var(--mono);font-size:12px;display:flex;gap:10px;align-items:center}
+.minirow .bar{width:3px;align-self:stretch;background:var(--red);flex:0 0 3px}
+.minirow .flg{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink)}
+/* ============ STEPS (P11 preserved) ============ */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:56px}
+.step{border:1px solid var(--line);border-radius:16px;padding:32px 26px;background:var(--surface);transition:border-color .25s,transform .25s cubic-bezier(.16,1,.3,1)}
+.step:hover{border-color:var(--line-hi);transform:translateY(-4px)}
+.step .n{font-family:var(--mono);font-size:11px;letter-spacing:.24em;color:var(--red);margin-bottom:16px}
+.step h4{font-family:var(--sg);font-size:19px;letter-spacing:-.01em;margin-bottom:14px}
+.step p{font-size:14px;color:var(--grey)}
+.step .srow{margin-top:12px;font-size:13.5px;color:var(--grey)}
+.step .srow b{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);font-weight:600;margin-bottom:3px}
+/* ============ PLAIN BLOCKS (setup lists, fit facts, leaving) ============ */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:40px}
+.plainblock{border:1px solid var(--line);border-radius:16px;padding:28px;background:var(--surface)}
+.plainblock h4{font-family:var(--sg);font-size:18px;margin-bottom:14px}
+.plainblock ul{list-style:none}
+.plainblock li{font-size:14.5px;color:var(--grey);padding:9px 0;border-bottom:1px solid var(--line);display:flex;gap:10px;align-items:baseline}
+.plainblock li:last-child{border-bottom:none}
+.plainblock p{font-size:14.5px;color:var(--grey)}
+.smallprint{margin-top:34px;font-size:13.5px;color:var(--grey);max-width:760px}
+.smallprint a{color:var(--ink)}
+/* ============ PROOF ZONES (Stage 4, Part 3) ============ */
+.zones{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;margin-top:56px;align-items:start}
+.zlab{font-family:var(--mono);font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--grey);margin-bottom:16px}
+.scalefigs{margin-top:26px}
+.scalefigs .sf{margin-bottom:20px}
+.scalefigs .sf .num{font-family:var(--mono);font-size:clamp(28px,3vw,40px);font-weight:600;letter-spacing:-.02em}
+.scalefigs .sf .cap,.flatrow .cap{font-size:13px;color:var(--grey)}
+.flatrow{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:8px;border-top:1px solid var(--line);padding-top:22px}
+.flatrow .num{font-family:var(--mono);font-size:22px;font-weight:600}
+.bars .bar-row{margin-bottom:28px}
+.bars .bar-lab{display:flex;justify-content:space-between;align-items:baseline;font-size:14.5px;margin-bottom:8px}
+.bars .bar-lab .bv{font-family:var(--mono);font-weight:600}
+.bars .track{height:16px;background:var(--surface2);border:1px solid var(--line);border-radius:3px}
+.bars .fill{height:100%;background:var(--ink)}
+.bars .barsent{font-size:14.5px;color:var(--grey);margin-top:6px}
+.cells35{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-top:18px}
+.cells35 .cell{border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:12px 4px;text-align:center;font-family:var(--mono);font-size:13.5px;font-weight:500}
+.zone-c{margin-top:52px}
+.methodsteps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+.methodsteps .ms{border-top:2px solid var(--ink);padding-top:16px;font-size:16.5px;font-weight:500}
+.methodsteps .ms span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.2em;color:var(--grey);text-transform:uppercase;margin-bottom:8px;font-weight:400}
+.statusline{margin-top:28px;font-size:16px}
+.statusline b{font-weight:600}
+.templateframe{margin-top:52px}
+.templateframe .tline{font-size:16px;margin-bottom:18px}
+.tframe{border:1.5px dashed var(--line-hi);border-radius:16px;padding:30px;display:grid;grid-template-columns:repeat(6,1fr);gap:18px}
+.tframe .slot .sl{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--grey);margin-bottom:12px}
+.tframe .slot .empty{border-bottom:1px solid var(--line-hi);height:22px}
+.tframe .slot .badgeempty{border:1.5px dashed var(--line-hi);border-radius:8px;height:38px;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--grey);text-align:center;padding:0 6px}
+.templateframe .tnote{font-size:13.5px;color:var(--grey);margin-top:16px}
+/* ============ FIT CHECK (Stage 6; N01/N02 swaps) ============ */
+.pospick{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+.posbtn{font-family:var(--sg);font-weight:600;font-size:14px;background:var(--surface);color:var(--ink);border:1px solid var(--line-hi);border-radius:999px;padding:12px 24px;cursor:pointer;transition:border-color .2s,color .2s}
+.posbtn:hover{border-color:var(--ink)}
+.posbtn[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.fitanswer{margin-top:30px;border:1px solid var(--line);border-radius:16px;background:var(--surface);padding:30px;max-width:720px}
+.fitanswer .verdict{font-family:var(--sg);font-size:24px;font-weight:700;margin-bottom:8px}
+.fitanswer p{color:var(--grey);font-size:15px;max-width:560px}
+.fitanswer .cta{margin-top:18px}
+.swapout{opacity:0;transition:opacity .17s cubic-bezier(.3,0,1,1)}
+.swapin{animation:swapin .24s cubic-bezier(.16,1,.3,1) both}
+@keyframes swapin{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.chips{display:flex;gap:10px;flex-wrap:wrap}
+.chipbtn{font-size:14px;background:var(--surface);color:var(--ink);border:1px solid var(--line-hi);border-radius:999px;padding:10px 20px;cursor:pointer;transition:border-color .2s,color .2s;font-family:var(--body)}
+.chipbtn[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.miniform{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.miniform input{flex:1;min-width:220px;background:var(--surface2);border:1px solid var(--line);border-radius:10px;color:var(--ink);font-family:var(--body);font-size:15px;padding:12px 16px;outline:none;transition:border-color .2s}
+.miniform input:focus{border-color:var(--line-hi)}
+.miniform button{font-family:var(--sg);font-weight:600;font-size:14px;background:var(--ink);color:var(--bg);border:1px solid var(--ink);border-radius:999px;padding:12px 24px;cursor:pointer}
+.miniform .merr{display:none;width:100%;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);margin-top:4px}
+.miniform.invalid .merr{display:block;animation:errin2 .15s cubic-bezier(.16,1,.3,1) both}
+@keyframes errin2{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+.wlsuccess{display:none;gap:10px;align-items:center;font-size:15px;color:var(--ink);margin-top:16px}
+.wlsuccess.show{display:flex;animation:swapin .24s cubic-bezier(.16,1,.3,1) both}
+/* ============ WALKTHROUGH (Stage 7) ============ */
+.walksteps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:44px}
+.walksteps .ws{border:1px solid var(--line);border-radius:16px;padding:26px;background:var(--surface)}
+.walksteps .ws .n{font-family:var(--mono);font-size:11px;letter-spacing:.24em;color:var(--red);margin-bottom:12px}
+.walksteps .ws h4{font-family:var(--sg);font-size:17px;margin-bottom:8px}
+.walksteps .ws p{font-size:13.5px;color:var(--grey)}
+.sampleline{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--grey);margin-top:26px}
+.doorblock{margin-top:44px;border:1px solid var(--line);border-radius:20px;background:var(--surface);padding:40px;text-align:center;box-shadow:var(--shadow)}
+.doorblock .cta{font-size:16px;padding:16px 38px}
+.doorblock .doorfail{margin:20px auto 0;font-size:14px;color:var(--grey);max-width:560px}
+.exitblock{margin-top:44px;text-align:center}
+.exitblock .exitline{font-family:var(--sg);font-size:clamp(24px,3.4vw,36px);font-weight:700;letter-spacing:-.02em;max-width:760px;margin:0 auto 26px}
+.exitblock .ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.exitblock .ctxline{margin-top:20px;font-size:13.5px;color:var(--grey)}
+/* ============ QUESTIONS (Stage 8; N05) ============ */
+.qa{border:1px solid var(--line);border-radius:16px;background:var(--surface);margin-top:14px;overflow:hidden}
+.qa button.qhead{width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;background:none;border:none;color:var(--ink);font-family:var(--sg);font-weight:600;font-size:17.5px;text-align:left;padding:24px 28px;cursor:pointer}
+.qa .qmark{flex:0 0 auto;display:flex;align-items:center;justify-content:center;width:32px;height:32px;border:1px solid var(--line-hi);border-radius:50%;color:var(--grey);transition:transform .24s cubic-bezier(.16,1,.3,1)}
+.qa .qmark svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform .24s cubic-bezier(.16,1,.3,1)}
+.qa button.qhead:hover .qmark{transform:translateY(2px)}
+.qa button.qhead:active .qmark{transform:translateY(2px) scale(.92)}
+.qa.open .qmark{background:var(--surface2);color:var(--ink)}
+.qa.open .qmark svg{transform:rotate(180deg)}
+.qa .qa-a{display:none}
+.qa.open .qa-a{display:block}
+.qa .qa-in{padding:0 28px 26px;font-size:15px;color:var(--grey);max-width:720px}
+.qa.anim .qa-in{transition:opacity .24s cubic-bezier(.16,1,.3,1),transform .24s cubic-bezier(.16,1,.3,1)}
+/* ============ COUNT + INNER CIRCLE (Stage 9: zero motion) ============ */
+#circle{text-align:center}
+#circle .lede{margin:0 auto 34px}
+.countblock{max-width:720px;margin:0 auto;border:1px solid var(--line);border-radius:16px;background:var(--surface);padding:34px}
+.countblock .cbig{font-family:var(--sg);font-size:clamp(24px,3.2vw,34px);font-weight:700;letter-spacing:-.02em;margin-bottom:10px}
+.countblock .csmall{color:var(--grey);font-size:15px}
+/* ============ FORM SECTION EXTRAS (Stages 10, 13, 14) ============ */
+.howstrip{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:0 0 30px;text-align:left}
+.howstrip .hs{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:var(--surface)}
+.howstrip .hs b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.22em;color:var(--red);text-transform:uppercase;margin-bottom:6px;font-weight:600}
+.howstrip .hs span{font-size:13.5px;color:var(--grey);line-height:1.5;display:block}
+@media(max-width:700px){.howstrip{grid-template-columns:1fr}}
+.lesserask{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:900px;margin:34px auto 0}
+.lesserask .la{border:1px solid var(--line);border-radius:16px;background:var(--surface);padding:26px;text-align:left}
+.lesserask .la h4{font-family:var(--sg);font-size:17px;margin-bottom:8px}
+.lesserask .la p{font-size:14px;color:var(--grey)}
+.lesserask .la .miniform input{background:var(--surface2)}
+.manageline{max-width:900px;margin:26px auto 0;font-size:14px;color:var(--grey);display:flex;gap:10px;align-items:baseline;justify-content:center;text-align:center;flex-wrap:wrap}
+.manageline a{color:var(--ink)}
+.noscriptline{border:1px solid var(--line-hi);border-radius:10px;padding:12px 16px;font-size:14px;margin-bottom:18px}
+/* ============ MESSAGE FRAMES (Stages 12 + 13) ============ */
+.checkstrip{display:flex;gap:0;flex-wrap:wrap;margin-top:44px;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.checkstrip .cstep{flex:1;min-width:150px;padding:16px 18px;background:var(--surface);border-right:1px solid var(--line);font-size:14px;display:flex;gap:10px;align-items:center}
+.checkstrip .cstep:last-child{border-right:none}
+.checkstrip .cstep .stt{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--grey);display:block}
+.msggrid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:40px}
+.msg{border:1px solid var(--line);border-radius:16px;background:var(--surface);padding:28px}
+.msg.wide{grid-column:span 2}
+.msg .mhead{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--grey);margin-bottom:16px;display:flex;justify-content:space-between;gap:12px}
+.msg p{font-size:14.5px;color:var(--grey);margin-bottom:12px}
+.msg p b,.msg p .ink{color:var(--ink);font-weight:500}
+.msg p:last-child{margin-bottom:0}
+.msg .askblock{border:1px dashed var(--line-hi);border-radius:10px;padding:14px 16px;margin:14px 0;display:flex;gap:12px;align-items:flex-start}
+.msg .askblock p{margin:0}
+.msg .mfoot{margin-top:14px;display:flex;justify-content:flex-end}
+.seqlist{margin-top:40px;border:1px solid var(--line);border-radius:16px;background:var(--surface);overflow:hidden}
+.seqlist .srow2{display:flex;gap:22px;padding:22px 28px;border-bottom:1px solid var(--line);align-items:baseline}
+.seqlist .srow2:last-child{border-bottom:none}
+.seqlist .day{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--red);flex:0 0 110px;font-weight:600}
+.seqlist .srow2 p{font-size:14.5px;color:var(--grey)}
+.seqlist .srow2 p b{color:var(--ink);font-weight:500}
+/* ============ LEAVING (Stage 15: type only) ============ */
+.leavelines{max-width:820px;margin-top:40px}
+.leavelines .ll{padding:20px 0;border-bottom:1px solid var(--line);font-size:15.5px;color:var(--grey)}
+.leavelines .ll:last-child{border-bottom:none}
+.leavelines .ll b{color:var(--ink);font-weight:500}
+/* ============ FOOTER (preserved + E89 triage) ============ */
+footer{border-top:1px solid var(--line);padding:80px 0 0;overflow:hidden}
+.triage{font-size:15px;color:var(--grey);max-width:820px;margin-bottom:44px;display:flex;gap:12px;align-items:flex-start}
+.triage a{color:var(--ink)}
+.desks{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;margin-bottom:56px}
+.desk .dk{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--grey);margin-bottom:8px}
+.desk a{font-size:14px;text-decoration:none;border-bottom:1px solid var(--line);transition:border-color .2s}
+.desk a:hover{border-color:var(--red)}
+.footmanage{font-size:13.5px;color:var(--grey);margin-bottom:56px}
+.footmanage a{color:var(--ink)}
+.parent{margin-bottom:60px;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--grey)}
+.parent a{text-decoration:none;border-bottom:1px solid var(--line)}
+.giant{font-family:var(--sg);font-weight:700;font-size:clamp(120px,24vw,340px);letter-spacing:-.04em;line-height:.8;text-align:center;color:var(--ink);opacity:.07;transform:translateY(22%);user-select:none;white-space:nowrap}
+/* ============ STICKY BAR (P13, preserved) ============ */
+.cta:active{transform:translateY(0) scale(.98);box-shadow:none}
+.tab:active{color:var(--ink)}
+.stickybar{position:fixed;left:0;right:0;bottom:0;z-index:90;display:none;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:var(--navbg);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .3s cubic-bezier(.16,1,.3,1)}
+.stickybar.show{transform:none}
+.stickybar .cta{flex:1;text-align:center;padding:13px 10px}
+.stickybar .ghost{flex:0 0 auto}
+@media(max-width:900px){.stickybar{display:flex}}
+/* ============ REVEAL (P06, preserved) ============ */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
+.rv.in{opacity:1;transform:none}
+/* ============ RESPONSIVE ============ */
+@media(max-width:900px){
+  .wrap{padding:0 20px}
+  .herogrid{grid-template-columns:1fr;gap:36px}
+  .pocket{text-align:left}
+  .steps{grid-template-columns:1fr 1fr}
+  .walksteps{grid-template-columns:1fr 1fr}
+  .zones{grid-template-columns:1fr;gap:40px}
+  .contrast{grid-template-columns:1fr}
+  .duo{grid-template-columns:1fr}
+  .msggrid{grid-template-columns:1fr}
+  .msg.wide{grid-column:span 1}
+  .lesserask{grid-template-columns:1fr}
+  .methodsteps{grid-template-columns:1fr}
+  .tframe{grid-template-columns:repeat(2,1fr)}
+  .desks{grid-template-columns:1fr 1fr}
+  .nav-links a.nl{display:none}
+  .nav-cta{padding:11px 18px;font-size:13px;white-space:nowrap}
+  #themeBtn{padding:9px 14px;font-size:12px}
+  .brand b{font-size:14px;white-space:nowrap}
+  .badge{display:none}
+  .panel{padding:30px 22px}
+  section{padding:80px 0}
+  .eq{flex-wrap:wrap}
+  .eq .gapstn{margin-left:0;border-left:none;padding-left:0;width:100%;flex:none;margin-top:10px}
+}
+@media(max-width:480px){
+  .brand-sub{display:none}
+  .nav-cta{display:inline-block;padding:9px 16px;font-size:12px}
+  .cells35{gap:5px}
+  .cells35 .cell{font-size:11.5px;padding:9px 2px}
+  .flatrow{grid-template-columns:1fr 1fr}
+  .seqlist .srow2{flex-direction:column;gap:6px}
+  .seqlist .day{flex:none}
+}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px;border-radius:4px}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+  #intro{display:none}
+}
+</style>
+</head>
+<!-- ============ INTRO (P01/P02) ============ -->
+<div id="intro" aria-hidden="true">
+  <svg viewBox="0 0 100 100">
+    <rect class="mkb" x="31.4" y="18.3" width="37.5" height="3.9"/>
+    <path class="mkb mkl" d="M50 27.5L22.95 83.3L31.37 83.3L50 36.3L68.63 83.3L77.05 83.3Z"/>
+  </svg>
+</div>
+
+<!-- ============ HEADER (Stage 1: arrivals) ============ -->
+<header>
+  <div class="nav-in">
+    <a class="brand" href="/" aria-label="Accueil Antigravity">
+      <svg viewBox="0 0 100 100" aria-hidden="true">
+        <rect class="mk" x="31.4" y="18.3" width="37.5" height="3.9"/>
+        <path class="mk" d="M50 27.5L22.95 83.3L31.37 83.3L50 36.3L68.63 83.3L77.05 83.3Z"/>
+      </svg>
+      <b>MISE <span class="brand-sub">by Antigravity</span></b>
+    </a>
+    <nav class="nav-links" aria-label="Navigation principale">
+      <a class="nl" href="#routine">Fonctionnement</a>
+      <a class="nl" href="#proof">Preuve</a>
+      <a class="nl" href="#setup">Installation</a>
+      <a class="nl" href="#questions">Questions</a>
+      <a class="langlink" href="mise.html" hreflang="en">EN</a>
+      <button id="themeBtn" type="button" aria-label="Basculer entre le thème clair et le thème sombre">Clair</button>
+      <a class="cta nav-cta" href="#book">Réserver un appel</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ RECOGNITION LINE (Stage 14, E7/E79: device-held state only) ============ -->
+<div class="recog" id="recog" hidden></div>
+
+<!-- ============ HERO (Stage 2; F5 no cohort line, F10 film beside text) ============ -->
+<section id="hero">
+  <canvas id="matrix" aria-hidden="true"></canvas>
+  <div class="wrap herogrid">
+    <div class="pocket">
+      <p class="defline rv">Mise est l’arrière-boutique qui vérifie vos factures, vos comptages et vos commandes, au même endroit.</p>
+      <div class="eyebrow rv">Pour les restaurants rapides, les cafés et les franchises partout au Canada</div>
+      <h1 class="rv">Voyez ce qui va manquer avant 16 h, le vendredi.</h1>
+      <p class="lede rv">Mise est en pilote fondateur, bâti à la main, cuisine par cuisine, avec des exploitants qui veulent que ça dure. La routine matinale de 10 minutes vient en premier : ce qui pourrait manquer aujourd’hui, ce qu’hier vous a coûté, une commande à approuver.</p>
+      <div class="hero-ctas rv">
+        <a class="cta" href="#book">Réserver un appel</a>
+        <a class="cta ghost" href="#routine">Voir la routine matinale de 10 minutes</a>
+      </div>
+      <a class="textlink rv" href="#walkthrough">Ou faites la vérification vous-même d’abord : parcourez la démo</a>
+      <div class="hero-note rv">Pilote fondateur · En développement · <b>Installation avec vous</b></div>
+    </div>
+    <div class="filmwrap rv" aria-hidden="true">
+      <video class="hero-film" autoplay muted loop playsinline preload="metadata" poster="mise-kitchen.jpg"><source src="films/mise-film.mp4" type="video/mp4"></video>
+      <div class="badge" id="b1"><span class="pulse"></span><b>08:15</b>&nbsp;&nbsp;Brief du matin</div>
+      <div class="badge" id="b2">Dépenses de panique&nbsp;&nbsp;<b class="rd">−86,40 $</b>&nbsp;&nbsp;cette semaine</div>
+      <div class="badge" id="b3"><b>248,00 $</b>&nbsp;&nbsp;<span class="rd">EN ATTENTE</span>&nbsp;&nbsp;du propriétaire</div>
+      <div class="badge" id="b4">POS&nbsp;&nbsp;<b>Clover</b>&nbsp;&nbsp;connecté</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ROUTINE (Stage 3) ============ -->
+<section id="routine">
+  <div class="wrap">
+    <div class="eyebrow rv">Fonctionnement</div>
+    <h2 class="rv">La routine matinale de 10 minutes.</h2>
+    <p class="lede rv">Chaque matin à 8 h 15 : ce qui pourrait manquer aujourd’hui, ce qu’hier vous a coûté, un comptage de deux minutes, une commande à approuver. Plus de dix minutes, c’est qu’il y a un problème.</p>
+    <p class="rv" style="font-family:var(--mono);font-size:10px;letter-spacing:.22em;color:var(--grey);text-transform:uppercase;margin-top:18px">Concept illustré. Mise est en pilote fondateur</p>
+
+    <!-- V1: La vérité des tablettes vient de la vérité du papier (Stage 3 opening viewport only) -->
+    <div class="figwrap rv" role="img" aria-label="Une tablette de cuisine dessinée entièrement à partir de papier vérifié : des feuilles de factures, des bordereaux de livraison et des feuilles de comptage empilés en tablettes et en stock.">
+      <svg viewBox="0 0 640 300" aria-hidden="true">
+        <!-- uprights: stacks of sheets, edge on -->
+        <g class="f-surf s-line"><rect x="30" y="20" width="26" height="252"/><rect x="584" y="20" width="26" height="252"/></g>
+        <g stroke="var(--line)"><path d="M30 62h26M30 104h26M30 146h26M30 188h26M30 230h26M584 62h26M584 104h26M584 146h26M584 188h26M584 230h26"/></g>
+        <!-- boards -->
+        <g class="f-surf s-hi"><rect x="30" y="84" width="580" height="8"/><rect x="30" y="168" width="580" height="8"/><rect x="30" y="252" width="580" height="8"/></g>
+        <!-- level 1 items: folded and stacked sheets -->
+        <g fill="#F4F2ED" stroke="rgba(90,95,105,.55)">
+          <rect x="92" y="40" width="70" height="44"/><rect x="95" y="37" width="70" height="44"/>
+          <rect x="206" y="52" width="54" height="32"/><rect x="209" y="49" width="54" height="32"/>
+          <rect x="382" y="46" width="80" height="38"/><rect x="385" y="43" width="80" height="38"/>
+          <rect x="502" y="56" width="58" height="28"/>
+        </g>
+        <text x="104" y="66" font-size="7.5" class="t-mono" fill="rgba(5,7,10,.55)">INV 0417</text>
+        <path d="M316 58l6 7 10-13" class="f-none s-ink" stroke-width="2.4"/>
+        <!-- level 2 items, one flagged -->
+        <g fill="#F4F2ED" stroke="rgba(90,95,105,.55)">
+          <rect x="98" y="126" width="64" height="42"/><rect x="101" y="123" width="64" height="42"/>
+          <rect x="228" y="120" width="70" height="48"/><rect x="231" y="117" width="70" height="48"/>
+          <rect x="420" y="132" width="58" height="36"/>
+          <rect x="518" y="128" width="64" height="40"/><rect x="521" y="125" width="64" height="40"/>
+        </g>
+        <rect x="165" y="117" width="10" height="20" class="f-red"/>
+        <text x="240" y="148" font-size="7.5" class="t-mono" fill="rgba(5,7,10,.55)">CNT 12</text>
+        <path d="M344 142l6 7 10-13" class="f-none s-ink" stroke-width="2.4"/>
+        <!-- level 3 items -->
+        <g fill="#F4F2ED" stroke="rgba(90,95,105,.55)">
+          <rect x="90" y="206" width="76" height="46"/><rect x="93" y="203" width="76" height="46"/>
+          <rect x="282" y="218" width="56" height="34"/>
+          <rect x="402" y="204" width="82" height="48"/><rect x="405" y="201" width="82" height="48"/>
+          <rect x="522" y="216" width="58" height="36"/>
+        </g>
+        <text x="290" y="240" font-size="7.5" class="t-mono" fill="rgba(5,7,10,.55)">DLV 29</text>
+        <path d="M212 226l6 7 10-13" class="f-none s-ink" stroke-width="2.4"/>
+      </svg>
+      <div class="figcap">La vérité des tablettes vient de la vérité du papier</div>
+    </div>
+
+    <div class="stage rv">
+      <div class="tabs" role="tablist" aria-label="Étapes de la routine matinale">
+        <button class="tab active" data-tab="0" role="tab" id="tab-0" aria-selected="true" aria-controls="panel-0"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>8 h 15 · Brief<small>Le comptage : les articles signalés seulement</small></button>
+        <button class="tab" data-tab="1" role="tab" id="tab-1" aria-selected="false" aria-controls="panel-1" tabindex="-1">Les coûts, expliqués<small>Des explications, pas des accusations</small></button>
+        <button class="tab" data-tab="2" role="tab" id="tab-2" aria-selected="false" aria-controls="panel-2" tabindex="-1">Le seuil de 200 $<small>Mise propose. Vous approuvez.</small></button>
+      </div>
+      <div class="panels">
+        <div class="panel active" data-panel="0" role="tabpanel" id="panel-0" aria-labelledby="tab-0">
+          <h3>Comptez dix articles. Pas deux cents.</h3>
+          <p class="psub">Mise signale seulement ce qui a besoin d’un œil. Deux minutes dans la chambre froide, et c’est terminé.</p>
+          <div class="kv"><span class="it">Fromage mou, bloc en vrac</span><span class="st red">Rouge · commander 2</span></div>
+          <div class="kv"><span class="it">Lait entier</span><span class="st watch">À surveiller · 1 jour restant</span></div>
+          <div class="kv"><span class="it">Pains à hamburger</span><span class="st watch">À surveiller · risque au rush du vendredi</span></div>
+          <div class="kv"><span class="it">Poitrines de poulet, portionnées</span><span class="st watch">À surveiller · 2 jours restants</span></div>
+          <div class="kv"><span class="it">Fromage en tranches</span><span class="st watch">À surveiller · risque au rush du vendredi</span></div>
+          <div class="kv"><span class="it">Huile à friture</span><span class="st ok">OK</span></div>
+          <div class="kv"><span class="it">Verres 12 oz</span><span class="st ok">OK</span></div>
+          <div class="kv"><span class="it">Laitue, émincée</span><span class="st ok">OK</span></div>
+          <div class="kv"><span class="it">Tomates, tranchées</span><span class="st ok">OK</span></div>
+          <div class="kv"><span class="it">Sirop de cola</span><span class="st ok">OK</span></div>
+          <p class="flagline"><svg class="ic red" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4"/><path d="M5 4h13l-2.5 4L18 12H5"/></svg>Un article a besoin d’une commande aujourd’hui. Le reste peut attendre.</p>
+        </div>
+        <div class="panel" data-panel="1" role="tabpanel" id="panel-1" aria-labelledby="tab-1">
+          <h3>Chaque chiffre montre son calcul.</h3>
+          <p class="psub">Un toucher montre la photo de la facture, le registre du comptage, qui l’a entré. Personne n’est blâmé. La question est <em>ce qui s’est passé</em>, jamais <em>qui l’a fait</em>.</p>
+          <div class="eq" role="img" aria-label="Ouverture 9,6 kilos, plus livraisons 12,4 kilos, moins usage des recettes 7,8 kilos, égale attendu 14,2 kilos. Le compté était 11,8 kilos. L’écart est de moins 12 dollars et 60 cents.">
+            <div class="stn"><div class="lab">Ouverture</div><div class="fig">9,6 kg</div><span class="src">De la feuille de comptage.</span></div>
+            <div class="op">+</div>
+            <div class="stn"><div class="lab">Livraisons</div><div class="fig">12,4 kg</div><span class="src">Des factures vérifiées.</span></div>
+            <div class="op">−</div>
+            <div class="stn"><div class="lab">Usage des recettes</div><div class="fig">7,8 kg</div><span class="src">Des fiches de recettes.</span></div>
+            <div class="op">=</div>
+            <div class="stn"><div class="lab">Attendu</div><div class="fig">14,2 kg</div><span class="src">Calculé ici.</span></div>
+            <div class="stn"><div class="lab">Compté</div><div class="fig">11,8 kg</div><span class="src">Du comptage de dix articles.</span></div>
+            <div class="stn gapstn"><div class="lab">L’écart</div><div class="fig">−12,60 $</div></div>
+          </div>
+          <p class="eqclose"><b>La question est ce qui s’est passé, jamais qui l’a fait.</b><br>Cause probable : un gaspillage de lot non consigné. Prochaine étape : recompter la chambre froide avant de commander.</p>
+        </div>
+        <div class="panel" data-panel="2" role="tabpanel" id="panel-2" aria-labelledby="tab-2">
+          <h3>Vous approuvez chaque commande.</h3>
+          <p class="psub">Mise prépare la commande. Si elle dépasse votre limite de gestionnaire de 200 $, elle se verrouille jusqu’à ce que le propriétaire approuve.</p>
+          <svg viewBox="0 0 560 210" style="width:100%;height:auto;display:block;margin-bottom:24px" role="img" aria-label="Un passe de service vu d’en haut. Deux articles sont en stock. Deux espaces sont vides, en forme de la caisse et du contenant qui manquent, et la feuille de commande à côté du passe liste exactement ces deux articles.">
+            <rect x="20" y="150" width="370" height="6" class="f-surf s-line"/>
+            <g class="f-surf s-hi"><rect x="32" y="106" width="74" height="44" rx="4"/></g>
+            <text x="69" y="132" font-size="11" text-anchor="middle" class="t-body f-ink">Fromage mou</text>
+            <rect x="122" y="102" width="72" height="48" rx="4" fill="none" class="s-hi" stroke-dasharray="5 4"/>
+            <g class="f-surf s-hi"><rect x="218" y="110" width="58" height="40" rx="4"/></g>
+            <text x="247" y="134" font-size="11" text-anchor="middle" class="t-body f-ink">Huile à friture</text>
+            <path d="M300 150 v-34 a32 14 0 0 1 64 0 v34" fill="none" class="s-hi" stroke-dasharray="5 4"/>
+            <rect x="420" y="34" width="122" height="122" class="f-surf1 s-hi"/>
+            <text x="434" y="58" font-size="10" class="t-mono f-grey" letter-spacing="2">COMMANDE</text>
+            <text x="434" y="84" font-size="11.5" class="t-body f-ink">Pains à hamburger ×2</text>
+            <text x="434" y="112" font-size="11.5" class="t-body f-ink">Lait entier ×3</text>
+            <rect x="194" y="76" width="226" height="10" class="f-ink"/>
+            <rect x="364" y="104" width="56" height="10" class="f-ink"/>
+            <g font-size="10" class="t-mono f-grey">
+              <text x="69" y="176" text-anchor="middle">EN STOCK</text>
+              <text x="158" y="176" text-anchor="middle">MANQUANT · SUR LA COMMANDE</text>
+              <text x="247" y="176" text-anchor="middle">EN STOCK</text>
+              <text x="332" y="176" text-anchor="middle">MANQUANT · SUR LA COMMANDE</text>
+            </g>
+          </svg>
+          <div class="gate">
+            <div class="amt">248,00 $</div>
+            <div><span class="hold">En attente · du propriétaire</span></div>
+            <p>Vous avez modifié la commande ? Elle a besoin de votre approbation à nouveau. Rien n’est jamais commandé deux fois. C’est toujours vous qui approuvez.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- E13/V6: the same sample day, without and with the check -->
+    <div class="contrast">
+      <div class="cpanel rv">
+        <h4>Sans la vérification.</h4>
+        <div class="shelfstrip" aria-hidden="true"><div class="slot">Lait</div><div class="slot">Pains</div><div class="slot empty">Vide</div><div class="slot">Huile</div></div>
+        <div class="tl">
+          <div class="row"><span class="tm">8 h 15</span><span>Aucun brief. La journée commence à l’aveugle.</span></div>
+          <div class="row"><span class="tm">Midi</span><span>La facture est classée, non vérifiée.</span></div>
+          <div class="row"><span class="tm">Après-midi</span><span>La commande est écrite de mémoire.</span></div>
+          <div class="row"><span class="tm">16 h</span><span>Une case de tablette est vide, au moment où le rush commence.</span></div>
+        </div>
+        <div class="foot">Journée type</div>
+      </div>
+      <div class="cpanel rv">
+        <h4>Avec la vérification.</h4>
+        <div class="shelfstrip" aria-hidden="true"><div class="slot">Lait</div><div class="slot">Pains</div><div class="slot">Fromage</div><div class="slot">Huile</div></div>
+        <div class="tl">
+          <div class="row"><span class="tm">8 h 15</span><span>La carte du brief : trois articles à surveiller.</span></div>
+          <div class="row"><span class="tm">Midi</span><span class="minirow"><span class="bar"></span>Lait entier, boîte de 4 L <span class="flg">Signalé</span></span></div>
+          <div class="row"><span class="tm">Après-midi</span><span>La feuille de comptage : dix lignes, faites en deux minutes.</span></div>
+          <div class="row"><span class="tm">16 h</span><span>La tablette est pleine. La feuille de commande indique Approuvé.</span></div>
+        </div>
+        <div class="foot">Journée type</div>
+      </div>
+    </div>
+
+    <p class="fwdline rv">Quatre étapes installent le tout. Aucune ne demande un comptage complet le premier jour. <a href="#setup">L’installation, étape par étape<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15"/><path d="M13 6l6 6-6 6"/></svg></a></p>
+  </div>
+</section>
+
+<!-- ============ PROOF (Stage 4; F15: proof is its own beat; amended E19 to E21) ============ -->
+<section id="proof">
+  <div class="wrap">
+    <div class="eyebrow rv">Preuve · Décembre 2025 · Vérifié à la main</div>
+    <h2 class="rv">Les factures semblaient correctes. Puis Mise a vérifié.</h2>
+    <p class="lede rv">Avant que Mise soit un logiciel, la vérification se faisait à la main. Voici un mois de ce travail : chaque ligne de facture fournisseur de décembre 2025, lue, vérifiée contre ce qui avait été convenu et ce qui était arrivé, et consignée.</p>
+
+    <div class="zones">
+      <!-- Zone A: the ledger stack -->
+      <div class="zone rv">
+        <div class="zlab">Zone A · Le mois vérifié</div>
+        <div style="display:grid;grid-template-columns:1.2fr .8fr;gap:26px;align-items:start">
+          <svg viewBox="0 0 560 380" style="width:100%;height:auto;display:block" role="img" aria-label="Une pile de feuilles de grand livre pour décembre 2025, son bord gauche entaillé de 30 onglets de dates, un pour chaque date d’achat. La feuille du dessus montre quatre lignes de facture au complet.">
+            <g font-size="10" class="t-mono f-grey">
+              <text x="14" y="42">1</text><text x="8" y="200">15</text><text x="8" y="352">30</text>
+            </g>
+            <g class="f-surf s-line">
+              <rect x="46" y="30" width="18" height="7"/><rect x="46" y="40.6" width="18" height="7"/><rect x="46" y="51.2" width="18" height="7"/><rect x="46" y="61.8" width="18" height="7"/><rect x="46" y="72.4" width="18" height="7"/><rect x="46" y="83" width="18" height="7"/><rect x="46" y="93.6" width="18" height="7"/><rect x="46" y="104.2" width="18" height="7"/><rect x="46" y="114.8" width="18" height="7"/><rect x="46" y="125.4" width="18" height="7"/><rect x="46" y="136" width="18" height="7"/><rect x="46" y="146.6" width="18" height="7"/><rect x="46" y="157.2" width="18" height="7"/><rect x="46" y="167.8" width="18" height="7"/><rect x="46" y="178.4" width="18" height="7"/><rect x="46" y="189" width="18" height="7"/><rect x="46" y="199.6" width="18" height="7"/><rect x="46" y="210.2" width="18" height="7"/><rect x="46" y="220.8" width="18" height="7"/><rect x="46" y="231.4" width="18" height="7"/><rect x="46" y="242" width="18" height="7"/><rect x="46" y="252.6" width="18" height="7"/><rect x="46" y="263.2" width="18" height="7"/><rect x="46" y="273.8" width="18" height="7"/><rect x="46" y="284.4" width="18" height="7"/><rect x="46" y="295" width="18" height="7"/><rect x="46" y="305.6" width="18" height="7"/><rect x="46" y="316.2" width="18" height="7"/><rect x="46" y="326.8" width="18" height="7"/><rect x="46" y="337.4" width="18" height="7"/>
+            </g>
+            <rect x="86" y="26" width="400" height="330" class="f-surf s-line"/>
+            <rect x="94" y="20" width="400" height="330" class="f-surf s-line"/>
+            <rect x="102" y="14" width="400" height="330" class="f-surf1 s-hi"/>
+            <text x="126" y="54" font-size="14" letter-spacing="3" class="t-mono f-ink">DÉCEMBRE 2025</text>
+            <text x="126" y="82" font-size="15" class="t-body f-grey">Northgate Dairy</text>
+            <line x1="126" y1="96" x2="478" y2="96" class="s-line"/>
+            <g font-size="12.5" class="t-mono f-ink">
+              <text x="126" y="128">Lait entier, boîte de 4 L</text><text x="478" y="128" text-anchor="end">14,00 $</text>
+              <text x="126" y="156">Paneer, bloc de 5 kg</text><text x="478" y="156" text-anchor="end">61,25 $</text>
+              <text x="126" y="184">Pains à hamburger, caisse de 48</text><text x="478" y="184" text-anchor="end">23,90 $</text>
+              <text x="126" y="212">Huile à friture, 16 L</text><text x="478" y="212" text-anchor="end">41,75 $</text>
+            </g>
+            <g class="f-surf"><rect x="126" y="238" width="300" height="7"/><rect x="126" y="262" width="258" height="7"/><rect x="126" y="286" width="318" height="7"/></g>
+          </svg>
+          <div class="scalefigs">
+            <div class="sf"><div class="num">515</div><div class="cap">lignes vérifiées. Chaque ligne de facture du mois, lue une par une.</div></div>
+            <div class="sf"><div class="num">42 012,65 $</div><div class="cap">de dépenses vérifiées, sur ces lignes.</div></div>
+          </div>
+        </div>
+        <div class="flatrow">
+          <div><div class="num">81,58 $</div><div class="cap">dépense moyenne par ligne</div></div>
+          <div><div class="num">30</div><div class="cap">dates d’achat dans le mois</div></div>
+          <div><div class="num">24</div><div class="cap">fournisseurs dans le mois</div></div>
+        </div>
+      </div>
+
+      <!-- Zone B: concentration -->
+      <div class="zone bars rv">
+        <div class="zlab">Zone B · Où l’argent se trouvait</div>
+        <div class="bar-row">
+          <div class="bar-lab"><span>Produits laitiers</span><span class="bv">57,85 %</span></div>
+          <div class="track"><div class="fill" style="width:57.85%"></div></div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-lab"><span>Les deux plus gros fournisseurs</span><span class="bv">85,20 %</span></div>
+          <div class="track"><div class="fill" style="width:85.2%"></div></div>
+        </div>
+        <p class="barsent">La plus grande partie de l’argent se trouvait à peu d’endroits. C’est pourquoi chaque ligne a été vérifiée.</p>
+      </div>
+    </div>
+
+    <!-- Zone C: the 35 identical milk cells -->
+    <div class="zone-c rv">
+      <div class="zlab">Zone C · Un prix, resté fixe</div>
+      <p style="font-size:15px;color:var(--grey);max-width:720px">Le lait, par boîte de 4 L, sur les 35 lignes d’un seul fournisseur, sur 29 dates.</p>
+      <div class="cells35" aria-hidden="true">
+        <div class="cell">14,00 $</div><div class="cell">14,00 $</div><div class="cell">14,00 $</div><div class="cell">14,00 $</div><div class="cell">14,00 $</div><div class="cell">14,00 $</div><div class="cell">14,00 $</div>
+        <div class="cell">14,00 $</div><div class="cell">14,00 $</div><div class="cell">14,00 $</div><div class="cell">14,00 $</div><div class="cell">14,00 $</div><div class="cell">14,00 $</div><div class="cell">14,00 $</div>
+        <div class="cell">14,00 $</div><div class="cell">14,00 $</div><div class="cell">14,00 $</div><div class="cell">14,00 $</div><div class="cell">14,00 $</div><div class="cell">14,00 $</div><div class="cell">14,00 $</div>
+        <div class="cell">14,00 $</div><div class="cell">14,00 $</div><div class="cell">14,00 $</div><div class="cell">14,00 $</div><div class="cell">14,00 $</div><div class="cell">14,00 $</div><div class="cell">14,00 $</div>
+        <div class="cell">14,00 $</div><div class="cell">14,00 $</div><div class="cell">14,00 $</div><div class="cell">14,00 $</div><div class="cell">14,00 $</div><div class="cell">14,00 $</div><div class="cell">14,00 $</div>
+      </div>
+    </div>
+
+    <!-- Zone D: the method, in three word steps -->
+    <div class="rv" style="margin-top:52px">
+      <div class="zlab" style="font-family:var(--mono);font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--grey)">Zone D · La méthode</div>
+      <div class="methodsteps">
+        <div class="ms"><span>Étape 1</span>Lire chaque ligne.</div>
+        <div class="ms"><span>Étape 2</span>La vérifier contre ce qui avait été convenu et ce qui était arrivé.</div>
+        <div class="ms"><span>Étape 3</span>Consigner ce qui ne correspond pas.</div>
+      </div>
+      <p class="statusline"><b>Mesuré à la main, avant que Mise soit un logiciel.</b> Le pilote fondateur, c’est là où le logiciel doit arriver au même niveau.</p>
+    </div>
+
+    <!-- E21/V5: the empty result frame. Published empty, or not at all. -->
+    <div class="templateframe rv">
+      <p class="tline">Chaque résultat ici doit remplir chaque case. Si une case est vide, le résultat n’est pas publié.</p>
+      <div class="tframe" role="img" aria-label="Un cadre de résultat vide avec cinq cases non remplies : avant, après, période, emplacements, méthode, et un insigne vide pour à la main ou logiciel. Aucun résultat n’est publié tant que chaque case ne peut pas être remplie.">
+        <div class="slot"><div class="sl">Avant</div><div class="empty"></div></div>
+        <div class="slot"><div class="sl">Après</div><div class="empty"></div></div>
+        <div class="slot"><div class="sl">Période</div><div class="empty"></div></div>
+        <div class="slot"><div class="sl">Emplacements</div><div class="empty"></div></div>
+        <div class="slot"><div class="sl">Méthode</div><div class="empty"></div></div>
+        <div class="slot"><div class="sl">Vérifié par</div><div class="badgeempty">À la main ou logiciel</div></div>
+      </div>
+      <p class="tnote">Vide jusqu’à ce qu’un résultat de pilote puisse remplir chaque case.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SETUP (Stage 5; F11: the store enters its own data, walked through together) ============ -->
+<section id="setup">
+  <div class="wrap">
+    <div class="eyebrow rv">Installation</div>
+    <h2 class="rv">Installé avec vous, en quatre étapes.</h2>
+    <p class="lede rv">Vous travaillez de longues journées, alors l’installation se fait par étapes, à votre rythme. Votre commerce entre ses propres données avec nos outils, et nous parcourons chaque étape ensemble jusqu’à ce qu’elle tienne. Rien n’est entré pour vous, et rien ne commence avant que les chiffres soient les vôtres.</p>
+    <div class="steps">
+      <div class="step rv"><div class="n">ÉTAPE 01</div><h4>Connectez votre point de vente</h4>
+        <div class="srow"><b>Vous donnez</b>Votre autorisation, dans Clover lors d’un appel ensemble : un toucher accorde à Mise un accès en lecture seule à votre compte. Aucun identifiant n’est partagé.</div>
+        <div class="srow"><b>Mise fait</b>Se connecte par cette autorisation, en lecture seule, et règle votre limite de gestionnaire. Toute commande de plus de 200 $ attend le propriétaire.</div>
+        <div class="srow"><b>Votre temps</b>Environ 10 minutes.</div>
+        <div class="srow"><b>Terminé quand</b>Vos ventes apparaissent dans Mise le jour même.</div>
+      </div>
+      <div class="step rv"><div class="n">ÉTAPE 02</div><h4>Vos recettes, comme point de départ</h4>
+        <div class="srow"><b>Vous donnez</b>La recette de départ de chaque plat, telle qu’elle est aujourd’hui.</div>
+        <div class="srow"><b>Mise fait</b>Les charge comme mesure. Les cuisiniers ajustent sur la ligne; Mise mesure contre votre original, pas contre une devinette.</div>
+        <div class="srow"><b>Votre temps</b>Environ 20 minutes pour un menu standard.</div>
+        <div class="srow"><b>Terminé quand</b>Chaque plat a une recette de départ au dossier.</div>
+      </div>
+      <div class="step rv"><div class="n">ÉTAPE 03</div><h4>Entrez votre stock, avec nous à vos côtés</h4>
+        <div class="srow"><b>Vous donnez</b>Votre liste d’articles, de vos tablettes et de vos factures.</div>
+        <div class="srow"><b>Mise fait</b>Fournit les outils et reste à l’appel pendant que vous entrez chaque article, pour que chaque article porte le nom que votre cuisine lui donne.</div>
+        <div class="srow"><b>Votre temps</b>Une séance, environ 30 à 45 minutes pour la plupart des cuisines.</div>
+        <div class="srow"><b>Terminé quand</b>Votre liste de stock correspond à ce qui est sur vos tablettes.</div>
+      </div>
+      <div class="step rv"><div class="n">ÉTAPE 04</div><h4>Comptez quand ça vous convient</h4>
+        <div class="srow"><b>Vous donnez</b>Un premier comptage de dix articles, quand ça vous convient.</div>
+        <div class="srow"><b>Mise fait</b>Démarre les briefs du matin à partir de votre comptage. Aucun comptage complet le premier jour.</div>
+        <div class="srow"><b>Votre temps</b>Deux minutes, dans la chambre froide.</div>
+        <div class="srow"><b>Terminé quand</b>Votre premier brief de 8 h 15 arrive le lendemain matin.</div>
+      </div>
+    </div>
+
+    <div class="duo">
+      <div class="plainblock rv">
+        <h4>À avoir prêt avant la première étape</h4>
+        <ul>
+          <li>Votre compte Clover, pour autoriser l’accès en lecture seule pendant l’appel.</li>
+          <li>Une facture fournisseur récente.</li>
+          <li>Vos recettes, telles qu’elles sont.</li>
+          <li>Un moment pour un premier comptage, n’importe quand dans la première semaine.</li>
+        </ul>
+        <p style="margin-top:14px">Tout se rassemble en un seul quart de travail.</p>
+      </div>
+      <div class="plainblock rv">
+        <h4>Ce qui ne change pas</h4>
+        <p>Vos fournisseurs restent les vôtres. Vos recettes restent les vôtres. Votre équipe continue de commander comme aujourd’hui jusqu’à ce que le brief remplace les devinettes. Et rien n’est jamais commandé sans l’approbation d’une personne.</p>
+      </div>
+    </div>
+
+    <div class="duo">
+      <div class="plainblock rv">
+        <h4>Inclus dans le pilote fondateur</h4>
+        <ul>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Comptages</li>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Vérification des factures</li>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Approbation des commandes</li>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Le brief du matin</li>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>L’installation, parcourue ensemble</li>
+        </ul>
+      </div>
+      <div class="plainblock rv">
+        <h4>Pas encore</h4>
+        <p>Les intégrations au-delà des systèmes nommés dans la vérification d’adéquation ci-dessous ne font pas partie du pilote. Tout ce qui n’est pas nommé comme inclus est une étape ultérieure, et nous le dirons franchement plutôt que de vous laisser supposer.</p>
+      </div>
+    </div>
+
+    <p class="fwdline rv">La première étape est un appel de 15 minutes. <a href="#fit">Vérifiez d’abord votre adéquation<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15"/><path d="M13 6l6 6-6 6"/></svg></a></p>
+  </div>
+</section>
+
+<!-- ============ FIT CHECK (Stage 6) ============ -->
+<section id="fit">
+  <div class="wrap">
+    <div class="eyebrow rv">Vérification d’adéquation</div>
+    <h2 class="rv">Mise convient-il à votre cuisine aujourd’hui ?</h2>
+    <p class="lede rv">Choisissez votre système de point de vente. La réponse est franche, et c’est la même que nous donnons à l’appel.</p>
+    <div class="pospick rv" role="group" aria-label="Choisissez votre système de point de vente">
+      <button type="button" class="posbtn" data-pos="Clover" data-state="live" aria-pressed="false">Clover</button>
+      <button type="button" class="posbtn" data-pos="Square" data-state="notyet" aria-pressed="false">Square</button>
+      <button type="button" class="posbtn" data-pos="TouchBistro" data-state="notyet" aria-pressed="false">TouchBistro</button>
+      <button type="button" class="posbtn" data-pos="Lightspeed" data-state="notyet" aria-pressed="false">Lightspeed</button>
+      <button type="button" class="posbtn" data-pos="Other" data-state="notyet" aria-pressed="false">Autre</button>
+    </div>
+    <div class="fitanswer rv" id="fitanswer" aria-live="polite">
+      <div data-answer="empty">
+        <p>Choisissez votre système pour voir la réponse. Aucun courriel n’est nécessaire pour la réponse elle-même.</p>
+      </div>
+      <div data-answer="live" hidden>
+        <div class="verdict">En service aujourd’hui.</div>
+        <p><span data-posname>Clover</span> se connecte aujourd’hui. Réservez l’appel et l’installation commence par votre point de vente. Votre choix voyage avec votre demande, pour qu’on ne vous le demande pas deux fois.</p>
+        <a class="cta" href="#book">Réserver un appel</a>
+      </div>
+      <div data-answer="notyet" hidden>
+        <div class="verdict">Pas encore.</div>
+        <p>Mise ne se connecte pas encore à <span data-posname>ce système</span>. Laissez votre courriel et nous écrirons le jour où ça ouvre. Aucune date n’est promise, parce que nous ne promettons pas de dates que nous ne pouvons pas tenir.</p>
+        <form class="miniform" data-miniform="waitlist" novalidate>
+          <input type="email" name="email" autocomplete="email" placeholder="Courriel de travail" aria-label="Courriel pour la liste d’attente">
+          <button type="submit">Me prévenir à l’ouverture</button>
+          <div class="merr" role="alert">Entrez un courriel valide</div>
+        </form>
+        <p class="wlsuccess" data-wlsuccess><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg><span>Vous êtes sur la liste pour <span data-posname>ce système</span>. Nous écrirons le jour où ça ouvre, et pas avant.</span></p>
+      </div>
+    </div>
+    <noscript><p class="smallprint">Pour vérifier votre système sans JavaScript, écrivez à <a href="mailto:hello@antigrav.si">hello@antigrav.si</a> avec votre nom, votre commerce et votre système de point de vente.</p></noscript>
+
+    <div style="margin-top:52px" class="rv">
+      <div class="eyebrow" style="margin-bottom:14px">Votre type de cuisine</div>
+      <div class="chips" role="group" aria-label="Choisissez la description la plus proche de votre cuisine">
+        <button type="button" class="chipbtn" data-segment="Quick service" aria-pressed="false">Restauration rapide</button>
+        <button type="button" class="chipbtn" data-segment="Café" aria-pressed="false">Café</button>
+        <button type="button" class="chipbtn" data-segment="Franchise" aria-pressed="false">Franchise ou multi-emplacements</button>
+      </div>
+      <p class="smallprint" style="margin-top:16px">Votre choix façonne les données d’exemple dans la visite guidée ci-dessous. Rien d’autre ne change : même vérification, même appel, mêmes conditions.</p>
+    </div>
+
+    <p class="smallprint rv"><b style="color:var(--ink)">Fournisseurs :</b> votre liste de fournisseurs est bâtie avec vous, à partir de vos vraies factures, pendant l’installation. Il n’y a aucune base de données de fournisseurs à jumeler, et aucun jumelage n’est promis.</p>
+    <p class="smallprint rv">Bâti pour le Canada. Les conditions fondatrices sont en dollars canadiens et sont expliquées au complet à l’appel. Mise fonctionne en anglais et en français canadien. Cette page existe aussi en anglais : <a href="mise.html" hreflang="en">Mise in English</a>.</p>
+  </div>
+</section>
+
+<!-- ============ WALKTHROUGH (Stage 7; door per F3 flag: C32 fixes not in this build) ============ -->
+<section id="walkthrough">
+  <div class="wrap">
+    <div class="eyebrow rv">La visite guidée</div>
+    <h2 class="rv">Faites la vérification de vos propres mains.</h2>
+    <p class="lede rv">La démo, c’est la routine, sur un commerce d’exemple. Quatre étapes, dans l’ordre où le produit les exécute. C’est une visite guidée, pas un essai : aucun compte, aucune carte, rien à installer.</p>
+    <p class="sampleline rv" id="sampleline">Commerce d’exemple · Une cuisine de restauration rapide</p>
+    <div class="walksteps">
+      <div class="ws rv"><div class="n">ÉTAPE 1</div><h4>Le brief du matin</h4><p>Voyez la journée comme l’exploitant la voit à 8 h 15.</p></div>
+      <div class="ws rv"><div class="n">ÉTAPE 2</div><h4>Le comptage de dix articles</h4><p>Comptez dix articles sur un téléphone, par-dessus la feuille de comptage.</p></div>
+      <div class="ws rv"><div class="n">ÉTAPE 3</div><h4>La vérification de facture</h4><p>Trois vérifications sur une facture : le prix contre ce qui avait été convenu, la livraison contre ce qui avait été commandé, et le calcul des lignes.</p></div>
+      <div class="ws rv"><div class="n">ÉTAPE 4</div><h4>L’approbation de la commande</h4><p>Approuvez la commande vous-même. Rien ne bouge sans une personne.</p></div>
+    </div>
+
+    <!-- V3: The followed line, full form (owns this stage) -->
+    <div class="figwrap rv">
+      <svg viewBox="0 0 640 300" style="width:100%;height:auto;display:block" role="img" aria-label="Une ligne de facture, suivie. Sur la facture, la ligne du lait entier est facturée 15 dollars 75 contre un prix convenu de 14 dollars, et elle est signalée. Une bande part de cette ligne, traverse la page et descend dans une tablette, où elle se termine à une case vide.">
+        <rect x="30" y="30" width="340" height="245" class="f-surf1 s-hi"/>
+        <text x="50" y="58" font-size="11" letter-spacing="2.5" class="t-mono f-grey">FACTURE</text>
+        <text x="50" y="80" font-size="13" class="t-body f-grey">Harbourline Foods</text>
+        <line x1="50" y1="92" x2="350" y2="92" class="s-line"/>
+        <g font-size="9" class="t-mono f-grey"><text x="250" y="110" text-anchor="end">CONVENU</text><text x="308" y="110" text-anchor="end">FACTURÉ</text></g>
+        <g class="f-surf"><rect x="50" y="122" width="120" height="8"/><rect x="50" y="146" width="96" height="8"/></g>
+        <rect x="30" y="168" width="3" height="28" class="f-red"/>
+        <text x="46" y="186" font-size="12.5" class="t-body f-ink">Lait entier, boîte de 4 L</text>
+        <text x="250" y="186" font-size="12" text-anchor="end" class="t-mono f-ink">14,00</text>
+        <text x="308" y="186" font-size="12" font-weight="600" text-anchor="end" class="t-mono f-ink">15,75</text>
+        <text x="362" y="186" font-size="8.5" letter-spacing="1" text-anchor="end" class="t-mono f-ink">SIGNALÉ</text>
+        <text x="46" y="216" font-size="11.5" class="t-body f-grey">Facturé 1,75 $ de plus que le prix convenu.</text>
+        <g class="f-surf"><rect x="50" y="232" width="132" height="8"/><rect x="50" y="254" width="104" height="8"/></g>
+        <rect x="370" y="168" width="110" height="28" class="f-ink"/>
+        <rect x="454" y="168" width="26" height="96" class="f-ink"/>
+        <g class="f-surf s-line"><rect x="496" y="212" width="52" height="28"/><rect x="562" y="212" width="52" height="28"/></g>
+        <line x1="440" y1="240" x2="630" y2="240" class="s-line"/>
+        <rect x="454" y="262" width="80" height="34" fill="none" class="s-red"/>
+        <g class="f-surf s-line"><rect x="548" y="262" width="66" height="34"/></g>
+        <line x1="440" y1="296" x2="630" y2="296" class="s-line"/>
+      </svg>
+      <div class="figcap">Une ligne, suivie de la facture à la tablette</div>
+    </div>
+
+    <div class="doorblock rv">
+      <a class="cta" id="doorlink" href="https://demo.mise.antigrav.si">Commencer la visite guidée</a>
+      <p class="doorfail">Si la visite guidée ne s’ouvre pas, ou charge une page blanche, ne vous battez pas avec. Réservez l’appel et nous faisons la même vérification en direct, sur une de vos factures.</p>
+    </div>
+
+    <div class="exitblock rv">
+      <p class="exitline">L’appel fait la même vérification sur une de vos propres factures.</p>
+      <div class="ctas">
+        <a class="cta" href="#book">Réserver un appel</a>
+        <a class="cta ghost" href="#questions">Continuer à regarder</a>
+      </div>
+      <p class="ctxline">Si vous réservez après avoir parcouru la démo, votre demande le note, et l’appel commence à la même vérification.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ QUESTIONS (Stage 8; E39 to E45, doubt order) ============ -->
+<section id="questions">
+  <div class="wrap">
+    <div class="eyebrow rv">Questions</div>
+    <h2 class="rv">Posées dans l’ordre où elles bloquent l’appel.</h2>
+    <div class="rv">
+      <div class="qa">
+        <button type="button" class="qhead" aria-expanded="false">Qu’est-ce que l’installation me demande ?<span class="qmark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9.5l6 6 6-6"/></svg></span></button>
+        <div class="qa-a"><div class="qa-in">Quatre étapes, à votre rythme. Vous entrez vos propres données avec nos outils, parcourues ensemble. Le minimum pour commencer tient en un quart de travail : votre autorisation Clover, en lecture seule et accordée par vous pendant l’appel, une facture fournisseur récente, vos recettes telles qu’elles sont, et un moment pour un premier comptage.</div></div>
+      </div>
+      <div class="qa">
+        <button type="button" class="qhead" aria-expanded="false">Est-ce que ça fonctionne avec mon point de vente ?<span class="qmark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9.5l6 6 6-6"/></svg></span></button>
+        <div class="qa-a"><div class="qa-in">Clover se connecte aujourd’hui. Les autres systèmes sont en pilote ou pas encore, et la vérification d’adéquation ci-dessus donne la réponse franche pour le vôtre. Si le vôtre n’est pas en service, la liste d’attente vous écrit le jour où ça ouvre. Aucune date n’est promise.</div></div>
+      </div>
+      <div class="qa">
+        <button type="button" class="qhead" aria-expanded="false">Est-ce que c’est terminé ?<span class="qmark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9.5l6 6 6-6"/></svg></span></button>
+        <div class="qa-a"><div class="qa-in">Non, et nous préférons le dire. Mise est en pilote fondateur, installé commerce par commerce. La première valeur n’est pas le produit fini. C’est la vérification de facture à l’appel, faite sur une de vos propres factures.</div></div>
+      </div>
+      <div class="qa">
+        <button type="button" class="qhead" aria-expanded="false">Combien ça coûte ?<span class="qmark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9.5l6 6 6-6"/></svg></span></button>
+        <div class="qa-a"><div class="qa-in">Le prix est par emplacement, et il est expliqué au complet à l’appel de 15 minutes, dans les chiffres de vos propres factures : ce que ça coûte, ce que ça doit économiser, et les conditions, dans le même ordre pour chaque commerce au même stade. Les conditions fondatrices canadiennes sont en dollars canadiens. Rien n’est facturé sur cette page, et aucune carte n’y est prise.</div></div>
+      </div>
+      <div class="qa">
+        <button type="button" class="qhead" aria-expanded="false">Et si ça n’économise pas plus que ça coûte ?<span class="qmark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9.5l6 6 6-6"/></svg></span></button>
+        <div class="qa-a"><div class="qa-in">Au jour 30, vous recevez un rapport de preuve écrit sur vos propres dossiers : ce qui a été vérifié, ce qui a été trouvé, ce qui a été économisé. Il n’y a aucune garantie et aucun remboursement. Nous préférons que vous jugiez le rapport plutôt qu’une promesse.</div></div>
+      </div>
+      <div class="qa">
+        <button type="button" class="qhead" aria-expanded="false">Qu’arrive-t-il à mes données ?<span class="qmark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9.5l6 6 6-6"/></svg></span></button>
+        <div class="qa-a"><div class="qa-in">Les détails que vous envoyez dans le formulaire servent à répondre à votre demande et à faire fonctionner votre pilote, et à rien d’autre. Les dossiers de votre commerce restent les vôtres. Les conditions sur les droits de données sont données par écrit avant le début de tout essai, et avant qu’une carte soit enregistrée, pour que vous puissiez les lire avant que quoi que ce soit commence.</div></div>
+      </div>
+    </div>
+    <p class="fwdline rv">Une chose de plus décide la plupart des appels : le champ du plus gros problème dans le formulaire ci-dessous. <a href="#book">Réserver un appel<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15"/><path d="M13 6l6 6-6 6"/></svg></a></p>
+  </div>
+</section>
+
+<!-- ============ COUNT + INNER CIRCLE (Stage 9; F4: words only at zero) ============ -->
+<section id="circle">
+  <div class="wrap">
+    <div class="eyebrow rv">Le cercle restreint</div>
+    <h2 class="rv">Bâti pour ceux qu’on laisse habituellement de côté.</h2>
+    <p class="lede rv">Comptages, factures et achats, vérifiés au même endroit. Si vous tenez l’arrière-boutique, votre place est dans le cercle.</p>
+    <div class="countblock rv" id="countblock">
+      <div class="cbig">La cohorte fondatrice est ouverte.</div>
+      <div class="csmall">Les places se prennent lors d’appels, un commerce à la fois.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FORM (Stage 10) + BOOKING (Stage 11) ============ -->
+<section id="book">
+  <div class="wrap">
+    <div class="eyebrow rv" style="text-align:center">Réserver un appel</div>
+    <h2 class="rv" style="text-align:center">Quinze minutes. Votre commerce, votre facture.</h2>
+    <p class="lede rv" style="margin:0 auto 44px;text-align:center">Deux minutes de formulaire, puis choisissez un moment sur ce même écran.</p>
+
+<div class="mise-form rv" id="mise-form">
+  <div class="invite">
+    <div class="intro">
+      <h3>Parlez-nous de votre cuisine</h3>
+      <p class="isub">Votre appel travaille sur votre commerce et vos emplacements, pas sur une démo générale.</p>
+    </div>
+    <div class="howstrip" aria-label="Comment la réservation fonctionne">
+      <div class="hs"><b>Étape 1 · Environ deux minutes</b><span>Parlez-nous de votre cuisine dans le formulaire ci-dessous.</span></div>
+      <div class="hs"><b>Étape 2 · Choisissez un moment</b><span>Juste après le formulaire, sur ce même écran.</span></div>
+      <div class="hs"><b>Étape 3 · Installation avec vous</b><span>L’installation se fait avec vous, à votre rythme.</span></div>
+    </div>
+    <div class="restore" id="restorebar">
+      <span>Vous avez un brouillon sur cet appareil, d’une visite précédente.</span>
+      <button type="button" data-restore="use">L’utiliser</button>
+      <button type="button" data-restore="fresh">Repartir à neuf</button>
+    </div>
+    <noscript><p class="noscriptline">Ce formulaire a besoin de JavaScript. Pour réserver un appel, écrivez à <a href="mailto:hello@antigrav.si">hello@antigrav.si</a> avec votre nom, votre commerce et deux moments qui vous conviennent.</p></noscript>
+    <form novalidate>
+      <input type="hidden" name="mise_lead_source" value="Website /mise">
+      <input type="hidden" name="mise_utm_source" value="">
+      <input type="hidden" name="mise_utm_medium" value="">
+      <input type="hidden" name="mise_utm_campaign" value="">
+      <input type="hidden" name="mise_utm_content" value="">
+      <input type="hidden" name="mise_pos_system" value="">
+      <input type="hidden" name="mise_segment" value="">
+      <input type="hidden" name="mise_context" value="">
+      <div class="hp" aria-hidden="true"><label>Laissez ceci vide<input name="company_website" tabindex="-1" autocomplete="off"></label></div>
+      <div class="frow full">
+        <div data-f><label class="fl" for="mf-fn">Prénom <span class="req">· Obligatoire</span></label><input class="fi" id="mf-fn" name="firstname" autocomplete="given-name" required aria-describedby="err-firstname"><div class="err" id="err-firstname"></div></div>
+      </div>
+      <div class="frow full">
+        <div data-f><label class="fl" for="mf-ln">Nom de famille <span class="req">· Obligatoire</span></label><input class="fi" id="mf-ln" name="lastname" autocomplete="family-name" required aria-describedby="err-lastname"><div class="err" id="err-lastname"></div></div>
+      </div>
+      <div class="frow full">
+        <div data-f><label class="fl" for="mf-em">Courriel de travail <span class="req">· Obligatoire</span></label><input class="fi" id="mf-em" name="email" type="email" autocomplete="email" required aria-describedby="err-email"><div class="err" id="err-email"></div></div>
+      </div>
+      <div class="frow full">
+        <div data-f><label class="fl" for="mf-co">Nom du restaurant ou de l’entreprise <span class="req">· Obligatoire</span></label><input class="fi" id="mf-co" name="company" autocomplete="organization" required aria-describedby="err-company"><div class="err" id="err-company"></div></div>
+      </div>
+      <div class="frow full">
+        <div data-f><label class="fl" for="mf-nl">Nombre d’emplacements <span class="req">· Obligatoire</span></label><input class="fi" id="mf-nl" name="mise_number_of_locations" type="number" inputmode="numeric" min="1" step="1" placeholder="1 si un seul emplacement" required aria-describedby="err-mise_number_of_locations"><div class="err" id="err-mise_number_of_locations"></div></div>
+      </div>
+      <div class="frow full">
+        <div data-f><label class="fl" for="mf-bp">Le plus gros problème dans votre arrière-boutique en ce moment <span class="opt">· Facultatif</span></label>
+          <p class="helperfull" id="bp-helper">Écrivez la tâche d’arrière-boutique que vous redoutez le plus. Votre appel commence par votre réponse, pas par un discours de vente.</p>
+          <textarea class="fi" id="mf-bp" name="mise_biggest_problem" rows="3" aria-describedby="bp-helper"></textarea><div class="err"></div></div>
+      </div>
+      <div class="frow full">
+        <div data-f><label class="fl" for="mf-ph">Téléphone <span class="opt">· Facultatif</span></label><input class="fi" id="mf-ph" name="phone" type="tel" autocomplete="tel" aria-describedby="err-phone">
+          <p class="hint">Son seul travail : un texto de rappel pour votre appel réservé, et seulement si vous l’acceptez à l’étape de réservation.</p><div class="err" id="err-phone"></div></div>
+      </div>
+      <label class="consent">
+        <input type="checkbox" name="marketing_consent" value="true">
+        <span id="mktText"><b>Facultatif. Oui, écrivez-moi au sujet de Mise.</b> Nouveautés du produit et la note de preuve mensuelle, d’Antigravity Analytics. Je peux me désabonner en tout temps. Antigravity Analytics Private Limited, 11 Bank Colony, Hissar Road, Sirsa, Haryana 125055, Inde · <a href="mailto:hello@antigrav.si">hello@antigrav.si</a></span>
+      </label>
+      <button class="cta" type="submit">Réserver un appel</button>
+      <p class="notice" id="processText">En envoyant, vous acceptez qu’Antigravity Analytics conserve et utilise ces détails pour répondre à votre demande et organiser votre appel.</p>
+      <p class="stillline" id="stillline">Envoi toujours en cours. Donnez-lui encore quelques secondes.</p>
+      <div class="formerr" role="alert"></div>
+      <p class="draftline">Vos réponses sont enregistrées sur cet appareil pendant que vous écrivez. Rien ne quitte cet appareil avant que vous pressiez Réserver un appel.</p>
+    </form>
+
+    <!-- Stage 11: the booking step, inside the same panel (F2) -->
+    <div class="ok" tabindex="-1" aria-live="polite">
+      <div class="okmark okin">Demande reçue</div>
+      <h3 class="okin">Choisissez maintenant un moment pour votre appel</h3>
+      <p class="summary okin d1" id="oksummary">Votre demande est reçue.</p>
+      <p class="fixline okin d1">Quelque chose ne va pas ? Écrivez à <a href="mailto:hello@antigrav.si">hello@antigrav.si</a> et nous corrigerons le dossier.</p>
+      <div class="extras okin d1">
+        <div id="phone-extra" hidden>
+          <label class="fl" for="ok-phone">Téléphone pour l’appel <span class="opt">· Facultatif</span></label>
+          <input class="fi" id="ok-phone" type="tel" autocomplete="tel">
+          <p class="hint">Alex vous appelle à ce numéro à l’heure réservée.</p>
+        </div>
+        <label class="consent" style="margin-top:16px">
+          <input type="checkbox" id="reminder-consent">
+          <span><b>Facultatif.</b> Envoyez-moi des rappels par texto pour cet appel. Si un rappel est un jour envoyé comme un appel automatisé, ceci le couvre aussi. Laissez la case décochée et vous recevrez les rappels par courriel seulement. Votre appel se réserve d’une façon ou de l’autre.</span>
+        </label>
+      </div>
+      <p class="tzline okin d2" id="tzline">Les heures sont affichées dans votre fuseau horaire. L’appel est mené depuis Toronto.</p>
+      <div class="okin d2">
+        <p class="calload" id="calload">Chargement du calendrier…</p>
+        <div class="cal calwrap" id="calwrap"><div id="cal-inline"></div></div>
+        <div class="cal-fallback" id="calfallback">
+          <p>Le calendrier ne s’est pas chargé ici. La page de réservation est la voie de secours :</p>
+          <a class="cta book" data-booking-link href="https://cal.com/getmise/intro-call" target="_blank" rel="noopener">Ouvrir la page de réservation dans un nouvel onglet</a>
+          <p class="fallback">Si vous avez réservé dans l’autre onglet, votre courriel de confirmation est votre preuve. Un problème d’une façon ou de l’autre ? Écrivez à <a href="mailto:hello@antigrav.si">hello@antigrav.si</a> avec votre nom, votre commerce et deux moments qui vous conviennent.</p>
+        </div>
+        <div class="booked" id="bookedblock">
+          <p class="bline"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg> Réservé : <span id="bookedwhen">le moment que vous avez choisi</span>.</p>
+          <p><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 15 minutes, par téléphone. <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg> Alex vous appellera à l’heure réservée. Votre courriel de confirmation contient le lien pour déplacer ou annuler.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!-- E59/E77: the lesser asks, beside the form -->
+    <div class="lesserask">
+      <div class="la rv">
+        <h4>Pas prêt à réserver ?</h4>
+        <p>Parcourez d’abord la démo. Quatre étapes, sur un commerce d’exemple, et la même vérification que l’appel.</p>
+        <p style="margin-top:14px"><a class="textlink" style="margin-top:0" href="#walkthrough">Parcourir la démo</a></p>
+      </div>
+      <div class="la rv">
+        <h4>Ou recevez la note de preuve mensuelle</h4>
+        <p>Un courriel par mois, et seulement quand il y a un nouveau chiffre à montrer. Un clic ou une réponse y met fin. Elle reste une note par mois; elle ne devient jamais autre chose.</p>
+        <form class="miniform" data-miniform="note" novalidate>
+          <input type="email" name="email" autocomplete="email" placeholder="Courriel de travail" aria-label="Courriel pour la note de preuve mensuelle">
+          <button type="submit">Envoyez-moi la note</button>
+          <div class="merr" role="alert">Entrez un courriel valide</div>
+        </form>
+        <p class="wlsuccess" data-notesuccess><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg><span>Vous êtes sur la liste pour la note de preuve mensuelle.</span></p>
+      </div>
+    </div>
+
+    <!-- E80: manage your call, on the page as well as in the messages -->
+    <p class="manageline rv"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span>Déjà réservé ? Vos courriels de confirmation et de rappel contiennent le lien pour déplacer ou annuler votre appel. Vous les avez perdus ? Écrivez à <a href="mailto:hello@antigrav.si">hello@antigrav.si</a> et nous le renverrons.</span></p>
+  </div>
+</section>
+
+<!-- ============ LEAVING (Stage 15: type only, by design) ============ -->
+<section id="leaving">
+  <div class="wrap">
+    <div class="eyebrow rv">Le départ</div>
+    <h2 class="rv">Partir est aussi simple que se joindre.</h2>
+    <div class="leavelines rv">
+      <div class="ll"><b>L’annulation</b> est exactement aussi facile que s’inscrire. Il n’y a aucun labyrinthe de rétention et aucun appel à endurer pour partir. Les frais sont non remboursables, et c’est énoncé dans le contrat avant que vous le signiez.</div>
+      <div class="ll"><b>Vos dossiers au départ</b> sont couverts par la clause sur les droits de données que vous avez reçue par écrit avant le début de votre essai.</div>
+      <div class="ll"><b>Le retour</b> se fait aux conditions d’introduction du jour de votre retour, jamais un échelon pire pour être parti. Les conditions fondatrices ne sont pas promises lors d’un retour; elles appartiennent à la cohorte qui est restée.</div>
+      <div class="ll"><b>Les courriels de marketing</b> prennent fin avec un clic ou une réponse. Les mots sont les mêmes dans chaque pied de page : se désabonner en tout temps.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER (Stage 16: E89 triage, desks, E80 manage line) ============ -->
+<footer>
+  <div class="wrap">
+    <p class="triage"><svg class="ic" style="margin-top:4px" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span>Pour un appel, ou une question avant de vous joindre, écrivez à <a href="mailto:hello@antigrav.si">hello@antigrav.si</a> (votre nom, votre commerce, deux moments qui vous conviennent). Chaque bureau ci-dessous est lu, et un message au mauvais bureau est transféré.</span></p>
+    <div class="desks">
+      <div class="desk"><div class="dk">Commercial</div><a href="mailto:hello@antigrav.si">hello@antigrav.si</a></div>
+      <div class="desk"><div class="dk">Commerces avec Mise · Soutien</div><a href="mailto:support@antigrav.si">support@antigrav.si</a></div>
+      <div class="desk"><div class="dk">Commerces avec Mise · Facturation</div><a href="mailto:billing@antigrav.si">billing@antigrav.si</a></div>
+      <div class="desk"><div class="dk">Médias et presse</div><a href="mailto:creatives@antigrav.si">creatives@antigrav.si</a></div>
+      <div class="desk"><div class="dk">Investisseurs</div><a href="mailto:endowing@antigrav.si">endowing@antigrav.si</a></div>
+    </div>
+    <p class="footmanage">Vous avez réservé un appel et devez le déplacer ? Votre courriel de confirmation contient le lien, ou écrivez à <a href="mailto:hello@antigrav.si">hello@antigrav.si</a>.</p>
+    <div class="parent">Bâti par <a href="https://antigrav.si">Antigravity Analytics</a> · Opérations partout au Canada · Toronto · Montréal · Vancouver<br><span style="font-size:11px">Analytique axée sur la vie privée, par Simple Analytics : aucun témoin, aucune donnée personnelle, respecte l’interdiction de suivi.</span></div>
+  </div>
+  <div style="text-align:center;margin-top:36px"><img src="/nvidia-inception-badge.svg" alt="Insigne de membre du programme NVIDIA Inception" style="width:170px;max-width:60vw;height:auto" loading="lazy"><div style="font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--grey);margin-top:10px">Bâti par un membre du programme NVIDIA Inception</div></div>
+  <div class="giant" aria-hidden="true">MISE</div>
+</footer>
+<div class="stickybar" id="stickybar" aria-hidden="true">
+  <a class="cta" href="#book">Réserver un appel</a>
+  <a class="cta ghost" href="#routine">La routine</a>
+</div>
+<script>
+(function(){
+"use strict";
+var $=function(s,c){return (c||document).querySelector(s)};
+var $$=function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
+
+/* ---------- THEME (preserved) ---------- */
+var root=document.documentElement, themeBtn=$('#themeBtn');
+function setTheme(t){root.setAttribute('data-theme',t);try{localStorage.setItem('mise-theme',t)}catch(e){}
+  themeBtn.textContent=(t==='dark')?'Clair':'Sombre';if(reduced)drawStatic();}
+var saved=null;try{saved=localStorage.getItem('mise-theme')}catch(e){}
+setTheme(saved||'dark');
+themeBtn.addEventListener('click',function(){setTheme(root.getAttribute('data-theme')==='dark'?'light':'dark');});
+
+/* ---------- INTRO (P01/P02, preserved) ---------- */
+var intro=$('#intro'), introDone=false;
+function endIntro(){if(introDone)return;introDone=true;try{sessionStorage.setItem('mise-intro','1')}catch(e){}intro.classList.add('done');
+  setTimeout(function(){if(intro.parentNode)intro.parentNode.removeChild(intro);},400);}
+var skipIntro=false;try{skipIntro=!!sessionStorage.getItem('mise-intro')}catch(e){}
+if(skipIntro){introDone=true;intro.classList.add('done');setTimeout(function(){if(intro.parentNode)intro.parentNode.removeChild(intro);},60);}
+else setTimeout(endIntro,1200);
+intro.addEventListener('click',endIntro);
+window.addEventListener('keydown',function(e){if(e.key==='Escape')endIntro();},{once:true});
+
+/* ---------- DISCO MATRIX (P03, preserved) ---------- */
+var cv=$('#matrix'), ctx=cv.getContext('2d'), hero=$('#hero');
+var CELL=22, cols=0, rows=0, grid=[], pocket={c0:0,c1:0,r0:0,r1:0};
+var BASE="MISEANTIGRAVITY", GLYPH="·:^+—";
+var mx=-9999,my=-9999, running=true, reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+function themeDark(){return root.getAttribute('data-theme')==='dark';}
+function sizeMatrix(){
+  var w=hero.clientWidth,h=hero.clientHeight,dpr=Math.min(window.devicePixelRatio||1,2);
+  cv.width=w*dpr;cv.height=h*dpr;cv.style.width=w+'px';cv.style.height=h+'px';
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+  cols=Math.ceil(w/CELL);rows=Math.ceil(h/CELL);
+  var pr=$('.pocket').getBoundingClientRect(), hr=hero.getBoundingClientRect(), pad=1;
+  pocket.c0=Math.max(0,Math.floor((pr.left-hr.left)/CELL)-pad);
+  pocket.c1=Math.min(cols-1,Math.ceil((pr.right-hr.left)/CELL)+pad);
+  pocket.r0=Math.max(0,Math.floor((pr.top-hr.top)/CELL)-pad);
+  pocket.r1=Math.min(rows-1,Math.ceil((pr.bottom-hr.top)/CELL)+pad);
+  grid=[];
+  for(var r=0;r<rows;r++){var row=[];
+    for(var c=0;c<cols;c++){
+      row.push({ch:BASE[(Math.random()*BASE.length)|0],a:.14+Math.random()*.22,mut:0,red:0,tx:0});
+    }grid.push(row);}
+}
+function inPocket(c,r){return c>=pocket.c0&&c<=pocket.c1&&r>=pocket.r0&&r<=pocket.r1;}
+function tick(){
+  if(!running)return;
+  var dark=themeDark(),W=cv.width/(Math.min(window.devicePixelRatio||1,2)),H=cv.height/(Math.min(window.devicePixelRatio||1,2));
+  ctx.clearRect(0,0,W,H);
+  ctx.font='500 '+CELL+'px "IBM Plex Mono",monospace';
+  ctx.textAlign='center';ctx.textBaseline='middle';
+  var R=175,mr=R/CELL;
+  for(var r=0;r<rows;r++)for(var c=0;c<cols;c++){
+    if(inPocket(c,r))continue;
+    var cell=grid[r][c],x=c*CELL+CELL/2,y=r*CELL+CELL/2;
+    if(!reduced&&Math.random()<0.0016){cell.mut=40+Math.random()*60;cell.ch=GLYPH[(Math.random()*GLYPH.length)|0];
+      if(Math.random()<0.12)cell.red=26;}
+    if(cell.mut>0){cell.mut--;if(cell.mut===0)cell.ch=BASE[(Math.random()*BASE.length)|0];}
+    if(cell.red>0)cell.red--;
+    var dx=x-mx,dy=y-my,d=Math.sqrt(dx*dx+dy*dy),ch=cell.ch,alpha=cell.a;
+    if(d<R&&!reduced){
+      var t=1-d/R;t=t*t*(3-2*t);alpha=Math.min(1,cell.a+t*.95);
+      ch="MISE "[c%5];
+    }
+    if(cell.red>0){ctx.fillStyle='rgba(200,16,46,'+Math.min(1,.35+cell.red/26*.65)+')';}
+    else{var rgb=dark?'255,255,255':'5,7,10';
+      ctx.fillStyle='rgba('+rgb+','+alpha.toFixed(3)+')';}
+    ctx.fillText(ch,x,y);
+  }
+  if(!reduced)requestAnimationFrame(tick);
+}
+function drawStatic(){var was=running;running=true;tick();running=was;}
+hero.addEventListener('mousemove',function(e){var r=hero.getBoundingClientRect();mx=e.clientX-r.left;my=e.clientY-r.top;});
+hero.addEventListener('mouseleave',function(){mx=-9999;my=-9999;});
+window.addEventListener('resize',function(){clearTimeout(window.__mrz);window.__mrz=setTimeout(sizeMatrix,180);});
+if(document.fonts&&document.fonts.ready){document.fonts.ready.then(function(){sizeMatrix();});}
+if('IntersectionObserver' in window){new IntersectionObserver(function(es){running=es[0].isIntersecting&&!reduced;if(running)requestAnimationFrame(tick);}).observe(hero);}
+sizeMatrix();tick();
+
+/* ---------- SIMULATOR TABS (P07/P08, preserved) ---------- */
+var tabs=$$('.tab'),panels=$$('.panel'),cur=0,timer=null;
+function show(i){cur=i;
+  tabs.forEach(function(t,j){t.classList.toggle('active',j===i);
+    t.setAttribute('aria-selected',j===i?'true':'false');
+    t.tabIndex=(j===i)?0:-1;});
+  panels.forEach(function(p,j){p.classList.toggle('active',j===i);});}
+function auto(){clearInterval(timer);}
+tabs.forEach(function(t){t.addEventListener('click',function(){show(+t.dataset.tab);auto();});});
+$('.tabs').addEventListener('keydown',function(e){
+  var i=null;
+  if(e.key==='ArrowRight')i=(cur+1)%tabs.length;
+  else if(e.key==='ArrowLeft')i=(cur-1+tabs.length)%tabs.length;
+  else if(e.key==='Home')i=0; else if(e.key==='End')i=tabs.length-1;
+  if(i!==null){e.preventDefault();show(i);auto();tabs[i].focus();}
+});
+$('.stage').addEventListener('mouseenter',function(){clearInterval(timer);});
+$('.stage').addEventListener('mouseleave',auto);
+
+/* ---------- REVEAL (P06, preserved) ---------- */
+if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  $$('.rv').forEach(function(el){io.observe(el);});
+}else{$$('.rv').forEach(function(el){el.classList.add('in');});}
+})();
+</script>
+<script>
+/* Sticky bar (P13, preserved mechanics; E86: hides while the form section is on
+   screen, and never shares the bottom strip with the cookie banner, which holds
+   its own reserved body padding). */
+(function(){var bar=document.getElementById('stickybar');if(!bar)return;var booksec=document.getElementById('book');var formVisible=false;
+function upd(){var on=window.scrollY>window.innerHeight*0.85&&!formVisible;bar.classList.toggle('show',on);bar.setAttribute('aria-hidden',on?'false':'true');}
+window.addEventListener('scroll',upd,{passive:true});upd();
+if('IntersectionObserver' in window&&booksec){new IntersectionObserver(function(es){formVisible=es[0].isIntersecting;upd();},{threshold:.08}).observe(booksec);}})();
+</script>
+<script>
+window.MISE_I18N = {
+  required: "Obligatoire",
+  email: "Entrez un courriel valide",
+  locations: "Nombre entier, 1 ou plus",
+  phone: "Vérifiez le numéro",
+  sending: "Envoi en cours…",
+  submit: "Réserver un appel",
+  fail: "Ça ne s’est pas envoyé. Réessayez, ou écrivez à hello@antigrav.si avec votre nom, votre commerce et deux moments qui vous conviennent.",
+  summary: "Pour {name}, chez {store}, {count}.",
+  locOne: "1 emplacement", locMany: "{n} emplacements",
+  tz: "Les heures sont affichées dans votre fuseau horaire : {zone}. L’appel est mené depuis Toronto.",
+  bookedWhen: "{when}",
+  recogSubmitted: "Votre demande est reçue. <a href=\"#book\">Choisissez un moment pour terminer la réservation de votre appel.</a>",
+  recogBooked: "Votre appel est réservé. Votre courriel de confirmation contient le lien pour déplacer ou annuler, ou écrivez à <a href=\"mailto:hello@antigrav.si\">hello@antigrav.si</a>.",
+  minifail: "Ça ne s’est pas envoyé. Écrivez à hello@antigrav.si.",
+  count: {
+    terms: "Les conditions fondatrices sont énoncées au complet à l’appel, les mêmes pour chaque commerce au même stade.",
+    taken: "{n} places sur 25 sont prises.",
+    openSmall: "La cohorte fondatrice est ouverte. ",
+    fillingSmall: "La cohorte fondatrice se remplit. ",
+    lastSmall: "Dernières places dans la cohorte fondatrice. ",
+    fullBig: "La cohorte fondatrice est pleine.",
+    fullSmall: "25 places sur 25 sont prises. La liste d’attente est ouverte pour la prochaine cohorte.",
+    emailPh: "Courriel de travail", emailAria: "Courriel pour la liste d’attente de la cohorte",
+    waitlistBtn: "Joindre la liste d’attente", waitlistOk: "Vous êtes sur la liste d’attente pour la prochaine cohorte.",
+    merr: "Entrez un courriel valide"
+  },
+  sample: {
+    "Quick service": "Commerce d’exemple · Une cuisine de restauration rapide",
+    "Café": "Commerce d’exemple · Un café",
+    "Franchise": "Commerce d’exemple · Une cuisine de franchise, un emplacement parmi plusieurs"
+  }
+};
+/* Founding cohort state (F4): 0 renders words only. The numbered states render
+   only when a real signing moves the count; set by operations, never by hand
+   in the page. */
+window.MISE_COHORT_STATE = 0;
+window.MISE_FORM_CONFIG = {
+  portalId: "343790256",
+  formGuid: "38d7d220-b9fd-446d-8c3f-000270bf082b",
+  bookingUrl: "https://cal.com/getmise/intro-call",
+  bookingEmbedUrl: "",
+  subscriptionTypeId: 3880517645,
+  apiHost: "api.hsforms.com",
+  leadSourceDefault: "Website /mise",
+  calLink: "getmise/intro-call"
+};
+</script>
+<script src="mise-page.js" defer></script>
+<script src="mise-form.js" defer></script>
+
+<style>
+.cookie-banner{position:fixed;z-index:180;left:0;right:0;bottom:0;display:flex;align-items:center;gap:18px;background:#0A0D11;border-top:1px solid #343A44;padding:10px 18px;transition:opacity .25s,transform .25s;font-family:inherit}body.consent-open{padding-bottom:var(--consent-h,64px)}
+.cookie-banner[hidden]{display:none}.cookie-banner.is-closing{opacity:0;transform:translateY(12px)}
+.cookie-banner p{margin:0;color:#C7CDD6;font-size:.86rem;line-height:1.55}
+.cookie-banner strong{display:block;margin-bottom:8px;color:#fff;font-size:.95rem}
+.cookie-actions{display:flex;justify-content:flex-end;gap:8px;flex-shrink:0}
+.cookie-actions button,.cookie-actions a{min-height:40px;border:1px solid #343A44;background:transparent;padding:0 14px;color:#fff;font-size:9px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;display:inline-flex;align-items:center;text-decoration:none}
+.cookie-actions button{background:#fff;color:#05070A;border-color:#fff;font-weight:700}
+@media(max-width:640px){.cookie-banner{flex-direction:column;align-items:stretch;gap:8px;padding:10px 14px}.cookie-banner p{font-size:.8rem;line-height:1.45}.cookie-banner strong{margin-bottom:4px}.cookie-actions{display:grid;grid-template-columns:1fr 1fr 1fr}}
+</style>
+<script>
+/* Antigravity advertising measurement, consent-gated (privacy notice v1.2).
+   Meta Pixel loads ONLY after the visitor accepts in the cookie banner.
+   Events: PageView on load after consent; Lead on Mise form submit; Schedule on booking click. */
+(function(){
+  var META_ID="1435060284799674", TT_ID="", loaded=false;
+  function has(id){return id && id.charAt(0)!=="_";}
+  function loadPixels(){
+    if(loaded) return; loaded=true;
+    if(has(META_ID)){
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init',META_ID); fbq('track','PageView');
+    }
+    if(has(TT_ID)){
+      !function(w,d,t){w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["track","page","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.factory=function(e){return function(){var n=ttq._v;if(n){ttq._i=ttq._i||{};var i=arguments;if(i.length){var a=ttq._i[e];if(a){a.push(i)}}}var r=ttq._i&&ttq._i[e];if(r){r.push([e].concat(Array.prototype.slice.call(arguments,0)))}else{ttq.push([e].concat(Array.prototype.slice.call(arguments,0)))}}};for(var e=0;e<ttq.methods.length;e++){var n=ttq.methods[e];ttq[n]=ttq.factory(n)}ttq.load=function(e){var n=d.createElement("script");n.type="text/javascript",n.async=!0,n.src="https://analytics.tiktok.com/i18n/pixel/events.js?sdkid="+e+"&lib="+t;var r=d.getElementsByTagName("script")[0];r.parentNode.insertBefore(n,r)};ttq.load(TT_ID);ttq.page();}(window,document,'ttq');
+    }
+  }
+  window.__agConsentLoad=loadPixels;
+  window.__agTrackLead=function(){try{if(window.fbq)fbq('track','Lead');}catch(e){} try{if(window.ttq&&ttq.track)ttq.track('SubmitForm');}catch(e){}};
+  window.__agTrackSchedule=function(){try{if(window.fbq)fbq('track','Schedule');}catch(e){} try{if(window.ttq&&ttq.track)ttq.track('ClickButton');}catch(e){}};
+  document.addEventListener('click',function(e){var a=e.target&&e.target.closest?e.target.closest('a[href*="cal.com/getmise"]'):null; if(a)window.__agTrackSchedule();});
+})();
+</script>
+
+<aside class="cookie-banner" id="cookie-banner" aria-labelledby="cookie-heading">
+  <div>
+    <strong id="cookie-heading">Témoins et mesure</strong>
+    <p>L’analytique axée sur la vie privée (Simple Analytics) est active pour chaque visite : pages vues et événements d’interaction anonymes seulement, aucun témoin, aucune donnée personnelle. Avec votre consentement, le pixel Meta se charge aussi, pour mesurer les publicités et les montrer aux personnes qui ont visité ce site. Refuser le garde éteint.</p>
+  </div>
+  <div class="cookie-actions"><a href="https://antigrav.si/" target="_blank" rel="noopener">Politique complète</a><button type="button" id="cookie-decline">Refuser</button><button type="button" id="cookie-accept">Accepter</button></div>
+</aside>
+<script>
+(function(){
+  var banner=document.getElementById('cookie-banner'),acc=document.getElementById('cookie-accept'),dec=document.getElementById('cookie-decline');
+  if(!banner) return;
+  function measureConsent(){if(banner.hidden){document.body.classList.remove('consent-open');document.documentElement.style.removeProperty('--consent-h')}else{document.body.classList.add('consent-open');document.documentElement.style.setProperty('--consent-h',banner.offsetHeight+'px')}}function hide(){banner.classList.add('is-closing');setTimeout(function(){banner.hidden=true;measureConsent();},260);}window.addEventListener('resize',measureConsent);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(measureConsent);
+  var choice=null; try{choice=localStorage.getItem('ag-consent-v1');}catch(e){}
+  if(choice){banner.hidden=true; if(choice==='granted'&&window.__agConsentLoad)window.__agConsentLoad();} measureConsent();
+  acc.addEventListener('click',function(){try{localStorage.setItem('ag-consent-v1','granted');}catch(e){} if(window.__agConsentLoad)window.__agConsentLoad(); hide();});
+  dec.addEventListener('click',function(){try{localStorage.setItem('ag-consent-v1','denied');}catch(e){} hide();});
+})();
+</script>
+
+<script src="/web-vitals.js" defer></script>
+<script>
+(function(){function send(m){try{if(window.sa_event)window.sa_event('web_vital_'+m.name.toLowerCase(),{value:Math.round(m.value*1000)/1000,rating:m.rating});}catch(e){}}function wire(){if(!window.webVitals)return;webVitals.onLCP(send);webVitals.onINP(send);webVitals.onCLS(send);}if(document.readyState==='complete')wire();else window.addEventListener('load',wire);})();
+</script>
+</body>
+</html>

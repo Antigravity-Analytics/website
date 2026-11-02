@@ -3,18 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mise — Kitchen Operations, Handmade | Antigravity Analytics</title>
-<meta name="description" content="Mise gives quick-service kitchens a 10-minute morning routine that flags low stock before the 4 PM rush. Founding pilot — book a call.">
+<title>Mise: Kitchen Operations, Handmade | Antigravity Analytics</title>
+<meta name="description" content="Mise gives quick-service kitchens a 10-minute morning routine that flags low stock before the 4 PM rush. Founding pilot. Book a call.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://antigrav.si/mise">
-<meta property="og:title" content="Mise — See what's running low before 4 PM on a Friday.">
-<meta property="og:description" content="A 10-minute morning routine for quick-service kitchens. Founding pilot — an inner circle, not a launch.">
+<meta property="og:title" content="Mise: See what's running low before 4 PM on a Friday.">
+<meta property="og:description" content="A 10-minute morning routine for quick-service kitchens. Founding pilot. An inner circle, not a launch.">
 <meta property="og:image" content="https://antigrav.si/mise-og.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Mise — See what's running low before 4 PM on a Friday.">
-<meta name="twitter:description" content="A 10-minute morning routine for quick-service kitchens. Founding pilot — an inner circle, not a launch.">
+<meta name="twitter:title" content="Mise: See what's running low before 4 PM on a Friday.">
+<meta name="twitter:description" content="A 10-minute morning routine for quick-service kitchens. Founding pilot. An inner circle, not a launch.">
 <meta name="twitter:image" content="https://antigrav.si/mise-og.png">
 <link rel="canonical" href="https://antigrav.si/mise">
+<link rel="alternate" hreflang="fr-CA" href="https://antigrav.si/mise-fr">
 <meta name="robots" content="index, follow">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%2305070A'/%3E%3Crect x='31.4' y='18.3' width='37.5' height='3.9' fill='%23FFFFFF'/%3E%3Cpath d='M50 27.5L22.95 83.3L31.37 83.3L50 36.3L68.63 83.3L77.05 83.3Z' fill='%23FFFFFF'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,7 +25,7 @@
 <link rel="stylesheet" href="mise-form.css">
 <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif?collect-dnt=true" alt="" referrerpolicy="no-referrer-when-downgrade"></noscript>
 <style>
-/* ============ TOKENS ============ */
+/* ============ TOKENS (preserved from live) ============ */
 :root, [data-theme="dark"]{
   --bg:#05070A; --surface:#090C12; --surface2:#0E131C;
   --line:#171E2B; --line-hi:rgba(255,255,255,.24);
@@ -54,14 +55,14 @@ h1{font-size:clamp(46px,7vw,92px)}
 h2{font-size:clamp(32px,4.5vw,58px);margin-bottom:18px}
 .lede{font-size:17px;color:var(--grey);max-width:600px}
 a{color:inherit}
-/* ============ INTRO ============ */
+/* ============ INTRO (P01/P02, preserved) ============ */
 #intro{position:fixed;inset:0;z-index:200;background:#05070A;display:flex;align-items:center;justify-content:center;transition:opacity .35s ease;cursor:pointer}
 #intro.done{opacity:0;pointer-events:none}
 #intro svg{width:min(320px,60vw);height:auto;overflow:visible}
 #intro .mkb{fill:#fff;opacity:0;transform:translateY(14px);animation:markin .9s cubic-bezier(.16,1,.3,1) forwards}
 #intro .mkl{animation-delay:.2s}
 @keyframes markin{to{opacity:1;transform:translateY(0)}}
-/* ============ HEADER ============ */
+/* ============ HEADER (preserved) ============ */
 header{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--navbg);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);transition:background .4s,border-color .4s}
 .nav-in{max-width:1180px;margin:0 auto;padding:0 32px;height:66px;display:flex;align-items:center;gap:14px}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
@@ -75,30 +76,42 @@ header{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--navbg);b
 .nav-links a.nl:hover{color:var(--ink)}
 #themeBtn{font-family:var(--mono);font-size:10px;letter-spacing:.22em;background:none;border:1px solid var(--line);color:var(--grey);padding:8px 14px;border-radius:999px;cursor:pointer;text-transform:uppercase;transition:border-color .2s,color .2s}
 #themeBtn:hover{border-color:var(--line-hi);color:var(--ink)}
+.langlink{font-family:var(--mono);font-size:10px;letter-spacing:.22em;color:var(--grey);text-decoration:none;text-transform:uppercase;transition:color .2s}
+.langlink:hover{color:var(--ink)}
 .cta{display:inline-block;font-family:var(--sg);font-weight:600;font-size:14px;letter-spacing:.02em;background:var(--ink);color:var(--bg);text-decoration:none;padding:13px 28px;border-radius:999px;border:1px solid var(--ink);transition:transform .25s cubic-bezier(.16,1,.3,1),box-shadow .25s;white-space:nowrap}
 .cta:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
 .cta.ghost{background:transparent;color:var(--ink);border:1px solid var(--line-hi)}
 .nav-cta{padding:10px 20px;font-size:13px}
-/* ============ HERO ============ */
+/* ============ RECOGNITION LINE (Stage 14, N07: opacity only) ============ */
+.recog{margin-top:66px;background:var(--surface);border-bottom:1px solid var(--line);padding:12px 20px;text-align:center;font-size:14px;color:var(--grey)}
+.recog a{color:var(--ink)}
+.recog.show{animation:fadein .24s cubic-bezier(.16,1,.3,1) both}
+@keyframes fadein{from{opacity:0}to{opacity:1}}
+/* ============ HERO (F10: film beside the text, never behind it) ============ */
 #hero{min-height:100svh;display:flex;align-items:center;padding:150px 0 90px;overflow:hidden}
-#matrix{position:absolute;inset:0;width:100%;height:100%;display:block}
-.pocket{position:relative;z-index:2;text-align:center;max-width:860px;margin:0 auto}
+#matrix{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:0}
+.herogrid{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center;width:100%;position:relative;z-index:1}
+.pocket{position:relative;z-index:2;text-align:left;max-width:600px;margin:0}
 .pocket h1{margin-bottom:24px}
-.pocket .lede{margin:0 auto 38px;font-size:19px}
-.hero-ctas{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.pocket .lede{margin:0 0 38px;font-size:19px}
+.defline{font-size:15px;color:var(--ink);max-width:520px;margin-bottom:20px}
+.hero-ctas{display:flex;gap:16px;justify-content:flex-start;flex-wrap:wrap}
 .hero-note{margin-top:26px;font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--grey);text-transform:uppercase}
 .hero-note b{color:var(--red);font-weight:600}
+.textlink{display:inline-block;margin-top:18px;font-size:15px;color:var(--ink);text-decoration:underline;text-underline-offset:4px}
+.filmwrap{position:relative;z-index:2;border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--shadow);background:var(--surface)}
+.filmwrap video{width:100%;height:100%;min-height:340px;object-fit:cover;display:block}
 .badge{position:absolute;z-index:2;font-family:var(--mono);font-size:11px;letter-spacing:.14em;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 16px;color:var(--grey);white-space:nowrap;box-shadow:var(--shadow);animation:floaty 7s ease-in-out infinite}
 .badge b{color:var(--ink);font-weight:600}
 .badge .rd{color:var(--red);font-weight:600}
-.badge .pulse{ display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--red);margin-right:8px;animation:pulse 2.2s infinite;vertical-align:1px}
+.badge .pulse{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--red);margin-right:8px;animation:pulse 2.2s infinite;vertical-align:1px}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.2}}
 @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
-#b1{top:24%;left:6%;animation-delay:0s}
-#b2{top:58%;left:9%;animation-delay:2.4s}
-#b3{top:23%;right:5%;animation-delay:4.1s}
-#b4{top:64%;right:9%;animation-delay:1.2s}
-/* ============ SIMULATOR ============ */
+#b1{top:7%;left:5%;animation-delay:0s}
+#b2{bottom:26%;left:6%;animation-delay:2.4s}
+#b3{top:36%;right:5%;animation-delay:4.1s}
+#b4{bottom:9%;right:6%;animation-delay:1.2s}
+/* ============ SIMULATOR (preserved) ============ */
 .stage{border:1px solid var(--line);border-radius:20px;background:var(--surface);box-shadow:var(--shadow);overflow:hidden;margin-top:56px;position:relative}
 .stage::before{content:"";position:absolute;inset:8px;border:1px solid var(--line);border-radius:12px;pointer-events:none}
 .tabs{display:flex;border-bottom:1px solid var(--line);position:relative;z-index:1}
@@ -106,6 +119,7 @@ header{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--navbg);b
 .tab small{display:block;margin-top:6px;letter-spacing:.08em;text-transform:none;color:var(--grey);opacity:.7;font-size:11px}
 .tab.active{color:var(--ink);border-bottom-color:var(--red)}
 .tab:hover{color:var(--ink)}
+.tab svg{vertical-align:-2px;margin-right:6px}
 .panels{position:relative;z-index:1;min-height:380px}
 .panel{display:none;padding:48px;animation:rise .5s cubic-bezier(.16,1,.3,1)}
 .panel.active{display:block}
@@ -120,82 +134,255 @@ header{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--navbg);b
 .st.watch{background:var(--surface2);color:var(--grey);border:1px solid var(--line)}
 .st.ok{background:rgba(255,255,255,.05);color:var(--grey);border:1px solid var(--line)}
 [data-theme="light"] .st.ok{background:rgba(5,7,10,.05)}
-.math{font-family:var(--mono);font-size:14px;line-height:2.1;background:var(--surface2);border:1px solid var(--line);border-radius:12px;padding:26px 30px;margin-bottom:24px;overflow-x:auto;white-space:nowrap}
-.math .tag{font-size:10px;letter-spacing:.14em;color:var(--grey);border:1px solid var(--line);border-radius:4px;padding:2px 8px;margin-left:10px;text-transform:uppercase}
-.math .res{color:var(--ink);font-weight:600}
+.flagline{display:flex;gap:10px;align-items:center;margin-top:18px;font-size:14.5px;color:var(--grey)}
 .gate{border:1px solid rgba(200,16,46,.45);border-radius:12px;padding:30px;background:rgba(200,16,46,.05)}
 .gate .amt{font-family:var(--mono);font-size:34px;font-weight:600}
 .gate .hold{display:inline-block;margin-top:12px;font-family:var(--mono);font-size:12px;letter-spacing:.24em;color:var(--red);border:1px solid var(--red);border-radius:6px;padding:8px 16px;text-transform:uppercase;animation:pulse 2.2s infinite}
 .gate p{color:var(--grey);font-size:14px;margin-top:14px;max-width:480px}
-/* ============ STEPS ============ */
+/* ============ ICONS (Part 3, section 3.4: Lucide outline, one size per surface) ============ */
+.ic{width:16px;height:16px;flex:0 0 16px;stroke:var(--ink);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;vertical-align:-3px}
+.ic.red{stroke:var(--red)}
+/* ============ FORWARD LINES ============ */
+.fwdline{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;margin-top:44px;font-size:16px;color:var(--grey)}
+.fwdline a{color:var(--ink);font-weight:500;text-decoration:none;border-bottom:1px solid var(--line-hi);white-space:nowrap}
+.fwdline a .ic{margin-left:4px}
+/* ============ V1 + ILLUSTRATION FRAMES ============ */
+.figwrap{margin-top:44px;border:1px solid var(--line);border-radius:20px;background:var(--surface);padding:34px 38px;position:relative}
+.figwrap .figcap{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--grey);margin-top:18px}
+.figwrap svg{width:100%;height:auto;display:block}
+.f-ink{fill:var(--ink)} .f-grey{fill:var(--grey)} .f-red{fill:var(--red)} .f-surf{fill:var(--surface2)} .f-surf1{fill:var(--surface)} .f-none{fill:none}
+.s-line{stroke:var(--line)} .s-hi{stroke:var(--line-hi)} .s-ink{stroke:var(--ink)} .s-red{stroke:var(--red)} .s-grey{stroke:var(--grey)}
+.t-mono{font-family:var(--mono)} .t-body{font-family:var(--body)}
+/* ============ EQUATION STRIP (V7) ============ */
+.eq{display:flex;align-items:flex-start;gap:10px;flex-wrap:nowrap;overflow:visible}
+.eq .stn{flex:1;min-width:0}
+.eq .stn .lab{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--grey);margin-bottom:6px}
+.eq .stn .fig{font-family:var(--mono);font-size:19px;font-weight:600;white-space:nowrap}
+.eq .stn .src{display:inline-block;margin-top:8px;font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;color:var(--grey);border:1px solid var(--line);border-radius:4px;padding:2px 7px}
+.eq .op{font-family:var(--sg);font-size:22px;font-weight:600;padding-top:22px;color:var(--grey)}
+.eq .gapstn{flex:1.2;margin-left:26px;border-left:1px solid var(--line);padding-left:26px}
+.eq .gapstn .fig{font-size:32px}
+.eqclose{margin-top:22px;font-size:15px;color:var(--grey)}
+.eqclose b{color:var(--ink);font-weight:500}
+/* ============ WITHOUT / WITH CONTRAST (V6/E13) ============ */
+.contrast{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:56px}
+.cpanel{border:1px solid var(--line);border-radius:16px;padding:30px;background:var(--surface)}
+.cpanel h4{font-family:var(--sg);font-size:20px;margin-bottom:20px}
+.shelfstrip{display:flex;gap:8px;margin-bottom:22px}
+.shelfstrip .slot{flex:1;height:34px;border:1px solid var(--line);border-radius:6px;background:var(--surface2);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--grey)}
+.shelfstrip .slot.empty{background:transparent;border:1px dashed var(--red);color:var(--red)}
+.tl{border-top:1px solid var(--line)}
+.tl .row{display:flex;gap:16px;padding:12px 2px;border-bottom:1px solid var(--line);font-size:14.5px}
+.tl .row:last-child{border-bottom:none}
+.tl .tm{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--grey);flex:0 0 64px;padding-top:3px}
+.cpanel .foot{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--grey);margin-top:18px}
+.minirow{font-family:var(--mono);font-size:12px;display:flex;gap:10px;align-items:center}
+.minirow .bar{width:3px;align-self:stretch;background:var(--red);flex:0 0 3px}
+.minirow .flg{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink)}
+/* ============ STEPS (P11 preserved) ============ */
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:56px}
 .step{border:1px solid var(--line);border-radius:16px;padding:32px 26px;background:var(--surface);transition:border-color .25s,transform .25s cubic-bezier(.16,1,.3,1)}
 .step:hover{border-color:var(--line-hi);transform:translateY(-4px)}
 .step .n{font-family:var(--mono);font-size:11px;letter-spacing:.24em;color:var(--red);margin-bottom:16px}
-.step h4{font-family:var(--sg);font-size:19px;letter-spacing:-.01em;margin-bottom:10px}
+.step h4{font-family:var(--sg);font-size:19px;letter-spacing:-.01em;margin-bottom:14px}
 .step p{font-size:14px;color:var(--grey)}
-/* ============ PROOF ============ */
-.bento{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:56px}
-.tile{border:1px solid var(--line);border-radius:16px;padding:36px 30px;background:var(--surface);position:relative;overflow:hidden}
-.tile.wide{grid-column:span 3}
-.tile .fig{font-family:var(--mono);font-size:clamp(30px,3.4vw,44px);font-weight:600;letter-spacing:-.02em;margin-bottom:10px}
-.tile .fig .down{color:var(--red)}
-.tile p{font-size:14px;color:var(--grey)}
-.tile .k{font-family:var(--mono);font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--grey);margin-bottom:14px}
-.method{margin-top:22px;border:1px dashed var(--line);border-radius:12px;padding:22px 26px;font-size:13.5px;color:var(--grey)}
-.method b{color:var(--ink);font-weight:500}
-/* ============ INNER CIRCLE ============ */
+.step .srow{margin-top:12px;font-size:13.5px;color:var(--grey)}
+.step .srow b{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);font-weight:600;margin-bottom:3px}
+/* ============ PLAIN BLOCKS (setup lists, fit facts, leaving) ============ */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:40px}
+.plainblock{border:1px solid var(--line);border-radius:16px;padding:28px;background:var(--surface)}
+.plainblock h4{font-family:var(--sg);font-size:18px;margin-bottom:14px}
+.plainblock ul{list-style:none}
+.plainblock li{font-size:14.5px;color:var(--grey);padding:9px 0;border-bottom:1px solid var(--line);display:flex;gap:10px;align-items:baseline}
+.plainblock li:last-child{border-bottom:none}
+.plainblock p{font-size:14.5px;color:var(--grey)}
+.smallprint{margin-top:34px;font-size:13.5px;color:var(--grey);max-width:760px}
+.smallprint a{color:var(--ink)}
+/* ============ PROOF ZONES (Stage 4, Part 3) ============ */
+.zones{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;margin-top:56px;align-items:start}
+.zlab{font-family:var(--mono);font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--grey);margin-bottom:16px}
+.scalefigs{margin-top:26px}
+.scalefigs .sf{margin-bottom:20px}
+.scalefigs .sf .num{font-family:var(--mono);font-size:clamp(28px,3vw,40px);font-weight:600;letter-spacing:-.02em}
+.scalefigs .sf .cap,.flatrow .cap{font-size:13px;color:var(--grey)}
+.flatrow{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:8px;border-top:1px solid var(--line);padding-top:22px}
+.flatrow .num{font-family:var(--mono);font-size:22px;font-weight:600}
+.bars .bar-row{margin-bottom:28px}
+.bars .bar-lab{display:flex;justify-content:space-between;align-items:baseline;font-size:14.5px;margin-bottom:8px}
+.bars .bar-lab .bv{font-family:var(--mono);font-weight:600}
+.bars .track{height:16px;background:var(--surface2);border:1px solid var(--line);border-radius:3px}
+.bars .fill{height:100%;background:var(--ink)}
+.bars .barsent{font-size:14.5px;color:var(--grey);margin-top:6px}
+.cells35{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-top:18px}
+.cells35 .cell{border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:12px 4px;text-align:center;font-family:var(--mono);font-size:13.5px;font-weight:500}
+.zone-c{margin-top:52px}
+.methodsteps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+.methodsteps .ms{border-top:2px solid var(--ink);padding-top:16px;font-size:16.5px;font-weight:500}
+.methodsteps .ms span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.2em;color:var(--grey);text-transform:uppercase;margin-bottom:8px;font-weight:400}
+.statusline{margin-top:28px;font-size:16px}
+.statusline b{font-weight:600}
+.templateframe{margin-top:52px}
+.templateframe .tline{font-size:16px;margin-bottom:18px}
+.tframe{border:1.5px dashed var(--line-hi);border-radius:16px;padding:30px;display:grid;grid-template-columns:repeat(6,1fr);gap:18px}
+.tframe .slot .sl{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--grey);margin-bottom:12px}
+.tframe .slot .empty{border-bottom:1px solid var(--line-hi);height:22px}
+.tframe .slot .badgeempty{border:1.5px dashed var(--line-hi);border-radius:8px;height:38px;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--grey);text-align:center;padding:0 6px}
+.templateframe .tnote{font-size:13.5px;color:var(--grey);margin-top:16px}
+/* ============ FIT CHECK (Stage 6; N01/N02 swaps) ============ */
+.pospick{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+.posbtn{font-family:var(--sg);font-weight:600;font-size:14px;background:var(--surface);color:var(--ink);border:1px solid var(--line-hi);border-radius:999px;padding:12px 24px;cursor:pointer;transition:border-color .2s,color .2s}
+.posbtn:hover{border-color:var(--ink)}
+.posbtn[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.fitanswer{margin-top:30px;border:1px solid var(--line);border-radius:16px;background:var(--surface);padding:30px;max-width:720px}
+.fitanswer .verdict{font-family:var(--sg);font-size:24px;font-weight:700;margin-bottom:8px}
+.fitanswer p{color:var(--grey);font-size:15px;max-width:560px}
+.fitanswer .cta{margin-top:18px}
+.swapout{opacity:0;transition:opacity .17s cubic-bezier(.3,0,1,1)}
+.swapin{animation:swapin .24s cubic-bezier(.16,1,.3,1) both}
+@keyframes swapin{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.chips{display:flex;gap:10px;flex-wrap:wrap}
+.chipbtn{font-size:14px;background:var(--surface);color:var(--ink);border:1px solid var(--line-hi);border-radius:999px;padding:10px 20px;cursor:pointer;transition:border-color .2s,color .2s;font-family:var(--body)}
+.chipbtn[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.miniform{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.miniform input{flex:1;min-width:220px;background:var(--surface2);border:1px solid var(--line);border-radius:10px;color:var(--ink);font-family:var(--body);font-size:15px;padding:12px 16px;outline:none;transition:border-color .2s}
+.miniform input:focus{border-color:var(--line-hi)}
+.miniform button{font-family:var(--sg);font-weight:600;font-size:14px;background:var(--ink);color:var(--bg);border:1px solid var(--ink);border-radius:999px;padding:12px 24px;cursor:pointer}
+.miniform .merr{display:none;width:100%;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);margin-top:4px}
+.miniform.invalid .merr{display:block;animation:errin2 .15s cubic-bezier(.16,1,.3,1) both}
+@keyframes errin2{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+.wlsuccess{display:none;gap:10px;align-items:center;font-size:15px;color:var(--ink);margin-top:16px}
+.wlsuccess.show{display:flex;animation:swapin .24s cubic-bezier(.16,1,.3,1) both}
+/* ============ WALKTHROUGH (Stage 7) ============ */
+.walksteps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:44px}
+.walksteps .ws{border:1px solid var(--line);border-radius:16px;padding:26px;background:var(--surface)}
+.walksteps .ws .n{font-family:var(--mono);font-size:11px;letter-spacing:.24em;color:var(--red);margin-bottom:12px}
+.walksteps .ws h4{font-family:var(--sg);font-size:17px;margin-bottom:8px}
+.walksteps .ws p{font-size:13.5px;color:var(--grey)}
+.sampleline{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--grey);margin-top:26px}
+.doorblock{margin-top:44px;border:1px solid var(--line);border-radius:20px;background:var(--surface);padding:40px;text-align:center;box-shadow:var(--shadow)}
+.doorblock .cta{font-size:16px;padding:16px 38px}
+.doorblock .doorfail{margin:20px auto 0;font-size:14px;color:var(--grey);max-width:560px}
+.exitblock{margin-top:44px;text-align:center}
+.exitblock .exitline{font-family:var(--sg);font-size:clamp(24px,3.4vw,36px);font-weight:700;letter-spacing:-.02em;max-width:760px;margin:0 auto 26px}
+.exitblock .ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.exitblock .ctxline{margin-top:20px;font-size:13.5px;color:var(--grey)}
+/* ============ QUESTIONS (Stage 8; N05) ============ */
+.qa{border:1px solid var(--line);border-radius:16px;background:var(--surface);margin-top:14px;overflow:hidden}
+.qa button.qhead{width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;background:none;border:none;color:var(--ink);font-family:var(--sg);font-weight:600;font-size:17.5px;text-align:left;padding:24px 28px;cursor:pointer}
+.qa .qmark{flex:0 0 auto;display:flex;align-items:center;justify-content:center;width:32px;height:32px;border:1px solid var(--line-hi);border-radius:50%;color:var(--grey);transition:transform .24s cubic-bezier(.16,1,.3,1)}
+.qa .qmark svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform .24s cubic-bezier(.16,1,.3,1)}
+.qa button.qhead:hover .qmark{transform:translateY(2px)}
+.qa button.qhead:active .qmark{transform:translateY(2px) scale(.92)}
+.qa.open .qmark{background:var(--surface2);color:var(--ink)}
+.qa.open .qmark svg{transform:rotate(180deg)}
+.qa .qa-a{display:none}
+.qa.open .qa-a{display:block}
+.qa .qa-in{padding:0 28px 26px;font-size:15px;color:var(--grey);max-width:720px}
+.qa.anim .qa-in{transition:opacity .24s cubic-bezier(.16,1,.3,1),transform .24s cubic-bezier(.16,1,.3,1)}
+/* ============ COUNT + INNER CIRCLE (Stage 9: zero motion) ============ */
 #circle{text-align:center}
-#circle .lede{margin:0 auto 44px}
-
-/* ============ FOOTER ============ */
-footer{border-top:1px solid var(--line);padding:80px 0 0;overflow:hidden}
-.desks{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;margin-bottom:70px}
-.desk .dk{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--grey);margin-bottom:8px}
-.desk a{font-size:14px;text-decoration:none;border-bottom:1px solid var(--line);transition:border-color .2s}
-.desk a:hover{border-color:var(--red)}
-.parent{margin-bottom:60px;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--grey)}
-.parent a{text-decoration:none;border-bottom:1px solid var(--line)}
-.giant{font-family:var(--sg);font-weight:700;font-size:clamp(120px,24vw,340px);letter-spacing:-.04em;line-height:.8;text-align:center;color:var(--ink);opacity:.07;transform:translateY(22%);user-select:none;white-space:nowrap}
-/* ============ HERO FILM + FLOW EXTRAS (2026-10-26 pass) ============ */
-.hero-film{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.5}
-.hero-scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,7,10,.55),rgba(5,7,10,.22) 42%,rgba(5,7,10,.8))}
-[data-theme="light"] .hero-film{opacity:.26}
-[data-theme="light"] .hero-scrim{background:linear-gradient(180deg,rgba(255,255,255,.62),rgba(255,255,255,.3) 42%,rgba(255,255,255,.86))}
-.cta:active{transform:translateY(0) scale(.98);box-shadow:none}
-.tab:active{color:var(--ink)}
+#circle .lede{margin:0 auto 34px}
+.countblock{max-width:720px;margin:0 auto;border:1px solid var(--line);border-radius:16px;background:var(--surface);padding:34px}
+.countblock .cbig{font-family:var(--sg);font-size:clamp(24px,3.2vw,34px);font-weight:700;letter-spacing:-.02em;margin-bottom:10px}
+.countblock .csmall{color:var(--grey);font-size:15px}
+/* ============ FORM SECTION EXTRAS (Stages 10, 13, 14) ============ */
 .howstrip{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:0 0 30px;text-align:left}
 .howstrip .hs{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:var(--surface)}
 .howstrip .hs b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.22em;color:var(--red);text-transform:uppercase;margin-bottom:6px;font-weight:600}
 .howstrip .hs span{font-size:13.5px;color:var(--grey);line-height:1.5;display:block}
 @media(max-width:700px){.howstrip{grid-template-columns:1fr}}
+.lesserask{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:900px;margin:34px auto 0}
+.lesserask .la{border:1px solid var(--line);border-radius:16px;background:var(--surface);padding:26px;text-align:left}
+.lesserask .la h4{font-family:var(--sg);font-size:17px;margin-bottom:8px}
+.lesserask .la p{font-size:14px;color:var(--grey)}
+.lesserask .la .miniform input{background:var(--surface2)}
+.manageline{max-width:900px;margin:26px auto 0;font-size:14px;color:var(--grey);display:flex;gap:10px;align-items:baseline;justify-content:center;text-align:center;flex-wrap:wrap}
+.manageline a{color:var(--ink)}
+.noscriptline{border:1px solid var(--line-hi);border-radius:10px;padding:12px 16px;font-size:14px;margin-bottom:18px}
+/* ============ MESSAGE FRAMES (Stages 12 + 13) ============ */
+.checkstrip{display:flex;gap:0;flex-wrap:wrap;margin-top:44px;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.checkstrip .cstep{flex:1;min-width:150px;padding:16px 18px;background:var(--surface);border-right:1px solid var(--line);font-size:14px;display:flex;gap:10px;align-items:center}
+.checkstrip .cstep:last-child{border-right:none}
+.checkstrip .cstep .stt{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--grey);display:block}
+.msggrid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:40px}
+.msg{border:1px solid var(--line);border-radius:16px;background:var(--surface);padding:28px}
+.msg.wide{grid-column:span 2}
+.msg .mhead{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--grey);margin-bottom:16px;display:flex;justify-content:space-between;gap:12px}
+.msg p{font-size:14.5px;color:var(--grey);margin-bottom:12px}
+.msg p b,.msg p .ink{color:var(--ink);font-weight:500}
+.msg p:last-child{margin-bottom:0}
+.msg .askblock{border:1px dashed var(--line-hi);border-radius:10px;padding:14px 16px;margin:14px 0;display:flex;gap:12px;align-items:flex-start}
+.msg .askblock p{margin:0}
+.msg .mfoot{margin-top:14px;display:flex;justify-content:flex-end}
+.seqlist{margin-top:40px;border:1px solid var(--line);border-radius:16px;background:var(--surface);overflow:hidden}
+.seqlist .srow2{display:flex;gap:22px;padding:22px 28px;border-bottom:1px solid var(--line);align-items:baseline}
+.seqlist .srow2:last-child{border-bottom:none}
+.seqlist .day{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--red);flex:0 0 110px;font-weight:600}
+.seqlist .srow2 p{font-size:14.5px;color:var(--grey)}
+.seqlist .srow2 p b{color:var(--ink);font-weight:500}
+/* ============ LEAVING (Stage 15: type only) ============ */
+.leavelines{max-width:820px;margin-top:40px}
+.leavelines .ll{padding:20px 0;border-bottom:1px solid var(--line);font-size:15.5px;color:var(--grey)}
+.leavelines .ll:last-child{border-bottom:none}
+.leavelines .ll b{color:var(--ink);font-weight:500}
+/* ============ FOOTER (preserved + E89 triage) ============ */
+footer{border-top:1px solid var(--line);padding:80px 0 0;overflow:hidden}
+.triage{font-size:15px;color:var(--grey);max-width:820px;margin-bottom:44px;display:flex;gap:12px;align-items:flex-start}
+.triage a{color:var(--ink)}
+.desks{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;margin-bottom:56px}
+.desk .dk{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--grey);margin-bottom:8px}
+.desk a{font-size:14px;text-decoration:none;border-bottom:1px solid var(--line);transition:border-color .2s}
+.desk a:hover{border-color:var(--red)}
+.footmanage{font-size:13.5px;color:var(--grey);margin-bottom:56px}
+.footmanage a{color:var(--ink)}
+.parent{margin-bottom:60px;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--grey)}
+.parent a{text-decoration:none;border-bottom:1px solid var(--line)}
+.giant{font-family:var(--sg);font-weight:700;font-size:clamp(120px,24vw,340px);letter-spacing:-.04em;line-height:.8;text-align:center;color:var(--ink);opacity:.07;transform:translateY(22%);user-select:none;white-space:nowrap}
+/* ============ STICKY BAR (P13, preserved) ============ */
+.cta:active{transform:translateY(0) scale(.98);box-shadow:none}
+.tab:active{color:var(--ink)}
 .stickybar{position:fixed;left:0;right:0;bottom:0;z-index:90;display:none;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:var(--navbg);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .3s cubic-bezier(.16,1,.3,1)}
 .stickybar.show{transform:none}
 .stickybar .cta{flex:1;text-align:center;padding:13px 10px}
 .stickybar .ghost{flex:0 0 auto}
 @media(max-width:900px){.stickybar{display:flex}}
-/* ============ REVEAL ============ */
+/* ============ REVEAL (P06, preserved) ============ */
 .rv{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
 .rv.in{opacity:1;transform:none}
 /* ============ RESPONSIVE ============ */
 @media(max-width:900px){
   .wrap{padding:0 20px}
+  .herogrid{grid-template-columns:1fr;gap:36px}
+  .pocket{text-align:left}
   .steps{grid-template-columns:1fr 1fr}
-  .bento{grid-template-columns:1fr}
-  .tile.wide{grid-column:span 1}
+  .walksteps{grid-template-columns:1fr 1fr}
+  .zones{grid-template-columns:1fr;gap:40px}
+  .contrast{grid-template-columns:1fr}
+  .duo{grid-template-columns:1fr}
+  .msggrid{grid-template-columns:1fr}
+  .msg.wide{grid-column:span 1}
+  .lesserask{grid-template-columns:1fr}
+  .methodsteps{grid-template-columns:1fr}
+  .tframe{grid-template-columns:repeat(2,1fr)}
   .desks{grid-template-columns:1fr 1fr}
   .nav-links a.nl{display:none}
   .nav-cta{padding:11px 18px;font-size:13px;white-space:nowrap}
   #themeBtn{padding:9px 14px;font-size:12px}
   .brand b{font-size:14px;white-space:nowrap}
   .badge{display:none}
-  .frow{grid-template-columns:1fr}
   .panel{padding:30px 22px}
   section{padding:80px 0}
+  .eq{flex-wrap:wrap}
+  .eq .gapstn{margin-left:0;border-left:none;padding-left:0;width:100%;flex:none;margin-top:10px}
 }
 @media(max-width:480px){
   .brand-sub{display:none}
   .nav-cta{display:inline-block;padding:9px 16px;font-size:12px}
+  .cells35{gap:5px}
+  .cells35 .cell{font-size:11.5px;padding:9px 2px}
+  .flatrow{grid-template-columns:1fr 1fr}
+  .seqlist .srow2{flex-direction:column;gap:6px}
+  .seqlist .day{flex:none}
 }
 :focus-visible{outline:2px solid var(--red);outline-offset:3px;border-radius:4px}
 @media(prefers-reduced-motion:reduce){
@@ -204,7 +391,7 @@ footer{border-top:1px solid var(--line);padding:80px 0 0;overflow:hidden}
 }
 </style>
 </head>
-<!-- ============ INTRO ============ -->
+<!-- ============ INTRO (P01/P02) ============ -->
 <div id="intro" aria-hidden="true">
   <svg viewBox="0 0 100 100">
     <rect class="mkb" x="31.4" y="18.3" width="37.5" height="3.9"/>
@@ -212,7 +399,7 @@ footer{border-top:1px solid var(--line);padding:80px 0 0;overflow:hidden}
   </svg>
 </div>
 
-<!-- ============ HEADER ============ -->
+<!-- ============ HEADER (Stage 1: arrivals) ============ -->
 <header>
   <div class="nav-in">
     <a class="brand" href="/" aria-label="Antigravity home">
@@ -224,46 +411,96 @@ footer{border-top:1px solid var(--line);padding:80px 0 0;overflow:hidden}
     </a>
     <nav class="nav-links" aria-label="Primary">
       <a class="nl" href="#routine">How it works</a>
-      <a class="nl" href="#setup">Setup</a>
       <a class="nl" href="#proof">Proof</a>
-      <a class="nl" href="#circle">Inner circle</a>
+      <a class="nl" href="#setup">Setup</a>
+      <a class="nl" href="#questions">Questions</a>
+      <a class="langlink" href="mise-fr.html" hreflang="fr-CA">FR</a>
       <button id="themeBtn" type="button" aria-label="Toggle light and dark theme">Light</button>
-      <a class="cta nav-cta" href="#circle">Book a call</a>
+      <a class="cta nav-cta" href="#book">Book a call</a>
     </nav>
   </div>
 </header>
 
-<!-- ============ HERO ============ -->
+<!-- ============ RECOGNITION LINE (Stage 14, E7/E79: device-held state only) ============ -->
+<div class="recog" id="recog" hidden></div>
+
+<!-- ============ HERO (Stage 2; F5 no cohort line, F10 film beside text) ============ -->
 <section id="hero">
-  <video class="hero-film" autoplay muted loop playsinline preload="metadata" poster="mise-kitchen.jpg" aria-hidden="true"><source src="films/mise-film.mp4" type="video/mp4"></video>
-  <div class="hero-scrim" aria-hidden="true"></div>
   <canvas id="matrix" aria-hidden="true"></canvas>
-  <div class="badge" id="b1"><span class="pulse"></span><b>08:15</b>&nbsp;&nbsp;Morning brief</div>
-  <div class="badge" id="b2">Panic spend&nbsp;&nbsp;<b class="rd">−CA$86.40</b>&nbsp;&nbsp;this week</div>
-  <div class="badge" id="b3"><b>CA$248.00</b>&nbsp;&nbsp;<span class="rd">ON HOLD</span>&nbsp;&nbsp;awaiting owner</div>
-  <div class="badge" id="b4">POS&nbsp;&nbsp;<b>Clover</b>&nbsp;&nbsp;connected</div>
-  <div class="wrap pocket">
-    <div class="eyebrow rv">For quick-service restaurants, cafés &amp; franchises across Canada</div>
-    <h1 class="rv">See what&rsquo;s running low before 4&nbsp;PM on a Friday.</h1>
-    <p class="lede rv">Mise is in its founding pilot — built by hand, kitchen by kitchen, with operators who want it to last. A small inner circle gets the 10-minute morning routine first and shapes what gets built.</p>
-    <div class="hero-ctas rv">
-      <a class="cta" href="#circle">Book a call</a>
-      <a class="cta ghost" href="#routine">See the 10-minute morning routine</a>
+  <div class="wrap herogrid">
+    <div class="pocket">
+      <p class="defline rv">Mise is the back office that checks your invoices, your counts and your orders, in one place.</p>
+      <div class="eyebrow rv">For quick-service restaurants, cafés &amp; franchises across Canada</div>
+      <h1 class="rv">See what&rsquo;s running low before 4&nbsp;PM on a Friday.</h1>
+      <p class="lede rv">Mise is in its founding pilot, built by hand, kitchen by kitchen, with operators who want it to last. The 10-minute morning routine comes first: what could run out today, what yesterday cost you, one order to approve.</p>
+      <div class="hero-ctas rv">
+        <a class="cta" href="#book">Book a call</a>
+        <a class="cta ghost" href="#routine">See the 10-minute morning routine</a>
+      </div>
+      <a class="textlink rv" href="#walkthrough">Or run the check yourself first: walk the demo</a>
+      <div class="hero-note rv">Founding pilot · In development · <b>Set up with you</b></div>
     </div>
-    <div class="hero-note rv">Founding pilot · In development · <b>Set up with you</b> — we do it in your kitchen until the software takes over</div>
+    <div class="filmwrap rv" aria-hidden="true">
+      <video class="hero-film" autoplay muted loop playsinline preload="metadata" poster="mise-kitchen.jpg"><source src="films/mise-film.mp4" type="video/mp4"></video>
+      <div class="badge" id="b1"><span class="pulse"></span><b>08:15</b>&nbsp;&nbsp;Morning brief</div>
+      <div class="badge" id="b2">Panic spend&nbsp;&nbsp;<b class="rd">−CA$86.40</b>&nbsp;&nbsp;this week</div>
+      <div class="badge" id="b3"><b>CA$248.00</b>&nbsp;&nbsp;<span class="rd">ON HOLD</span>&nbsp;&nbsp;awaiting owner</div>
+      <div class="badge" id="b4">POS&nbsp;&nbsp;<b>Clover</b>&nbsp;&nbsp;connected</div>
+    </div>
   </div>
 </section>
 
-<!-- ============ SIMULATOR ============ -->
+<!-- ============ ROUTINE (Stage 3) ============ -->
 <section id="routine">
   <div class="wrap">
     <div class="eyebrow rv">How it works</div>
     <h2 class="rv">The 10-minute morning routine.</h2>
     <p class="lede rv">Every morning at 08:15: what could run out today, what yesterday cost you, a two-minute stock count, one order to approve. Longer than ten minutes means something&rsquo;s wrong.</p>
-    <p class="rv" style="font-family:var(--mono);font-size:10px;letter-spacing:.22em;color:var(--grey);text-transform:uppercase;margin-top:18px">Illustrated concept — Mise is in its founding pilot</p>
+    <p class="rv" style="font-family:var(--mono);font-size:10px;letter-spacing:.22em;color:var(--grey);text-transform:uppercase;margin-top:18px">Illustrated concept. Mise is in its founding pilot</p>
+
+    <!-- V1: Shelf truth from paper truth (Stage 3 opening viewport only) -->
+    <div class="figwrap rv" role="img" aria-label="A kitchen shelf drawn entirely from checked paper: invoice sheets, delivery slips and count sheets stacked into shelves and stock.">
+      <svg viewBox="0 0 640 300" aria-hidden="true">
+        <!-- uprights: stacks of sheets, edge on -->
+        <g class="f-surf s-line"><rect x="30" y="20" width="26" height="252"/><rect x="584" y="20" width="26" height="252"/></g>
+        <g stroke="var(--line)"><path d="M30 62h26M30 104h26M30 146h26M30 188h26M30 230h26M584 62h26M584 104h26M584 146h26M584 188h26M584 230h26"/></g>
+        <!-- boards -->
+        <g class="f-surf s-hi"><rect x="30" y="84" width="580" height="8"/><rect x="30" y="168" width="580" height="8"/><rect x="30" y="252" width="580" height="8"/></g>
+        <!-- level 1 items: folded and stacked sheets -->
+        <g fill="#F4F2ED" stroke="rgba(90,95,105,.55)">
+          <rect x="92" y="40" width="70" height="44"/><rect x="95" y="37" width="70" height="44"/>
+          <rect x="206" y="52" width="54" height="32"/><rect x="209" y="49" width="54" height="32"/>
+          <rect x="382" y="46" width="80" height="38"/><rect x="385" y="43" width="80" height="38"/>
+          <rect x="502" y="56" width="58" height="28"/>
+        </g>
+        <text x="104" y="66" font-size="7.5" class="t-mono" fill="rgba(5,7,10,.55)">INV 0417</text>
+        <path d="M316 58l6 7 10-13" class="f-none s-ink" stroke-width="2.4"/>
+        <!-- level 2 items, one flagged -->
+        <g fill="#F4F2ED" stroke="rgba(90,95,105,.55)">
+          <rect x="98" y="126" width="64" height="42"/><rect x="101" y="123" width="64" height="42"/>
+          <rect x="228" y="120" width="70" height="48"/><rect x="231" y="117" width="70" height="48"/>
+          <rect x="420" y="132" width="58" height="36"/>
+          <rect x="518" y="128" width="64" height="40"/><rect x="521" y="125" width="64" height="40"/>
+        </g>
+        <rect x="165" y="117" width="10" height="20" class="f-red"/>
+        <text x="240" y="148" font-size="7.5" class="t-mono" fill="rgba(5,7,10,.55)">CNT 12</text>
+        <path d="M344 142l6 7 10-13" class="f-none s-ink" stroke-width="2.4"/>
+        <!-- level 3 items -->
+        <g fill="#F4F2ED" stroke="rgba(90,95,105,.55)">
+          <rect x="90" y="206" width="76" height="46"/><rect x="93" y="203" width="76" height="46"/>
+          <rect x="282" y="218" width="56" height="34"/>
+          <rect x="402" y="204" width="82" height="48"/><rect x="405" y="201" width="82" height="48"/>
+          <rect x="522" y="216" width="58" height="36"/>
+        </g>
+        <text x="290" y="240" font-size="7.5" class="t-mono" fill="rgba(5,7,10,.55)">DLV 29</text>
+        <path d="M212 226l6 7 10-13" class="f-none s-ink" stroke-width="2.4"/>
+      </svg>
+      <div class="figcap">Shelf truth from paper truth</div>
+    </div>
+
     <div class="stage rv">
       <div class="tabs" role="tablist" aria-label="Morning routine steps">
-        <button class="tab active" data-tab="0" role="tab" id="tab-0" aria-selected="true" aria-controls="panel-0">08:15 Brief<small>The count — flagged items only</small></button>
+        <button class="tab active" data-tab="0" role="tab" id="tab-0" aria-selected="true" aria-controls="panel-0"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>08:15 Brief<small>The count: flagged items only</small></button>
         <button class="tab" data-tab="1" role="tab" id="tab-1" aria-selected="false" aria-controls="panel-1" tabindex="-1">Food costs, explained<small>Explanations, not accusations</small></button>
         <button class="tab" data-tab="2" role="tab" id="tab-2" aria-selected="false" aria-controls="panel-2" tabindex="-1">The CA$200 gate<small>Mise proposes. You approve.</small></button>
       </div>
@@ -271,191 +508,593 @@ footer{border-top:1px solid var(--line);padding:80px 0 0;overflow:hidden}
         <div class="panel active" data-panel="0" role="tabpanel" id="panel-0" aria-labelledby="tab-0">
           <h3>Count ten items. Not two hundred.</h3>
           <p class="psub">Mise flags only what needs eyes. Two minutes in the walk-in, then you&rsquo;re done.</p>
-          <div class="kv"><span class="it">Soft cheese — bulk block</span><span class="st red">Red · order 2</span></div>
+          <div class="kv"><span class="it">Soft cheese, bulk block</span><span class="st red">Red · order 2</span></div>
           <div class="kv"><span class="it">Whole milk</span><span class="st watch">Watch · 1 day left</span></div>
           <div class="kv"><span class="it">Burger buns</span><span class="st watch">Watch · Friday rush risk</span></div>
+          <div class="kv"><span class="it">Chicken breast, portioned</span><span class="st watch">Watch · 2 days left</span></div>
+          <div class="kv"><span class="it">Cheese slices</span><span class="st watch">Watch · Friday rush risk</span></div>
           <div class="kv"><span class="it">Frying oil</span><span class="st ok">OK</span></div>
           <div class="kv"><span class="it">12oz cups</span><span class="st ok">OK</span></div>
+          <div class="kv"><span class="it">Lettuce, shredded</span><span class="st ok">OK</span></div>
+          <div class="kv"><span class="it">Tomatoes, sliced</span><span class="st ok">OK</span></div>
+          <div class="kv"><span class="it">Cola syrup</span><span class="st ok">OK</span></div>
+          <p class="flagline"><svg class="ic red" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4"/><path d="M5 4h13l-2.5 4L18 12H5"/></svg>One item needs an order today. The rest can wait.</p>
         </div>
         <div class="panel" data-panel="1" role="tabpanel" id="panel-1" aria-labelledby="tab-1">
           <h3>Every number shows its work.</h3>
-          <p class="psub">One tap shows the invoice photo, the count record, who entered it. Nobody gets blamed — the question is <em>what happened</em>, never <em>who did it</em>.</p>
-          <div class="math">Opening <span class="tag">Confirmed</span> + Deliveries <span class="tag">Confirmed</span><br>− Recipe usage <span class="tag">From sales</span> = Expected <span class="tag">Calculated</span><br><span class="res">Expected 14.2 kg vs Counted 11.8 kg → gap −CA$12.60</span><br>Likely cause: unlogged batch waste · Next step: recount walk-in before ordering</div>
+          <p class="psub">One tap shows the invoice photo, the count record, who entered it. Nobody gets blamed. The question is <em>what happened</em>, never <em>who did it</em>.</p>
+          <div class="eq" role="img" aria-label="Opening 9.6 kilos, plus deliveries 12.4 kilos, minus recipe use 7.8 kilos, equals expected 14.2 kilos. Counted was 11.8 kilos. The gap is minus 12 dollars and 60 cents.">
+            <div class="stn"><div class="lab">Opening</div><div class="fig">9.6 kg</div><span class="src">From the count sheet.</span></div>
+            <div class="op">+</div>
+            <div class="stn"><div class="lab">Deliveries</div><div class="fig">12.4 kg</div><span class="src">From checked invoices.</span></div>
+            <div class="op">−</div>
+            <div class="stn"><div class="lab">Recipe use</div><div class="fig">7.8 kg</div><span class="src">From recipe cards.</span></div>
+            <div class="op">=</div>
+            <div class="stn"><div class="lab">Expected</div><div class="fig">14.2 kg</div><span class="src">Worked out here.</span></div>
+            <div class="stn"><div class="lab">Counted</div><div class="fig">11.8 kg</div><span class="src">From the ten item count.</span></div>
+            <div class="stn gapstn"><div class="lab">The gap</div><div class="fig">−CA$12.60</div></div>
+          </div>
+          <p class="eqclose"><b>The question is what happened, never who did it.</b><br>Likely cause: unlogged batch waste. Next step: recount the walk-in before ordering.</p>
         </div>
         <div class="panel" data-panel="2" role="tabpanel" id="panel-2" aria-labelledby="tab-2">
           <h3>You approve every order.</h3>
           <p class="psub">Mise drafts the order. If it&rsquo;s over your CA$200 manager limit, it locks until the owner taps approve.</p>
+          <svg viewBox="0 0 560 210" style="width:100%;height:auto;display:block;margin-bottom:24px" role="img" aria-label="A service pass seen from above. Two items are on hand. Two spaces sit empty, shaped like the case and the tub that are missing, and the order sheet beside the pass lists exactly those two items.">
+            <rect x="20" y="150" width="370" height="6" class="f-surf s-line"/>
+            <g class="f-surf s-hi"><rect x="32" y="106" width="74" height="44" rx="4"/></g>
+            <text x="69" y="132" font-size="11" text-anchor="middle" class="t-body f-ink">Soft cheese</text>
+            <rect x="122" y="102" width="72" height="48" rx="4" fill="none" class="s-hi" stroke-dasharray="5 4"/>
+            <g class="f-surf s-hi"><rect x="218" y="110" width="58" height="40" rx="4"/></g>
+            <text x="247" y="134" font-size="11" text-anchor="middle" class="t-body f-ink">Frying oil</text>
+            <path d="M300 150 v-34 a32 14 0 0 1 64 0 v34" fill="none" class="s-hi" stroke-dasharray="5 4"/>
+            <rect x="420" y="34" width="122" height="122" class="f-surf1 s-hi"/>
+            <text x="434" y="58" font-size="10" class="t-mono f-grey" letter-spacing="2">ORDER</text>
+            <text x="434" y="84" font-size="11.5" class="t-body f-ink">Burger buns ×2</text>
+            <text x="434" y="112" font-size="11.5" class="t-body f-ink">Whole milk ×3</text>
+            <rect x="194" y="76" width="226" height="10" class="f-ink"/>
+            <rect x="364" y="104" width="56" height="10" class="f-ink"/>
+            <g font-size="10" class="t-mono f-grey">
+              <text x="69" y="176" text-anchor="middle">ON HAND</text>
+              <text x="158" y="176" text-anchor="middle">OUT · ON THE ORDER</text>
+              <text x="247" y="176" text-anchor="middle">ON HAND</text>
+              <text x="332" y="176" text-anchor="middle">OUT · ON THE ORDER</text>
+            </g>
+          </svg>
           <div class="gate">
             <div class="amt">CA$248.00</div>
-            <div><span class="hold">On hold — awaiting owner</span></div>
+            <div><span class="hold">On hold · awaiting owner</span></div>
             <p>Changed the order? It needs your approval again. Nothing is ever ordered twice. You always sign off.</p>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- ============ SETUP ============ -->
-<section id="setup">
-  <div class="wrap">
-    <div class="eyebrow rv">4-step setup</div>
-    <h2 class="rv">No same-day setup stress.</h2>
-    <p class="lede rv">You work fourteen-hour days. Setup happens in steps, at your pace — we do the heavy lifting.</p>
-    <div class="steps">
-      <div class="step rv"><div class="n">STEP 01</div><h4>Connect your POS</h4><p>Connect Clover and set a spending limit for managers — any order over CA$200 waits for the owner&rsquo;s tap.</p></div>
-      <div class="step rv"><div class="n">STEP 02</div><h4>Your recipes, as a starting point</h4><p>Tell us the recipe each dish started with. We know cooks adjust on the line — Mise measures against your original, not a guess.</p></div>
-      <div class="step rv"><div class="n">STEP 03</div><h4>We map your stock for you</h4><p>Send us your item list. Mise matches it to your recipes on its own — no weeks of typing things in.</p></div>
-      <div class="step rv"><div class="n">STEP 04</div><h4>Count when it suits you</h4><p>No full count on day one. Enter your opening stock whenever suits you — that&rsquo;s when the morning briefs start.</p></div>
+    <!-- E13/V6: the same sample day, without and with the check -->
+    <div class="contrast">
+      <div class="cpanel rv">
+        <h4>Without the check.</h4>
+        <div class="shelfstrip" aria-hidden="true"><div class="slot">Milk</div><div class="slot">Buns</div><div class="slot empty">Empty</div><div class="slot">Oil</div></div>
+        <div class="tl">
+          <div class="row"><span class="tm">08:15</span><span>No brief. The day starts blind.</span></div>
+          <div class="row"><span class="tm">Midday</span><span>The invoice is filed, unchecked.</span></div>
+          <div class="row"><span class="tm">Afternoon</span><span>The order is written from memory.</span></div>
+          <div class="row"><span class="tm">4 PM</span><span>One shelf slot is empty, as the rush starts.</span></div>
+        </div>
+        <div class="foot">Sample day</div>
+      </div>
+      <div class="cpanel rv">
+        <h4>With the check.</h4>
+        <div class="shelfstrip" aria-hidden="true"><div class="slot">Milk</div><div class="slot">Buns</div><div class="slot">Cheese</div><div class="slot">Oil</div></div>
+        <div class="tl">
+          <div class="row"><span class="tm">08:15</span><span>The brief card: three items to watch.</span></div>
+          <div class="row"><span class="tm">Midday</span><span class="minirow"><span class="bar"></span>Whole milk, 4L case <span class="flg">Flagged</span></span></div>
+          <div class="row"><span class="tm">Afternoon</span><span>The count sheet: ten rows, done in two minutes.</span></div>
+          <div class="row"><span class="tm">4 PM</span><span>The shelf is full. The order sheet reads Approved.</span></div>
+        </div>
+        <div class="foot">Sample day</div>
+      </div>
     </div>
+
+    <p class="fwdline rv">Four steps set this up. None of them asks for a full count on day one. <a href="#setup">Setup, step by step<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15"/><path d="M13 6l6 6-6 6"/></svg></a></p>
   </div>
 </section>
 
-<!-- ============ PROOF ============ -->
+<!-- ============ PROOF (Stage 4; F15: proof is its own beat; amended E19 to E21) ============ -->
 <section id="proof">
   <div class="wrap">
-    <div class="eyebrow rv">The method</div>
-    <h2 class="rv">Worked out by hand first.</h2>
-    <p class="lede rv">Mise comes from a manual pilot, the method the app is being built on. Same math, now becoming software you can use.</p>
-    <div class="bento">
-      <div class="tile wide rv"><div class="k">Order, delivery, and bill — matched</div><div class="fig" style="font-size:clamp(22px,2.6vw,32px)">Order <span class="down">↔</span> Delivery <span class="down">↔</span> Invoice</div><p>Snap the invoice photo when the delivery arrives. If the supplier raised the price since you ordered, it gets flagged before you pay.</p></div>
+    <div class="eyebrow rv">Proof · December 2025 · Checked by hand</div>
+    <h2 class="rv">The invoices looked fine. Then Mise checked.</h2>
+    <p class="lede rv">Before Mise was software, the check was done by hand. This is one month of it: every supplier invoice line in December 2025, read, checked against what was agreed and what arrived, and written down.</p>
+
+    <div class="zones">
+      <!-- Zone A: the ledger stack -->
+      <div class="zone rv">
+        <div class="zlab">Zone A · The checked month</div>
+        <div style="display:grid;grid-template-columns:1.2fr .8fr;gap:26px;align-items:start">
+          <svg viewBox="0 0 560 380" style="width:100%;height:auto;display:block" role="img" aria-label="A stack of ledger sheets for December 2025, its left edge notched with 30 date tabs, one for each purchase date. The top sheet shows four invoice lines in full.">
+            <g font-size="10" class="t-mono f-grey">
+              <text x="14" y="42">1</text><text x="8" y="200">15</text><text x="8" y="352">30</text>
+            </g>
+            <g class="f-surf s-line">
+              <rect x="46" y="30" width="18" height="7"/><rect x="46" y="40.6" width="18" height="7"/><rect x="46" y="51.2" width="18" height="7"/><rect x="46" y="61.8" width="18" height="7"/><rect x="46" y="72.4" width="18" height="7"/><rect x="46" y="83" width="18" height="7"/><rect x="46" y="93.6" width="18" height="7"/><rect x="46" y="104.2" width="18" height="7"/><rect x="46" y="114.8" width="18" height="7"/><rect x="46" y="125.4" width="18" height="7"/><rect x="46" y="136" width="18" height="7"/><rect x="46" y="146.6" width="18" height="7"/><rect x="46" y="157.2" width="18" height="7"/><rect x="46" y="167.8" width="18" height="7"/><rect x="46" y="178.4" width="18" height="7"/><rect x="46" y="189" width="18" height="7"/><rect x="46" y="199.6" width="18" height="7"/><rect x="46" y="210.2" width="18" height="7"/><rect x="46" y="220.8" width="18" height="7"/><rect x="46" y="231.4" width="18" height="7"/><rect x="46" y="242" width="18" height="7"/><rect x="46" y="252.6" width="18" height="7"/><rect x="46" y="263.2" width="18" height="7"/><rect x="46" y="273.8" width="18" height="7"/><rect x="46" y="284.4" width="18" height="7"/><rect x="46" y="295" width="18" height="7"/><rect x="46" y="305.6" width="18" height="7"/><rect x="46" y="316.2" width="18" height="7"/><rect x="46" y="326.8" width="18" height="7"/><rect x="46" y="337.4" width="18" height="7"/>
+            </g>
+            <rect x="86" y="26" width="400" height="330" class="f-surf s-line"/>
+            <rect x="94" y="20" width="400" height="330" class="f-surf s-line"/>
+            <rect x="102" y="14" width="400" height="330" class="f-surf1 s-hi"/>
+            <text x="126" y="54" font-size="14" letter-spacing="3" class="t-mono f-ink">DECEMBER 2025</text>
+            <text x="126" y="82" font-size="15" class="t-body f-grey">Northgate Dairy</text>
+            <line x1="126" y1="96" x2="478" y2="96" class="s-line"/>
+            <g font-size="12.5" class="t-mono f-ink">
+              <text x="126" y="128">Whole milk, 4L case</text><text x="478" y="128" text-anchor="end">$14.00</text>
+              <text x="126" y="156">Paneer, 5 kg block</text><text x="478" y="156" text-anchor="end">$61.25</text>
+              <text x="126" y="184">Burger buns, case of 48</text><text x="478" y="184" text-anchor="end">$23.90</text>
+              <text x="126" y="212">Frying oil, 16 L</text><text x="478" y="212" text-anchor="end">$41.75</text>
+            </g>
+            <g class="f-surf"><rect x="126" y="238" width="300" height="7"/><rect x="126" y="262" width="258" height="7"/><rect x="126" y="286" width="318" height="7"/></g>
+          </svg>
+          <div class="scalefigs">
+            <div class="sf"><div class="num">515</div><div class="cap">lines checked. Every invoice line in the month, read one by one.</div></div>
+            <div class="sf"><div class="num">$42,012.65</div><div class="cap">in spend checked, across those lines.</div></div>
+          </div>
+        </div>
+        <div class="flatrow">
+          <div><div class="num">$81.58</div><div class="cap">average spend per line</div></div>
+          <div><div class="num">30</div><div class="cap">purchase dates in the month</div></div>
+          <div><div class="num">24</div><div class="cap">suppliers across the month</div></div>
+        </div>
+      </div>
+
+      <!-- Zone B: concentration -->
+      <div class="zone bars rv">
+        <div class="zlab">Zone B · Where the money sat</div>
+        <div class="bar-row">
+          <div class="bar-lab"><span>Dairy</span><span class="bv">57.85%</span></div>
+          <div class="track"><div class="fill" style="width:57.85%"></div></div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-lab"><span>The two largest suppliers</span><span class="bv">85.20%</span></div>
+          <div class="track"><div class="fill" style="width:85.2%"></div></div>
+        </div>
+        <p class="barsent">Most of the money sat in few places. That is why every line got checked.</p>
+      </div>
+    </div>
+
+    <!-- Zone C: the 35 identical milk cells -->
+    <div class="zone-c rv">
+      <div class="zlab">Zone C · One price, held flat</div>
+      <p style="font-size:15px;color:var(--grey);max-width:720px">Milk, per 4L case, on all 35 lines from one supplier, across 29 dates.</p>
+      <div class="cells35" aria-hidden="true">
+        <div class="cell">$14.00</div><div class="cell">$14.00</div><div class="cell">$14.00</div><div class="cell">$14.00</div><div class="cell">$14.00</div><div class="cell">$14.00</div><div class="cell">$14.00</div>
+        <div class="cell">$14.00</div><div class="cell">$14.00</div><div class="cell">$14.00</div><div class="cell">$14.00</div><div class="cell">$14.00</div><div class="cell">$14.00</div><div class="cell">$14.00</div>
+        <div class="cell">$14.00</div><div class="cell">$14.00</div><div class="cell">$14.00</div><div class="cell">$14.00</div><div class="cell">$14.00</div><div class="cell">$14.00</div><div class="cell">$14.00</div>
+        <div class="cell">$14.00</div><div class="cell">$14.00</div><div class="cell">$14.00</div><div class="cell">$14.00</div><div class="cell">$14.00</div><div class="cell">$14.00</div><div class="cell">$14.00</div>
+        <div class="cell">$14.00</div><div class="cell">$14.00</div><div class="cell">$14.00</div><div class="cell">$14.00</div><div class="cell">$14.00</div><div class="cell">$14.00</div><div class="cell">$14.00</div>
+      </div>
+    </div>
+
+    <!-- Zone D: the method, in three word steps -->
+    <div class="rv" style="margin-top:52px">
+      <div class="zlab" style="font-family:var(--mono);font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--grey)">Zone D · The method</div>
+      <div class="methodsteps">
+        <div class="ms"><span>Step 1</span>Read every line.</div>
+        <div class="ms"><span>Step 2</span>Check it against what was agreed and what arrived.</div>
+        <div class="ms"><span>Step 3</span>Write down what does not match.</div>
+      </div>
+      <p class="statusline"><b>Measured by hand, before Mise was software.</b> The founding pilot is where the software has to match it.</p>
+    </div>
+
+    <!-- E21/V5: the empty result frame. Published empty, or not at all. -->
+    <div class="templateframe rv">
+      <p class="tline">Every result here has to fill every box. If a box is empty, the result does not go up.</p>
+      <div class="tframe" role="img" aria-label="An empty result frame with five unfilled slots: before, after, period, locations, method, and an empty badge for hand or software. No result is published until every slot can be filled.">
+        <div class="slot"><div class="sl">Before</div><div class="empty"></div></div>
+        <div class="slot"><div class="sl">After</div><div class="empty"></div></div>
+        <div class="slot"><div class="sl">Period</div><div class="empty"></div></div>
+        <div class="slot"><div class="sl">Locations</div><div class="empty"></div></div>
+        <div class="slot"><div class="sl">Method</div><div class="empty"></div></div>
+        <div class="slot"><div class="sl">Checked by</div><div class="badgeempty">Hand or Software</div></div>
+      </div>
+      <p class="tnote">Empty until a pilot result can fill every box.</p>
     </div>
   </div>
 </section>
 
-<!-- ============ MID CTA ============ -->
-<section id="seenenough" style="padding:0 0 110px">
+<!-- ============ SETUP (Stage 5; F11: the store enters its own data, walked through together) ============ -->
+<section id="setup">
   <div class="wrap">
-    <div class="invite rv" style="text-align:center">
-      <h3 style="margin-bottom:10px">Seen enough?</h3>
-      <p class="isub" style="margin-bottom:28px">An inner circle of kitchens, not a launch. If you do real work, book a call.</p>
-      <a class="cta" href="#circle">Book a call</a>
+    <div class="eyebrow rv">Setup</div>
+    <h2 class="rv">Set up with you, in four steps.</h2>
+    <p class="lede rv">You work long days, so setup happens in steps, at your pace. Your store enters its own data with our tooling, and we walk through it together until each step holds. Nothing is entered for you, and nothing starts until the numbers are yours.</p>
+    <div class="steps">
+      <div class="step rv"><div class="n">STEP 01</div><h4>Connect your POS</h4>
+        <div class="srow"><b>You give</b>Your authorisation, inside Clover on a call together: one tap grants Mise read only access to your account. Nobody hands over a login.</div>
+        <div class="srow"><b>Mise does</b>Connects through that authorisation, read only, and sets your manager limit. Any order over CA$200 waits for the owner.</div>
+        <div class="srow"><b>Your time</b>About 10 minutes.</div>
+        <div class="srow"><b>Done when</b>Your sales show in Mise the same day.</div>
+      </div>
+      <div class="step rv"><div class="n">STEP 02</div><h4>Your recipes, as a starting point</h4>
+        <div class="srow"><b>You give</b>The recipe each dish started with, as it stands today.</div>
+        <div class="srow"><b>Mise does</b>Loads them as the measure. Cooks adjust on the line; Mise measures against your original, not a guess.</div>
+        <div class="srow"><b>Your time</b>About 20 minutes for a standard menu.</div>
+        <div class="srow"><b>Done when</b>Every dish has a starting recipe on record.</div>
+      </div>
+      <div class="step rv"><div class="n">STEP 03</div><h4>Enter your stock, with us beside you</h4>
+        <div class="srow"><b>You give</b>Your item list, from your shelves and your invoices.</div>
+        <div class="srow"><b>Mise does</b>Provides the tooling and stays on the call while you enter each item, so every item lands the way your kitchen names it.</div>
+        <div class="srow"><b>Your time</b>One sitting, about 30 to 45 minutes for most kitchens.</div>
+        <div class="srow"><b>Done when</b>Your stock list matches what is on your shelves.</div>
+      </div>
+      <div class="step rv"><div class="n">STEP 04</div><h4>Count when it suits you</h4>
+        <div class="srow"><b>You give</b>A first ten item count, whenever it suits.</div>
+        <div class="srow"><b>Mise does</b>Starts the morning briefs from your count. No full count on day one.</div>
+        <div class="srow"><b>Your time</b>Two minutes, in the walk-in.</div>
+        <div class="srow"><b>Done when</b>Your first 08:15 brief arrives the next morning.</div>
+      </div>
+    </div>
+
+    <div class="duo">
+      <div class="plainblock rv">
+        <h4>Have ready before step one</h4>
+        <ul>
+          <li>Your Clover account, so you can authorise read only access on the call.</li>
+          <li>One recent supplier invoice.</li>
+          <li>Your recipes, as they stand.</li>
+          <li>A time for a first count, any time in the first week.</li>
+        </ul>
+        <p style="margin-top:14px">All of it is gatherable in one shift.</p>
+      </div>
+      <div class="plainblock rv">
+        <h4>What stays the same</h4>
+        <p>Your suppliers stay yours. Your recipes stay yours. Your team keeps ordering the way they do today until the brief replaces the guesswork. And nothing is ever ordered without a person approving it.</p>
+      </div>
+    </div>
+
+    <div class="duo">
+      <div class="plainblock rv">
+        <h4>Included in the founding pilot</h4>
+        <ul>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Counts</li>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Invoice checking</li>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Order approval</li>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>The morning brief</li>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Setup, walked through together</li>
+        </ul>
+      </div>
+      <div class="plainblock rv">
+        <h4>Not yet</h4>
+        <p>Integrations beyond the systems named in the fit check below are not in the pilot. Anything not named as included is a later step, and we will say so plainly rather than let you assume.</p>
+      </div>
+    </div>
+
+    <p class="fwdline rv">The first step is a 15-minute call. <a href="#fit">Check your fit first<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15"/><path d="M13 6l6 6-6 6"/></svg></a></p>
+  </div>
+</section>
+
+<!-- ============ FIT CHECK (Stage 6) ============ -->
+<section id="fit">
+  <div class="wrap">
+    <div class="eyebrow rv">Fit check</div>
+    <h2 class="rv">Does Mise fit your kitchen today?</h2>
+    <p class="lede rv">Pick your point of sale system. The answer is plain, and it is the same answer we give on the call.</p>
+    <div class="pospick rv" role="group" aria-label="Choose your POS system">
+      <button type="button" class="posbtn" data-pos="Clover" data-state="live" aria-pressed="false">Clover</button>
+      <button type="button" class="posbtn" data-pos="Square" data-state="notyet" aria-pressed="false">Square</button>
+      <button type="button" class="posbtn" data-pos="TouchBistro" data-state="notyet" aria-pressed="false">TouchBistro</button>
+      <button type="button" class="posbtn" data-pos="Lightspeed" data-state="notyet" aria-pressed="false">Lightspeed</button>
+      <button type="button" class="posbtn" data-pos="Other" data-state="notyet" aria-pressed="false">Other</button>
+    </div>
+    <div class="fitanswer rv" id="fitanswer" aria-live="polite">
+      <div data-answer="empty">
+        <p>Pick your system to see the answer. No email is needed for the answer itself.</p>
+      </div>
+      <div data-answer="live" hidden>
+        <div class="verdict">Live today.</div>
+        <p><span data-posname>Clover</span> connects today. Book the call and setup starts with your POS. Your pick travels with your request, so you will not be asked twice.</p>
+        <a class="cta" href="#book">Book a call</a>
+      </div>
+      <div data-answer="notyet" hidden>
+        <div class="verdict">Not yet.</div>
+        <p>Mise does not connect to <span data-posname>this system</span> yet. Leave your email and we will write the day it opens. No date is promised, because we do not promise dates we cannot hold.</p>
+        <form class="miniform" data-miniform="waitlist" novalidate>
+          <input type="email" name="email" autocomplete="email" placeholder="Work email" aria-label="Email for the waitlist">
+          <button type="submit">Email me when it opens</button>
+          <div class="merr" role="alert">Enter a valid email</div>
+        </form>
+        <p class="wlsuccess" data-wlsuccess><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg><span>You are on the list for <span data-posname>this system</span>. We write the day it opens, and not before.</span></p>
+      </div>
+    </div>
+    <noscript><p class="smallprint">To check your system without JavaScript, email <a href="mailto:hello@antigrav.si">hello@antigrav.si</a> with your name, your store and your POS system.</p></noscript>
+
+    <div style="margin-top:52px" class="rv">
+      <div class="eyebrow" style="margin-bottom:14px">Your kind of kitchen</div>
+      <div class="chips" role="group" aria-label="Choose the description closest to your kitchen">
+        <button type="button" class="chipbtn" data-segment="Quick service" aria-pressed="false">Quick service</button>
+        <button type="button" class="chipbtn" data-segment="Café" aria-pressed="false">Café</button>
+        <button type="button" class="chipbtn" data-segment="Franchise" aria-pressed="false">Franchise or multi-unit</button>
+      </div>
+      <p class="smallprint" style="margin-top:16px">Your pick shapes the sample data in the walkthrough below. Nothing else changes: same check, same call, same terms.</p>
+    </div>
+
+    <p class="smallprint rv"><b style="color:var(--ink)">Suppliers:</b> your supplier list is built with you, from your real invoices, during setup. There is no supplier database to match against, and no match is promised.</p>
+    <p class="smallprint rv">Built for Canada. Founding terms are in Canadian dollars and are explained whole on the call. Mise works in English and French Canadian. This page is also available in French: <a href="mise-fr.html" hreflang="fr-CA">Mise en français</a>.</p>
+  </div>
+</section>
+
+<!-- ============ WALKTHROUGH (Stage 7; door per F3 flag: C32 fixes not in this build) ============ -->
+<section id="walkthrough">
+  <div class="wrap">
+    <div class="eyebrow rv">The walkthrough</div>
+    <h2 class="rv">Run the check with your own hands.</h2>
+    <p class="lede rv">The demo is the routine, on a sample store. Four steps, in the order the product runs them. It is a walkthrough, not a trial: no account, no card, nothing to install.</p>
+    <p class="sampleline rv" id="sampleline">Sample store · A quick-service kitchen</p>
+    <div class="walksteps">
+      <div class="ws rv"><div class="n">STEP 1</div><h4>The morning brief</h4><p>See the day the way the operator sees it at 08:15.</p></div>
+      <div class="ws rv"><div class="n">STEP 2</div><h4>The ten item count</h4><p>Count ten items on a phone, over the count sheet.</p></div>
+      <div class="ws rv"><div class="n">STEP 3</div><h4>The invoice check</h4><p>Three checks on one invoice: the price against what was agreed, the delivery against what was ordered, and the line math.</p></div>
+      <div class="ws rv"><div class="n">STEP 4</div><h4>Order approval</h4><p>Approve the order yourself. Nothing moves without a person.</p></div>
+    </div>
+
+    <!-- V3: The followed line, full form (owns this stage) -->
+    <div class="figwrap rv">
+      <svg viewBox="0 0 640 300" style="width:100%;height:auto;display:block" role="img" aria-label="One invoice line, followed. On the invoice, the line for whole milk is charged at 15 dollars 75 against an agreed 14 dollars, and is flagged. A band runs from that line across the page and down into a shelf, where it ends at one empty slot.">
+        <rect x="30" y="30" width="340" height="245" class="f-surf1 s-hi"/>
+        <text x="50" y="58" font-size="11" letter-spacing="2.5" class="t-mono f-grey">INVOICE</text>
+        <text x="50" y="80" font-size="13" class="t-body f-grey">Harbourline Foods</text>
+        <line x1="50" y1="92" x2="350" y2="92" class="s-line"/>
+        <g font-size="9" class="t-mono f-grey"><text x="250" y="110" text-anchor="end">AGREED</text><text x="308" y="110" text-anchor="end">CHARGED</text></g>
+        <g class="f-surf"><rect x="50" y="122" width="120" height="8"/><rect x="50" y="146" width="96" height="8"/></g>
+        <rect x="30" y="168" width="3" height="28" class="f-red"/>
+        <text x="46" y="186" font-size="12.5" class="t-body f-ink">Whole milk, 4L case</text>
+        <text x="250" y="186" font-size="12" text-anchor="end" class="t-mono f-ink">14.00</text>
+        <text x="308" y="186" font-size="12" font-weight="600" text-anchor="end" class="t-mono f-ink">15.75</text>
+        <text x="362" y="186" font-size="8.5" letter-spacing="1" text-anchor="end" class="t-mono f-ink">FLAGGED</text>
+        <text x="46" y="216" font-size="11.5" class="t-body f-grey">Charged $1.75 over the agreed price.</text>
+        <g class="f-surf"><rect x="50" y="232" width="132" height="8"/><rect x="50" y="254" width="104" height="8"/></g>
+        <rect x="370" y="168" width="110" height="28" class="f-ink"/>
+        <rect x="454" y="168" width="26" height="96" class="f-ink"/>
+        <g class="f-surf s-line"><rect x="496" y="212" width="52" height="28"/><rect x="562" y="212" width="52" height="28"/></g>
+        <line x1="440" y1="240" x2="630" y2="240" class="s-line"/>
+        <rect x="454" y="262" width="80" height="34" fill="none" class="s-red"/>
+        <g class="f-surf s-line"><rect x="548" y="262" width="66" height="34"/></g>
+        <line x1="440" y1="296" x2="630" y2="296" class="s-line"/>
+      </svg>
+      <div class="figcap">One line, followed from the invoice to the shelf</div>
+    </div>
+
+    <div class="doorblock rv">
+      <a class="cta" id="doorlink" href="https://demo.mise.antigrav.si">Start the walkthrough</a>
+      <p class="doorfail">If the walkthrough does not open, or loads blank, do not fight it. Book the call and we run the same check live, on one of your invoices.</p>
+    </div>
+
+    <div class="exitblock rv">
+      <p class="exitline">The call does this same check on one of your own invoices.</p>
+      <div class="ctas">
+        <a class="cta" href="#book">Book a call</a>
+        <a class="cta ghost" href="#questions">Keep looking</a>
+      </div>
+      <p class="ctxline">If you book after walking the demo, your request notes it, and the call starts from the same check.</p>
     </div>
   </div>
 </section>
 
-<!-- ============ INNER CIRCLE ============ -->
+<!-- ============ QUESTIONS (Stage 8; E39 to E45, doubt order) ============ -->
+<section id="questions">
+  <div class="wrap">
+    <div class="eyebrow rv">Questions</div>
+    <h2 class="rv">Asked in the order they block the call.</h2>
+    <div class="rv">
+      <div class="qa">
+        <button type="button" class="qhead" aria-expanded="false">What does setup ask of me?<span class="qmark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9.5l6 6 6-6"/></svg></span></button>
+        <div class="qa-a"><div class="qa-in">Four steps, at your pace. You enter your own data with our tooling, walked through together. The minimum to start fits in one shift: your Clover authorisation (read only, granted by you on the call), one recent supplier invoice, your recipes as they stand, and a time for a first count.</div></div>
+      </div>
+      <div class="qa">
+        <button type="button" class="qhead" aria-expanded="false">Does it work with my POS?<span class="qmark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9.5l6 6 6-6"/></svg></span></button>
+        <div class="qa-a"><div class="qa-in">Clover connects today. Other systems are in pilot or not yet, and the fit check above gives the plain answer for yours. If yours is not live, the waitlist writes to you the day it opens. No date is promised.</div></div>
+      </div>
+      <div class="qa">
+        <button type="button" class="qhead" aria-expanded="false">Is it finished?<span class="qmark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9.5l6 6 6-6"/></svg></span></button>
+        <div class="qa-a"><div class="qa-in">No, and we would rather say so. Mise is in its founding pilot, set up store by store. The first value is not the finished product. It is the invoice check on the call, run on one of your own invoices.</div></div>
+      </div>
+      <div class="qa">
+        <button type="button" class="qhead" aria-expanded="false">What does it cost?<span class="qmark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9.5l6 6 6-6"/></svg></span></button>
+        <div class="qa-a"><div class="qa-in">Pricing is per location, and it is explained whole on the 15-minute call, in your own invoice numbers: what it costs, what it has to save, and the terms, in the same order for every store at the same stage. Canadian founding terms are in Canadian dollars. Nothing is charged on this page, and no card is taken here.</div></div>
+      </div>
+      <div class="qa">
+        <button type="button" class="qhead" aria-expanded="false">What if it does not save more than it costs?<span class="qmark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9.5l6 6 6-6"/></svg></span></button>
+        <div class="qa-a"><div class="qa-in">On day 30 you get a written proof report on your own records: what was checked, what was found, what it saved. There is no guarantee and there are no refunds. We would rather you judge the report than a promise.</div></div>
+      </div>
+      <div class="qa">
+        <button type="button" class="qhead" aria-expanded="false">What happens to my data?<span class="qmark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9.5l6 6 6-6"/></svg></span></button>
+        <div class="qa-a"><div class="qa-in">The details you send in the form are used to answer your request and run your pilot, and nothing else. Your store&rsquo;s records stay yours. The data rights terms are given in writing before any trial starts, and before a card is saved, so you can read them before anything begins.</div></div>
+      </div>
+    </div>
+    <p class="fwdline rv">One more thing decides most calls: the biggest problem field in the form below. <a href="#book">Book a call<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15"/><path d="M13 6l6 6-6 6"/></svg></a></p>
+  </div>
+</section>
+
+<!-- ============ COUNT + INNER CIRCLE (Stage 9; F4: words only at zero) ============ -->
 <section id="circle">
   <div class="wrap">
     <div class="eyebrow rv">The inner circle</div>
     <h2 class="rv">Built for the ones usually left out.</h2>
-    <p class="lede rv">The invoices looked fine. Then Mise checked. Counts, invoices and purchasing, checked in one place. If you run the back office, you belong in it.</p>
+    <p class="lede rv">Counts, invoices and purchasing, checked in one place. If you run the back office, you belong in the circle.</p>
+    <div class="countblock rv" id="countblock">
+      <div class="cbig">The founding cohort is open.</div>
+      <div class="csmall">Places are being taken on calls, one store at a time.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FORM (Stage 10) + BOOKING (Stage 11) ============ -->
+<section id="book">
+  <div class="wrap">
+    <div class="eyebrow rv" style="text-align:center">Book a call</div>
+    <h2 class="rv" style="text-align:center">Fifteen minutes. Your store, your invoice.</h2>
+    <p class="lede rv" style="margin:0 auto 44px;text-align:center">Two minutes of form, then pick a time on this same screen.</p>
+
 <div class="mise-form rv" id="mise-form">
   <div class="invite">
     <div class="intro">
-      <h3>Book a call</h3>
-      <p class="isub">Tell us about your kitchen. We read every request ourselves, then you can pick a time for a call.</p>
+      <h3>Tell us about your kitchen</h3>
+      <p class="isub">Your call works on your store and your locations, not on a general demo.</p>
     </div>
     <div class="howstrip" aria-label="How booking works">
-      <div class="hs"><b>Step 1 · Two minutes</b><span>Tell us about your kitchen in the form below.</span></div>
-      <div class="hs"><b>Step 2 · Pick a time</b><span>After the form, pick a time on the booking page.</span></div>
-      <div class="hs"><b>Step 3 · Set up with you</b><span>Setup happens in your kitchen, at your pace.</span></div>
+      <div class="hs"><b>Step 1 · About two minutes</b><span>Tell us about your kitchen in the form below.</span></div>
+      <div class="hs"><b>Step 2 · Pick a time</b><span>Right after the form, on this same screen.</span></div>
+      <div class="hs"><b>Step 3 · Set up with you</b><span>Setup happens with you, at your pace.</span></div>
     </div>
+    <div class="restore" id="restorebar">
+      <span>You have a draft on this device from an earlier visit.</span>
+      <button type="button" data-restore="use">Use it</button>
+      <button type="button" data-restore="fresh">Start fresh</button>
+    </div>
+    <noscript><p class="noscriptline">This form needs JavaScript. To book a call, email <a href="mailto:hello@antigrav.si">hello@antigrav.si</a> with your name, your store and two times that suit you.</p></noscript>
     <form novalidate>
       <input type="hidden" name="mise_lead_source" value="Website /mise">
       <input type="hidden" name="mise_utm_source" value="">
       <input type="hidden" name="mise_utm_medium" value="">
       <input type="hidden" name="mise_utm_campaign" value="">
       <input type="hidden" name="mise_utm_content" value="">
+      <input type="hidden" name="mise_pos_system" value="">
+      <input type="hidden" name="mise_segment" value="">
+      <input type="hidden" name="mise_context" value="">
       <div class="hp" aria-hidden="true"><label>Leave this empty<input name="company_website" tabindex="-1" autocomplete="off"></label></div>
-      <div class="frow">
-        <div data-f><label class="fl" for="mf-fn">First name</label><input class="fi" id="mf-fn" name="firstname" autocomplete="given-name" required><div class="err"></div></div>
-        <div data-f><label class="fl" for="mf-ln">Last name</label><input class="fi" id="mf-ln" name="lastname" autocomplete="family-name" required><div class="err"></div></div>
-      </div>
-      <div class="frow">
-        <div data-f><label class="fl" for="mf-em">Work email</label><input class="fi" id="mf-em" name="email" type="email" autocomplete="email" required><div class="err"></div></div>
-        <div data-f><label class="fl" for="mf-ph">Phone <span class="opt">(optional)</span></label><input class="fi" id="mf-ph" name="phone" type="tel" autocomplete="tel"><div class="err"></div></div>
-      </div>
-      <div class="frow">
-        <div data-f><label class="fl" for="mf-co">Restaurant / company name</label><input class="fi" id="mf-co" name="company" autocomplete="organization" required><div class="err"></div></div>
-        <div data-f><label class="fl" for="mf-pr">Province</label>
-          <select class="fi" id="mf-pr" name="mise_province" required>
-            <option value="">Select…</option>
-            <option value="on">Ontario</option><option value="ab">Alberta</option><option value="bc">British Columbia</option><option value="mb">Manitoba</option><option value="nb">New Brunswick</option><option value="nl">Newfoundland and Labrador</option><option value="ns">Nova Scotia</option><option value="pe">Prince Edward Island</option><option value="qc">Quebec</option><option value="sk">Saskatchewan</option><option value="nt">Northwest Territories</option><option value="nu">Nunavut</option><option value="yt">Yukon</option>
-          </select><div class="err"></div></div>
+      <div class="frow full">
+        <div data-f><label class="fl" for="mf-fn">First name <span class="req">· Required</span></label><input class="fi" id="mf-fn" name="firstname" autocomplete="given-name" required aria-describedby="err-firstname"><div class="err" id="err-firstname"></div></div>
       </div>
       <div class="frow full">
-        <div data-f><label class="fl" for="mf-ro">Role</label>
-          <select class="fi" id="mf-ro" name="mise_role" required>
-            <option value="">Select…</option>
-            <option value="owner">Owner</option><option value="general_manager">General Manager</option><option value="manager">Manager</option><option value="staff">Staff</option><option value="other">Other</option>
-          </select><div class="err"></div></div>
-      </div>
-      <div class="frow">
-        <div data-f><label class="fl" for="mf-bt">Business type</label>
-          <select class="fi" id="mf-bt" name="mise_business_type" required>
-            <option value="">Select…</option>
-            <option value="Independent restaurant">Independent restaurant</option>
-            <option value="qsr">QSR</option><option value="fast_casual">Fast-casual</option><option value="cafe">Cafe</option><option value="bakery">Bakery</option><option value="other">Other</option>
-          </select><div class="err"></div></div>
-        <div data-f><label class="fl" for="mf-nl">Number of locations</label><input class="fi" id="mf-nl" name="mise_number_of_locations" type="number" inputmode="numeric" min="1" step="1" placeholder="1 if single-site" required><div class="err"></div></div>
+        <div data-f><label class="fl" for="mf-ln">Last name <span class="req">· Required</span></label><input class="fi" id="mf-ln" name="lastname" autocomplete="family-name" required aria-describedby="err-lastname"><div class="err" id="err-lastname"></div></div>
       </div>
       <div class="frow full">
-        <div data-f><label class="fl" for="mf-pos">POS system</label>
-          <select class="fi" id="mf-pos" name="mise_pos_system" required>
-            <option value="">Select…</option>
-            <option value="clover">Clover</option>
-            <option value="square">Square</option>
-            <option value="touchbistro">TouchBistro</option>
-            <option value="other">Other</option>
-          </select>
-          <p class="hint">Mise works with Clover today.</p><div class="err"></div></div>
+        <div data-f><label class="fl" for="mf-em">Work email <span class="req">· Required</span></label><input class="fi" id="mf-em" name="email" type="email" autocomplete="email" required aria-describedby="err-email"><div class="err" id="err-email"></div></div>
       </div>
       <div class="frow full">
-        <div data-f><label class="fl" for="mf-bp">Biggest problem in your back office right now <span class="opt">(optional)</span></label><textarea class="fi" id="mf-bp" name="mise_biggest_problem" rows="3"></textarea><div class="err"></div></div>
+        <div data-f><label class="fl" for="mf-co">Restaurant / company name <span class="req">· Required</span></label><input class="fi" id="mf-co" name="company" autocomplete="organization" required aria-describedby="err-company"><div class="err" id="err-company"></div></div>
       </div>
       <div class="frow full">
-        <fieldset data-f><legend class="fl">Ownership</legend>
-          <div class="seg">
-            <label><input type="radio" name="mise_franchisee" value="false"> Independent</label>
-            <label><input type="radio" name="mise_franchisee" value="true"> Franchisee</label>
-          </div><div class="err"></div></fieldset>
+        <div data-f><label class="fl" for="mf-nl">Number of locations <span class="req">· Required</span></label><input class="fi" id="mf-nl" name="mise_number_of_locations" type="number" inputmode="numeric" min="1" step="1" placeholder="1 if single-site" required aria-describedby="err-mise_number_of_locations"><div class="err" id="err-mise_number_of_locations"></div></div>
       </div>
-      <label class="consent" data-f>
-        <input type="checkbox" name="casl_consent" value="true" required>
-        <span id="caslText"><b>Yes, email me about Mise.</b> I agree to get emails from Antigravity Analytics about Mise, including invite and product updates. I can unsubscribe at any time. <span data-addr>Antigravity Analytics Private Limited, 11 Bank Colony, Hissar Road, Sirsa, Haryana 125055, India</span> · <a href="mailto:hello@antigrav.si">hello@antigrav.si</a></span>
+      <div class="frow full">
+        <div data-f><label class="fl" for="mf-bp">Biggest problem in your back office right now <span class="opt">· Optional</span></label>
+          <p class="helperfull" id="bp-helper">Write the back office job you dread most. Your call starts with your answer, not a pitch.</p>
+          <textarea class="fi" id="mf-bp" name="mise_biggest_problem" rows="3" aria-describedby="bp-helper"></textarea><div class="err"></div></div>
+      </div>
+      <div class="frow full">
+        <div data-f><label class="fl" for="mf-ph">Phone <span class="opt">· Optional</span></label><input class="fi" id="mf-ph" name="phone" type="tel" autocomplete="tel" aria-describedby="err-phone">
+          <p class="hint">Its one job: a text reminder about your booked call, and only if you agree to it at the booking step.</p><div class="err" id="err-phone"></div></div>
+      </div>
+      <label class="consent">
+        <input type="checkbox" name="marketing_consent" value="true">
+        <span id="mktText"><b>Optional. Yes, email me about Mise.</b> Product updates and the monthly proof note from Antigravity Analytics. I can unsubscribe at any time. Antigravity Analytics Private Limited, 11 Bank Colony, Hissar Road, Sirsa, Haryana 125055, India · <a href="mailto:hello@antigrav.si">hello@antigrav.si</a></span>
       </label>
-      <div class="err consent-err" style="margin:-10px 0 14px"></div>
       <button class="cta" type="submit">Book a call</button>
       <p class="notice" id="processText">By submitting, you agree that Antigravity Analytics can store and use these details to reply to your request and set up your call.</p>
+      <p class="stillline" id="stillline">Still sending. Give it a few more seconds.</p>
       <div class="formerr" role="alert"></div>
+      <p class="draftline">Your answers are saved on this device as you type. Nothing leaves this device until you press Book a call.</p>
     </form>
+
+    <!-- Stage 11: the booking step, inside the same panel (F2) -->
     <div class="ok" tabindex="-1" aria-live="polite">
-      <div class="okmark">Request received</div>
-      <h3>Pick a time for your call</h3>
-      <p>Thanks — pick a time on the booking page. You&rsquo;ll get a confirmation email with the video link.</p>
-      <div class="cal"><iframe title="Book a call with Antigravity" data-booking-embed></iframe></div>
-      <div class="book-actions"><a class="cta book" data-booking-link href="https://cal.com/getmise/intro-call" target="_blank" rel="noopener">Open booking page in a new tab</a></div>
-      <p class="fallback">Trouble booking? Email <a href="mailto:hello@antigrav.si">hello@antigrav.si</a>.</p>
+      <div class="okmark okin">Request received</div>
+      <h3 class="okin">Now pick a time for your call</h3>
+      <p class="summary okin d1" id="oksummary">Your request is in.</p>
+      <p class="fixline okin d1">Something wrong? Email <a href="mailto:hello@antigrav.si">hello@antigrav.si</a> and we will fix the record.</p>
+      <div class="extras okin d1">
+        <div id="phone-extra" hidden>
+          <label class="fl" for="ok-phone">Phone for the call <span class="opt">· Optional</span></label>
+          <input class="fi" id="ok-phone" type="tel" autocomplete="tel">
+          <p class="hint">Alex calls you at this number at the booked time.</p>
+        </div>
+        <label class="consent" style="margin-top:16px">
+          <input type="checkbox" id="reminder-consent">
+          <span><b>Optional.</b> Text me reminders for this call. If a reminder is ever sent as an automated call, this covers that too. Leave it unticked and you get email reminders only. Your call books either way.</span>
+        </label>
+      </div>
+      <p class="tzline okin d2" id="tzline">Times are shown in your time zone. The call is run from Toronto.</p>
+      <div class="okin d2">
+        <p class="calload" id="calload">Loading the calendar…</p>
+        <div class="cal calwrap" id="calwrap"><div id="cal-inline"></div></div>
+        <div class="cal-fallback" id="calfallback">
+          <p>The calendar did not load here. The booking page is the backup route:</p>
+          <a class="cta book" data-booking-link href="https://cal.com/getmise/intro-call" target="_blank" rel="noopener">Open the booking page in a new tab</a>
+          <p class="fallback">If you booked in the other tab, your confirmation email is your record. Trouble either way? Email <a href="mailto:hello@antigrav.si">hello@antigrav.si</a> with your name, your store and two times that suit you.</p>
+        </div>
+        <div class="booked" id="bookedblock">
+          <p class="bline"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg> Booked: <span id="bookedwhen">your picked time</span>.</p>
+          <p><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 15 minutes, by phone. <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg> Alex will call you at the booked time. Your confirmation email carries the link to move or cancel.</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-    <p class="rv" style="text-align:center;font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--grey);margin-top:38px">The back office for restaurants that count.</p>
+
+    <!-- E59/E77: the lesser asks, beside the form -->
+    <div class="lesserask">
+      <div class="la rv">
+        <h4>Not ready to book?</h4>
+        <p>Walk the demo first. Four steps, on a sample store, and the same check the call runs.</p>
+        <p style="margin-top:14px"><a class="textlink" style="margin-top:0" href="#walkthrough">Walk the demo</a></p>
+      </div>
+      <div class="la rv">
+        <h4>Or take the monthly proof note</h4>
+        <p>One email a month, and only when there is a new number to show. One click or one reply ends it. It stays one note a month; it never turns into anything more.</p>
+        <form class="miniform" data-miniform="note" novalidate>
+          <input type="email" name="email" autocomplete="email" placeholder="Work email" aria-label="Email for the monthly proof note">
+          <button type="submit">Send me the note</button>
+          <div class="merr" role="alert">Enter a valid email</div>
+        </form>
+        <p class="wlsuccess" data-notesuccess><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg><span>You are on the list for the monthly proof note.</span></p>
+      </div>
+    </div>
+
+    <!-- E80: manage your call, on the page as well as in the messages -->
+    <p class="manageline rv"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span>Already booked? Your confirmation and reminder emails carry the link to move or cancel your call. Lost them? Email <a href="mailto:hello@antigrav.si">hello@antigrav.si</a> and we will send it again.</span></p>
   </div>
 </section>
 
-<!-- ============ FOOTER ============ -->
+<!-- ============ LEAVING (Stage 15: type only, by design) ============ -->
+<section id="leaving">
+  <div class="wrap">
+    <div class="eyebrow rv">Leaving</div>
+    <h2 class="rv">Leaving is as plain as joining.</h2>
+    <div class="leavelines rv">
+      <div class="ll"><b>Cancelling</b> is exactly as easy as signing up. There is no retention maze and no call you have to sit through to leave. Fees are non-refundable, and that is stated in the contract before you sign.</div>
+      <div class="ll"><b>Your records on exit</b> are covered by the data rights clause you received in writing before your trial started.</div>
+      <div class="ll"><b>Coming back</b> is on the intro terms of the day you return, never a worse rung for having left. Founding terms are not promised on a return; they belong to the cohort that stayed.</div>
+      <div class="ll"><b>Marketing emails</b> end with one click or one reply. The words are the same in every footer: unsubscribe at any time.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER (Stage 16: E89 triage, desks, E80 manage line) ============ -->
 <footer>
   <div class="wrap">
+    <p class="triage"><svg class="ic" style="margin-top:4px" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span>For a call, or a question before you join, write to <a href="mailto:hello@antigrav.si">hello@antigrav.si</a> (your name, your store, two times that suit you). Every desk below is read, and a message to the wrong desk is forwarded.</span></p>
     <div class="desks">
       <div class="desk"><div class="dk">Commercial</div><a href="mailto:hello@antigrav.si">hello@antigrav.si</a></div>
-      <div class="desk"><div class="dk">POS &amp; onboarding</div><a href="mailto:support@antigrav.si">support@antigrav.si</a></div>
-      <div class="desk"><div class="dk">Multi-unit accounts</div><a href="mailto:billing@antigrav.si">billing@antigrav.si</a></div>
+      <div class="desk"><div class="dk">Stores with Mise · Support</div><a href="mailto:support@antigrav.si">support@antigrav.si</a></div>
+      <div class="desk"><div class="dk">Stores with Mise · Billing</div><a href="mailto:billing@antigrav.si">billing@antigrav.si</a></div>
       <div class="desk"><div class="dk">Media &amp; press</div><a href="mailto:creatives@antigrav.si">creatives@antigrav.si</a></div>
       <div class="desk"><div class="dk">Investors</div><a href="mailto:endowing@antigrav.si">endowing@antigrav.si</a></div>
     </div>
-    <div class="parent">Built by <a href="https://antigrav.si">Antigravity Analytics</a> · Canada-wide operations · Toronto · Montreal · Vancouver<br><span style="font-size:11px">Privacy-first analytics by Simple Analytics — no cookies, no personal data, honors Do Not Track.</span></div>
+    <p class="footmanage">Booked a call and need to move it? Your confirmation email carries the link, or write to <a href="mailto:hello@antigrav.si">hello@antigrav.si</a>.</p>
+    <div class="parent">Built by <a href="https://antigrav.si">Antigravity Analytics</a> · Canada-wide operations · Toronto · Montreal · Vancouver<br><span style="font-size:11px">Privacy-first analytics by Simple Analytics: no cookies, no personal data, honors Do Not Track.</span></div>
   </div>
   <div style="text-align:center;margin-top:36px"><img src="/nvidia-inception-badge.svg" alt="NVIDIA Inception program member badge" style="width:170px;max-width:60vw;height:auto" loading="lazy"><div style="font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--grey);margin-top:10px">Built by an NVIDIA Inception program member</div></div>
   <div class="giant" aria-hidden="true">MISE</div>
 </footer>
+<div class="stickybar" id="stickybar" aria-hidden="true">
+  <a class="cta" href="#book">Book a call</a>
+  <a class="cta ghost" href="#routine">The routine</a>
+</div>
 <script>
 (function(){
 "use strict";
 var $=function(s,c){return (c||document).querySelector(s)};
 var $$=function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
 
-/* ---------- THEME ---------- */
+/* ---------- THEME (preserved) ---------- */
 var root=document.documentElement, themeBtn=$('#themeBtn');
 function setTheme(t){root.setAttribute('data-theme',t);try{localStorage.setItem('mise-theme',t)}catch(e){}
   themeBtn.textContent=(t==='dark')?'Light':'Dark';if(reduced)drawStatic();}
@@ -463,7 +1102,7 @@ var saved=null;try{saved=localStorage.getItem('mise-theme')}catch(e){}
 setTheme(saved||'dark');
 themeBtn.addEventListener('click',function(){setTheme(root.getAttribute('data-theme')==='dark'?'light':'dark');});
 
-/* ---------- INTRO (2.2s, skippable) ---------- */
+/* ---------- INTRO (P01/P02, preserved) ---------- */
 var intro=$('#intro'), introDone=false;
 function endIntro(){if(introDone)return;introDone=true;try{sessionStorage.setItem('mise-intro','1')}catch(e){}intro.classList.add('done');
   setTimeout(function(){if(intro.parentNode)intro.parentNode.removeChild(intro);},400);}
@@ -473,7 +1112,7 @@ else setTimeout(endIntro,1200);
 intro.addEventListener('click',endIntro);
 window.addEventListener('keydown',function(e){if(e.key==='Escape')endIntro();},{once:true});
 
-/* ---------- DISCO MATRIX ---------- */
+/* ---------- DISCO MATRIX (P03, preserved) ---------- */
 var cv=$('#matrix'), ctx=cv.getContext('2d'), hero=$('#hero');
 var CELL=22, cols=0, rows=0, grid=[], pocket={c0:0,c1:0,r0:0,r1:0};
 var BASE="MISEANTIGRAVITY", GLYPH="·:^+—";
@@ -506,12 +1145,10 @@ function tick(){
   for(var r=0;r<rows;r++)for(var c=0;c<cols;c++){
     if(inPocket(c,r))continue;
     var cell=grid[r][c],x=c*CELL+CELL/2,y=r*CELL+CELL/2;
-    // autonomous mutation
     if(!reduced&&Math.random()<0.0016){cell.mut=40+Math.random()*60;cell.ch=GLYPH[(Math.random()*GLYPH.length)|0];
       if(Math.random()<0.12)cell.red=26;}
     if(cell.mut>0){cell.mut--;if(cell.mut===0)cell.ch=BASE[(Math.random()*BASE.length)|0];}
     if(cell.red>0)cell.red--;
-    // cursor ripple -> telemetry
     var dx=x-mx,dy=y-my,d=Math.sqrt(dx*dx+dy*dy),ch=cell.ch,alpha=cell.a;
     if(d<R&&!reduced){
       var t=1-d/R;t=t*t*(3-2*t);alpha=Math.min(1,cell.a+t*.95);
@@ -532,7 +1169,7 @@ if(document.fonts&&document.fonts.ready){document.fonts.ready.then(function(){si
 if('IntersectionObserver' in window){new IntersectionObserver(function(es){running=es[0].isIntersecting&&!reduced;if(running)requestAnimationFrame(tick);}).observe(hero);}
 sizeMatrix();tick();
 
-/* ---------- SIMULATOR TABS ---------- */
+/* ---------- SIMULATOR TABS (P07/P08, preserved) ---------- */
 var tabs=$$('.tab'),panels=$$('.panel'),cur=0,timer=null;
 function show(i){cur=i;
   tabs.forEach(function(t,j){t.classList.toggle('active',j===i);
@@ -551,25 +1188,47 @@ $('.tabs').addEventListener('keydown',function(e){
 $('.stage').addEventListener('mouseenter',function(){clearInterval(timer);});
 $('.stage').addEventListener('mouseleave',auto);
 
-/* ---------- REVEAL ---------- */
+/* ---------- REVEAL (P06, preserved) ---------- */
 if('IntersectionObserver' in window){
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
   $$('.rv').forEach(function(el){io.observe(el);});
 }else{$$('.rv').forEach(function(el){el.classList.add('in');});}
 })();
-
 </script>
-<div class="stickybar" id="stickybar" aria-hidden="true">
-  <a class="cta" href="#circle">Book a call</a>
-  <a class="cta ghost" href="#routine">The routine</a>
-</div>
 <script>
-(function(){var bar=document.getElementById('stickybar');if(!bar)return;var circle=document.getElementById('circle');var formVisible=false;
+/* Sticky bar (P13, preserved mechanics; E86: hides while the form section is on
+   screen, and never shares the bottom strip with the cookie banner, which holds
+   its own reserved body padding). */
+(function(){var bar=document.getElementById('stickybar');if(!bar)return;var booksec=document.getElementById('book');var formVisible=false;
 function upd(){var on=window.scrollY>window.innerHeight*0.85&&!formVisible;bar.classList.toggle('show',on);bar.setAttribute('aria-hidden',on?'false':'true');}
 window.addEventListener('scroll',upd,{passive:true});upd();
-if('IntersectionObserver' in window&&circle){new IntersectionObserver(function(es){formVisible=es[0].isIntersecting;upd();},{threshold:.08}).observe(circle);}})();
+if('IntersectionObserver' in window&&booksec){new IntersectionObserver(function(es){formVisible=es[0].isIntersecting;upd();},{threshold:.08}).observe(booksec);}})();
 </script>
 <script>
+window.MISE_I18N = {
+  required: "Required",
+  email: "Enter a valid email",
+  locations: "Whole number, 1 or more",
+  phone: "Check the number",
+  sending: "Sending…",
+  submit: "Book a call",
+  fail: "That did not go through. Please try again, or email hello@antigrav.si with your name, your store and two times that suit you.",
+  summary: "For {name}, at {store}, {count}.",
+  locOne: "1 location", locMany: "{n} locations",
+  tz: "Times are shown in your time zone: {zone}. The call is run from Toronto.",
+  bookedWhen: "{when}",
+  recogSubmitted: "Your request is in. <a href=\"#book\">Pick a time to finish booking your call.</a>",
+  recogBooked: "Your call is booked. Your confirmation email carries the link to move or cancel, or write to <a href=\"mailto:hello@antigrav.si\">hello@antigrav.si</a>.",
+  sample: {
+    "Quick service": "Sample store · A quick-service kitchen",
+    "Café": "Sample store · A café",
+    "Franchise": "Sample store · A franchise kitchen, one of several locations"
+  }
+};
+/* Founding cohort state (F4): 0 renders words only. The numbered states render
+   only when a real signing moves the count; set by operations, never by hand
+   in the page. */
+window.MISE_COHORT_STATE = 0;
 window.MISE_FORM_CONFIG = {
   portalId: "343790256",
   formGuid: "38d7d220-b9fd-446d-8c3f-000270bf082b",
@@ -577,9 +1236,11 @@ window.MISE_FORM_CONFIG = {
   bookingEmbedUrl: "",
   subscriptionTypeId: 3880517645,
   apiHost: "api.hsforms.com",
-  leadSourceDefault: "Website /mise"
+  leadSourceDefault: "Website /mise",
+  calLink: "getmise/intro-call"
 };
 </script>
+<script src="mise-page.js" defer></script>
 <script src="mise-form.js" defer></script>
 
 <style>
@@ -594,7 +1255,7 @@ window.MISE_FORM_CONFIG = {
 </style>
 <script>
 /* Antigravity advertising measurement, consent-gated (privacy notice v1.2).
-   Meta Pixel + TikTok Pixel load ONLY after the visitor accepts in the cookie banner.
+   Meta Pixel loads ONLY after the visitor accepts in the cookie banner.
    Events: PageView on load after consent; Lead on Mise form submit; Schedule on booking click. */
 (function(){
   var META_ID="1435060284799674", TT_ID="", loaded=false;
