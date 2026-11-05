@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <script data-collect-dnt="true" async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
 <script src="https://js.sentry-cdn.com/64e80ec8f5a4be798e2180b838a5c974.min.js" crossorigin="anonymous"></script>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="mise-form.css">
 <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif?collect-dnt=true" alt="" referrerpolicy="no-referrer-when-downgrade"></noscript>
 <style>
@@ -391,6 +391,54 @@ footer{border-top:1px solid var(--line);padding:80px 0 0;overflow:hidden}
   #intro{display:none}
 }
 </style>
+
+<style id="mise-v2">
+/* ===== MISE V2: the auditor's ledger. New palette and type, no brand kit. ===== */
+:root{--sg:'Fraunces',Georgia,'Times New Roman',serif}
+:root,[data-theme="dark"]{--bg:#17130C;--surface:#201A12;--surface2:#2A2317;--line:#3A3122;--line-hi:rgba(241,234,217,.30);--ink:#F1EAD9;--grey:#A99C84;--red:#D96F4E;--mark:#F1EAD9;--matrix:241,234,217;--navbg:rgba(23,19,12,.86);--shadow:0 24px 60px rgba(0,0,0,.45)}
+[data-theme="light"]{--bg:#F4EFE2;--surface:#FBF8EF;--surface2:#ECE4D0;--line:#DCD1B8;--line-hi:rgba(34,27,18,.34);--ink:#221B12;--grey:#766B57;--red:#AE3F2C;--mark:#221B12;--matrix:34,27,18;--navbg:rgba(244,239,226,.88);--shadow:0 24px 60px rgba(34,27,18,.13)}
+body{font-size:16.5px}
+h1,h2{font-weight:600;letter-spacing:-.018em;line-height:1.0}
+h1{font-size:clamp(54px,7.4vw,102px)}
+h2{font-size:clamp(34px,4.6vw,60px)}
+.panel h3,.cpanel h4,.step h4,.walksteps .ws h4,.plainblock h4,.qa button.qhead{font-family:var(--sg);font-weight:600}
+.eyebrow{color:var(--red);display:flex;align-items:center;gap:14px;font-weight:500}
+.eyebrow::before{content:"";width:36px;height:1px;background:var(--red);flex:0 0 36px}
+#circle .eyebrow,#book .eyebrow{justify-content:center}
+.cta{border-radius:3px;font-family:var(--mono);font-weight:600;text-transform:uppercase;letter-spacing:.13em;font-size:12px;padding:17px 28px}
+.cta:hover{box-shadow:7px 7px 0 var(--line)}
+.nav-cta{padding:11px 18px;font-size:11px}
+#themeBtn,.posbtn,.chipbtn,.miniform button,.mise-form .restore button{border-radius:3px}
+.posbtn,.chipbtn{font-family:var(--mono);text-transform:uppercase;letter-spacing:.1em;font-size:12px;font-weight:600}
+section{padding:128px 0}
+.stage,.figwrap,.filmwrap,.cpanel,.step,.plainblock,.qa,.countblock,.doorblock,.fitanswer,.msg,.gate,.tframe,.checkstrip{border-radius:6px}
+.walksteps .ws,.howstrip .hs,.lesserask .la{border-radius:6px}
+.step:hover{transform:translateY(-2px)}
+.kv .st,.gate .hold,.cells35 .cell,.shelfstrip .slot{border-radius:3px}
+.miniform input{border-radius:4px}
+.giant{font-weight:500;font-style:italic;letter-spacing:-.02em}
+.bars .fill{background:var(--red)}
+.leavelines .ll{padding:24px 0}
+[data-theme="light"] #matrix{opacity:.45}
+.mise-form{--bg:#17130C;--surface:#201A12;--surface2:#2A2317;--line:#3A3122;--line-hi:rgba(241,234,217,.30);--ink:#F1EAD9;--grey:#A99C84;--red:#D96F4E;--shadow:0 24px 60px rgba(0,0,0,.45);--sg:'Fraunces',Georgia,serif}
+[data-theme="light"] .mise-form{--bg:#F4EFE2;--surface:#FBF8EF;--surface2:#ECE4D0;--line:#DCD1B8;--line-hi:rgba(34,27,18,.34);--ink:#221B12;--grey:#766B57;--red:#AE3F2C;--shadow:0 24px 60px rgba(34,27,18,.13)}
+.mise-form .invite{border-radius:6px}
+.mise-form .invite::before{border-radius:4px}
+.mise-form .fi{border-radius:4px}
+.bench{margin-top:64px;border-top:2px solid var(--ink);padding-top:28px}
+.benchhead{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin:26px 0 8px}
+.benchhead .num{font-family:var(--mono);font-size:clamp(34px,4vw,52px);font-weight:600;letter-spacing:-.03em}
+.benchhead .cap{font-size:14px;color:var(--grey);margin-top:4px}
+.benchtable{width:100%;border-collapse:collapse;margin-top:26px}
+.benchtable th{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--grey);font-weight:500;text-align:left;padding:0 10px 12px 0;border-bottom:1px solid var(--line-hi)}
+.benchtable th:last-child,.benchtable td:last-child{text-align:right;padding-right:0}
+.benchtable td{padding:18px 10px 18px 0;border-bottom:1px solid var(--line);font-size:16px;vertical-align:baseline}
+.benchtable td.bv2{font-family:var(--mono);font-weight:600;white-space:nowrap}
+.benchtable td.before{color:var(--grey)}
+.benchtable td.delta{font-family:var(--mono);color:var(--red);font-weight:600;white-space:nowrap}
+.benchnote{margin-top:20px;font-size:14.5px;color:var(--grey);max-width:720px}
+@media(max-width:700px){.benchhead{grid-template-columns:1fr}.benchtable td{font-size:14.5px;padding:14px 6px 14px 0}}
+</style>
 </head>
 <!-- ============ INTRO (P01/P02) ============ -->
 <div id="intro" aria-hidden="true">
@@ -416,7 +464,7 @@ footer{border-top:1px solid var(--line);padding:80px 0 0;overflow:hidden}
       <a class="nl" href="#setup">Setup</a>
       <a class="nl" href="#questions">Questions</a>
       <a class="langlink" href="mise-fr.html" hreflang="fr-CA">FR</a>
-      <button id="themeBtn" type="button" aria-label="Toggle light and dark theme">Light</button>
+      <button id="themeBtn" type="button" aria-label="Toggle light and dark theme">Dark</button>
       <a class="cta nav-cta" href="#book">Book a call</a>
     </nav>
   </div>
@@ -603,14 +651,30 @@ footer{border-top:1px solid var(--line);padding:80px 0 0;overflow:hidden}
 <!-- ============ PROOF (Stage 4; F15: proof is its own beat; amended E19 to E21) ============ -->
 <section id="proof">
   <div class="wrap">
-    <div class="eyebrow rv">Proof · December 2025 · Checked by hand</div>
+    <div class="eyebrow rv">Proof · Measured by hand</div>
     <h2 class="rv">The invoices looked fine. Then Mise checked.</h2>
-    <p class="lede rv">Before Mise was software, the check was done by hand. This is one month of it: every supplier invoice line in December 2025, read, checked against what was agreed and what arrived, and written down.</p>
+    <p class="lede rv">Before Mise was software, the check was done by hand, across a 15-location network. These are the manual pilot findings: what the checking did to the numbers, measured before the product existed. One checked month is kept below them as the exhibit.</p>
+
+    <!-- The benchmark: lead proof, founder-ruled, framed as manual pilot findings -->
+    <div class="bench rv">
+      <div class="zlab">The benchmark · 15 locations · Measured by hand</div>
+      <div class="benchhead">
+        <div><div class="num">619</div><div class="cap">invoice lines checked by hand, one by one</div></div>
+        <div><div class="num">$50,380.85</div><div class="cap">in spend carried by those lines</div></div>
+      </div>
+      <table class="benchtable">
+        <tr><th scope="col">Measure</th><th scope="col">Before the check</th><th scope="col">After the check</th><th scope="col">Change</th></tr>
+        <tr><td>Billing errors</td><td class="bv2 before">8.72%</td><td class="bv2 after">0.18%</td><td class="delta">-8.54 pts</td></tr>
+        <tr><td>Price variance</td><td class="bv2 before">14.28%</td><td class="bv2 after">2.14%</td><td class="delta">-12.14 pts</td></tr>
+        <tr><td>Manager hours on the back office</td><td class="bv2 before">6.25 h</td><td class="bv2 after">1.75 h</td><td class="delta">-4.50 h</td></tr>
+      </table>
+      <p class="benchnote">Fifteen locations, one network, every line read against what was agreed and what arrived. Measured by hand, before Mise was software. The founding pilot is where the software has to match it.</p>
+    </div>
 
     <div class="zones">
       <!-- Zone A: the ledger stack -->
       <div class="zone rv">
-        <div class="zlab">Zone A · The checked month</div>
+        <div class="zlab">Zone A · The exhibit · One checked month</div>
         <div style="display:grid;grid-template-columns:1.2fr .8fr;gap:26px;align-items:start">
           <svg viewBox="0 0 560 380" style="width:100%;height:auto;display:block" role="img" aria-label="A stack of ledger sheets for December 2025, its left edge notched with 30 date tabs, one for each purchase date. The top sheet shows four invoice lines in full.">
             <g font-size="10" class="t-mono f-grey">
@@ -682,6 +746,7 @@ footer{border-top:1px solid var(--line);padding:80px 0 0;overflow:hidden}
         <div class="ms"><span>Step 3</span>Write down what does not match.</div>
       </div>
       <p class="statusline"><b>Measured by hand, before Mise was software.</b> The founding pilot is where the software has to match it.</p>
+      <p class="smallprint">And when a line does not match, it does not stop at a flag. The dispute goes to the supplier by email with the evidence pack attached: the flagged lines, the price that was agreed, and the receiving record. The supplier replies on the same thread, and the thread stays attached to the invoice.</p>
     </div>
 
     <!-- E21/V5: the empty result frame. Published empty, or not at all. -->
@@ -901,12 +966,16 @@ footer{border-top:1px solid var(--line);padding:80px 0 0;overflow:hidden}
         <div class="qa-a"><div class="qa-in">Pricing is per location, and it is explained whole on the 15-minute call, in your own invoice numbers: what it costs, what it has to save, and the terms, in the same order for every store at the same stage. Canadian founding terms are in Canadian dollars. Nothing is charged on this page, and no card is taken here.</div></div>
       </div>
       <div class="qa">
+        <button type="button" class="qhead" aria-expanded="false">How does the trial work?<span class="qmark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9.5l6 6 6-6"/></svg></span></button>
+        <div class="qa-a"><div class="qa-in">The pilot opens with a 14-day trial. A card is saved when the trial starts and is charged only when the trial ends, and you get a warning three days before the first charge. The data rights terms land in writing before the trial starts, so nothing about the card or your records is a surprise.</div></div>
+      </div>
+      <div class="qa">
         <button type="button" class="qhead" aria-expanded="false">What if it does not save more than it costs?<span class="qmark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9.5l6 6 6-6"/></svg></span></button>
-        <div class="qa-a"><div class="qa-in">On day 30 you get a written proof report on your own records: what was checked, what was found, what it saved. There is no guarantee and there are no refunds. We would rather you judge the report than a promise.</div></div>
+        <div class="qa-a"><div class="qa-in">On day 30 you get a written proof report on your own records, worked against the baseline set in the first checked week of your pilot: what was checked, what was found, what it saved. There is no guarantee and there are no refunds. We would rather you judge the report than a promise.</div></div>
       </div>
       <div class="qa">
         <button type="button" class="qhead" aria-expanded="false">What happens to my data?<span class="qmark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9.5l6 6 6-6"/></svg></span></button>
-        <div class="qa-a"><div class="qa-in">The details you send in the form are used to answer your request and run your pilot, and nothing else. Your store&rsquo;s records stay yours. The data rights terms are given in writing before any trial starts, and before a card is saved, so you can read them before anything begins.</div></div>
+        <div class="qa-a"><div class="qa-in">The details you send in the form are used to answer your request and run your pilot, and nothing else. Your store&rsquo;s records stay yours. The data rights terms are given in writing before any trial starts, and before a card is saved, so you can read them before anything begins. Support, when you ask for it, sees what the owner sees and changes nothing: access is read only, agreed with you, and time-boxed, and emergency access is declared to the owner at the moment it happens. Every company that touches your invoices is named in those terms, including the service that reads them.</div></div>
       </div>
     </div>
     <p class="fwdline rv">One more thing decides most calls: the biggest problem field in the form below. <a href="#book">Book a call<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15"/><path d="M13 6l6 6-6 6"/></svg></a></p>
@@ -1061,7 +1130,7 @@ footer{border-top:1px solid var(--line);padding:80px 0 0;overflow:hidden}
     <h2 class="rv">Leaving is as plain as joining.</h2>
     <div class="leavelines rv">
       <div class="ll"><b>Cancelling</b> is exactly as easy as signing up. There is no retention maze and no call you have to sit through to leave. Fees are non-refundable, and that is stated in the contract before you sign.</div>
-      <div class="ll"><b>Your records on exit</b> are covered by the data rights clause you received in writing before your trial started.</div>
+      <div class="ll"><b>Your records on exit</b> stay yours and stay exportable for twelve months after you leave, with a warning before anything is deleted. Come back inside the year and everything is restored exactly as you left it.</div>
       <div class="ll"><b>Coming back</b> is on the intro terms of the day you return, never a worse rung for having left. Founding terms are not promised on a return; they belong to the cohort that stayed.</div>
       <div class="ll"><b>Marketing emails</b> end with one click or one reply. The words are the same in every footer: unsubscribe at any time.</div>
     </div>
@@ -1100,7 +1169,7 @@ var root=document.documentElement, themeBtn=$('#themeBtn');
 function setTheme(t){root.setAttribute('data-theme',t);try{localStorage.setItem('mise-theme',t)}catch(e){}
   themeBtn.textContent=(t==='dark')?'Light':'Dark';if(reduced)drawStatic();}
 var saved=null;try{saved=localStorage.getItem('mise-theme')}catch(e){}
-setTheme(saved||'dark');
+setTheme(saved||'light');
 themeBtn.addEventListener('click',function(){setTheme(root.getAttribute('data-theme')==='dark'?'light':'dark');});
 
 /* ---------- INTRO (P01/P02, preserved) ---------- */

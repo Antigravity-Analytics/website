@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr-CA" data-theme="dark">
+<html lang="fr-CA" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <script data-collect-dnt="true" async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
 <script src="https://js.sentry-cdn.com/64e80ec8f5a4be798e2180b838a5c974.min.js" crossorigin="anonymous"></script>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="mise-form.css">
 <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif?collect-dnt=true" alt="" referrerpolicy="no-referrer-when-downgrade"></noscript>
 <style>
@@ -391,6 +391,54 @@ footer{border-top:1px solid var(--line);padding:80px 0 0;overflow:hidden}
   #intro{display:none}
 }
 </style>
+
+<style id="mise-v2">
+/* ===== MISE V2: the auditor's ledger. New palette and type, no brand kit. ===== */
+:root{--sg:'Fraunces',Georgia,'Times New Roman',serif}
+:root,[data-theme="dark"]{--bg:#17130C;--surface:#201A12;--surface2:#2A2317;--line:#3A3122;--line-hi:rgba(241,234,217,.30);--ink:#F1EAD9;--grey:#A99C84;--red:#D96F4E;--mark:#F1EAD9;--matrix:241,234,217;--navbg:rgba(23,19,12,.86);--shadow:0 24px 60px rgba(0,0,0,.45)}
+[data-theme="light"]{--bg:#F4EFE2;--surface:#FBF8EF;--surface2:#ECE4D0;--line:#DCD1B8;--line-hi:rgba(34,27,18,.34);--ink:#221B12;--grey:#766B57;--red:#AE3F2C;--mark:#221B12;--matrix:34,27,18;--navbg:rgba(244,239,226,.88);--shadow:0 24px 60px rgba(34,27,18,.13)}
+body{font-size:16.5px}
+h1,h2{font-weight:600;letter-spacing:-.018em;line-height:1.0}
+h1{font-size:clamp(54px,7.4vw,102px)}
+h2{font-size:clamp(34px,4.6vw,60px)}
+.panel h3,.cpanel h4,.step h4,.walksteps .ws h4,.plainblock h4,.qa button.qhead{font-family:var(--sg);font-weight:600}
+.eyebrow{color:var(--red);display:flex;align-items:center;gap:14px;font-weight:500}
+.eyebrow::before{content:"";width:36px;height:1px;background:var(--red);flex:0 0 36px}
+#circle .eyebrow,#book .eyebrow{justify-content:center}
+.cta{border-radius:3px;font-family:var(--mono);font-weight:600;text-transform:uppercase;letter-spacing:.13em;font-size:12px;padding:17px 28px}
+.cta:hover{box-shadow:7px 7px 0 var(--line)}
+.nav-cta{padding:11px 18px;font-size:11px}
+#themeBtn,.posbtn,.chipbtn,.miniform button,.mise-form .restore button{border-radius:3px}
+.posbtn,.chipbtn{font-family:var(--mono);text-transform:uppercase;letter-spacing:.1em;font-size:12px;font-weight:600}
+section{padding:128px 0}
+.stage,.figwrap,.filmwrap,.cpanel,.step,.plainblock,.qa,.countblock,.doorblock,.fitanswer,.msg,.gate,.tframe,.checkstrip{border-radius:6px}
+.walksteps .ws,.howstrip .hs,.lesserask .la{border-radius:6px}
+.step:hover{transform:translateY(-2px)}
+.kv .st,.gate .hold,.cells35 .cell,.shelfstrip .slot{border-radius:3px}
+.miniform input{border-radius:4px}
+.giant{font-weight:500;font-style:italic;letter-spacing:-.02em}
+.bars .fill{background:var(--red)}
+.leavelines .ll{padding:24px 0}
+[data-theme="light"] #matrix{opacity:.45}
+.mise-form{--bg:#17130C;--surface:#201A12;--surface2:#2A2317;--line:#3A3122;--line-hi:rgba(241,234,217,.30);--ink:#F1EAD9;--grey:#A99C84;--red:#D96F4E;--shadow:0 24px 60px rgba(0,0,0,.45);--sg:'Fraunces',Georgia,serif}
+[data-theme="light"] .mise-form{--bg:#F4EFE2;--surface:#FBF8EF;--surface2:#ECE4D0;--line:#DCD1B8;--line-hi:rgba(34,27,18,.34);--ink:#221B12;--grey:#766B57;--red:#AE3F2C;--shadow:0 24px 60px rgba(34,27,18,.13)}
+.mise-form .invite{border-radius:6px}
+.mise-form .invite::before{border-radius:4px}
+.mise-form .fi{border-radius:4px}
+.bench{margin-top:64px;border-top:2px solid var(--ink);padding-top:28px}
+.benchhead{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin:26px 0 8px}
+.benchhead .num{font-family:var(--mono);font-size:clamp(34px,4vw,52px);font-weight:600;letter-spacing:-.03em}
+.benchhead .cap{font-size:14px;color:var(--grey);margin-top:4px}
+.benchtable{width:100%;border-collapse:collapse;margin-top:26px}
+.benchtable th{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--grey);font-weight:500;text-align:left;padding:0 10px 12px 0;border-bottom:1px solid var(--line-hi)}
+.benchtable th:last-child,.benchtable td:last-child{text-align:right;padding-right:0}
+.benchtable td{padding:18px 10px 18px 0;border-bottom:1px solid var(--line);font-size:16px;vertical-align:baseline}
+.benchtable td.bv2{font-family:var(--mono);font-weight:600;white-space:nowrap}
+.benchtable td.before{color:var(--grey)}
+.benchtable td.delta{font-family:var(--mono);color:var(--red);font-weight:600;white-space:nowrap}
+.benchnote{margin-top:20px;font-size:14.5px;color:var(--grey);max-width:720px}
+@media(max-width:700px){.benchhead{grid-template-columns:1fr}.benchtable td{font-size:14.5px;padding:14px 6px 14px 0}}
+</style>
 </head>
 <!-- ============ INTRO (P01/P02) ============ -->
 <div id="intro" aria-hidden="true">
@@ -416,7 +464,7 @@ footer{border-top:1px solid var(--line);padding:80px 0 0;overflow:hidden}
       <a class="nl" href="#setup">Installation</a>
       <a class="nl" href="#questions">Questions</a>
       <a class="langlink" href="mise.html" hreflang="en">EN</a>
-      <button id="themeBtn" type="button" aria-label="Basculer entre le thème clair et le thème sombre">Clair</button>
+      <button id="themeBtn" type="button" aria-label="Basculer entre le thème clair et le thème sombre">Sombre</button>
       <a class="cta nav-cta" href="#book">Réserver un appel</a>
     </nav>
   </div>
@@ -603,14 +651,30 @@ footer{border-top:1px solid var(--line);padding:80px 0 0;overflow:hidden}
 <!-- ============ PROOF (Stage 4; F15: proof is its own beat; amended E19 to E21) ============ -->
 <section id="proof">
   <div class="wrap">
-    <div class="eyebrow rv">Preuve · Décembre 2025 · Vérifié à la main</div>
+    <div class="eyebrow rv">Preuve · Mesuré à la main</div>
     <h2 class="rv">Les factures semblaient correctes. Puis Mise a vérifié.</h2>
-    <p class="lede rv">Avant que Mise soit un logiciel, la vérification se faisait à la main. Voici un mois de ce travail : chaque ligne de facture fournisseur de décembre 2025, lue, vérifiée contre ce qui avait été convenu et ce qui était arrivé, et consignée.</p>
+    <p class="lede rv">Avant que Mise soit un logiciel, la vérification se faisait à la main, dans un réseau de 15 emplacements. Voici les résultats du pilote manuel : ce que la vérification a fait aux chiffres, mesuré avant que le produit existe. Un mois vérifié est conservé ci-dessous comme pièce à l’appui.</p>
+
+    <!-- Le repère : preuve principale, mesurée à la main -->
+    <div class="bench rv">
+      <div class="zlab">Le repère · 15 emplacements · Mesuré à la main</div>
+      <div class="benchhead">
+        <div><div class="num">619</div><div class="cap">lignes de facture vérifiées à la main, une par une</div></div>
+        <div><div class="num">50 380,85 $</div><div class="cap">de dépenses portées par ces lignes</div></div>
+      </div>
+      <table class="benchtable">
+        <tr><th scope="col">Mesure</th><th scope="col">Avant la vérification</th><th scope="col">Après la vérification</th><th scope="col">Écart</th></tr>
+        <tr><td>Erreurs de facturation</td><td class="bv2 before">8,72 %</td><td class="bv2 after">0,18 %</td><td class="delta">-8,54 pts</td></tr>
+        <tr><td>Écart de prix</td><td class="bv2 before">14,28 %</td><td class="bv2 after">2,14 %</td><td class="delta">-12,14 pts</td></tr>
+        <tr><td>Heures de gestion au bureau arrière</td><td class="bv2 before">6,25 h</td><td class="bv2 after">1,75 h</td><td class="delta">-4,50 h</td></tr>
+      </table>
+      <p class="benchnote">Quinze emplacements, un seul réseau, chaque ligne lue contre ce qui avait été convenu et ce qui était arrivé. Mesuré à la main, avant que Mise soit un logiciel. Le pilote fondateur est l’endroit où le logiciel doit égaler ce résultat.</p>
+    </div>
 
     <div class="zones">
       <!-- Zone A: the ledger stack -->
       <div class="zone rv">
-        <div class="zlab">Zone A · Le mois vérifié</div>
+        <div class="zlab">Zone A · La pièce à l’appui · Un mois vérifié</div>
         <div style="display:grid;grid-template-columns:1.2fr .8fr;gap:26px;align-items:start">
           <svg viewBox="0 0 560 380" style="width:100%;height:auto;display:block" role="img" aria-label="Une pile de feuilles de grand livre pour décembre 2025, son bord gauche entaillé de 30 onglets de dates, un pour chaque date d’achat. La feuille du dessus montre quatre lignes de facture au complet.">
             <g font-size="10" class="t-mono f-grey">
@@ -682,6 +746,7 @@ footer{border-top:1px solid var(--line);padding:80px 0 0;overflow:hidden}
         <div class="ms"><span>Étape 3</span>Consigner ce qui ne correspond pas.</div>
       </div>
       <p class="statusline"><b>Mesuré à la main, avant que Mise soit un logiciel.</b> Le pilote fondateur, c’est là où le logiciel doit arriver au même niveau.</p>
+      <p class="smallprint">Et quand une ligne ne correspond pas, ça ne s’arrête pas à un signalement. Le litige part au fournisseur par courriel avec le dossier de preuve joint : les lignes signalées, le prix qui avait été convenu et le registre de réception. Le fournisseur répond sur le même fil, et le fil reste attaché à la facture.</p>
     </div>
 
     <!-- E21/V5: the empty result frame. Published empty, or not at all. -->
@@ -901,12 +966,16 @@ footer{border-top:1px solid var(--line);padding:80px 0 0;overflow:hidden}
         <div class="qa-a"><div class="qa-in">Le prix est par emplacement, et il est expliqué au complet à l’appel de 15 minutes, dans les chiffres de vos propres factures : ce que ça coûte, ce que ça doit économiser, et les conditions, dans le même ordre pour chaque commerce au même stade. Les conditions fondatrices canadiennes sont en dollars canadiens. Rien n’est facturé sur cette page, et aucune carte n’y est prise.</div></div>
       </div>
       <div class="qa">
+        <button type="button" class="qhead" aria-expanded="false">Comment fonctionne l’essai ?<span class="qmark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9.5l6 6 6-6"/></svg></span></button>
+        <div class="qa-a"><div class="qa-in">Le pilote s’ouvre avec un essai de 14 jours. Une carte est enregistrée au début de l’essai et n’est débitée qu’à la fin de l’essai, et vous recevez un avertissement trois jours avant le premier débit. Les conditions sur les droits de données arrivent par écrit avant le début de l’essai, pour que rien, ni la carte ni vos dossiers, ne soit une surprise.</div></div>
+      </div>
+      <div class="qa">
         <button type="button" class="qhead" aria-expanded="false">Et si ça n’économise pas plus que ça coûte ?<span class="qmark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9.5l6 6 6-6"/></svg></span></button>
-        <div class="qa-a"><div class="qa-in">Au jour 30, vous recevez un rapport de preuve écrit sur vos propres dossiers : ce qui a été vérifié, ce qui a été trouvé, ce qui a été économisé. Il n’y a aucune garantie et aucun remboursement. Nous préférons que vous jugiez le rapport plutôt qu’une promesse.</div></div>
+        <div class="qa-a"><div class="qa-in">Au jour 30, vous recevez un rapport de preuve écrit sur vos propres dossiers, travaillé contre la base fixée dans la première semaine vérifiée de votre pilote : ce qui a été vérifié, ce qui a été trouvé, ce qui a été économisé. Il n’y a aucune garantie et aucun remboursement. Nous préférons que vous jugiez le rapport plutôt qu’une promesse.</div></div>
       </div>
       <div class="qa">
         <button type="button" class="qhead" aria-expanded="false">Qu’arrive-t-il à mes données ?<span class="qmark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9.5l6 6 6-6"/></svg></span></button>
-        <div class="qa-a"><div class="qa-in">Les détails que vous envoyez dans le formulaire servent à répondre à votre demande et à faire fonctionner votre pilote, et à rien d’autre. Les dossiers de votre commerce restent les vôtres. Les conditions sur les droits de données sont données par écrit avant le début de tout essai, et avant qu’une carte soit enregistrée, pour que vous puissiez les lire avant que quoi que ce soit commence.</div></div>
+        <div class="qa-a"><div class="qa-in">Les détails que vous envoyez dans le formulaire servent à répondre à votre demande et à faire fonctionner votre pilote, et à rien d’autre. Les dossiers de votre commerce restent les vôtres. Les conditions sur les droits de données sont données par écrit avant le début de tout essai, et avant qu’une carte soit enregistrée, pour que vous puissiez les lire avant que quoi que ce soit commence. Le soutien, quand vous le demandez, voit ce que le propriétaire voit et ne change rien : l’accès est en lecture seule, convenu avec vous et limité dans le temps, et tout accès d’urgence est déclaré au propriétaire au moment même où il se produit. Chaque entreprise qui touche vos factures est nommée dans ces conditions, y compris le service qui les lit.</div></div>
       </div>
     </div>
     <p class="fwdline rv">Une chose de plus décide la plupart des appels : le champ du plus gros problème dans le formulaire ci-dessous. <a href="#book">Réserver un appel<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15"/><path d="M13 6l6 6-6 6"/></svg></a></p>
@@ -1061,7 +1130,7 @@ footer{border-top:1px solid var(--line);padding:80px 0 0;overflow:hidden}
     <h2 class="rv">Partir est aussi simple que se joindre.</h2>
     <div class="leavelines rv">
       <div class="ll"><b>L’annulation</b> est exactement aussi facile que s’inscrire. Il n’y a aucun labyrinthe de rétention et aucun appel à endurer pour partir. Les frais sont non remboursables, et c’est énoncé dans le contrat avant que vous le signiez.</div>
-      <div class="ll"><b>Vos dossiers au départ</b> sont couverts par la clause sur les droits de données que vous avez reçue par écrit avant le début de votre essai.</div>
+      <div class="ll"><b>Vos dossiers au départ</b> restent les vôtres et restent exportables pendant douze mois après votre départ, avec un avertissement avant toute suppression. Revenez dans l’année et tout est restauré exactement comme vous l’aviez laissé.</div>
       <div class="ll"><b>Le retour</b> se fait aux conditions d’introduction du jour de votre retour, jamais un échelon pire pour être parti. Les conditions fondatrices ne sont pas promises lors d’un retour; elles appartiennent à la cohorte qui est restée.</div>
       <div class="ll"><b>Les courriels de marketing</b> prennent fin avec un clic ou une réponse. Les mots sont les mêmes dans chaque pied de page : se désabonner en tout temps.</div>
     </div>
@@ -1100,7 +1169,7 @@ var root=document.documentElement, themeBtn=$('#themeBtn');
 function setTheme(t){root.setAttribute('data-theme',t);try{localStorage.setItem('mise-theme',t)}catch(e){}
   themeBtn.textContent=(t==='dark')?'Clair':'Sombre';if(reduced)drawStatic();}
 var saved=null;try{saved=localStorage.getItem('mise-theme')}catch(e){}
-setTheme(saved||'dark');
+setTheme(saved||'light');
 themeBtn.addEventListener('click',function(){setTheme(root.getAttribute('data-theme')==='dark'?'light':'dark');});
 
 /* ---------- INTRO (P01/P02, preserved) ---------- */
