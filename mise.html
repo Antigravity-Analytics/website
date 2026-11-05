@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <script data-collect-dnt="true" async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
 <script src="https://js.sentry-cdn.com/64e80ec8f5a4be798e2180b838a5c974.min.js" crossorigin="anonymous"></script>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="mise-form.css">
 <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif?collect-dnt=true" alt="" referrerpolicy="no-referrer-when-downgrade"></noscript>
 <style>
@@ -392,52 +392,118 @@ footer{border-top:1px solid var(--line);padding:80px 0 0;overflow:hidden}
 }
 </style>
 
-<style id="mise-v2">
-/* ===== MISE V2: the auditor's ledger. New palette and type, no brand kit. ===== */
-:root{--sg:'Fraunces',Georgia,'Times New Roman',serif}
-:root,[data-theme="dark"]{--bg:#17130C;--surface:#201A12;--surface2:#2A2317;--line:#3A3122;--line-hi:rgba(241,234,217,.30);--ink:#F1EAD9;--grey:#A99C84;--red:#D96F4E;--mark:#F1EAD9;--matrix:241,234,217;--navbg:rgba(23,19,12,.86);--shadow:0 24px 60px rgba(0,0,0,.45)}
-[data-theme="light"]{--bg:#F4EFE2;--surface:#FBF8EF;--surface2:#ECE4D0;--line:#DCD1B8;--line-hi:rgba(34,27,18,.34);--ink:#221B12;--grey:#766B57;--red:#AE3F2C;--mark:#221B12;--matrix:34,27,18;--navbg:rgba(244,239,226,.88);--shadow:0 24px 60px rgba(34,27,18,.13)}
-body{font-size:16.5px}
-h1,h2{font-weight:600;letter-spacing:-.018em;line-height:1.0}
-h1{font-size:clamp(54px,7.4vw,102px)}
-h2{font-size:clamp(34px,4.6vw,60px)}
-.panel h3,.cpanel h4,.step h4,.walksteps .ws h4,.plainblock h4,.qa button.qhead{font-family:var(--sg);font-weight:600}
-.eyebrow{color:var(--red);display:flex;align-items:center;gap:14px;font-weight:500}
-.eyebrow::before{content:"";width:36px;height:1px;background:var(--red);flex:0 0 36px}
-#circle .eyebrow,#book .eyebrow{justify-content:center}
-.cta{border-radius:3px;font-family:var(--mono);font-weight:600;text-transform:uppercase;letter-spacing:.13em;font-size:12px;padding:17px 28px}
-.cta:hover{box-shadow:7px 7px 0 var(--line)}
+<style id="mise-ledger">
+/* ===== MISE LEDGER MINIMAL (adopted 2026-11-05): near-black frame and hero, cool greys and off-white,
+   teal only for Verified / Active / Links / Focus, muted amber only for Flagged. One sans family. ===== */
+:root{--sg:'Inter',-apple-system,'Segoe UI',sans-serif;--mono:'Inter',-apple-system,'Segoe UI',sans-serif;--body:'Inter',-apple-system,'Segoe UI',sans-serif}
+:root,[data-theme="dark"]{--bg:#0A0C0F;--surface:#12151B;--surface2:#1B2029;--line:#282E39;--line-hi:rgba(238,242,246,.30);--ink:#F2F4F7;--grey:#9AA3B0;--red:#C98A4B;--teal:#2FBFAE;--flagbg:rgba(201,138,75,.14);--flagline:rgba(201,138,75,.55);--tealbg:rgba(47,191,174,.13);--tealline:rgba(47,191,174,.5);--mark:#F2F4F7;--matrix:238,242,246;--navbg:rgba(10,12,15,.88);--shadow:0 24px 60px rgba(0,0,0,.5)}
+[data-theme="light"]{--bg:#F5F6F7;--surface:#FFFFFF;--surface2:#E8EBEE;--line:#D8DDE3;--line-hi:rgba(11,13,16,.30);--ink:#0B0D10;--grey:#5E6773;--red:#A96A28;--teal:#0B7A6E;--flagbg:rgba(169,106,40,.12);--flagline:rgba(169,106,40,.55);--tealbg:rgba(11,122,110,.10);--tealline:rgba(11,122,110,.5);--mark:#0B0D10;--matrix:238,242,246;--navbg:rgba(10,12,15,.92);--shadow:0 24px 60px rgba(11,13,16,.12)}
+h1,h2{font-weight:700;letter-spacing:-.03em;line-height:1.03}
+::selection{background:var(--teal);color:#fff}
+:focus-visible{outline:2px solid var(--teal);outline-offset:3px;border-radius:2px}
+/* tabular numerals wherever numbers carry the proof */
+.t-mono,.benchtable,.eq .fig,.gate .amt,.cells35 .cell,.scalefigs .num,.flatrow .num,.bars .bv,.kv,.minirow,.badge,.benchhead .num{font-variant-numeric:tabular-nums lining-nums}
+/* squared corners, grid discipline */
+.cta,#themeBtn,.posbtn,.chipbtn,.miniform button,.miniform input,.stage,.figwrap,.filmwrap,.cpanel,.step,.plainblock,.qa,.countblock,.doorblock,.fitanswer,.msg,.gate,.tframe,.checkstrip,.walksteps .ws,.howstrip .hs,.lesserask .la,.kv .st,.gate .hold,.cells35 .cell,.shelfstrip .slot,.badge,.mpcard{border-radius:2px}
+.qa .qmark{border-radius:2px}
+.cta{font-family:var(--sg);font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:12px;padding:17px 28px}
 .nav-cta{padding:11px 18px;font-size:11px}
-#themeBtn,.posbtn,.chipbtn,.miniform button,.mise-form .restore button{border-radius:3px}
-.posbtn,.chipbtn{font-family:var(--mono);text-transform:uppercase;letter-spacing:.1em;font-size:12px;font-weight:600}
-section{padding:128px 0}
-.stage,.figwrap,.filmwrap,.cpanel,.step,.plainblock,.qa,.countblock,.doorblock,.fitanswer,.msg,.gate,.tframe,.checkstrip{border-radius:6px}
-.walksteps .ws,.howstrip .hs,.lesserask .la{border-radius:6px}
-.step:hover{transform:translateY(-2px)}
-.kv .st,.gate .hold,.cells35 .cell,.shelfstrip .slot{border-radius:3px}
-.miniform input{border-radius:4px}
-.giant{font-weight:500;font-style:italic;letter-spacing:-.02em}
-.bars .fill{background:var(--red)}
-.leavelines .ll{padding:24px 0}
-[data-theme="light"] #matrix{opacity:.45}
-.mise-form{--bg:#17130C;--surface:#201A12;--surface2:#2A2317;--line:#3A3122;--line-hi:rgba(241,234,217,.30);--ink:#F1EAD9;--grey:#A99C84;--red:#D96F4E;--shadow:0 24px 60px rgba(0,0,0,.45);--sg:'Fraunces',Georgia,serif}
-[data-theme="light"] .mise-form{--bg:#F4EFE2;--surface:#FBF8EF;--surface2:#ECE4D0;--line:#DCD1B8;--line-hi:rgba(34,27,18,.34);--ink:#221B12;--grey:#766B57;--red:#AE3F2C;--shadow:0 24px 60px rgba(34,27,18,.13)}
-.mise-form .invite{border-radius:6px}
-.mise-form .invite::before{border-radius:4px}
-.mise-form .fi{border-radius:4px}
+#themeBtn,.posbtn,.chipbtn,.miniform button,.mise-form .restore button{border-radius:2px}
+.posbtn,.chipbtn{text-transform:uppercase;letter-spacing:.1em;font-size:12px;font-weight:700}
+/* header: near-black frame in both themes */
+header{background:#0A0C0F;border-bottom:1px solid #282E39}
+header .brand b{color:#F2F4F7}
+header .brand svg .mk{fill:#F2F4F7}
+header .brand-sub{color:#9AA3B0}
+header .nav-links a.nl{color:#9AA3B0}
+header .nav-links a.nl:hover{color:#F2F4F7}
+header .langlink{color:#9AA3B0}
+header .langlink:hover{color:#F2F4F7}
+header #themeBtn{border-color:#3A414D;color:#C7CDD4}
+header #themeBtn:hover{border-color:#F2F4F7;color:#F2F4F7}
+header .nav-cta{background:#F2F4F7;color:#0A0C0F;border-color:#F2F4F7}
+/* hero: near-black field, off-white type, in both themes */
+#hero{background:#0A0C0F;color:#F2F4F7}
+#hero .defline{color:#F2F4F7}
+#hero .lede{color:#AEB7C2}
+#hero .eyebrow{color:#9AA3B0}
+#hero .eyebrow::before{background:#9AA3B0}
+#hero .hero-note{color:#8B95A3}
+#hero .hero-note b{color:#F2F4F7}
+#hero .cta{background:#F2F4F7;color:#0A0C0F;border-color:#F2F4F7}
+#hero .cta.ghost{background:transparent;color:#F2F4F7;border-color:rgba(238,242,246,.4)}
+#hero .filmwrap{border-color:#282E39;background:#12151B;box-shadow:0 24px 60px rgba(0,0,0,.5)}
+#hero .badge{background:#12151B;border-color:#282E39;color:#9AA3B0;box-shadow:0 16px 40px rgba(0,0,0,.45)}
+#hero .badge b{color:#F2F4F7}
+#hero .badge .rd{color:var(--red)}
+#hero .badge .pulse{background:var(--teal)}
+/* eyebrow: quiet label, never the flag colour */
+.eyebrow{color:var(--grey);display:flex;align-items:center;gap:14px;font-weight:500}
+.eyebrow::before{content:"";width:36px;height:1px;background:var(--grey);flex:0 0 36px}
+#circle .eyebrow,#book .eyebrow{justify-content:center}
+/* statuses: Verified teal, Flagged amber, Pending cool grey */
+.kv .st.red{background:var(--flagbg);color:var(--red);border:1px solid var(--flagline)}
+.kv .st.watch{background:var(--surface2);color:var(--grey);border:1px solid var(--line)}
+.kv .st.ok{background:var(--tealbg);color:var(--teal);border:1px solid var(--tealline)}
+.tab.active{border-bottom-color:var(--teal)}
+.gate{border-color:var(--flagline);background:var(--flagbg)}
+.step .n,.walksteps .ws .n,.howstrip .hs b,.seqlist .day{color:var(--grey)}
+.bars .fill{background:var(--ink)}
+.wlsuccess .ic{stroke:var(--teal)}
+/* links and focus take the teal, nothing else does */
+.textlink{color:var(--teal)}
+.fwdline a{color:var(--teal);border-bottom-color:var(--tealline)}
+.smallprint a,.triage a,.footmanage a,.manageline a{color:var(--teal)}
+.desk a{color:var(--teal)}
+.desk a:hover{border-color:var(--teal)}
+.miniform input:focus{border-color:var(--teal)}
+/* sticky bar rides on the near-black frame too */
+.stickybar{background:#0A0C0F;border-top:1px solid #282E39}
+.stickybar .cta{background:#F2F4F7;color:#0A0C0F;border-color:#F2F4F7}
+.stickybar .cta.ghost{background:transparent;color:#F2F4F7;border-color:rgba(238,242,246,.4)}
+.giant{font-weight:700;font-style:normal}
+/* benchmark table: numbers right, tabular */
 .bench{margin-top:64px;border-top:2px solid var(--ink);padding-top:28px}
 .benchhead{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin:26px 0 8px}
-.benchhead .num{font-family:var(--mono);font-size:clamp(34px,4vw,52px);font-weight:600;letter-spacing:-.03em}
+.benchhead .num{font-size:clamp(34px,4vw,52px);font-weight:700;letter-spacing:-.03em}
 .benchhead .cap{font-size:14px;color:var(--grey);margin-top:4px}
 .benchtable{width:100%;border-collapse:collapse;margin-top:26px}
-.benchtable th{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--grey);font-weight:500;text-align:left;padding:0 10px 12px 0;border-bottom:1px solid var(--line-hi)}
-.benchtable th:last-child,.benchtable td:last-child{text-align:right;padding-right:0}
+.benchtable th{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--grey);font-weight:600;text-align:left;padding:0 10px 12px 0;border-bottom:1px solid var(--line-hi)}
+.benchtable th:nth-child(n+2),.benchtable td:nth-child(n+2){text-align:right;padding-right:0;padding-left:10px}
 .benchtable td{padding:18px 10px 18px 0;border-bottom:1px solid var(--line);font-size:16px;vertical-align:baseline}
-.benchtable td.bv2{font-family:var(--mono);font-weight:600;white-space:nowrap}
+.benchtable td.bv2{font-weight:700;white-space:nowrap}
 .benchtable td.before{color:var(--grey)}
-.benchtable td.delta{font-family:var(--mono);color:var(--red);font-weight:600;white-space:nowrap}
+.benchtable td.delta{color:var(--ink);font-weight:700;white-space:nowrap}
 .benchnote{margin-top:20px;font-size:14.5px;color:var(--grey);max-width:720px}
 @media(max-width:700px){.benchhead{grid-template-columns:1fr}.benchtable td{font-size:14.5px;padding:14px 6px 14px 0}}
+/* form panel on the same tokens */
+.mise-form{--bg:#0A0C0F;--surface:#12151B;--surface2:#1B2029;--line:#282E39;--line-hi:rgba(238,242,246,.30);--ink:#F2F4F7;--grey:#9AA3B0;--red:#C98A4B;--teal:#2FBFAE;--shadow:0 24px 60px rgba(0,0,0,.5);--sg:'Inter',-apple-system,'Segoe UI',sans-serif;--mono:'Inter',-apple-system,'Segoe UI',sans-serif;--body:'Inter',-apple-system,'Segoe UI',sans-serif}
+[data-theme="light"] .mise-form{--bg:#F5F6F7;--surface:#FFFFFF;--surface2:#E8EBEE;--line:#D8DDE3;--line-hi:rgba(11,13,16,.30);--ink:#0B0D10;--grey:#5E6773;--red:#A96A28;--teal:#0B7A6E;--shadow:0 24px 60px rgba(11,13,16,.12)}
+.mise-form .invite{border-radius:2px}
+.mise-form .invite::before{border-radius:2px}
+.mise-form .fi{border-radius:2px}
+.mise-form .fi:focus{border-color:var(--teal)}
+.mise-form :focus-visible{outline:2px solid var(--teal);outline-offset:3px}
+.mise-form input[type=checkbox]:checked,.mise-form input[type=radio]:checked{border-color:var(--teal);background:var(--teal)}
+.mise-form .cta{border-radius:2px}
+.mise-form .restore button{border-radius:2px}
+.mise-form .consent{border-radius:2px}
+.mise-form .formerr{border-radius:2px}
+/* marketplace: proof-card listing, chips by the same status law */
+.mktgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:44px}
+.mpcard{border:1px solid var(--line);background:var(--surface);padding:30px;margin-top:18px}
+.mpcard .mphead{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:center;border-bottom:1px solid var(--line);padding-bottom:14px}
+.mpcard .mpname{font-weight:700;font-size:18px;letter-spacing:-.01em}
+.mpdoc{display:flex;justify-content:space-between;gap:14px;padding:13px 2px;border-bottom:1px solid var(--line);font-size:14.5px;align-items:center}
+.mpdoc:last-of-type{border-bottom:none}
+.chip{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;padding:5px 10px;border:1px solid var(--line);border-radius:2px;color:var(--grey);white-space:nowrap;font-weight:600;font-variant-numeric:tabular-nums lining-nums}
+.chip.ok{background:var(--tealbg);color:var(--teal);border-color:var(--tealline)}
+.chip.flag{background:var(--flagbg);color:var(--red);border-color:var(--flagline)}
+.chip.new{background:var(--surface2);color:var(--grey);border-color:var(--line)}
+.mpfoot{margin-top:14px;font-size:13.5px;color:var(--grey)}
+.mpdoor{margin-top:18px}
+@media(max-width:900px){.mktgrid{grid-template-columns:1fr}}
+@media(max-width:560px){.mpcard{padding:22px 18px}.mpdoc{flex-wrap:wrap;row-gap:8px}.chip{white-space:normal}.mpdoor .cta{width:100%;white-space:normal;text-align:center;line-height:1.5}}
 </style>
 </head>
 <!-- ============ INTRO (P01/P02) ============ -->
@@ -461,6 +527,7 @@ section{padding:128px 0}
     <nav class="nav-links" aria-label="Primary">
       <a class="nl" href="#routine">How it works</a>
       <a class="nl" href="#proof">Proof</a>
+      <a class="nl" href="#marketplace">Marketplace</a>
       <a class="nl" href="#setup">Setup</a>
       <a class="nl" href="#questions">Questions</a>
       <a class="langlink" href="mise-fr.html" hreflang="fr-CA">FR</a>
@@ -479,9 +546,9 @@ section{padding:128px 0}
   <div class="wrap herogrid">
     <div class="pocket">
       <p class="defline rv">Mise is the back office that checks your invoices, your counts and your orders, in one place.</p>
-      <div class="eyebrow rv">For quick-service restaurants, cafés &amp; franchises across Canada</div>
+      <div class="eyebrow rv">For quick-service restaurants, cafés &amp; franchises across the United States and Canada</div>
       <h1 class="rv">See what&rsquo;s running low before 4&nbsp;PM on a Friday.</h1>
-      <p class="lede rv">Mise is in its founding pilot, built by hand, kitchen by kitchen, with operators who want it to last. The 10-minute morning routine comes first: what could run out today, what yesterday cost you, one order to approve.</p>
+      <p class="lede rv">Mise is in its founding pilot, built by hand, kitchen by kitchen, with operators who want it to last. The 10-minute morning routine comes first: what could run out today, what yesterday cost you, the prep list, one order to approve.</p>
       <div class="hero-ctas rv">
         <a class="cta" href="#book">Book a call</a>
         <a class="cta ghost" href="#routine">See the 10-minute morning routine</a>
@@ -504,7 +571,7 @@ section{padding:128px 0}
   <div class="wrap">
     <div class="eyebrow rv">How it works</div>
     <h2 class="rv">The 10-minute morning routine.</h2>
-    <p class="lede rv">Every morning at 08:15: what could run out today, what yesterday cost you, a two-minute stock count, one order to approve. Longer than ten minutes means something&rsquo;s wrong.</p>
+    <p class="lede rv">Every morning at 08:15: what could run out today, what yesterday cost you, a two-minute stock count, the prep list and the opening checklist, one order to approve. Longer than ten minutes means something&rsquo;s wrong.</p>
     <p class="rv" style="font-family:var(--mono);font-size:10px;letter-spacing:.22em;color:var(--grey);text-transform:uppercase;margin-top:18px">Illustrated concept. Mise is in its founding pilot</p>
 
     <!-- V1: Shelf truth from paper truth (Stage 3 opening viewport only) -->
@@ -516,7 +583,7 @@ section{padding:128px 0}
         <!-- boards -->
         <g class="f-surf s-hi"><rect x="30" y="84" width="580" height="8"/><rect x="30" y="168" width="580" height="8"/><rect x="30" y="252" width="580" height="8"/></g>
         <!-- level 1 items: folded and stacked sheets -->
-        <g fill="#F4F2ED" stroke="rgba(90,95,105,.55)">
+        <g fill="#E9EDF1" stroke="rgba(90,95,105,.55)">
           <rect x="92" y="40" width="70" height="44"/><rect x="95" y="37" width="70" height="44"/>
           <rect x="206" y="52" width="54" height="32"/><rect x="209" y="49" width="54" height="32"/>
           <rect x="382" y="46" width="80" height="38"/><rect x="385" y="43" width="80" height="38"/>
@@ -525,7 +592,7 @@ section{padding:128px 0}
         <text x="104" y="66" font-size="7.5" class="t-mono" fill="rgba(5,7,10,.55)">INV 0417</text>
         <path d="M316 58l6 7 10-13" class="f-none s-ink" stroke-width="2.4"/>
         <!-- level 2 items, one flagged -->
-        <g fill="#F4F2ED" stroke="rgba(90,95,105,.55)">
+        <g fill="#E9EDF1" stroke="rgba(90,95,105,.55)">
           <rect x="98" y="126" width="64" height="42"/><rect x="101" y="123" width="64" height="42"/>
           <rect x="228" y="120" width="70" height="48"/><rect x="231" y="117" width="70" height="48"/>
           <rect x="420" y="132" width="58" height="36"/>
@@ -535,7 +602,7 @@ section{padding:128px 0}
         <text x="240" y="148" font-size="7.5" class="t-mono" fill="rgba(5,7,10,.55)">CNT 12</text>
         <path d="M344 142l6 7 10-13" class="f-none s-ink" stroke-width="2.4"/>
         <!-- level 3 items -->
-        <g fill="#F4F2ED" stroke="rgba(90,95,105,.55)">
+        <g fill="#E9EDF1" stroke="rgba(90,95,105,.55)">
           <rect x="90" y="206" width="76" height="46"/><rect x="93" y="203" width="76" height="46"/>
           <rect x="282" y="218" width="56" height="34"/>
           <rect x="402" y="204" width="82" height="48"/><rect x="405" y="201" width="82" height="48"/>
@@ -557,7 +624,7 @@ section{padding:128px 0}
         <div class="panel active" data-panel="0" role="tabpanel" id="panel-0" aria-labelledby="tab-0">
           <h3>Count ten items. Not two hundred.</h3>
           <p class="psub">Mise flags only what needs eyes. Two minutes in the walk-in, then you&rsquo;re done.</p>
-          <div class="kv"><span class="it">Soft cheese, bulk block</span><span class="st red">Red · order 2</span></div>
+          <div class="kv"><span class="it">Soft cheese, bulk block</span><span class="st red">Flagged · order 2</span></div>
           <div class="kv"><span class="it">Whole milk</span><span class="st watch">Watch · 1 day left</span></div>
           <div class="kv"><span class="it">Burger buns</span><span class="st watch">Watch · Friday rush risk</span></div>
           <div class="kv"><span class="it">Chicken breast, portioned</span><span class="st watch">Watch · 2 days left</span></div>
@@ -584,6 +651,7 @@ section{padding:128px 0}
             <div class="stn gapstn"><div class="lab">The gap</div><div class="fig">−CA$12.60</div></div>
           </div>
           <p class="eqclose"><b>The question is what happened, never who did it.</b><br>Likely cause: unlogged batch waste. Next step: recount the walk-in before ordering.</p>
+          <p class="eqclose">Margins read off the same numbers: every dish set against the real cost of what went into it.</p>
         </div>
         <div class="panel" data-panel="2" role="tabpanel" id="panel-2" aria-labelledby="tab-2">
           <h3>You approve every order.</h3>
@@ -828,7 +896,7 @@ section{padding:128px 0}
       </div>
       <div class="plainblock rv">
         <h4>Not yet</h4>
-        <p>Integrations beyond the systems named in the fit check below are not in the pilot. Anything not named as included is a later step, and we will say so plainly rather than let you assume.</p>
+        <p>Integrations beyond the systems named in the fit check below are not in the pilot. Named plainly as later steps: the marketplace, prep lists and checklists, and margin views. Anything not named as included is a later step, and we will say so plainly rather than let you assume.</p>
       </div>
     </div>
 
@@ -836,6 +904,38 @@ section{padding:128px 0}
   </div>
 </section>
 
+<!-- ============ MARKETPLACE (2026-11-05: both halves of the updated scope, honest state) ============ -->
+<section id="marketplace">
+  <div class="wrap">
+    <div class="eyebrow rv">The marketplace</div>
+    <h2 class="rv">Services you can trust.</h2>
+    <p class="lede rv">Mise is also a marketplace. When the fridge breaks at 4 PM, or the menu needs a camera, you hire from listings that show their papers in the open. No badges. No claim the documents do not support.</p>
+    <div class="mktgrid">
+      <div class="plainblock rv">
+        <h4>Repairs and servicing</h4>
+        <p>Refrigeration, HVAC, plumbing, electrical, cleaning, pest control: the trades a store runs on. Every listing shows the documents behind it, each with its expiry date: insurance, licence, registration. A document close to expiry shows as close to expiry. A missing document shows as missing.</p>
+      </div>
+      <div class="plainblock rv">
+        <h4>Creative</h4>
+        <p>Videographers, photographers, menu designers. The same rule as the trades: the work sits in the open, the papers sit beside it, and the listing says plainly what is on file and what is not.</p>
+      </div>
+    </div>
+
+    <div class="mpcard rv" role="img" aria-label="A sample marketplace listing for a refrigeration provider. Its documents are listed with their state: insurance on file, licence on file, registration missing. The provider is new, with no jobs yet.">
+      <div class="mphead"><span class="mpname">Refrigeration · Your city</span><span class="chip new">New provider · No jobs yet</span></div>
+      <div class="mpdoc"><span>Insurance certificate</span><span class="chip ok">On file · Expiry shown</span></div>
+      <div class="mpdoc"><span>Trade licence</span><span class="chip ok">On file · Expiry shown</span></div>
+      <div class="mpdoc"><span>Business registration</span><span class="chip flag">Missing · Shown as missing</span></div>
+      <p class="mpfoot">Sample listing, shown the way every listing shows. No ratings: ratings wait for real jobs. Stores pay providers directly. Mise never touches the money.</p>
+    </div>
+
+    <div class="plainblock mpdoor rv">
+      <h4>Run a trade, or a camera?</h4>
+      <p>Get found by the food businesses near you. Free to list. Stores pay you directly. The marketplace opens in steps, after the founding pilot&rsquo;s back office. Leave your details in the form below and say you are a provider: your trade or your craft, your city, and what you do. We write when your category opens. No jobs are promised.</p>
+      <p style="margin-top:16px"><a class="cta ghost" href="#book">Register interest as a provider</a></p>
+    </div>
+  </div>
+</section>
 <!-- ============ FIT CHECK (Stage 6) ============ -->
 <section id="fit">
   <div class="wrap">
@@ -882,7 +982,7 @@ section{padding:128px 0}
     </div>
 
     <p class="smallprint rv"><b style="color:var(--ink)">Suppliers:</b> your supplier list is built with you, from your real invoices, during setup. There is no supplier database to match against, and no match is promised.</p>
-    <p class="smallprint rv">Built for Canada. Founding terms are in Canadian dollars and are explained whole on the call. Mise works in English and French Canadian. This page is also available in French: <a href="mise-fr.html" hreflang="fr-CA">Mise en français</a>.</p>
+    <p class="smallprint rv">Built for the United States and Canada, with India next. Founding terms are explained whole on the call: in Canada, in Canadian dollars; in the United States, in US dollars. Mise works in English and French Canadian. This page is also available in French: <a href="mise-fr.html" hreflang="fr-CA">Mise en français</a>.</p>
   </div>
 </section>
 
@@ -963,7 +1063,7 @@ section{padding:128px 0}
       </div>
       <div class="qa">
         <button type="button" class="qhead" aria-expanded="false">What does it cost?<span class="qmark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9.5l6 6 6-6"/></svg></span></button>
-        <div class="qa-a"><div class="qa-in">Pricing is per location, and it is explained whole on the 15-minute call, in your own invoice numbers: what it costs, what it has to save, and the terms, in the same order for every store at the same stage. Canadian founding terms are in Canadian dollars. Nothing is charged on this page, and no card is taken here.</div></div>
+        <div class="qa-a"><div class="qa-in">Pricing is per location, and it is explained whole on the 15-minute call, in your own invoice numbers: what it costs, what it has to save, and the terms, in the same order for every store at the same stage. In Canada the terms are in Canadian dollars; in the United States, in US dollars. Nothing is charged on this page, and no card is taken here.</div></div>
       </div>
       <div class="qa">
         <button type="button" class="qhead" aria-expanded="false">How does the trial work?<span class="qmark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9.5l6 6 6-6"/></svg></span></button>
@@ -987,7 +1087,7 @@ section{padding:128px 0}
   <div class="wrap">
     <div class="eyebrow rv">The inner circle</div>
     <h2 class="rv">Built for the ones usually left out.</h2>
-    <p class="lede rv">Counts, invoices and purchasing, checked in one place. If you run the back office, you belong in the circle.</p>
+    <p class="lede rv">Counts, invoices and purchasing, checked in one place, and the help you hire, listed with its papers in the open. If you run the back office, you belong in the circle.</p>
     <div class="countblock rv" id="countblock">
       <div class="cbig">The founding cohort is open.</div>
       <div class="csmall">Places are being taken on calls, one store at a time.</div>
@@ -1149,7 +1249,7 @@ section{padding:128px 0}
       <div class="desk"><div class="dk">Investors</div><a href="mailto:endowing@antigrav.si">endowing@antigrav.si</a></div>
     </div>
     <p class="footmanage">Booked a call and need to move it? Your confirmation email carries the link, or write to <a href="mailto:hello@antigrav.si">hello@antigrav.si</a>.</p>
-    <div class="parent">Built by <a href="https://antigrav.si">Antigravity Analytics</a> · Canada-wide operations · Toronto · Montreal · Vancouver<br><span style="font-size:11px">Privacy-first analytics by Simple Analytics: no cookies, no personal data, honors Do Not Track.</span></div>
+    <div class="parent">Built by <a href="https://antigrav.si">Antigravity Analytics</a> · United States and Canada, India next · Toronto · Montreal · Vancouver<br><span style="font-size:11px">Privacy-first analytics by Simple Analytics: no cookies, no personal data, honors Do Not Track.</span></div>
   </div>
   <div style="text-align:center;margin-top:36px"><img src="/nvidia-inception-badge.svg" alt="NVIDIA Inception program member badge" style="width:170px;max-width:60vw;height:auto" loading="lazy"><div style="font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--grey);margin-top:10px">Built by an NVIDIA Inception program member</div></div>
   <div class="giant" aria-hidden="true">MISE</div>
@@ -1209,7 +1309,7 @@ function tick(){
   if(!running)return;
   var dark=themeDark(),W=cv.width/(Math.min(window.devicePixelRatio||1,2)),H=cv.height/(Math.min(window.devicePixelRatio||1,2));
   ctx.clearRect(0,0,W,H);
-  ctx.font='500 '+CELL+'px "IBM Plex Mono",monospace';
+  ctx.font='500 '+CELL+'px "Inter",sans-serif';
   ctx.textAlign='center';ctx.textBaseline='middle';
   var R=175,mr=R/CELL;
   for(var r=0;r<rows;r++)for(var c=0;c<cols;c++){
@@ -1224,8 +1324,8 @@ function tick(){
       var t=1-d/R;t=t*t*(3-2*t);alpha=Math.min(1,cell.a+t*.95);
       ch="MISE "[c%5];
     }
-    if(cell.red>0){ctx.fillStyle='rgba(200,16,46,'+Math.min(1,.35+cell.red/26*.65)+')';}
-    else{var rgb=dark?'255,255,255':'5,7,10';
+    if(cell.red>0){ctx.fillStyle='rgba(201,138,75,'+Math.min(1,.35+cell.red/26*.65)+')';}
+    else{var rgb='238,242,246';
       ctx.fillStyle='rgba('+rgb+','+alpha.toFixed(3)+')';}
     ctx.fillText(ch,x,y);
   }

@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <script data-collect-dnt="true" async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
 <script src="https://js.sentry-cdn.com/64e80ec8f5a4be798e2180b838a5c974.min.js" crossorigin="anonymous"></script>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="mise-form.css">
 <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif?collect-dnt=true" alt="" referrerpolicy="no-referrer-when-downgrade"></noscript>
 <style>
@@ -392,52 +392,118 @@ footer{border-top:1px solid var(--line);padding:80px 0 0;overflow:hidden}
 }
 </style>
 
-<style id="mise-v2">
-/* ===== MISE V2: the auditor's ledger. New palette and type, no brand kit. ===== */
-:root{--sg:'Fraunces',Georgia,'Times New Roman',serif}
-:root,[data-theme="dark"]{--bg:#17130C;--surface:#201A12;--surface2:#2A2317;--line:#3A3122;--line-hi:rgba(241,234,217,.30);--ink:#F1EAD9;--grey:#A99C84;--red:#D96F4E;--mark:#F1EAD9;--matrix:241,234,217;--navbg:rgba(23,19,12,.86);--shadow:0 24px 60px rgba(0,0,0,.45)}
-[data-theme="light"]{--bg:#F4EFE2;--surface:#FBF8EF;--surface2:#ECE4D0;--line:#DCD1B8;--line-hi:rgba(34,27,18,.34);--ink:#221B12;--grey:#766B57;--red:#AE3F2C;--mark:#221B12;--matrix:34,27,18;--navbg:rgba(244,239,226,.88);--shadow:0 24px 60px rgba(34,27,18,.13)}
-body{font-size:16.5px}
-h1,h2{font-weight:600;letter-spacing:-.018em;line-height:1.0}
-h1{font-size:clamp(54px,7.4vw,102px)}
-h2{font-size:clamp(34px,4.6vw,60px)}
-.panel h3,.cpanel h4,.step h4,.walksteps .ws h4,.plainblock h4,.qa button.qhead{font-family:var(--sg);font-weight:600}
-.eyebrow{color:var(--red);display:flex;align-items:center;gap:14px;font-weight:500}
-.eyebrow::before{content:"";width:36px;height:1px;background:var(--red);flex:0 0 36px}
-#circle .eyebrow,#book .eyebrow{justify-content:center}
-.cta{border-radius:3px;font-family:var(--mono);font-weight:600;text-transform:uppercase;letter-spacing:.13em;font-size:12px;padding:17px 28px}
-.cta:hover{box-shadow:7px 7px 0 var(--line)}
+<style id="mise-ledger">
+/* ===== MISE LEDGER MINIMAL (adopted 2026-11-05): near-black frame and hero, cool greys and off-white,
+   teal only for Verified / Active / Links / Focus, muted amber only for Flagged. One sans family. ===== */
+:root{--sg:'Inter',-apple-system,'Segoe UI',sans-serif;--mono:'Inter',-apple-system,'Segoe UI',sans-serif;--body:'Inter',-apple-system,'Segoe UI',sans-serif}
+:root,[data-theme="dark"]{--bg:#0A0C0F;--surface:#12151B;--surface2:#1B2029;--line:#282E39;--line-hi:rgba(238,242,246,.30);--ink:#F2F4F7;--grey:#9AA3B0;--red:#C98A4B;--teal:#2FBFAE;--flagbg:rgba(201,138,75,.14);--flagline:rgba(201,138,75,.55);--tealbg:rgba(47,191,174,.13);--tealline:rgba(47,191,174,.5);--mark:#F2F4F7;--matrix:238,242,246;--navbg:rgba(10,12,15,.88);--shadow:0 24px 60px rgba(0,0,0,.5)}
+[data-theme="light"]{--bg:#F5F6F7;--surface:#FFFFFF;--surface2:#E8EBEE;--line:#D8DDE3;--line-hi:rgba(11,13,16,.30);--ink:#0B0D10;--grey:#5E6773;--red:#A96A28;--teal:#0B7A6E;--flagbg:rgba(169,106,40,.12);--flagline:rgba(169,106,40,.55);--tealbg:rgba(11,122,110,.10);--tealline:rgba(11,122,110,.5);--mark:#0B0D10;--matrix:238,242,246;--navbg:rgba(10,12,15,.92);--shadow:0 24px 60px rgba(11,13,16,.12)}
+h1,h2{font-weight:700;letter-spacing:-.03em;line-height:1.03}
+::selection{background:var(--teal);color:#fff}
+:focus-visible{outline:2px solid var(--teal);outline-offset:3px;border-radius:2px}
+/* tabular numerals wherever numbers carry the proof */
+.t-mono,.benchtable,.eq .fig,.gate .amt,.cells35 .cell,.scalefigs .num,.flatrow .num,.bars .bv,.kv,.minirow,.badge,.benchhead .num{font-variant-numeric:tabular-nums lining-nums}
+/* squared corners, grid discipline */
+.cta,#themeBtn,.posbtn,.chipbtn,.miniform button,.miniform input,.stage,.figwrap,.filmwrap,.cpanel,.step,.plainblock,.qa,.countblock,.doorblock,.fitanswer,.msg,.gate,.tframe,.checkstrip,.walksteps .ws,.howstrip .hs,.lesserask .la,.kv .st,.gate .hold,.cells35 .cell,.shelfstrip .slot,.badge,.mpcard{border-radius:2px}
+.qa .qmark{border-radius:2px}
+.cta{font-family:var(--sg);font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:12px;padding:17px 28px}
 .nav-cta{padding:11px 18px;font-size:11px}
-#themeBtn,.posbtn,.chipbtn,.miniform button,.mise-form .restore button{border-radius:3px}
-.posbtn,.chipbtn{font-family:var(--mono);text-transform:uppercase;letter-spacing:.1em;font-size:12px;font-weight:600}
-section{padding:128px 0}
-.stage,.figwrap,.filmwrap,.cpanel,.step,.plainblock,.qa,.countblock,.doorblock,.fitanswer,.msg,.gate,.tframe,.checkstrip{border-radius:6px}
-.walksteps .ws,.howstrip .hs,.lesserask .la{border-radius:6px}
-.step:hover{transform:translateY(-2px)}
-.kv .st,.gate .hold,.cells35 .cell,.shelfstrip .slot{border-radius:3px}
-.miniform input{border-radius:4px}
-.giant{font-weight:500;font-style:italic;letter-spacing:-.02em}
-.bars .fill{background:var(--red)}
-.leavelines .ll{padding:24px 0}
-[data-theme="light"] #matrix{opacity:.45}
-.mise-form{--bg:#17130C;--surface:#201A12;--surface2:#2A2317;--line:#3A3122;--line-hi:rgba(241,234,217,.30);--ink:#F1EAD9;--grey:#A99C84;--red:#D96F4E;--shadow:0 24px 60px rgba(0,0,0,.45);--sg:'Fraunces',Georgia,serif}
-[data-theme="light"] .mise-form{--bg:#F4EFE2;--surface:#FBF8EF;--surface2:#ECE4D0;--line:#DCD1B8;--line-hi:rgba(34,27,18,.34);--ink:#221B12;--grey:#766B57;--red:#AE3F2C;--shadow:0 24px 60px rgba(34,27,18,.13)}
-.mise-form .invite{border-radius:6px}
-.mise-form .invite::before{border-radius:4px}
-.mise-form .fi{border-radius:4px}
+#themeBtn,.posbtn,.chipbtn,.miniform button,.mise-form .restore button{border-radius:2px}
+.posbtn,.chipbtn{text-transform:uppercase;letter-spacing:.1em;font-size:12px;font-weight:700}
+/* header: near-black frame in both themes */
+header{background:#0A0C0F;border-bottom:1px solid #282E39}
+header .brand b{color:#F2F4F7}
+header .brand svg .mk{fill:#F2F4F7}
+header .brand-sub{color:#9AA3B0}
+header .nav-links a.nl{color:#9AA3B0}
+header .nav-links a.nl:hover{color:#F2F4F7}
+header .langlink{color:#9AA3B0}
+header .langlink:hover{color:#F2F4F7}
+header #themeBtn{border-color:#3A414D;color:#C7CDD4}
+header #themeBtn:hover{border-color:#F2F4F7;color:#F2F4F7}
+header .nav-cta{background:#F2F4F7;color:#0A0C0F;border-color:#F2F4F7}
+/* hero: near-black field, off-white type, in both themes */
+#hero{background:#0A0C0F;color:#F2F4F7}
+#hero .defline{color:#F2F4F7}
+#hero .lede{color:#AEB7C2}
+#hero .eyebrow{color:#9AA3B0}
+#hero .eyebrow::before{background:#9AA3B0}
+#hero .hero-note{color:#8B95A3}
+#hero .hero-note b{color:#F2F4F7}
+#hero .cta{background:#F2F4F7;color:#0A0C0F;border-color:#F2F4F7}
+#hero .cta.ghost{background:transparent;color:#F2F4F7;border-color:rgba(238,242,246,.4)}
+#hero .filmwrap{border-color:#282E39;background:#12151B;box-shadow:0 24px 60px rgba(0,0,0,.5)}
+#hero .badge{background:#12151B;border-color:#282E39;color:#9AA3B0;box-shadow:0 16px 40px rgba(0,0,0,.45)}
+#hero .badge b{color:#F2F4F7}
+#hero .badge .rd{color:var(--red)}
+#hero .badge .pulse{background:var(--teal)}
+/* eyebrow: quiet label, never the flag colour */
+.eyebrow{color:var(--grey);display:flex;align-items:center;gap:14px;font-weight:500}
+.eyebrow::before{content:"";width:36px;height:1px;background:var(--grey);flex:0 0 36px}
+#circle .eyebrow,#book .eyebrow{justify-content:center}
+/* statuses: Verified teal, Flagged amber, Pending cool grey */
+.kv .st.red{background:var(--flagbg);color:var(--red);border:1px solid var(--flagline)}
+.kv .st.watch{background:var(--surface2);color:var(--grey);border:1px solid var(--line)}
+.kv .st.ok{background:var(--tealbg);color:var(--teal);border:1px solid var(--tealline)}
+.tab.active{border-bottom-color:var(--teal)}
+.gate{border-color:var(--flagline);background:var(--flagbg)}
+.step .n,.walksteps .ws .n,.howstrip .hs b,.seqlist .day{color:var(--grey)}
+.bars .fill{background:var(--ink)}
+.wlsuccess .ic{stroke:var(--teal)}
+/* links and focus take the teal, nothing else does */
+.textlink{color:var(--teal)}
+.fwdline a{color:var(--teal);border-bottom-color:var(--tealline)}
+.smallprint a,.triage a,.footmanage a,.manageline a{color:var(--teal)}
+.desk a{color:var(--teal)}
+.desk a:hover{border-color:var(--teal)}
+.miniform input:focus{border-color:var(--teal)}
+/* sticky bar rides on the near-black frame too */
+.stickybar{background:#0A0C0F;border-top:1px solid #282E39}
+.stickybar .cta{background:#F2F4F7;color:#0A0C0F;border-color:#F2F4F7}
+.stickybar .cta.ghost{background:transparent;color:#F2F4F7;border-color:rgba(238,242,246,.4)}
+.giant{font-weight:700;font-style:normal}
+/* benchmark table: numbers right, tabular */
 .bench{margin-top:64px;border-top:2px solid var(--ink);padding-top:28px}
 .benchhead{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin:26px 0 8px}
-.benchhead .num{font-family:var(--mono);font-size:clamp(34px,4vw,52px);font-weight:600;letter-spacing:-.03em}
+.benchhead .num{font-size:clamp(34px,4vw,52px);font-weight:700;letter-spacing:-.03em}
 .benchhead .cap{font-size:14px;color:var(--grey);margin-top:4px}
 .benchtable{width:100%;border-collapse:collapse;margin-top:26px}
-.benchtable th{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--grey);font-weight:500;text-align:left;padding:0 10px 12px 0;border-bottom:1px solid var(--line-hi)}
-.benchtable th:last-child,.benchtable td:last-child{text-align:right;padding-right:0}
+.benchtable th{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--grey);font-weight:600;text-align:left;padding:0 10px 12px 0;border-bottom:1px solid var(--line-hi)}
+.benchtable th:nth-child(n+2),.benchtable td:nth-child(n+2){text-align:right;padding-right:0;padding-left:10px}
 .benchtable td{padding:18px 10px 18px 0;border-bottom:1px solid var(--line);font-size:16px;vertical-align:baseline}
-.benchtable td.bv2{font-family:var(--mono);font-weight:600;white-space:nowrap}
+.benchtable td.bv2{font-weight:700;white-space:nowrap}
 .benchtable td.before{color:var(--grey)}
-.benchtable td.delta{font-family:var(--mono);color:var(--red);font-weight:600;white-space:nowrap}
+.benchtable td.delta{color:var(--ink);font-weight:700;white-space:nowrap}
 .benchnote{margin-top:20px;font-size:14.5px;color:var(--grey);max-width:720px}
 @media(max-width:700px){.benchhead{grid-template-columns:1fr}.benchtable td{font-size:14.5px;padding:14px 6px 14px 0}}
+/* form panel on the same tokens */
+.mise-form{--bg:#0A0C0F;--surface:#12151B;--surface2:#1B2029;--line:#282E39;--line-hi:rgba(238,242,246,.30);--ink:#F2F4F7;--grey:#9AA3B0;--red:#C98A4B;--teal:#2FBFAE;--shadow:0 24px 60px rgba(0,0,0,.5);--sg:'Inter',-apple-system,'Segoe UI',sans-serif;--mono:'Inter',-apple-system,'Segoe UI',sans-serif;--body:'Inter',-apple-system,'Segoe UI',sans-serif}
+[data-theme="light"] .mise-form{--bg:#F5F6F7;--surface:#FFFFFF;--surface2:#E8EBEE;--line:#D8DDE3;--line-hi:rgba(11,13,16,.30);--ink:#0B0D10;--grey:#5E6773;--red:#A96A28;--teal:#0B7A6E;--shadow:0 24px 60px rgba(11,13,16,.12)}
+.mise-form .invite{border-radius:2px}
+.mise-form .invite::before{border-radius:2px}
+.mise-form .fi{border-radius:2px}
+.mise-form .fi:focus{border-color:var(--teal)}
+.mise-form :focus-visible{outline:2px solid var(--teal);outline-offset:3px}
+.mise-form input[type=checkbox]:checked,.mise-form input[type=radio]:checked{border-color:var(--teal);background:var(--teal)}
+.mise-form .cta{border-radius:2px}
+.mise-form .restore button{border-radius:2px}
+.mise-form .consent{border-radius:2px}
+.mise-form .formerr{border-radius:2px}
+/* marketplace: proof-card listing, chips by the same status law */
+.mktgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:44px}
+.mpcard{border:1px solid var(--line);background:var(--surface);padding:30px;margin-top:18px}
+.mpcard .mphead{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:center;border-bottom:1px solid var(--line);padding-bottom:14px}
+.mpcard .mpname{font-weight:700;font-size:18px;letter-spacing:-.01em}
+.mpdoc{display:flex;justify-content:space-between;gap:14px;padding:13px 2px;border-bottom:1px solid var(--line);font-size:14.5px;align-items:center}
+.mpdoc:last-of-type{border-bottom:none}
+.chip{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;padding:5px 10px;border:1px solid var(--line);border-radius:2px;color:var(--grey);white-space:nowrap;font-weight:600;font-variant-numeric:tabular-nums lining-nums}
+.chip.ok{background:var(--tealbg);color:var(--teal);border-color:var(--tealline)}
+.chip.flag{background:var(--flagbg);color:var(--red);border-color:var(--flagline)}
+.chip.new{background:var(--surface2);color:var(--grey);border-color:var(--line)}
+.mpfoot{margin-top:14px;font-size:13.5px;color:var(--grey)}
+.mpdoor{margin-top:18px}
+@media(max-width:900px){.mktgrid{grid-template-columns:1fr}}
+@media(max-width:560px){.mpcard{padding:22px 18px}.mpdoc{flex-wrap:wrap;row-gap:8px}.chip{white-space:normal}.mpdoor .cta{width:100%;white-space:normal;text-align:center;line-height:1.5}}
 </style>
 </head>
 <!-- ============ INTRO (P01/P02) ============ -->
@@ -461,6 +527,7 @@ section{padding:128px 0}
     <nav class="nav-links" aria-label="Navigation principale">
       <a class="nl" href="#routine">Fonctionnement</a>
       <a class="nl" href="#proof">Preuve</a>
+      <a class="nl" href="#marketplace">Place de marché</a>
       <a class="nl" href="#setup">Installation</a>
       <a class="nl" href="#questions">Questions</a>
       <a class="langlink" href="mise.html" hreflang="en">EN</a>
@@ -479,9 +546,9 @@ section{padding:128px 0}
   <div class="wrap herogrid">
     <div class="pocket">
       <p class="defline rv">Mise est l’arrière-boutique qui vérifie vos factures, vos comptages et vos commandes, au même endroit.</p>
-      <div class="eyebrow rv">Pour les restaurants rapides, les cafés et les franchises partout au Canada</div>
+      <div class="eyebrow rv">Pour les restaurants rapides, les cafés et les franchises aux États-Unis et au Canada</div>
       <h1 class="rv">Voyez ce qui va manquer avant 16 h, le vendredi.</h1>
-      <p class="lede rv">Mise est en pilote fondateur, bâti à la main, cuisine par cuisine, avec des exploitants qui veulent que ça dure. La routine matinale de 10 minutes vient en premier : ce qui pourrait manquer aujourd’hui, ce qu’hier vous a coûté, une commande à approuver.</p>
+      <p class="lede rv">Mise est en pilote fondateur, bâti à la main, cuisine par cuisine, avec des exploitants qui veulent que ça dure. La routine matinale de 10 minutes vient en premier : ce qui pourrait manquer aujourd’hui, ce qu’hier vous a coûté, la liste de préparation, une commande à approuver.</p>
       <div class="hero-ctas rv">
         <a class="cta" href="#book">Réserver un appel</a>
         <a class="cta ghost" href="#routine">Voir la routine matinale de 10 minutes</a>
@@ -504,7 +571,7 @@ section{padding:128px 0}
   <div class="wrap">
     <div class="eyebrow rv">Fonctionnement</div>
     <h2 class="rv">La routine matinale de 10 minutes.</h2>
-    <p class="lede rv">Chaque matin à 8 h 15 : ce qui pourrait manquer aujourd’hui, ce qu’hier vous a coûté, un comptage de deux minutes, une commande à approuver. Plus de dix minutes, c’est qu’il y a un problème.</p>
+    <p class="lede rv">Chaque matin à 8 h 15 : ce qui pourrait manquer aujourd’hui, ce qu’hier vous a coûté, un comptage de deux minutes, la liste de préparation et la liste d’ouverture, une commande à approuver. Plus de dix minutes, c’est qu’il y a un problème.</p>
     <p class="rv" style="font-family:var(--mono);font-size:10px;letter-spacing:.22em;color:var(--grey);text-transform:uppercase;margin-top:18px">Concept illustré. Mise est en pilote fondateur</p>
 
     <!-- V1: La vérité des tablettes vient de la vérité du papier (Stage 3 opening viewport only) -->
@@ -516,7 +583,7 @@ section{padding:128px 0}
         <!-- boards -->
         <g class="f-surf s-hi"><rect x="30" y="84" width="580" height="8"/><rect x="30" y="168" width="580" height="8"/><rect x="30" y="252" width="580" height="8"/></g>
         <!-- level 1 items: folded and stacked sheets -->
-        <g fill="#F4F2ED" stroke="rgba(90,95,105,.55)">
+        <g fill="#E9EDF1" stroke="rgba(90,95,105,.55)">
           <rect x="92" y="40" width="70" height="44"/><rect x="95" y="37" width="70" height="44"/>
           <rect x="206" y="52" width="54" height="32"/><rect x="209" y="49" width="54" height="32"/>
           <rect x="382" y="46" width="80" height="38"/><rect x="385" y="43" width="80" height="38"/>
@@ -525,7 +592,7 @@ section{padding:128px 0}
         <text x="104" y="66" font-size="7.5" class="t-mono" fill="rgba(5,7,10,.55)">INV 0417</text>
         <path d="M316 58l6 7 10-13" class="f-none s-ink" stroke-width="2.4"/>
         <!-- level 2 items, one flagged -->
-        <g fill="#F4F2ED" stroke="rgba(90,95,105,.55)">
+        <g fill="#E9EDF1" stroke="rgba(90,95,105,.55)">
           <rect x="98" y="126" width="64" height="42"/><rect x="101" y="123" width="64" height="42"/>
           <rect x="228" y="120" width="70" height="48"/><rect x="231" y="117" width="70" height="48"/>
           <rect x="420" y="132" width="58" height="36"/>
@@ -535,7 +602,7 @@ section{padding:128px 0}
         <text x="240" y="148" font-size="7.5" class="t-mono" fill="rgba(5,7,10,.55)">CNT 12</text>
         <path d="M344 142l6 7 10-13" class="f-none s-ink" stroke-width="2.4"/>
         <!-- level 3 items -->
-        <g fill="#F4F2ED" stroke="rgba(90,95,105,.55)">
+        <g fill="#E9EDF1" stroke="rgba(90,95,105,.55)">
           <rect x="90" y="206" width="76" height="46"/><rect x="93" y="203" width="76" height="46"/>
           <rect x="282" y="218" width="56" height="34"/>
           <rect x="402" y="204" width="82" height="48"/><rect x="405" y="201" width="82" height="48"/>
@@ -557,7 +624,7 @@ section{padding:128px 0}
         <div class="panel active" data-panel="0" role="tabpanel" id="panel-0" aria-labelledby="tab-0">
           <h3>Comptez dix articles. Pas deux cents.</h3>
           <p class="psub">Mise signale seulement ce qui a besoin d’un œil. Deux minutes dans la chambre froide, et c’est terminé.</p>
-          <div class="kv"><span class="it">Fromage mou, bloc en vrac</span><span class="st red">Rouge · commander 2</span></div>
+          <div class="kv"><span class="it">Fromage mou, bloc en vrac</span><span class="st red">Signalé · en commander 2</span></div>
           <div class="kv"><span class="it">Lait entier</span><span class="st watch">À surveiller · 1 jour restant</span></div>
           <div class="kv"><span class="it">Pains à hamburger</span><span class="st watch">À surveiller · risque au rush du vendredi</span></div>
           <div class="kv"><span class="it">Poitrines de poulet, portionnées</span><span class="st watch">À surveiller · 2 jours restants</span></div>
@@ -584,6 +651,7 @@ section{padding:128px 0}
             <div class="stn gapstn"><div class="lab">L’écart</div><div class="fig">−12,60 $</div></div>
           </div>
           <p class="eqclose"><b>La question est ce qui s’est passé, jamais qui l’a fait.</b><br>Cause probable : un gaspillage de lot non consigné. Prochaine étape : recompter la chambre froide avant de commander.</p>
+          <p class="eqclose">Les marges se lisent sur les mêmes chiffres : chaque plat comparé au coût réel de ce qui est entré dedans.</p>
         </div>
         <div class="panel" data-panel="2" role="tabpanel" id="panel-2" aria-labelledby="tab-2">
           <h3>Vous approuvez chaque commande.</h3>
@@ -828,7 +896,7 @@ section{padding:128px 0}
       </div>
       <div class="plainblock rv">
         <h4>Pas encore</h4>
-        <p>Les intégrations au-delà des systèmes nommés dans la vérification d’adéquation ci-dessous ne font pas partie du pilote. Tout ce qui n’est pas nommé comme inclus est une étape ultérieure, et nous le dirons franchement plutôt que de vous laisser supposer.</p>
+        <p>Les intégrations au-delà des systèmes nommés dans la vérification d’adéquation ci-dessous ne font pas partie du pilote. Nommés franchement comme étapes ultérieures : la place de marché, les listes de préparation et d’ouverture, et les vues de marges. Tout ce qui n’est pas nommé comme inclus est une étape ultérieure, et nous le dirons franchement plutôt que de vous laisser supposer.</p>
       </div>
     </div>
 
@@ -836,6 +904,38 @@ section{padding:128px 0}
   </div>
 </section>
 
+<!-- ============ PLACE DE MARCHÉ (2026-11-05 : les deux moitiés de la portée mise à jour, état honnête) ============ -->
+<section id="marketplace">
+  <div class="wrap">
+    <div class="eyebrow rv">La place de marché</div>
+    <h2 class="rv">Des services de confiance.</h2>
+    <p class="lede rv">Mise est aussi une place de marché. Quand le frigo lâche à 16 h, ou que le menu a besoin d’une caméra, vous embauchez à partir d’annonces qui montrent leurs papiers au grand jour. Aucun badge. Aucune affirmation que les documents ne soutiennent pas.</p>
+    <div class="mktgrid">
+      <div class="plainblock rv">
+        <h4>Réparations et entretien</h4>
+        <p>Réfrigération, chauffage, ventilation et climatisation, plomberie, électricité, nettoyage, lutte antiparasitaire : les métiers qui font tourner un commerce. Chaque annonce montre les documents derrière elle, chacun avec sa date d’expiration : assurance, permis, enregistrement. Un document proche de l’expiration paraît proche de l’expiration. Un document manquant paraît manquant.</p>
+      </div>
+      <div class="plainblock rv">
+        <h4>Créatif</h4>
+        <p>Vidéastes, photographes, concepteurs de menus. La même règle que les métiers : le travail est au grand jour, les papiers sont à côté, et l’annonce dit franchement ce qui est au dossier et ce qui ne l’est pas.</p>
+      </div>
+    </div>
+
+    <div class="mpcard rv" role="img" aria-label="Une annonce type de la place de marché pour un fournisseur en réfrigération. Ses documents sont listés avec leur état : assurance au dossier, permis au dossier, enregistrement manquant. Le fournisseur est nouveau, sans travail encore.">
+      <div class="mphead"><span class="mpname">Réfrigération · Votre ville</span><span class="chip new">Nouveau fournisseur · Aucun travail encore</span></div>
+      <div class="mpdoc"><span>Certificat d’assurance</span><span class="chip ok">Au dossier · Expiration affichée</span></div>
+      <div class="mpdoc"><span>Permis de métier</span><span class="chip ok">Au dossier · Expiration affichée</span></div>
+      <div class="mpdoc"><span>Enregistrement d’entreprise</span><span class="chip flag">Manquant · Affiché comme manquant</span></div>
+      <p class="mpfoot">Annonce type, montrée comme toutes les annonces se montrent. Aucune évaluation : les évaluations attendent de vrais travaux. Les commerces paient les fournisseurs directement. Mise ne touche jamais à l’argent.</p>
+    </div>
+
+    <div class="plainblock mpdoor rv">
+      <h4>Vous exercez un métier, ou tenez une caméra ?</h4>
+      <p>Faites-vous trouver par les entreprises alimentaires près de chez vous. Inscription gratuite. Les commerces vous paient directement. La place de marché ouvre par étapes, après l’arrière-boutique du pilote fondateur. Laissez vos coordonnées dans le formulaire ci-dessous et dites que vous êtes un fournisseur : votre métier ou votre art, votre ville, et ce que vous faites. Nous écrirons quand votre catégorie ouvrira. Aucun travail n’est promis.</p>
+      <p style="margin-top:16px"><a class="cta ghost" href="#book">Inscrire mon intérêt comme fournisseur</a></p>
+    </div>
+  </div>
+</section>
 <!-- ============ FIT CHECK (Stage 6) ============ -->
 <section id="fit">
   <div class="wrap">
@@ -882,7 +982,7 @@ section{padding:128px 0}
     </div>
 
     <p class="smallprint rv"><b style="color:var(--ink)">Fournisseurs :</b> votre liste de fournisseurs est bâtie avec vous, à partir de vos vraies factures, pendant l’installation. Il n’y a aucune base de données de fournisseurs à jumeler, et aucun jumelage n’est promis.</p>
-    <p class="smallprint rv">Bâti pour le Canada. Les conditions fondatrices sont en dollars canadiens et sont expliquées au complet à l’appel. Mise fonctionne en anglais et en français canadien. Cette page existe aussi en anglais : <a href="mise.html" hreflang="en">Mise in English</a>.</p>
+    <p class="smallprint rv">Bâti pour les États-Unis et le Canada, avec l’Inde ensuite. Les conditions fondatrices sont expliquées au complet à l’appel : au Canada, en dollars canadiens; aux États-Unis, en dollars américains. Mise fonctionne en anglais et en français canadien. Cette page existe aussi en anglais : <a href="mise.html" hreflang="en">Mise in English</a>.</p>
   </div>
 </section>
 
@@ -963,7 +1063,7 @@ section{padding:128px 0}
       </div>
       <div class="qa">
         <button type="button" class="qhead" aria-expanded="false">Combien ça coûte ?<span class="qmark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9.5l6 6 6-6"/></svg></span></button>
-        <div class="qa-a"><div class="qa-in">Le prix est par emplacement, et il est expliqué au complet à l’appel de 15 minutes, dans les chiffres de vos propres factures : ce que ça coûte, ce que ça doit économiser, et les conditions, dans le même ordre pour chaque commerce au même stade. Les conditions fondatrices canadiennes sont en dollars canadiens. Rien n’est facturé sur cette page, et aucune carte n’y est prise.</div></div>
+        <div class="qa-a"><div class="qa-in">Le prix est par emplacement, et il est expliqué au complet à l’appel de 15 minutes, dans les chiffres de vos propres factures : ce que ça coûte, ce que ça doit économiser, et les conditions, dans le même ordre pour chaque commerce au même stade. Au Canada, les conditions sont en dollars canadiens; aux États-Unis, en dollars américains. Rien n’est facturé sur cette page, et aucune carte n’y est prise.</div></div>
       </div>
       <div class="qa">
         <button type="button" class="qhead" aria-expanded="false">Comment fonctionne l’essai ?<span class="qmark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9.5l6 6 6-6"/></svg></span></button>
@@ -987,7 +1087,7 @@ section{padding:128px 0}
   <div class="wrap">
     <div class="eyebrow rv">Le cercle restreint</div>
     <h2 class="rv">Bâti pour ceux qu’on laisse habituellement de côté.</h2>
-    <p class="lede rv">Comptages, factures et achats, vérifiés au même endroit. Si vous tenez l’arrière-boutique, votre place est dans le cercle.</p>
+    <p class="lede rv">Comptages, factures et achats, vérifiés au même endroit, et l’aide que vous embauchez, annoncée avec ses papiers au grand jour. Si vous tenez l’arrière-boutique, votre place est dans le cercle.</p>
     <div class="countblock rv" id="countblock">
       <div class="cbig">La cohorte fondatrice est ouverte.</div>
       <div class="csmall">Les places se prennent lors d’appels, un commerce à la fois.</div>
@@ -1149,7 +1249,7 @@ section{padding:128px 0}
       <div class="desk"><div class="dk">Investisseurs</div><a href="mailto:endowing@antigrav.si">endowing@antigrav.si</a></div>
     </div>
     <p class="footmanage">Vous avez réservé un appel et devez le déplacer ? Votre courriel de confirmation contient le lien, ou écrivez à <a href="mailto:hello@antigrav.si">hello@antigrav.si</a>.</p>
-    <div class="parent">Bâti par <a href="https://antigrav.si">Antigravity Analytics</a> · Opérations partout au Canada · Toronto · Montréal · Vancouver<br><span style="font-size:11px">Analytique axée sur la vie privée, par Simple Analytics : aucun témoin, aucune donnée personnelle, respecte l’interdiction de suivi.</span></div>
+    <div class="parent">Bâti par <a href="https://antigrav.si">Antigravity Analytics</a> · États-Unis et Canada, l’Inde ensuite · Toronto · Montréal · Vancouver<br><span style="font-size:11px">Analytique axée sur la vie privée, par Simple Analytics : aucun témoin, aucune donnée personnelle, respecte l’interdiction de suivi.</span></div>
   </div>
   <div style="text-align:center;margin-top:36px"><img src="/nvidia-inception-badge.svg" alt="Insigne de membre du programme NVIDIA Inception" style="width:170px;max-width:60vw;height:auto" loading="lazy"><div style="font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--grey);margin-top:10px">Bâti par un membre du programme NVIDIA Inception</div></div>
   <div class="giant" aria-hidden="true">MISE</div>
@@ -1209,7 +1309,7 @@ function tick(){
   if(!running)return;
   var dark=themeDark(),W=cv.width/(Math.min(window.devicePixelRatio||1,2)),H=cv.height/(Math.min(window.devicePixelRatio||1,2));
   ctx.clearRect(0,0,W,H);
-  ctx.font='500 '+CELL+'px "IBM Plex Mono",monospace';
+  ctx.font='500 '+CELL+'px "Inter",sans-serif';
   ctx.textAlign='center';ctx.textBaseline='middle';
   var R=175,mr=R/CELL;
   for(var r=0;r<rows;r++)for(var c=0;c<cols;c++){
@@ -1224,8 +1324,8 @@ function tick(){
       var t=1-d/R;t=t*t*(3-2*t);alpha=Math.min(1,cell.a+t*.95);
       ch="MISE "[c%5];
     }
-    if(cell.red>0){ctx.fillStyle='rgba(200,16,46,'+Math.min(1,.35+cell.red/26*.65)+')';}
-    else{var rgb=dark?'255,255,255':'5,7,10';
+    if(cell.red>0){ctx.fillStyle='rgba(201,138,75,'+Math.min(1,.35+cell.red/26*.65)+')';}
+    else{var rgb='238,242,246';
       ctx.fillStyle='rgba('+rgb+','+alpha.toFixed(3)+')';}
     ctx.fillText(ch,x,y);
   }
