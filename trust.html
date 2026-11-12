@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Trust &amp; Security — Mise — Antigravity Analytics</title>
+<meta name="description" content="How Mise protects restaurant data: encryption, access control, tenant isolation, audit logging, Canada-first hosting, and our SOC 2-ready control program under PIPEDA and Quebec Law 25. No certification is claimed." />
+<link rel="canonical" href="https://antigrav.si/trust" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink:#05070A; --white:#FFFFFF; --paper:#F4F2ED; --grey:#6B6B6B; --line:#E2E0DA;
+    --display:"Space Grotesk",sans-serif; --body:"Inter",sans-serif; --mono:"IBM Plex Mono",monospace;
+  }
+  *{box-sizing:border-box} html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--white);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.65}
+  a{color:var(--ink)}
+  .site-header{border-bottom:1px solid var(--line);padding:20px clamp(20px,4.4vw,76px);display:flex;align-items:baseline;justify-content:space-between;gap:16px}
+  .site-header .brand{font-family:var(--display);font-weight:600;font-size:18px;letter-spacing:.01em;text-decoration:none}
+  .site-header nav{display:flex;gap:20px}
+  .site-header nav a{font-family:var(--mono);font-size:13px;color:var(--grey);text-decoration:none}
+  .site-header nav a:hover{color:var(--ink)}
+  main{max-width:760px;margin:0 auto;padding:clamp(40px,7vw,88px) clamp(20px,4.4vw,40px) clamp(48px,7vw,88px)}
+  .policy-meta{display:flex;flex-wrap:wrap;gap:8px 20px;font-family:var(--mono);font-size:13px;color:var(--grey);border-top:1px solid var(--ink);border-bottom:1px solid var(--line);padding:12px 0;margin-bottom:36px}
+  h1{font-family:var(--display);font-weight:600;font-size:clamp(34px,5vw,52px);line-height:1.08;letter-spacing:-.01em;margin:0 0 20px}
+  .policy-summary{font-size:18px;line-height:1.6;margin:0 0 44px}
+  h2{font-family:var(--display);font-weight:600;font-size:21px;line-height:1.3;margin:40px 0 10px;padding-top:28px;border-top:1px solid var(--line)}
+  p{margin:0 0 14px}
+  .policy-list{list-style:none;margin:0 0 14px;padding:0}
+  .policy-list li{padding:12px 0 12px 18px;border-left:1px solid var(--line);margin-bottom:10px}
+  .policy-list strong{font-weight:600}
+  .notice-band{background:var(--paper);padding:18px 20px;margin:0 0 40px;font-size:15px}
+  table{border-collapse:collapse;width:100%;margin:8px 0 18px;font-size:15px}
+  th,td{border-bottom:1px solid var(--line);text-align:left;padding:10px 12px 10px 0;vertical-align:top}
+  th{font-family:var(--mono);font-size:12px;color:var(--grey);font-weight:500}
+  .site-footer{border-top:1px solid var(--line);padding:20px clamp(20px,4.4vw,76px);font-family:var(--mono);font-size:13px;color:var(--grey);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between}
+  .site-footer a{color:var(--grey)} .site-footer a:hover{color:var(--ink)}
+  @media (prefers-reduced-motion: reduce){*{transition:none}}
+</style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/">Antigravity Analytics</a>
+    <nav><a href="/mise">Mise</a><a href="/enterprise">Enterprise</a><a href="/">antigrav.si</a></nav>
+  </header>
+
+  <main>
+    <h1>Trust &amp; security</h1>
+    <div class="policy-meta"><span>Last updated 12 November 2026</span><span>Security contact: hello@antigrav.si</span></div>
+    <p class="policy-summary">Mise handles supplier invoices, purchase orders, counts, and store records for restaurants. This page describes the controls that protect that data today, the compliance program we are building toward, and — just as plainly — what is not finished yet. It is written for your security review, not as marketing copy.</p>
+
+    <div class="notice-band"><strong>No certification is claimed.</strong> Mise is in pilot-stage deployment. We operate a SOC 2-ready control program for Canada (controls designed and being evidenced); we do not hold a SOC 2 report, ISO 27001 certificate, or any other attestation today. Anything on this page marked as planned is not yet a contractual commitment.</div>
+
+    <h2>Compliance program</h2>
+    <ul class="policy-list">
+      <li><strong>SOC 2-ready, Canada first</strong> — Controls are mapped to the SOC 2 Trust Services Criteria (Security, Availability, Confidentiality) with evidence collected as the pilot runs. A Type I observation window follows production launch; no date is promised on this page.</li>
+      <li><strong>PIPEDA and Quebec Law 25</strong> — Privacy design follows Canada's PIPEDA accountability principles and Quebec's Law 25 requirements for our initial Ontario/Quebec pilot boundary. Legal sufficiency is reviewed by qualified local counsel before production customer data is processed; that review is in progress, not complete.</li>
+      <li><strong>Data-processing agreement</strong> — Available for pilot customers under NDA, covering roles, subprocessors, security measures, incident notice, and return/deletion on exit.</li>
+      <li><strong>Vendor questionnaires</strong> — We answer SIG/CAIQ-style questionnaires against evidence and mark unbuilt controls as such. Send yours to <a href="mailto:hello@antigrav.si">hello@antigrav.si</a>.</li>
+    </ul>
+
+    <h2>Access control</h2>
+    <ul class="policy-list">
+      <li><strong>Identity</strong> — Production sign-in is delivered by Clerk, including SAML/OIDC single sign-on and enforced MFA for enterprise organizations (in implementation for the production cell).</li>
+      <li><strong>Authorization</strong> — Every request resolves the person to an authorized tenant and store membership at the server boundary. Callers cannot choose their own tenant scope.</li>
+      <li><strong>Least privilege internally</strong> — Support staff use a separate internal console with role boundaries (support cannot open finance views). There is no user impersonation; elevated access is owner-approved or disclosed break-glass and is audit-logged.</li>
+      <li><strong>Sessions</strong> — Staff sessions use HttpOnly, expiring cookies. Revocation removes access and is a recorded event.</li>
+    </ul>
+
+    <h2>Data protection</h2>
+    <ul class="policy-list">
+      <li><strong>Tenant isolation</strong> — Database row-level security separates tenants and stores. An automated tenant-isolation leak suite runs in CI; a cross-tenant read fails the build.</li>
+      <li><strong>Encryption</strong> — Data is encrypted in transit over TLS and at rest by our cloud database and storage providers. Secrets live in Google Secret Manager, never in source code or chat.</li>
+      <li><strong>Document handling</strong> — Supplier documents are quarantined on intake. Extracted values remain candidates until a named person reviews them; OCR output never posts an accounting entry or a payment by itself.</li>
+      <li><strong>Backups and recovery</strong> — A local restore drill has proven data, tenant isolation, and receipt continuity survive a restore into a fresh PostgreSQL 17 cluster. Production point-in-time recovery and published RPO/RTO are set before production launch and are not claimed today.</li>
+      <li><strong>Retention and deletion</strong> — Retention periods for access events are not yet adopted; they await qualified counsel's answers, and no deletion schedule runs meanwhile. Account export and offboarding processes are part of the tenant lifecycle design.</li>
+    </ul>
+
+    <h2>Engineering and operations</h2>
+    <ul class="policy-list">
+      <li><strong>Change control</strong> — All code lands through reviewed pull requests with green CI (build, typecheck, lint, unit and browser tests, dependency-boundary checks). Failed browser runs retain Playwright traces and error context as build artifacts for diagnosis.</li>
+      <li><strong>Deterministic money math</strong> — The valuation calculator is held to 100% branch coverage and a mutation-score floor, re-measured in CI. Quantities and money never use floating point, and no model output sits on the balance, stock, or payment path.</li>
+      <li><strong>Dependency hygiene</strong> — Critical dependency advisories block the cold-checkout CI job. Residual advisories are tracked openly in the repository until patched releases exist.</li>
+      <li><strong>Web hardening</strong> — Applications send frame, referrer, content-type, permissions, and HSTS headers, asserted by tests. A nonce-based script Content-Security-Policy is staged for the production cell and is not yet enforced.</li>
+      <li><strong>Incident response</strong> — An incident and breach-assessment procedure with named responders is required before production operations and is being finalized with counsel. Until then, report anything security-related to <a href="mailto:hello@antigrav.si">hello@antigrav.si</a>; we acknowledge security reports within two business days.</li>
+    </ul>
+
+    <h2>Subprocessors</h2>
+    <p>The vendors below support the pilot and evaluation deployment. Production activation of each vendor follows signed terms and, where personal data is processed, a data-processing schedule. This list changes only with notice to pilot customers.</p>
+    <table>
+      <tr><th scope="col">Vendor</th><th scope="col">Purpose</th><th scope="col">Status</th></tr>
+      <tr><td>Google Cloud (Montreal / Toronto)</td><td>Hosting, database, secrets</td><td>Evaluation cell live; production cell gated on approvals</td></tr>
+      <tr><td>Clerk</td><td>Identity, SSO, MFA</td><td>Decided production provider; production configuration in build</td></tr>
+      <tr><td>Clover</td><td>Point-of-sale sales import</td><td>Sandbox evaluation; live connection gated on store authorization</td></tr>
+      <tr><td>Razorpay</td><td>Subscription billing</td><td>Test mode only; live charges off until eligibility is verified</td></tr>
+      <tr><td>Sentry</td><td>Error reporting</td><td>Environment-gated; inert unless a DSN is configured</td></tr>
+    </table>
+
+    <h2>Responsible disclosure</h2>
+    <p>If you believe you have found a vulnerability in Mise or on antigrav.si, email <a href="mailto:hello@antigrav.si">hello@antigrav.si</a> with enough detail to reproduce it. Please do not access other customers' data, degrade the service, or disclose the issue publicly before we have had a reasonable chance to fix it. We do not run a paid bug bounty today.</p>
+    <p>See also: <a href="/enterprise">Mise for enterprise</a> · <a href="/privacy">Privacy</a> · <a href="/mise">Mise</a></p>
+  </main>
+
+  <footer class="site-footer">
+    <span>© 2026 Antigravity Analytics Private Limited</span>
+    <span><a href="/enterprise">Enterprise</a> · <a href="/privacy">Privacy</a> · <a href="/">Home</a></span>
+  </footer>
+</body>
+</html>
