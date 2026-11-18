@@ -15,7 +15,11 @@
 <meta name="twitter:description" content="A 10-minute morning routine for quick-service kitchens. Founding pilot. An inner circle, not a launch.">
 <meta name="twitter:image" content="https://antigrav.si/mise-og.png">
 <link rel="canonical" href="https://antigrav.si/mise">
+<link rel="alternate" type="text/markdown" href="https://antigrav.si/mise.md" />
+<link rel="describedby" href="https://antigrav.si/llms.txt">
 <link rel="alternate" hreflang="fr-CA" href="https://antigrav.si/mise-fr">
+<link rel="alternate" hreflang="en" href="https://antigrav.si/mise">
+<link rel="alternate" hreflang="x-default" href="https://antigrav.si/mise">
 <meta name="robots" content="index, follow">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%2305070A'/%3E%3Crect x='31.4' y='18.3' width='37.5' height='3.9' fill='%23FFFFFF'/%3E%3Cpath d='M50 27.5L22.95 83.3L31.37 83.3L50 36.3L68.63 83.3L77.05 83.3Z' fill='%23FFFFFF'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -505,6 +509,7 @@ header .nav-cta{background:#F2F4F7;color:#0A0C0F;border-color:#F2F4F7}
 @media(max-width:900px){.mktgrid{grid-template-columns:1fr}}
 @media(max-width:560px){.mpcard{padding:22px 18px}.mpdoc{flex-wrap:wrap;row-gap:8px}.chip{white-space:normal}.mpdoor .cta{width:100%;white-space:normal;text-align:center;line-height:1.5}}
 </style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Mise","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://antigrav.si/mise","description":"Mise is the back office that checks your invoices, your counts and your orders, in one place. It flags what could run out today and drafts the order. You approve every order: nothing is ever ordered without a person approving it.","publisher":{"@type":"Organization","name":"Antigravity Analytics","legalName":"Antigravity Analytics Private Limited","url":"https://antigrav.si/"}}</script>
 </head>
 <!-- ============ INTRO (P01/P02) ============ -->
 <div id="intro" aria-hidden="true">
@@ -530,6 +535,7 @@ header .nav-cta{background:#F2F4F7;color:#0A0C0F;border-color:#F2F4F7}
       <a class="nl" href="#marketplace">Marketplace</a>
       <a class="nl" href="#setup">Setup</a>
       <a class="nl" href="#questions">Questions</a>
+      <a class="nl" href="partner.html">Partner</a>
       <a class="langlink" href="mise-fr.html" hreflang="fr-CA">FR</a>
       <button id="themeBtn" type="button" aria-label="Toggle light and dark theme">Dark</button>
       <a class="cta nav-cta" href="#book">Book a call</a>
@@ -541,6 +547,28 @@ header .nav-cta{background:#F2F4F7;color:#0A0C0F;border-color:#F2F4F7}
 <div class="recog" id="recog" hidden></div>
 
 <!-- ============ HERO (Stage 2; F5 no cohort line, F10 film beside text) ============ -->
+<style>
+  /* Hero product composition (founder "read finished" pass): two device
+     frames in the same bezel language as the Proof-section screens (psx-),
+     at full product scale, inside the hero's existing film frame, which is
+     near-black in both themes. Morning Brief in front at about half the
+     frame's width; Invoice Workbench behind it, inside the frame at the
+     right and raised above the front phone's top so its header and audit
+     lines show, the front phone overlapping only its lower-left.
+     No labels, no caption: the screens carry the frame on their own. */
+  .hfx-stage{position:relative;padding:42px 26px 46px}
+  .hfx-phone{position:relative;background:#0B0D10;aspect-ratio:9/19;box-shadow:0 30px 60px rgba(0,0,0,.55),0 6px 18px rgba(0,0,0,.42),inset 0 0 0 1px rgba(255,255,255,.1)}
+  .hfx-phone::before{content:"";position:absolute;z-index:2;top:19px;left:50%;transform:translateX(-50%);width:7px;height:7px;border-radius:50%;background:#0B0D10;box-shadow:inset 0 0 2px rgba(255,255,255,.4)}
+  .hfx-phone::after{content:"";position:absolute;right:-2px;top:120px;width:3px;height:58px;border-radius:2px;background:#242932}
+  .hfx-phone img{display:block;width:100%;height:100%;object-fit:cover;object-position:top center;background:#0B0E13}
+  .hfx-front{z-index:2;width:54%;margin-top:104px;padding:11px;border-radius:38px}
+  .hfx-front img{border-radius:27px}
+  .hfx-back{z-index:1;position:absolute;top:42px;right:56px;width:40%;padding:9px;border-radius:30px}
+  .hfx-back::before{top:16px}
+  .hfx-back::after{top:92px;height:44px}
+  .hfx-back img{border-radius:21px}
+  @media(max-width:560px){.hfx-stage{padding:32px 20px 36px}.hfx-front{margin-top:64px}.hfx-back{top:32px;right:36px}}
+</style>
 <section id="hero">
   <canvas id="matrix" aria-hidden="true"></canvas>
   <div class="wrap herogrid">
@@ -556,12 +584,11 @@ header .nav-cta{background:#F2F4F7;color:#0A0C0F;border-color:#F2F4F7}
       <a class="textlink rv" href="#walkthrough">Or run the check yourself first: walk the demo</a>
       <div class="hero-note rv">Founding pilot · In development · <b>Set up with you</b></div>
     </div>
-    <div class="filmwrap rv" aria-hidden="true">
-      <video class="hero-film" autoplay muted loop playsinline preload="metadata" poster="mise-kitchen.jpg"><source src="films/mise-film.mp4" type="video/mp4"></video>
-      <div class="badge" id="b1"><span class="pulse"></span><b>08:15</b>&nbsp;&nbsp;Morning brief</div>
-      <div class="badge" id="b2">Panic spend&nbsp;&nbsp;<b class="rd">−CA$86.40</b>&nbsp;&nbsp;this week</div>
-      <div class="badge" id="b3"><b>CA$248.00</b>&nbsp;&nbsp;<span class="rd">ON HOLD</span>&nbsp;&nbsp;awaiting owner</div>
-      <div class="badge" id="b4">POS&nbsp;&nbsp;<b>Clover</b>&nbsp;&nbsp;connected</div>
+    <div class="filmwrap rv">
+      <div class="hfx-stage">
+        <div class="hfx-phone hfx-back"><img src="screens/invoice-workbench.png" alt="Mise app screen: invoice workbench"></div>
+        <div class="hfx-phone hfx-front"><img src="screens/morning-brief.png" alt="Mise app screen: morning brief"></div>
+      </div>
     </div>
   </div>
 </section>
@@ -829,6 +856,177 @@ header .nav-cta{background:#F2F4F7;color:#0A0C0F;border-color:#F2F4F7}
         <div class="slot"><div class="sl">Checked by</div><div class="badgeempty">Hand or Software</div></div>
       </div>
       <p class="tnote">Empty until a pilot result can fill every box.</p>
+    </div>
+    <style>
+      /* Product screens: a band in the page's own panel language (surface,
+         hairline, squared corner, page shadow) holding three device frames.
+         The honesty note runs as the section intro, not a footnote. */
+      .psx-strip{margin-top:64px}
+      .psx-band{background:var(--surface);border:1px solid var(--line);border-radius:2px;box-shadow:var(--shadow);padding:clamp(30px,4.5vw,52px) clamp(22px,4.5vw,56px) clamp(36px,4.5vw,58px)}
+      .psx-eyebrow{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:var(--grey);display:flex;align-items:center;gap:14px;margin-bottom:18px}
+      .psx-eyebrow::before{content:"";width:36px;height:1px;background:var(--grey);flex:0 0 36px}
+      .psx-intro{font-size:16px;line-height:1.65;color:var(--grey);max-width:66ch}
+      .psx-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,3.4vw,40px);max-width:920px;margin:46px auto 0}
+      .psx-card{margin:0}
+      .psx-phone{position:relative;background:#0B0D10;border-radius:38px;padding:11px;aspect-ratio:9/19;box-shadow:0 26px 50px rgba(5,7,10,.26),0 5px 16px rgba(5,7,10,.16),inset 0 0 0 1px rgba(255,255,255,.09)}
+      [data-theme="dark"] .psx-phone{box-shadow:0 26px 50px rgba(0,0,0,.55),0 5px 16px rgba(0,0,0,.42),inset 0 0 0 1px rgba(255,255,255,.1)}
+      .psx-phone::before{content:"";position:absolute;z-index:2;top:19px;left:50%;transform:translateX(-50%);width:7px;height:7px;border-radius:50%;background:#0B0D10;box-shadow:inset 0 0 2px rgba(255,255,255,.4)}
+      .psx-phone::after{content:"";position:absolute;right:-2px;top:120px;width:3px;height:58px;border-radius:2px;background:#242932}
+      .psx-phone img{display:block;width:100%;height:100%;object-fit:cover;object-position:top center;border-radius:27px;background:#0B0E13}
+      .psx-card figcaption,.psx-wide figcaption{margin-top:20px;font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--grey);line-height:1.75;text-align:center}
+      .psx-card figcaption b,.psx-wide figcaption b{display:block;color:var(--ink);font-weight:600;font-size:11px;letter-spacing:.22em;margin-bottom:3px}
+      .psx-wide{max-width:920px;margin:54px auto 0}
+      .psx-browser{position:relative;background:#0B0D10;border-radius:24px;padding:11px;box-shadow:0 26px 50px rgba(5,7,10,.26),0 5px 16px rgba(5,7,10,.16),inset 0 0 0 1px rgba(255,255,255,.09)}
+      [data-theme="dark"] .psx-browser{box-shadow:0 26px 50px rgba(0,0,0,.55),0 5px 16px rgba(0,0,0,.42),inset 0 0 0 1px rgba(255,255,255,.1)}
+      .psx-chrome{position:relative;display:flex;align-items:center;gap:7px;height:26px;margin:0 6px 10px}
+      .psx-dot{width:9px;height:9px;border-radius:50%;background:#2A2F38;flex:0 0 9px}
+      .psx-url{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:#9AA3AF;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.07);padding:4px 18px;border-radius:999px;white-space:nowrap}
+      .psx-browser img{display:block;width:100%;height:auto;border-radius:13px;background:#0B0E13}
+      .psx-fine{margin-top:36px;font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--grey);text-align:center}
+      @media(max-width:900px){
+        .psx-grid{grid-template-columns:1fr;max-width:300px;gap:44px;margin-top:38px}
+        .psx-band{padding:30px 20px 40px}
+        .psx-wide{margin-top:42px}
+      }
+    </style>
+    <div class="psx-strip">
+      <div class="psx-band">
+        <div class="psx-eyebrow">Product screens</div>
+        <p class="psx-intro">The three screens the day runs on: the morning brief, the invoice workbench, and the guided count.</p>
+        <div class="psx-grid">
+          <figure class="psx-card">
+            <div class="psx-phone"><img src="screens/morning-brief.png" alt="Mise design screen: morning brief, the floor home" loading="lazy"></div>
+            <figcaption><b>Morning brief</b>The floor home: the day in five to ten minutes</figcaption>
+          </figure>
+          <figure class="psx-card">
+            <div class="psx-phone"><img src="screens/invoice-workbench.png" alt="Mise design screen: invoice verification workbench" loading="lazy"></div>
+            <figcaption><b>Invoice workbench</b>Every invoice checked, three passes</figcaption>
+          </figure>
+          <figure class="psx-card">
+            <div class="psx-phone"><img src="screens/guided-count.png" alt="Mise design screen: guided critical count" loading="lazy"></div>
+            <figcaption><b>Guided count</b>A short count of only the items that matter</figcaption>
+          </figure>
+        </div>
+        <figure class="psx-wide">
+          <div class="psx-browser">
+            <div class="psx-chrome"><span class="psx-dot"></span><span class="psx-dot"></span><span class="psx-dot"></span><span class="psx-url">mise.antigrav.si</span></div>
+            <img src="screens/desktop-brief.jpg" alt="Mise design screen: morning brief on desktop, the owner's desk view" loading="lazy">
+          </div>
+          <figcaption><b>Morning brief — desktop</b>The owner's desk view: the same morning, on the big screen</figcaption>
+        </figure>
+        <p class="psx-fine">Product screens · Sample data throughout</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURES (complete list, from the canonical scope) ============ -->
+<style>
+  /* Complete feature list: text-led, in the page's own language. Group
+     labels in the eyebrow pattern; items as hairline rows (the plainblock
+     list pattern) with the feature name in ink and one plain sentence in
+     grey. No cards, no icons. */
+  .ftx-groups{margin-top:14px}
+  .ftx-group{margin-top:52px}
+  .ftx-gname{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:var(--grey);display:flex;align-items:center;gap:14px;margin-bottom:10px}
+  .ftx-gname::before{content:"";width:36px;height:1px;background:var(--grey);flex:0 0 36px}
+  .ftx-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(32px,4.5vw,56px)}
+  .ftx-list li{font-size:14.5px;line-height:1.6;color:var(--grey);padding:11px 0;border-bottom:1px solid var(--line)}
+  .ftx-list li b{font-family:var(--sg);font-weight:600;color:var(--ink);margin-right:8px}
+  @media(max-width:900px){.ftx-list{grid-template-columns:1fr}.ftx-group{margin-top:42px}}
+</style>
+<section id="features">
+  <div class="wrap">
+    <div class="eyebrow rv">Everything in Mise</div>
+    <h2 class="rv">The whole back office, in one place.</h2>
+    <p class="lede rv">The morning brief is the part you open every day. Under it sits the whole back office: counts, invoices, orders, credits, waste, and the month-end books. Here is all of it.</p>
+
+    <div class="ftx-groups">
+      <div class="ftx-group rv">
+        <div class="ftx-gname">The morning</div>
+        <ul class="ftx-list">
+          <li><b>Morning brief</b>The day starts with one short brief: what might run out tonight, what yesterday cost you, and what needs a decision.</li>
+          <li><b>Rush-risk warnings</b>Mise works out which items will not last through tonight&rsquo;s rush, hour by hour, and puts them at the top of the brief.</li>
+          <li><b>Store health score</b>One plain score in the brief shows how the store is doing today.</li>
+          <li><b>Yesterday&rsquo;s money</b>Every leak from yesterday is listed with its proof one tap away: the invoice, the count, and who entered it.</li>
+        </ul>
+      </div>
+
+      <div class="ftx-group rv">
+        <div class="ftx-gname">Counts and stock</div>
+        <ul class="ftx-list">
+          <li><b>Guided counts</b>A two-minute count of only the items Mise flags, zone by zone (walk-in, dry store, line), with cases, packs and loose units added up for you. You never do the math.</li>
+          <li><b>Opening count</b>Before the first brief, an opening count sets the starting numbers, and you sign off the recipes, pack sizes and counts yourself.</li>
+          <li><b>Count review</b>Where a count and the expected number disagree, you accept, split or correct the reason (used, wasted, overcharged, missing) before anything adjusts.</li>
+          <li><b>Recipes and costing</b>Recipes turn your sales into ingredient use. Each store can edit yields, sub-recipes and modifier rules like &ldquo;extra bacon,&rdquo; with costing kept up to date.</li>
+          <li><b>Batch prep</b>Prep batches are logged on the floor, and when sales pass a full batch, Mise records the next batch as made, so stock stays honest between counts.</li>
+          <li><b>Expiring batches</b>Batches carry their shelf life, and the day&rsquo;s expiring batches show on the floor pad before they become waste.</li>
+          <li><b>Menu drift queue</b>A new or changed item on your till that is not linked to ingredients raises a flag with a suggested link. Nothing slips past the stock math unlinked.</li>
+          <li><b>Sunday spot-check</b>A short weekly check of the five highest-value items, so small losses surface before month end.</li>
+        </ul>
+      </div>
+
+      <div class="ftx-group rv">
+        <div class="ftx-gname">On the floor</div>
+        <ul class="ftx-list">
+          <li><b>Floor PIN sessions</b>Staff open their own session with a Floor PIN and land on a floor pad with big tap targets, not the owner&rsquo;s brief.</li>
+          <li><b>Receiving checks</b>At the back door, staff check what arrived against what was ordered, while the truck is still there.</li>
+          <li><b>Waste logging</b>Waste is logged in seconds on the pad, with who logged it, so yesterday&rsquo;s money can show where food went.</li>
+          <li><b>Panic-buy capture</b>When something runs out mid-rush, the emergency buy is captured on the pad: a photo of the receipt, the amount, and which item ran out.</li>
+          <li><b>Panic spend line</b>Emergency buys are priced against the wholesale price and reported as their own line, so you see exactly what running out costs.</li>
+          <li><b>Food safety records</b>Temperature and holding logs, batch shelf life and allergen records, kept as an evidence pack that is ready for inspection.</li>
+        </ul>
+      </div>
+
+      <div class="ftx-group rv">
+        <div class="ftx-gname">Invoices and suppliers</div>
+        <ul class="ftx-list">
+          <li><b>Invoice checking</b>Forward invoices by email or upload them. Mise reads them, flags duplicates and price changes, and checks every line three ways: against the order and against the delivery.</li>
+          <li><b>Photo-side verification</b>Any line Mise is unsure of, including handwriting on a paper bill, opens side by side with the photo, so you confirm or fix it yourself. Nothing posts on a guess.</li>
+          <li><b>Dispute drafts</b>When an invoice is wrong, Mise drafts the dispute with the evidence attached, ready for you to send.</li>
+          <li><b>Credits ledger</b>Every promised supplier credit is tracked until the credit actually lands on a later invoice. A credit that never arrives stays open, aging where you can see it.</li>
+          <li><b>Supplier catalogue</b>Your supplier list builds itself from your invoices: pack sizes, prices, and who supplies what.</li>
+          <li><b>Shrinking packs</b>If a supplier quietly shrinks a pack, the cost per unit gives it away, and the change is flagged.</li>
+        </ul>
+      </div>
+
+      <div class="ftx-group rv">
+        <div class="ftx-gname">Orders</div>
+        <ul class="ftx-list">
+          <li><b>One proposed order</b>One order, worked out from your stock, expected demand, delivery days, pack sizes and prices, with its reason in one plain sentence.</li>
+          <li><b>Approval of exact contents</b>Nothing is ever sent without your yes on the exact contents. Change anything and it needs a fresh yes. Retries never send an order twice.</li>
+          <li><b>Minimums and cutoffs</b>Supplier minimums and order cutoffs count down on the approval screen, with a reminder before a cutoff is missed.</li>
+          <li><b>Unacknowledged orders</b>If a supplier does not confirm an order in time, the order shows it, with the next step named (call, or send it elsewhere). Never silent waiting.</li>
+        </ul>
+      </div>
+
+      <div class="ftx-group rv">
+        <div class="ftx-gname">The books</div>
+        <ul class="ftx-list">
+          <li><b>Savings ledger</b>A running ledger of what Mise has caught and corrected for the store, month by month, in plain dollars.</li>
+          <li><b>Month-end pack</b>At month end, every movement traces back to its evidence, ready for your accountant. Mise is not your accounting system; it hands over a clean pack.</li>
+          <li><b>Delivery-platform checks</b>Monthly statements from the delivery apps are checked line by line (sales, minus the platform&rsquo;s cut, minus refund clawbacks), and fault-waste claims are tracked until they land.</li>
+          <li><b>Availability advice</b>If an item runs out, Mise advises pausing it on the delivery apps. It never pauses anything on its own.</li>
+        </ul>
+      </div>
+
+      <div class="ftx-group rv">
+        <div class="ftx-gname">Repairs and creative help</div>
+        <ul class="ftx-list">
+          <li><b>Facilities marketplace</b>When equipment breaks, hire vetted local trades from listings that show their papers in the open. You pay the provider directly; Mise keeps the booking and the record, and never touches the money.</li>
+          <li><b>Creative marketplace</b>Videographers, photographers and menu designers, hired the same way: papers in the open, paid directly by you, and every campaign&rsquo;s spend approved by you first.</li>
+        </ul>
+      </div>
+
+      <div class="ftx-group rv">
+        <div class="ftx-gname">Anywhere</div>
+        <ul class="ftx-list">
+          <li><b>Works offline</b>Counts and logs keep working with no connection, saved safely on the device, and send when the connection returns. Nothing is lost, and nothing is doubled.</li>
+          <li><b>Honest connection states</b>If a connection breaks, the screen says so, says when it last worked, and marks anything waiting as queued, never as sent.</li>
+          <li><b>Web, phone and tablet</b>The same Mise on the web, iPhone, iPad and Android, in light or dark, with controls that stay easy to tap.</li>
+          <li><b>Roles and assigned stores</b>Owners, managers and floor staff each sign in with their own role and see their own stores.</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
