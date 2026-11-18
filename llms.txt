@@ -1,0 +1,21 @@
+# Antigravity Analytics
+
+> Antigravity Analytics is a Physical AI company building the intelligence layer for the physical world, starting inside real kitchens. Who: Antigravity Analytics Private Limited, a Physical AI company. What: the intelligence layer for the physical world - back office plus service marketplace for physical businesses first, capture inside those operations second, one brain for a physical body as the end goal. Why: physical work is unmeasured from inside; systems record what was sold and what was ordered, but not what hands did, what was actually used, what was wasted, in what order work happened, or why it failed. How: a staircase of five steps - sell the service, capture inside the work, compare primary data with secondary data from the world, train one brain across jobs and trades, then give it a body through a mechatronics partner first, or our own robots when the economics hold. Product 01 is Mise, the back office for kitchens, now in build. Construction is in research. Mechanics is defined. No paying customers yet, and no Antigravity robot is for sale or in deployment today. End goal: one brain, one general purpose robot - kitchen in the morning, mechanic in the evening, construction at the weekend, and a home version that cooks, repairs, and does mechanic work.
+
+## Pages
+
+- [Home](https://antigrav.si/index.md): The company, the problem, the staircase, the trades, the capture kit, and the end goal.
+- [Mise](https://antigrav.si/mise.md): Product 01. Software that runs the back of a kitchen: recipes, orders, stock, and bills in one place, with a person approving every order before anything is bought.
+- [Mise in French](https://antigrav.si/mise-fr.md): The French (fr-CA) version of the Mise page.
+- [Partner](https://antigrav.si/partner.md): We are interested in partners for the physical step: mechatronics and robotics companies, IoT, sensor, wearable and camera hardware partners, operators and proving grounds, technical and research partners, and institutions.
+- [Privacy](https://antigrav.si/privacy.md): The website privacy notice.
+
+## Mise plugin
+
+- [Mise plugin privacy](https://antigrav.si/mise-plugin-privacy.html): Privacy for the free Mise tools (invoice check, panic-spend estimate, pack unit cost).
+- [Mise plugin terms](https://antigrav.si/mise-plugin-terms.html): Terms for the free Mise tools.
+
+## Contact
+
+- Email: hello@antigrav.si
+- Pricing is not published on the site. Pricing is discussed on a call only.

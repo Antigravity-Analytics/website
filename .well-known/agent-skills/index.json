@@ -1,0 +1,12 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "mise-free-tools",
+      "type": "skill-md",
+      "description": "Work out kitchen back-office figures with the free Mise tools - check a supplier invoice line by line, estimate panic spend from emergency top-up buying, and calculate the unit cost of an ingredient from its pack price and size. Use when a user asks about an invoice discrepancy or overcharge, emergency or top-up purchasing costs, per-unit or per-pack ingredient costs, or wants a quick kitchen cost check before talking to Mise.",
+      "url": "https://antigrav.si/.well-known/agent-skills/mise-free-tools/SKILL.md",
+      "digest": "sha256:9feaa2ffe4be6706e53293e45afe2205393c1b86e94f8604a0790be132eb875d"
+    }
+  ]
+}

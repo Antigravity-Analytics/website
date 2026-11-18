@@ -1,0 +1,100 @@
+# Antigravity Analytics - antigrav.si
+# AI crawlers are explicitly welcome, including for AI training: the founder
+# decision is to allow training, because these marketing pages are distribution
+# and the company wants to be found and cited.
+# Content Signals Policy (Cloudflare, 2025, CC0 - preference, not a block):
+#  search   = building a search index and providing search results (links + short excerpts)
+#  ai-input = inputting content into AI models (RAG, grounding, real-time generative answers)
+#  ai-train = training or fine-tuning AI models
+User-agent: *
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
+Allow: /
+
+# Search-index bots - allow (blocking any of these removes us from that product's answers)
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Meta-WebIndexer
+Allow: /
+
+User-agent: MistralAI-Index
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: Amzn-SearchBot
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+# User-triggered fetchers - allow (several operators state robots may not apply to these anyway)
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Meta-ExternalFetcher
+Allow: /
+
+User-agent: MistralAI-User
+Allow: /
+
+User-agent: Amzn-User
+Allow: /
+
+# Training bots - allowed by choice (our pages are our distribution)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: MistralAI-Training
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: AI2Bot
+Allow: /
+
+# Control tokens (not crawlers) - allowed, matching the allow-training decision
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Emerging shared training-preference token (IETF AIPREF draft, Oct 2026) - explicitly allowed
+User-agent: __usage_ai-training
+Allow: /
+
+# Link previews - never block
+User-agent: facebookexternalhit
+Allow: /
+
+Sitemap: https://antigrav.si/sitemap.xml

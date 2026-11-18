@@ -1,0 +1,6 @@
+# antigrav.si - agent interfaces
+Site: https://antigrav.si/
+Docs: https://antigrav.si/llms.txt
+Skills: https://antigrav.si/.well-known/agent-skills/index.json
+Partner: https://antigrav.si/partner
+Contact: mailto:hello@antigrav.si
