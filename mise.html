@@ -2657,6 +2657,12 @@ function readJSON(k){try{var v=localStorage.getItem(k);return v?JSON.parse(v):nu
 function storeJSON(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
 var EMAIL_RE=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 function money(n){return "CA$"+n.toFixed(2)}
+/* Demo renderer strings resolve live through MISE_I18N.demo (seeded with
+   these same English defaults by mise-page.js; mise-fr.html overrides the
+   demo key with French). The literal fallbacks are the current English text,
+   so this page renders identically with or without the seed. */
+function dt(key,fallback){var d=(window.MISE_I18N&&window.MISE_I18N.demo)||{};return d[key]||fallback}
+function dunit(n){return n===1?dt("dayLeft","day left"):dt("daysLeft","days left")}
 
 /* ================= SEGMENTS (Clover customize lesson) ================= */
 var SEGMENTS={
@@ -2983,7 +2989,7 @@ function renderBrief(){
     pr.innerHTML="";
     var first=seg.items[0];
     var rows=[
-      {t:"Count "+first.name+" first: "+first.days+" day"+(first.days===1?"":"s")+" left on its stock clock",pill:"Do first",cls:"pill flag"},
+      {t:dt("countFirst","Count {name} first: {n} {unit} on its stock clock").replace("{name}",first.name).replace("{n}",first.days).replace("{unit}",dunit(first.days)),pill:dt("doFirst","Do first"),cls:"pill flag"},
       {t:"Approve the order before the 4:00 PM supplier cutoff",pill:"Before 4 PM",cls:"pill"},
       {t:"Answer the flagged invoice line: burger buns, printed 8, by hand 5",pill:"Needs your eyes",cls:"pill flag"}
     ];
@@ -3004,10 +3010,10 @@ function renderCount(){
     countState[idx]={c:0,p:0,l:0};
     var wrap=document.createElement("div"); wrap.className="countitem";
     var pillCls=it.days<=1?"pill flag":"pill";
-    var html="<div class='ci-head'><span class='ci-name'>"+it.name+"</span><span class='"+pillCls+"'>Stock clock: "+it.days+" day"+(it.days===1?"":"s")+" left</span></div>";
+    var html="<div class='ci-head'><span class='ci-name'>"+it.name+"</span><span class='"+pillCls+"'>"+dt("stockClock","Stock clock: {n} {unit}").replace("{n}",it.days).replace("{unit}",dunit(it.days))+"</span></div>";
     html+="<div class='countgrid'>";
     [["c","Cases","1 case = "+it.perCase+" "+it.unit],["p","Packs","1 pack = "+it.perPack+" "+it.unit],["l","Loose","Single "+it.unit]].forEach(function(kind){
-      html+="<div class='stepper'><span class='sl2'>"+kind[1]+"</span><div class='srow3'><button type='button' data-count-btn data-idx='"+idx+"' data-kind='"+kind[0]+"' data-dir='-1' aria-label='Take one away'>-</button><span class='sv' data-count-val='"+idx+"-"+kind[0]+"'>0</span><button type='button' data-count-btn data-idx='"+idx+"' data-kind='"+kind[0]+"' data-dir='1' aria-label='Add one'>+</button></div><div class='snote'>"+kind[2]+"</div></div>";
+      html+="<div class='stepper'><span class='sl2'>"+kind[1]+"</span><div class='srow3'><button type='button' data-count-btn data-idx='"+idx+"' data-kind='"+kind[0]+"' data-dir='-1' aria-label='"+dt("takeOneAway","Take one away")+"'>-</button><span class='sv' data-count-val='"+idx+"-"+kind[0]+"'>0</span><button type='button' data-count-btn data-idx='"+idx+"' data-kind='"+kind[0]+"' data-dir='1' aria-label='"+dt("addOne","Add one")+"'>+</button></div><div class='snote'>"+kind[2]+"</div></div>";
     });
     html+="</div><p class='ci-total'>On the shelf: <b data-count-total='"+idx+"'>0 "+it.unit+"</b>. Mise adds it up, not you.</p>";
     wrap.innerHTML=html;
@@ -3143,7 +3149,7 @@ if(invFile)invFile.addEventListener("change",function(){
   var nameEl=$("#invFileName"), stageEl=$("#invStage"), spin=$("#invSpinner"), result=$("#invSampleResult");
   if(!f)return;
   result.hidden=true; spin.classList.remove("show"); stageEl.textContent="";
-  nameEl.textContent="File picked: "+f.name+". This page does not read your file. Watch the steps the real check runs.";
+  nameEl.textContent=dt("filePicked","File picked: {name}. This page does not read your file. Watch the steps the real check runs.").replace("{name}",f.name);
   setTimeout(function(){spin.classList.add("show");},1000);
   setTimeout(function(){stageEl.textContent="Step 1 of 3: Reading the invoice";},2100);
   setTimeout(function(){stageEl.textContent="Step 2 of 3: Pulling the lines out";},3200);

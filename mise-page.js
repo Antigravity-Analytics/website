@@ -7,6 +7,23 @@
 (function(){
 "use strict";
 var I18N = window.MISE_I18N || {};
+/* Demo renderer string defaults (English). The demo script in each page
+   reads MISE_I18N.demo live at render time and falls back to these same
+   English literals, so the English page renders identically with or without
+   this seed. A page overrides per language by defining MISE_I18N.demo
+   itself: mise-fr.html ships the French set, which wins over these
+   defaults. */
+window.MISE_I18N = window.MISE_I18N || {};
+window.MISE_I18N.demo = Object.assign({
+  stockClock: "Stock clock: {n} {unit}",
+  dayLeft: "day left",
+  daysLeft: "days left",
+  countFirst: "Count {name} first: {n} {unit} on its stock clock",
+  doFirst: "Do first",
+  takeOneAway: "Take one away",
+  addOne: "Add one",
+  filePicked: "File picked: {name}. This page does not read your file. Watch the steps the real check runs."
+}, window.MISE_I18N.demo || {});
 var REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 function $(s,c){return (c||document).querySelector(s)}
 function $$(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))}

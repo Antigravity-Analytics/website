@@ -847,6 +847,22 @@ header .nav-links a.nl,header .nav-links button.nl{white-space:nowrap}
     .benchtable th:nth-child(n+2),.benchtable td:nth-child(n+2){padding-left:6px}
   }
 </style>
+<style>
+/* FR header fit (fix pass, 2026-11-24): the French nav labels are longer than
+   the English ones, and at desktop widths the trial button and the booking
+   CTA were clipped at the right edge of the 1440px header container. Widen
+   the container, tighten the nav rhythm and smaller mono labels so the full
+   nav and both CTAs fit at 1440 and 1920 with room to spare. Phone widths
+   keep the base rules: text links and nav buttons already step out below
+   1400px, 1180px and 900px, and the CTA already stays on one line. */
+header .nav-in{max-width:1600px;padding:0 24px;gap:10px}
+header .nav-links{gap:11px}
+header .nav-links a.nl,header .nav-links button.nl{font-size:9.5px;letter-spacing:.1em}
+header .langlink{font-size:9.5px;letter-spacing:.1em}
+header #themeBtn{font-size:9.5px;letter-spacing:.1em;padding:8px 12px}
+header .nav-cta{white-space:nowrap}
+@media(max-width:480px){header .nav-in{padding:0 16px;gap:8px}header .nav-links{gap:10px}header #themeBtn{padding:7px 10px}header .nav-cta{padding:9px 12px}}
+</style>
 </head>
 <body>
 <a class="skiplink" href="#main">Aller au contenu</a>
@@ -1462,7 +1478,7 @@ header .nav-links a.nl,header .nav-links button.nl{white-space:nowrap}
     <div class="mktoggle rv" role="group" aria-label="Choisissez votre marché">
       <span class="mktlab">Marché</span>
       <button type="button" class="mktbtn" data-mkt="ca" aria-pressed="true">Canada (CA$)</button>
-      <button type="button" class="mktbtn" data-mkt="us" aria-pressed="false">United States (US$)</button>
+      <button type="button" class="mktbtn" data-mkt="us" aria-pressed="false">États-Unis (US$)</button>
     </div>
     <div class="mktoggle rv" role="group" aria-label="Choisissez la période de facturation" style="margin-top:-14px">
       <span class="mktlab">Facturation</span>
@@ -2051,7 +2067,7 @@ header .nav-links a.nl,header .nav-links button.nl{white-space:nowrap}
           <div class="srow"><b>Envoyer</b>Vos premières factures, par téléversement ou en transférant le courriel.</div>
           <div class="srow"><b>Inventaire</b>Votre inventaire d'ouverture, dix articles signalés, deux minutes.</div>
         </div>
-        <div class="step"><div class="n">ÉTAPE 03</div><h4>Start</h4>
+        <div class="step"><div class="n">ÉTAPE 03</div><h4>Commencer</h4>
           <div class="srow"><b>Premier résumé</b>Votre premier résumé de 8 h 15 arrive le lendemain matin.</div>
           <div class="srow"><b>Première commande</b>Préparée à partir de votre inventaire, approuvée par vous, avant l'heure limite.</div>
           <div class="srow"><b>Terminé quand</b>La routine roule sans nous à l'appel.</div>
@@ -2575,6 +2591,16 @@ window.MISE_I18N = {
     "Quick service": "Magasin échantillon · Une cuisine à service rapide",
     "Café": "Magasin échantillon · Un café",
     "Franchise": "Magasin échantillon · Une cuisine de franchise, une de plusieurs succursales"
+  },
+  demo: {
+    stockClock: "Horloge de stock : {n} {unit}",
+    dayLeft: "jour restant",
+    daysLeft: "jours restants",
+    countFirst: "Comptez {name} d'abord : {n} {unit} à son horloge de stock",
+    doFirst: "À faire en premier",
+    takeOneAway: "En retirer un",
+    addOne: "Ajouter un",
+    filePicked: "Fichier choisi : {name}. Cette page ne lit pas votre fichier. Regardez les étapes que la vraie vérification exécute."
   }
 };
 /* Founding cohort state (F4): 0 renders words only. The numbered states render
@@ -2666,6 +2692,10 @@ function readJSON(k){try{var v=localStorage.getItem(k);return v?JSON.parse(v):nu
 function storeJSON(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
 var EMAIL_RE=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 function money(n){return "CA$"+n.toFixed(2)}
+/* Les chaînes de la démo passent par MISE_I18N.demo (valeurs françaises
+   ci-dessus; les replis littéraux sont le texte anglais actuel). */
+function dt(key,fallback){var d=(window.MISE_I18N&&window.MISE_I18N.demo)||{};return d[key]||fallback}
+function dunit(n){return n===1?dt("dayLeft","day left"):dt("daysLeft","days left")}
 
 /* ================= SEGMENTS (Clover customize lesson) ================= */
 var SEGMENTS={
@@ -2992,7 +3022,7 @@ function renderBrief(){
     pr.innerHTML="";
     var first=seg.items[0];
     var rows=[
-      {t:"Comptez "+first.name+" first: "+first.days+" jour"+(first.days===1?"":"s")+" restant"+(first.days===1?"":"s")+" à son horloge de stock",pill:"À faire en premier",cls:"pill flag"},
+      {t:dt("countFirst","Count {name} first: {n} {unit} on its stock clock").replace("{name}",first.name).replace("{n}",first.days).replace("{unit}",dunit(first.days)),pill:dt("doFirst","Do first"),cls:"pill flag"},
       {t:"Approuvez la commande avant l'heure limite du fournisseur à 16 h",pill:"Avant 16 h",cls:"pill"},
       {t:"Répondez à la ligne de facture signalée : pains à burger, imprimé 8, à la main 5",pill:"A besoin de vos yeux",cls:"pill flag"}
     ];
@@ -3013,10 +3043,10 @@ function renderCount(){
     countState[idx]={c:0,p:0,l:0};
     var wrap=document.createElement("div"); wrap.className="countitem";
     var pillCls=it.days<=1?"pill flag":"pill";
-    var html="<div class='ci-head'><span class='ci-name'>"+it.name+"</span><span class='"+pillCls+"'>Horloge de stock : "+it.days+" day"+(it.days===1?"":"s")+" left</span></div>";
+    var html="<div class='ci-head'><span class='ci-name'>"+it.name+"</span><span class='"+pillCls+"'>"+dt("stockClock","Stock clock: {n} {unit}").replace("{n}",it.days).replace("{unit}",dunit(it.days))+"</span></div>";
     html+="<div class='countgrid'>";
     [["c","Caisses","1 caisse = "+it.perCase+" "+it.unit],["p","Paquets","1 paquet = "+it.perPack+" "+it.unit],["l","Libres","Unité "+it.unit]].forEach(function(kind){
-      html+="<div class='stepper'><span class='sl2'>"+kind[1]+"</span><div class='srow3'><button type='button' data-count-btn data-idx='"+idx+"' data-kind='"+kind[0]+"' data-dir='-1' aria-label='En retirer un'>-</button><span class='sv' data-count-val='"+idx+"-"+kind[0]+"'>0</span><button type='button' data-count-btn data-idx='"+idx+"' data-kind='"+kind[0]+"' data-dir='1' aria-label='Add one'>+</button></div><div class='snote'>"+kind[2]+"</div></div>";
+      html+="<div class='stepper'><span class='sl2'>"+kind[1]+"</span><div class='srow3'><button type='button' data-count-btn data-idx='"+idx+"' data-kind='"+kind[0]+"' data-dir='-1' aria-label='"+dt("takeOneAway","Take one away")+"'>-</button><span class='sv' data-count-val='"+idx+"-"+kind[0]+"'>0</span><button type='button' data-count-btn data-idx='"+idx+"' data-kind='"+kind[0]+"' data-dir='1' aria-label='"+dt("addOne","Add one")+"'>+</button></div><div class='snote'>"+kind[2]+"</div></div>";
     });
     html+="</div><p class='ci-total'>Sur la tablette : <b data-count-total='"+idx+"'>0 "+it.unit+"</b>. Mise fait l'addition, pas vous.</p>";
     wrap.innerHTML=html;
@@ -3152,7 +3182,7 @@ if(invFile)invFile.addEventListener("change",function(){
   var nameEl=$("#invFileName"), stageEl=$("#invStage"), spin=$("#invSpinner"), result=$("#invSampleResult");
   if(!f)return;
   result.hidden=true; spin.classList.remove("show"); stageEl.textContent="";
-  nameEl.textContent="Fichier choisi : "+f.name+". This page does not read your file. Watch the steps the real check runs.";
+  nameEl.textContent=dt("filePicked","File picked: {name}. This page does not read your file. Watch the steps the real check runs.").replace("{name}",f.name);
   setTimeout(function(){spin.classList.add("show");},1000);
   setTimeout(function(){stageEl.textContent="Étape 1 sur 3 : Lecture de la facture";},2100);
   setTimeout(function(){stageEl.textContent="Étape 2 sur 3 : Extraction des lignes";},3200);
