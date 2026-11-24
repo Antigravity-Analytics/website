@@ -833,7 +833,14 @@ header .nav-links a.nl,header .nav-links button.nl{white-space:nowrap}
   .ftx-list li b{font-family:var(--sg);font-weight:600;color:var(--ink);margin-right:8px}
   @media(max-width:900px){.ftx-list{grid-template-columns:1fr}.ftx-group{margin-top:42px}}
 </style>
+<style>
+  .skiplink{position:absolute;left:16px;top:-80px;z-index:9999;background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:999px;font-family:var(--sg);font-weight:600;font-size:13px;text-decoration:none;transition:top .2s}
+  .skiplink:focus{top:12px}
+  main{display:block}
+</style>
 </head>
+<body>
+<a class="skiplink" href="#main">Skip to content</a>
 <!-- ============ INTRO (P01/P02) ============ -->
 <div id="intro" aria-hidden="true">
   <svg viewBox="0 0 100 100">
@@ -870,6 +877,7 @@ header .nav-links a.nl,header .nav-links button.nl{white-space:nowrap}
     </nav>
   </div>
 </header>
+<main id="main" tabindex="-1">
 
 <!-- ============ RECOGNITION LINE (Stage 14, E7/E79: device-held state only) ============ -->
 <div class="recog" id="recog" hidden></div>
@@ -2246,6 +2254,8 @@ header .nav-links a.nl,header .nav-links button.nl{white-space:nowrap}
     </div>
   </div>
 </section>
+
+</main>
 
 <!-- ============ FOOTER (Stage 16: E89 triage, desks, E80 manage line) ============ -->
 <footer>
