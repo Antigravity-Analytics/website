@@ -15,11 +15,7 @@
 <meta name="twitter:description" content="A 10-minute morning routine for quick-service kitchens. Founding pilot. An inner circle, not a launch.">
 <meta name="twitter:image" content="https://antigrav.si/mise-og.png">
 <link rel="canonical" href="https://antigrav.si/mise">
-<link rel="alternate" type="text/markdown" href="https://antigrav.si/mise.md" />
-<link rel="describedby" href="https://antigrav.si/llms.txt">
 <link rel="alternate" hreflang="fr-CA" href="https://antigrav.si/mise-fr">
-<link rel="alternate" hreflang="en" href="https://antigrav.si/mise">
-<link rel="alternate" hreflang="x-default" href="https://antigrav.si/mise">
 <meta name="robots" content="index, follow">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%2305070A'/%3E%3Crect x='31.4' y='18.3' width='37.5' height='3.9' fill='%23FFFFFF'/%3E%3Cpath d='M50 27.5L22.95 83.3L31.37 83.3L50 36.3L68.63 83.3L77.05 83.3Z' fill='%23FFFFFF'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -69,14 +65,14 @@ a{color:inherit}
 @keyframes markin{to{opacity:1;transform:translateY(0)}}
 /* ============ HEADER (preserved) ============ */
 header{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--navbg);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);transition:background .4s,border-color .4s}
-.nav-in{max-width:1180px;margin:0 auto;padding:0 32px;height:66px;display:flex;align-items:center;gap:14px}
+.nav-in{max-width:1440px;margin:0 auto;padding:0 32px;height:66px;display:flex;align-items:center;gap:14px}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
 .brand svg{width:30px;height:30px;display:block}
 .brand svg .mk{fill:var(--mark);transition:fill .4s}
 .brand b{font-family:var(--sg);font-weight:700;font-size:14px;letter-spacing:.14em}
 .brand-sub{font-weight:500;color:var(--grey);letter-spacing:.06em}
 .brand b i{font-style:normal;color:var(--red)}
-.nav-links{margin-left:auto;display:flex;gap:26px;align-items:center}
+.nav-links{margin-left:auto;display:flex;gap:20px;align-items:center}
 .nav-links a.nl{font-family:var(--mono);font-size:10px;letter-spacing:.22em;color:var(--grey);text-decoration:none;text-transform:uppercase;transition:color .2s}
 .nav-links a.nl:hover{color:var(--ink)}
 #themeBtn{font-family:var(--mono);font-size:10px;letter-spacing:.22em;background:none;border:1px solid var(--line);color:var(--grey);padding:8px 14px;border-radius:999px;cursor:pointer;text-transform:uppercase;transition:border-color .2s,color .2s}
@@ -509,7 +505,334 @@ header .nav-cta{background:#F2F4F7;color:#0A0C0F;border-color:#F2F4F7}
 @media(max-width:900px){.mktgrid{grid-template-columns:1fr}}
 @media(max-width:560px){.mpcard{padding:22px 18px}.mpdoc{flex-wrap:wrap;row-gap:8px}.chip{white-space:normal}.mpdoor .cta{width:100%;white-space:normal;text-align:center;line-height:1.5}}
 </style>
+<style id="mise-demo-learnings">
+/* ===== Demo learnings build (2026-11-23): doors, workspace, tour, clocks, assistant, academy.
+   Extends the Mise Ledger system only: same tokens, squared corners, teal = active/verified,
+   amber (--red in ledger tokens) = flagged. No new colours, no gradients. ===== */
+button.nl{background:none;border:none;cursor:pointer;font-family:var(--mono);font-size:10px;letter-spacing:.22em;color:#9AA3B0;text-transform:uppercase;padding:0}
+button.nl:hover{color:#F2F4F7}
+.doorbtn{font-family:var(--sg);font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:12px;padding:13px 22px;background:var(--surface);color:var(--ink);border:1px solid var(--line-hi);border-radius:2px;cursor:pointer;transition:border-color .2s,transform .25s cubic-bezier(.16,1,.3,1)}
+.doorbtn:hover{border-color:var(--ink);transform:translateY(-2px)}
+.doorbtn.solid{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.doorbtn[disabled]{opacity:.45;cursor:not-allowed;transform:none}
+.doorbtn.small{padding:10px 16px;font-size:11px}
+/* segment switcher (hero) */
+.segswitch{margin-top:30px}
+.segswitch .seglab{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#9AA3B0;margin-bottom:10px}
+.segswitch .segrow{display:flex;gap:8px;flex-wrap:wrap}
+.segbtn{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;background:transparent;color:#C7CDD4;border:1px solid rgba(238,242,246,.35);border-radius:2px;padding:10px 16px;cursor:pointer}
+.segbtn[aria-pressed="true"]{background:#F2F4F7;color:#0A0C0F;border-color:#F2F4F7}
+#herosample{margin-top:16px;font-size:14.5px;color:#AEB7C2}
+#herosample b{color:#F2F4F7;font-weight:600}
+.resumedoors{margin-top:22px;display:flex;gap:10px 22px;flex-wrap:wrap;align-items:center}
+.resumedoors a,.resumedoors button{background:none;border:none;cursor:pointer;padding:0;font-size:14px;color:var(--teal);text-decoration:none;border-bottom:1px solid var(--tealline)}
+.resumedoors [hidden]{display:none}
+/* trial clock chip */
+.trialchip{margin-top:22px;max-width:520px;border:1px solid var(--line-hi);background:var(--surface);border-radius:2px;padding:14px 18px}
+.trialchip[hidden]{display:none}
+.trialchip .tc-top{display:flex;justify-content:space-between;gap:12px;align-items:baseline;flex-wrap:wrap}
+.trialchip .tc-big{font-weight:700;font-size:16px}
+.trialchip .tc-note{font-size:12.5px;color:var(--grey);margin-top:6px}
+.tctrack{height:8px;background:var(--surface2);border:1px solid var(--line);margin-top:10px}
+.tcfill{height:100%;background:var(--teal);width:0}
+#hero .trialchip{background:#12151B;border-color:#3A414D;color:#F2F4F7}
+#hero .trialchip .tc-note{color:#9AA3B0}
+#hero .tctrack{background:#1B2029;border-color:#282E39}
+/* overlay panels: sign in + trial setup */
+.panelwrap{position:fixed;inset:0;z-index:190;background:rgba(5,7,10,.72);display:flex;align-items:flex-start;justify-content:center;overflow-y:auto;padding:28px 16px}
+.panelwrap[hidden]{display:none}
+.sheet{background:var(--bg);color:var(--ink);border:1px solid var(--line-hi);border-radius:2px;box-shadow:var(--shadow);width:100%;max-width:560px;padding:36px;position:relative}
+.sheet.wide{max-width:860px}
+.sheet h3{font-family:var(--sg);font-size:26px;letter-spacing:-.02em;margin-bottom:8px}
+.sheet .ssub{color:var(--grey);font-size:14.5px;margin-bottom:24px;max-width:520px}
+.sheetclose{position:absolute;top:14px;right:14px;background:none;border:1px solid var(--line);color:var(--grey);width:36px;height:36px;border-radius:2px;cursor:pointer;font-size:16px;line-height:1}
+.sheetclose:hover{color:var(--ink);border-color:var(--line-hi)}
+.fld{margin-bottom:16px}
+.fld label{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--grey);margin-bottom:8px}
+.fld label .opt{text-transform:none;letter-spacing:.05em;opacity:.8}
+.fld input,.fld select{width:100%;background:var(--surface2);border:1px solid var(--line);border-radius:2px;color:var(--ink);font-family:var(--body);font-size:15px;padding:13px 16px;outline:none}
+.fld input:focus,.fld select:focus{border-color:var(--teal)}
+.fld .ferr{display:none;font-size:12px;color:var(--ink);margin-top:6px;font-weight:600}
+.fld.invalid .ferr{display:block}
+.fld.invalid input{border-color:var(--line-hi);border-width:2px}
+.frow2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:640px){.frow2{grid-template-columns:1fr}.sheet{padding:28px 20px}}
+.sheet .altline{margin-top:18px;font-size:14px;color:var(--grey)}
+.sheet .altline button,.sheet .altline a{background:none;border:none;padding:0;cursor:pointer;color:var(--teal);font-size:14px;text-decoration:none;border-bottom:1px solid var(--tealline)}
+.divider{display:flex;align-items:center;gap:14px;margin:22px 0;color:var(--grey);font-size:12px;text-transform:uppercase;letter-spacing:.14em}
+.divider::before,.divider::after{content:"";flex:1;border-top:1px solid var(--line)}
+.googlebtn{width:100%;background:var(--surface);color:var(--ink);border:1px solid var(--line-hi);border-radius:2px;padding:13px;font-size:14.5px;font-weight:600;cursor:pointer}
+.googlebtn:hover{border-color:var(--ink)}
+.forgotbox{border:1px dashed var(--line-hi);border-radius:2px;padding:18px;margin-top:20px}
+.forgotbox[hidden]{display:none}
+.okline{display:none;gap:10px;align-items:flex-start;font-size:14.5px;margin-top:16px}
+.okline.show{display:flex}
+.okline .ic{stroke:var(--teal);margin-top:3px}
+/* trial setup: side progress rail (Uber lesson) */
+.trialgrid{display:grid;grid-template-columns:230px 1fr;gap:34px}
+@media(max-width:760px){.trialgrid{grid-template-columns:1fr;gap:20px}}
+.rail{border-right:1px solid var(--line);padding-right:24px}
+@media(max-width:760px){.rail{border-right:none;border-bottom:1px solid var(--line);padding:0 0 16px}}
+.rail .rstep{padding:12px 0;border-bottom:1px solid var(--line);font-size:14px;color:var(--grey)}
+.rail .rstep:last-child{border-bottom:none}
+.rail .rstep .rn{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;display:block;margin-bottom:4px}
+.rail .rstep.now{color:var(--ink);font-weight:600}
+.rail .rstep.now .rn{color:var(--teal)}
+.rail .rstep.done .rn{color:var(--teal)}
+.tstep[hidden]{display:none}
+.choicerow{display:grid;gap:10px;margin-bottom:20px}
+.choice{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);background:var(--surface);border-radius:2px;padding:16px;cursor:pointer;font-size:14.5px}
+.choice input{margin-top:3px;accent-color:var(--teal);width:17px;height:17px;flex:0 0 17px}
+.choice b{display:block;font-weight:600}
+.choice span{color:var(--grey);font-size:13.5px}
+.choice:has(input:checked){border-color:var(--teal)}
+.stepnav{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+.summarybar{position:sticky;bottom:0;background:var(--surface);border:1px solid var(--line-hi);border-radius:2px;padding:14px 18px;margin-top:26px;display:flex;gap:8px 26px;flex-wrap:wrap;font-size:13.5px}
+.summarybar b{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--grey);display:block;font-weight:600}
+.honestline{font-size:13px;color:var(--grey);border:1px dashed var(--line-hi);border-radius:2px;padding:12px 16px;margin-top:18px}
+/* demo workspace */
+.ws-shell{border:1px solid var(--line-hi);border-radius:2px;background:var(--surface);box-shadow:var(--shadow);margin-top:48px;overflow:hidden}
+.ws-head{display:flex;gap:14px;align-items:center;flex-wrap:wrap;padding:20px 24px;border-bottom:1px solid var(--line);background:var(--surface)}
+.ws-head .ws-store{font-weight:700;font-size:17px}
+.ws-head .ws-user{font-size:13px;color:var(--grey)}
+.ws-banner{border-bottom:1px solid var(--flagline);background:var(--flagbg);padding:12px 24px;font-size:13.5px}
+.ws-banner[hidden]{display:none}
+.ws-grid{display:grid;grid-template-columns:212px 1fr;min-height:520px}
+@media(max-width:820px){.ws-grid{grid-template-columns:1fr}}
+.ws-nav{display:flex;flex-direction:column;border-right:1px solid var(--line);background:var(--surface)}
+@media(max-width:820px){.ws-nav{flex-direction:row;overflow-x:auto;border-right:none;border-bottom:1px solid var(--line)}}
+.ws-tab{background:none;border:none;border-bottom:1px solid var(--line);color:var(--grey);font-size:14px;font-weight:500;text-align:left;padding:15px 20px;cursor:pointer;white-space:nowrap;display:flex;gap:10px;align-items:center}
+@media(max-width:820px){.ws-tab{border-bottom:none;border-right:1px solid var(--line)}}
+.ws-tab:hover{color:var(--ink)}
+.ws-tab.active{color:var(--ink);font-weight:700;box-shadow:inset 3px 0 0 var(--teal)}
+@media(max-width:820px){.ws-tab.active{box-shadow:inset 0 -3px 0 var(--teal)}}
+.ws-tab.tourhl{outline:2px solid var(--teal);outline-offset:-2px}
+.ws-main{padding:30px;position:relative;background:var(--bg)}
+@media(max-width:640px){.ws-main{padding:22px 16px}}
+.ws-panel{display:none}
+.ws-panel.active{display:block;animation:rise .35s cubic-bezier(.16,1,.3,1)}
+.ws-panel h3{font-family:var(--sg);font-size:23px;letter-spacing:-.02em;margin-bottom:6px}
+.ws-panel .wsub{color:var(--grey);font-size:14.5px;margin-bottom:24px;max-width:560px}
+.skel{display:none}
+.skel.show{display:block}
+.skel .sk{height:18px;background:var(--surface2);border:1px solid var(--line);margin-bottom:12px}
+.skel .sk.w40{width:40%}.skel .sk.w70{width:70%}
+.wsrow{display:flex;justify-content:space-between;gap:14px;align-items:center;padding:14px 2px;border-bottom:1px solid var(--line);font-size:14.5px;flex-wrap:wrap}
+.wsrow:last-child{border-bottom:none}
+.pill{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:5px 10px;border:1px solid var(--line);border-radius:2px;color:var(--grey);white-space:nowrap;font-weight:600}
+.pill.ok{background:var(--tealbg);color:var(--teal);border-color:var(--tealline)}
+.pill.flag{background:var(--flagbg);color:var(--red);border-color:var(--flagline)}
+.bigfig{font-family:var(--mono);font-size:30px;font-weight:600;font-variant-numeric:tabular-nums lining-nums}
+.track{height:12px;background:var(--surface2);border:1px solid var(--line);margin-top:8px}
+.track .fill{height:100%;background:var(--teal)}
+.track .fill.flag{background:var(--red)}
+/* count steppers */
+.countitem{border:1px solid var(--line);border-radius:2px;background:var(--surface);padding:20px;margin-bottom:14px}
+.countitem .ci-head{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline;margin-bottom:6px}
+.countitem .ci-name{font-weight:700;font-size:16px}
+.countgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+@media(max-width:560px){.countgrid{grid-template-columns:1fr}}
+.stepper{border:1px solid var(--line);background:var(--bg);padding:12px;text-align:center}
+.stepper .sl2{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--grey);display:block;margin-bottom:8px}
+.stepper .srow3{display:flex;align-items:center;justify-content:center;gap:14px}
+.stepper button{width:40px;height:40px;font-size:20px;background:var(--surface);color:var(--ink);border:1px solid var(--line-hi);border-radius:2px;cursor:pointer;line-height:1}
+.stepper .sv{font-family:var(--mono);font-size:20px;font-weight:600;min-width:34px}
+.stepper .snote{font-size:11.5px;color:var(--grey);margin-top:8px}
+.ci-total{margin-top:14px;font-size:14.5px}
+.ci-total b{font-family:var(--mono)}
+/* invoices split */
+.invsplit{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:760px){.invsplit{grid-template-columns:1fr}}
+.paper{background:#F4F1EA;color:#17130C;border:1px solid var(--line-hi);border-radius:2px;padding:22px;font-size:13.5px}
+[data-theme="dark"] .paper{background:#EDE9E0}
+.paper .phead{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#5B5344;margin-bottom:12px}
+.paper .pline{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px solid #D8D2C4}
+.paper .hand{font-style:italic;color:#8A2B1B;font-weight:600}
+.parsed{border:1px solid var(--line);border-radius:2px;background:var(--surface);padding:22px}
+.uploadbox{border:1px dashed var(--line-hi);border-radius:2px;padding:20px;margin-top:18px}
+.uploadbox input[type=file]{max-width:100%;font-size:14px;color:var(--ink)}
+.spinner{display:none;width:22px;height:22px;border:3px solid var(--line);border-top-color:var(--teal);border-radius:50%;animation:spin 0.9s linear infinite;margin-top:14px}
+.spinner.show{display:block}
+@keyframes spin{to{transform:rotate(360deg)}}
+.stageline{font-size:13.5px;color:var(--grey);margin-top:10px;min-height:20px}
+/* performance chart */
+.barchart{display:flex;align-items:flex-end;gap:8px;height:170px;border-bottom:2px solid var(--line-hi);padding-top:16px}
+.barchart .bc{flex:1;background:var(--ink);min-height:4px;position:relative}
+.barchart .bc span{position:absolute;top:-22px;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:10px;color:var(--grey);white-space:nowrap}
+.barlabels{display:flex;gap:8px;margin-top:8px}
+.barlabels span{flex:1;text-align:center;font-family:var(--mono);font-size:10px;color:var(--grey)}
+.segchips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.segchip{font-size:12.5px;font-weight:600;background:var(--surface);color:var(--ink);border:1px solid var(--line-hi);border-radius:2px;padding:9px 16px;cursor:pointer}
+.segchip[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+/* team table */
+.roletable{width:100%;border-collapse:collapse;font-size:14px}
+.roletable th{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--grey);text-align:left;padding:0 10px 10px 0;border-bottom:1px solid var(--line-hi)}
+.roletable td{padding:12px 10px 12px 0;border-bottom:1px solid var(--line);vertical-align:top}
+@media(max-width:640px){.roletable{font-size:12.5px}}
+/* toggles in settings */
+.togglerow{display:flex;justify-content:space-between;gap:16px;align-items:center;padding:16px 2px;border-bottom:1px solid var(--line);font-size:14.5px;flex-wrap:wrap}
+.switch{position:relative;width:52px;height:28px;flex:0 0 52px;background:var(--surface2);border:1px solid var(--line-hi);border-radius:999px;cursor:pointer;padding:0}
+.switch::after{content:"";position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:var(--grey);transition:left .2s,background .2s}
+.switch[aria-checked="true"]{border-color:var(--teal)}
+.switch[aria-checked="true"]::after{left:27px;background:var(--teal)}
+/* guided tour card */
+.tourcard{position:absolute;z-index:5;left:20px;right:20px;bottom:20px;background:var(--surface);border:2px solid var(--teal);border-radius:2px;box-shadow:var(--shadow);padding:22px}
+.tourcard[hidden]{display:none}
+.tourcard .tt{font-weight:700;font-size:16px;margin-bottom:6px}
+.tourcard p{font-size:14px;color:var(--grey);max-width:560px}
+.tourdots{display:flex;gap:6px;margin:14px 0}
+.tourdots i{width:9px;height:9px;border-radius:50%;border:1px solid var(--line-hi);display:block}
+.tourdots i.on{background:var(--teal);border-color:var(--teal)}
+.tournav{display:flex;gap:10px;flex-wrap:wrap}
+/* assistant */
+#askBtn{position:fixed;right:18px;bottom:18px;z-index:120;background:#0A0C0F;color:#F2F4F7;border:1px solid #3A414D;border-radius:2px;padding:14px 20px;font-family:var(--sg);font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;box-shadow:0 16px 40px rgba(0,0,0,.35)}
+#askBtn:hover{border-color:#F2F4F7}
+.askpanel{position:fixed;right:18px;bottom:76px;z-index:121;width:min(380px,calc(100vw - 36px));max-height:min(560px,calc(100vh - 110px));display:none;flex-direction:column;background:var(--bg);color:var(--ink);border:1px solid var(--line-hi);border-radius:2px;box-shadow:var(--shadow)}
+.askpanel.open{display:flex}
+.askpanel .ap-head{display:flex;justify-content:space-between;align-items:center;padding:16px 18px;border-bottom:1px solid var(--line)}
+.askpanel .ap-head b{font-size:15px}
+.asklog{padding:16px 18px;overflow-y:auto;font-size:14px}
+.askmsg{margin-bottom:14px;padding:12px 14px;border:1px solid var(--line);background:var(--surface);border-radius:2px}
+.askmsg.me{background:var(--surface2);text-align:right}
+.askchips{display:flex;gap:8px;flex-wrap:wrap;padding:0 18px 12px}
+.askchip{font-size:12.5px;background:var(--surface);color:var(--ink);border:1px solid var(--line-hi);border-radius:2px;padding:8px 12px;cursor:pointer;text-align:left}
+.askchip:hover{border-color:var(--teal)}
+.askform{display:flex;gap:8px;padding:12px 18px 16px;border-top:1px solid var(--line)}
+.askform input{flex:1;min-width:0;background:var(--surface2);border:1px solid var(--line);border-radius:2px;color:var(--ink);font-size:14px;padding:11px 12px;outline:none}
+.askform input:focus{border-color:var(--teal)}
+.askform button{background:var(--ink);color:var(--bg);border:1px solid var(--ink);border-radius:2px;padding:11px 16px;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.08em;cursor:pointer}
+.asknote{font-size:12px;color:var(--grey);padding:0 18px 14px}
+/* academy */
+.lessongroups{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px;align-items:start}
+@media(max-width:900px){.lessongroups{grid-template-columns:1fr}}
+.lessongroups .lg h4{font-family:var(--sg);font-size:18px;margin-bottom:6px}
+.lessongroups .qa{margin-top:12px}
+.lessongroups .qa button.qhead{font-size:15.5px;padding:18px 20px}
+.lessongroups .qa .qa-in{padding:0 20px 20px;font-size:14px}
+.lessongroups .qa-in ol,.lessongroups .qa-in ul{margin:0 0 0 18px}
+.lessongroups .qa-in li{padding:3px 0}
+.checklist{list-style:none;margin-top:8px}
+.checklist li{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--line);font-size:14.5px;color:var(--grey)}
+.checklist li:last-child{border-bottom:none}
+.checklist input{width:19px;height:19px;margin-top:2px;accent-color:var(--teal);flex:0 0 19px}
+.checklist input:checked + span{color:var(--ink)}
+.steps3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:900px){.steps3{grid-template-columns:1fr}}
+.filmstill{margin-top:18px;border:1px solid var(--line);border-radius:2px;overflow:hidden;background:var(--surface)}
+.filmstill video{width:100%;max-height:300px;object-fit:cover;display:block}
+.filmstill .figcap{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--grey);padding:12px 16px}
+.footdoors{display:flex;gap:10px 26px;flex-wrap:wrap;font-size:14px;margin-bottom:34px;align-items:center}
+.footdoors a,.footdoors button{background:none;border:none;padding:0;cursor:pointer;color:var(--teal);font-size:14px;text-decoration:none;border-bottom:1px solid var(--tealline)}
+.footdoors [hidden]{display:none}
+.statebox{border:1px dashed var(--line-hi);border-radius:2px;padding:22px;text-align:left}
+.statebox .sb-t{font-weight:700;font-size:16px;margin-bottom:6px}
+.statebox p{font-size:14px;color:var(--grey)}
+.errbox{border:1px solid var(--flagline);background:var(--flagbg);border-radius:2px;padding:18px;font-size:14px}
+/* phone width fixes found in the build walk: nav text links hide at 900px in the
+   base sheet, so the two new nav buttons follow the same rule; the longer
+   doorblock CTA labels wrap instead of overflowing. */
+@media(max-width:900px){header .nav-links button.nl{display:none}}
+@media(max-width:560px){.doorblock .cta{white-space:normal;width:100%;text-align:center;line-height:1.5}}
+/* nav fit, found in the build walk screenshots: the four new doors made labels
+   wrap inside the 66px header at desktop width. Labels now stay on one line;
+   duplicated doors (Learn, Help, then Sign in and Start trial) step out of the
+   nav at narrower widths, where the hero, workspace and footer doors carry
+   them. Below 1020px the header wraps the way the original page already did. */
+header .nav-links a.nl,header .nav-links button.nl{white-space:nowrap}
+@media(max-width:1400px){header .nav-links a[href="#learn"],header .nav-links a[href="#workspace"],header .nav-links a[href="#specs"]{display:none}}
+@media(max-width:1180px){header .nav-links button.nl{display:none}}
+@media(max-width:900px){#askBtn{bottom:86px}.askpanel{bottom:142px}}
+/* ===== DoorDash second pass (2026-11-23): inline validation, academy search,
+   store status, priorities, glance strip, payouts, have handy, trial terms. ===== */
+.fld.invalid select{border-color:var(--line-hi);border-width:2px}
+.doorbtn.gated{opacity:.45;cursor:not-allowed;transform:none}
+.doorbtn.gated:hover{transform:none;border-color:var(--line-hi)}
+.doorbtn.solid.gated:hover{border-color:var(--ink)}
+.formerr{display:none;font-size:13px;font-weight:600;margin-top:4px}
+.formerr.show{display:block}
+.handybox{border:1px dashed var(--line-hi);border-radius:2px;padding:14px 16px;margin-top:18px;font-size:13.5px}
+.handybox b{display:block;margin-bottom:6px}
+.handybox ul{margin:0 0 0 18px}
+.handybox li{padding:2px 0}
+.termslist{margin:8px 0 0 18px;font-size:13.5px}
+.termslist li{padding:2px 0}
+.glance{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:22px}
+@media(max-width:640px){.glance{grid-template-columns:1fr 1fr}}
+.glance .gstat{border:1px solid var(--line);background:var(--surface);border-radius:2px;padding:14px 16px}
+.glance .gstat .gl{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--grey);display:block;margin-bottom:6px}
+.glance .gstat .gv{font-family:var(--mono);font-size:19px;font-weight:600}
+.ws-head button.pill{cursor:pointer;background:var(--surface);font-family:var(--mono)}
+.ws-head button.pill.ok{background:var(--tealbg)}
+.ws-head button.pill.flag{background:var(--flagbg)}
+.learntools{margin-top:36px;max-width:560px}
+.learntools[hidden]{display:none}
+#trialDone[hidden]{display:none}
+#stmtNote[hidden]{display:none}
+/* public pricing (founder order 2026-11-24: the ruled ladder, in plain sight) */
+.mktoggle{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:28px 0 30px}
+.mktoggle .mktlab{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--grey);margin-right:6px}
+.mktbtn{font-family:var(--sg);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;background:transparent;color:var(--ink);border:1px solid var(--line-hi);border-radius:2px;padding:10px 18px;cursor:pointer}
+.mktbtn[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.pricegrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;align-items:stretch}
+.pricecard{border:1px solid var(--line);background:var(--surface);border-radius:2px;padding:26px 22px;display:flex;flex-direction:column}
+.pricecard[hidden]{display:none}
+.pricecard .pk{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--grey);margin-bottom:14px}
+.pricegrid.tiers{grid-template-columns:repeat(3,1fr)}
+.pricecard.popular{background:var(--surface2);border-color:var(--line-hi)}
+.pricecard.popular .pk{color:var(--red)}
+.trialstrip{border:1px solid var(--line);background:var(--surface);border-radius:2px;padding:16px 20px;font-size:14.5px;color:var(--grey);margin-bottom:26px;max-width:860px}
+.trialstrip b{color:var(--ink)}
+.benchstrip{margin-top:34px;border-top:1px solid var(--line);padding-top:26px;max-width:860px}
+.benchstrip h4{font-family:var(--sg);font-size:18px;margin-bottom:12px}
+.benchstrip p{font-size:14.5px;color:var(--grey);margin-bottom:10px;max-width:720px}
+.pricecard .pfig{font-family:var(--sg);font-size:31px;font-weight:700;line-height:1.15}
+.pricecard .punit{font-size:13px;color:var(--grey);margin-top:4px}
+.pricecard .pdesc{font-size:14px;color:var(--grey);margin-top:14px}
+.pricecard .pinc{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--grey);margin-top:20px}
+.pricecard .plist{list-style:none;margin:8px 0 22px}
+.pricecard .plist li{font-size:13.5px;padding:7px 0;border-bottom:1px solid var(--line)}
+.pricecard .plist li:last-child{border-bottom:none}
+.pricecard .doorbtn{margin-top:auto;text-align:center;width:100%}
+.pricecard .psave{font-size:13px;font-weight:600;color:var(--ink);margin-top:8px}
+.pricecard .psave[hidden]{display:none}
+.pricefaq{margin-top:34px;max-width:860px}
+@media(max-width:1100px){.pricegrid{grid-template-columns:1fr 1fr}.pricegrid.tiers{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.pricegrid{grid-template-columns:1fr}.pricegrid.tiers{grid-template-columns:1fr}}
+/* whole-page rebuild (2026-11-24): specifications, trust, comparison */
+.spectable{width:100%;border-collapse:collapse;margin-top:8px}
+.spectable th[scope="row"]{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--grey);font-weight:600;text-align:left;vertical-align:top;padding:16px 22px 16px 0;border-bottom:1px solid var(--line);width:210px}
+.spectable td{font-size:15px;padding:16px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.spectable tr:last-child th,.spectable tr:last-child td{border-bottom:none}
+.dayhead{font-family:var(--mono);font-size:11px;letter-spacing:.32em;color:var(--grey);text-transform:uppercase;margin:58px 0 20px}
+.cmpwrap{overflow-x:auto;margin-top:10px;-webkit-overflow-scrolling:touch}
+.cmptable{width:100%;min-width:760px;border-collapse:collapse}
+.cmptable th{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--grey);font-weight:600;text-align:left;padding:0 14px 12px 0;border-bottom:1px solid var(--line-hi)}
+.cmptable th[scope="row"]{letter-spacing:.14em;color:var(--ink);white-space:nowrap}
+.cmptable td{padding:16px 14px 16px 0;border-bottom:1px solid var(--line);font-size:14.5px;vertical-align:top}
+.cmptable td.us{background:var(--surface)}
+.cmptable tr:last-child td,.cmptable tr:last-child th{border-bottom:none}
+@media(max-width:640px){.spectable th[scope="row"]{width:118px;padding-right:14px}.spectable td{font-size:14px}}
+
+</style>
+<link rel="alternate" type="text/markdown" href="https://antigrav.si/mise.md" />
+<link rel="describedby" href="https://antigrav.si/llms.txt">
+<link rel="alternate" hreflang="en" href="https://antigrav.si/mise">
+<link rel="alternate" hreflang="x-default" href="https://antigrav.si/mise">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Mise","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://antigrav.si/mise","description":"Mise is the back office that checks your invoices, your counts and your orders, in one place. It flags what could run out today and drafts the order. You approve every order: nothing is ever ordered without a person approving it.","publisher":{"@type":"Organization","name":"Antigravity Analytics","legalName":"Antigravity Analytics Private Limited","url":"https://antigrav.si/"}}</script>
+<style>
+  /* Complete feature list: text-led, in the page's own language. Group
+     labels in the eyebrow pattern; items as hairline rows (the plainblock
+     list pattern) with the feature name in ink and one plain sentence in
+     grey. No cards, no icons. */
+  .ftx-groups{margin-top:14px}
+  .ftx-group{margin-top:52px}
+  .ftx-gname{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:var(--grey);display:flex;align-items:center;gap:14px;margin-bottom:10px}
+  .ftx-gname::before{content:"";width:36px;height:1px;background:var(--grey);flex:0 0 36px}
+  .ftx-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(32px,4.5vw,56px)}
+  .ftx-list li{font-size:14.5px;line-height:1.6;color:var(--grey);padding:11px 0;border-bottom:1px solid var(--line)}
+  .ftx-list li b{font-family:var(--sg);font-weight:600;color:var(--ink);margin-right:8px}
+  @media(max-width:900px){.ftx-list{grid-template-columns:1fr}.ftx-group{margin-top:42px}}
+</style>
 </head>
 <!-- ============ INTRO (P01/P02) ============ -->
 <div id="intro" aria-hidden="true">
@@ -532,10 +855,15 @@ header .nav-cta{background:#F2F4F7;color:#0A0C0F;border-color:#F2F4F7}
     <nav class="nav-links" aria-label="Primary">
       <a class="nl" href="#routine">How it works</a>
       <a class="nl" href="#proof">Proof</a>
+      <a class="nl" href="#specs">Specs</a>
       <a class="nl" href="#marketplace">Marketplace</a>
       <a class="nl" href="#setup">Setup</a>
+      <a class="nl" href="#pricing">Pricing</a>
       <a class="nl" href="#questions">Questions</a>
-      <a class="nl" href="partner.html">Partner</a>
+      <a class="nl" href="#learn">Learn</a>
+      <a class="nl" href="#workspace">Help</a>
+      <button type="button" class="nl" data-open-signin>Sign in</button>
+      <button type="button" class="nl" data-open-trial>Start trial</button>
       <a class="langlink" href="mise-fr.html" hreflang="fr-CA">FR</a>
       <button id="themeBtn" type="button" aria-label="Toggle light and dark theme">Dark</button>
       <a class="cta nav-cta" href="#book">Book a call</a>
@@ -547,28 +875,6 @@ header .nav-cta{background:#F2F4F7;color:#0A0C0F;border-color:#F2F4F7}
 <div class="recog" id="recog" hidden></div>
 
 <!-- ============ HERO (Stage 2; F5 no cohort line, F10 film beside text) ============ -->
-<style>
-  /* Hero product composition (founder "read finished" pass): two device
-     frames in the same bezel language as the Proof-section screens (psx-),
-     at full product scale, inside the hero's existing film frame, which is
-     near-black in both themes. Morning Brief in front at about half the
-     frame's width; Invoice Workbench behind it, inside the frame at the
-     right and raised above the front phone's top so its header and audit
-     lines show, the front phone overlapping only its lower-left.
-     No labels, no caption: the screens carry the frame on their own. */
-  .hfx-stage{position:relative;padding:42px 26px 46px}
-  .hfx-phone{position:relative;background:#0B0D10;aspect-ratio:9/19;box-shadow:0 30px 60px rgba(0,0,0,.55),0 6px 18px rgba(0,0,0,.42),inset 0 0 0 1px rgba(255,255,255,.1)}
-  .hfx-phone::before{content:"";position:absolute;z-index:2;top:19px;left:50%;transform:translateX(-50%);width:7px;height:7px;border-radius:50%;background:#0B0D10;box-shadow:inset 0 0 2px rgba(255,255,255,.4)}
-  .hfx-phone::after{content:"";position:absolute;right:-2px;top:120px;width:3px;height:58px;border-radius:2px;background:#242932}
-  .hfx-phone img{display:block;width:100%;height:100%;object-fit:cover;object-position:top center;background:#0B0E13}
-  .hfx-front{z-index:2;width:54%;margin-top:104px;padding:11px;border-radius:38px}
-  .hfx-front img{border-radius:27px}
-  .hfx-back{z-index:1;position:absolute;top:42px;right:56px;width:40%;padding:9px;border-radius:30px}
-  .hfx-back::before{top:16px}
-  .hfx-back::after{top:92px;height:44px}
-  .hfx-back img{border-radius:21px}
-  @media(max-width:560px){.hfx-stage{padding:32px 20px 36px}.hfx-front{margin-top:64px}.hfx-back{top:32px;right:36px}}
-</style>
 <section id="hero">
   <canvas id="matrix" aria-hidden="true"></canvas>
   <div class="wrap herogrid">
@@ -576,19 +882,42 @@ header .nav-cta{background:#F2F4F7;color:#0A0C0F;border-color:#F2F4F7}
       <p class="defline rv">Mise is the back office that checks your invoices, your counts and your orders, in one place.</p>
       <div class="eyebrow rv">For quick-service restaurants, cafés &amp; franchises across the United States and Canada</div>
       <h1 class="rv">See what&rsquo;s running low before 4&nbsp;PM on a Friday.</h1>
-      <p class="lede rv">Mise is in its founding pilot, built by hand, kitchen by kitchen, with operators who want it to last. The 10-minute morning routine comes first: what could run out today, what yesterday cost you, the prep list, one order to approve.</p>
+      <p class="lede rv">Mise is in its founding pilot, set up store by store. The 10-minute morning routine comes first: what could run out today, what yesterday cost you, the prep list, one order to approve.</p>
       <div class="hero-ctas rv">
         <a class="cta" href="#book">Book a call</a>
         <a class="cta ghost" href="#routine">See the 10-minute morning routine</a>
       </div>
       <a class="textlink rv" href="#walkthrough">Or run the check yourself first: walk the demo</a>
       <div class="hero-note rv">Founding pilot · In development · <b>Set up with you</b></div>
-    </div>
-    <div class="filmwrap rv">
-      <div class="hfx-stage">
-        <div class="hfx-phone hfx-back"><img src="screens/invoice-workbench.png" alt="Mise app screen: invoice workbench"></div>
-        <div class="hfx-phone hfx-front"><img src="screens/morning-brief.png" alt="Mise app screen: morning brief"></div>
+      <div class="segswitch rv">
+        <div class="seglab">Made for:</div>
+        <div class="segrow" role="group" aria-label="Pick your kind of store">
+          <button type="button" class="segbtn" data-seg="quick" aria-pressed="true">Quick service</button>
+          <button type="button" class="segbtn" data-seg="full" aria-pressed="false">Full service</button>
+          <button type="button" class="segbtn" data-seg="multi" aria-pressed="false">Multi location</button>
+          <button type="button" class="segbtn" data-seg="coffee" aria-pressed="false">Coffee shop</button>
+          <button type="button" class="segbtn" data-seg="truck" aria-pressed="false">Food truck</button>
+        </div>
+        <p id="herosample">Sample store: <b>Northline Burgers</b>, a quick-service kitchen before the Friday rush. The workspace, the brief and the count below all run on this store.</p>
       </div>
+      <div class="resumedoors rv">
+        <button type="button" data-resume-door data-resume-open hidden>Continue your trial setup</button>
+        <button type="button" data-open-signin>Sign in to the demo workspace</button>
+        <a href="#book">Manage or move your booked call</a>
+        <a href="#book">Start a change of store details</a>
+      </div>
+      <div class="trialchip" id="trialChipHero" hidden>
+        <div class="tc-top"><span class="tc-big" data-trial-text>Trial day 1 of 14</span><span class="pill ok">Clock running</span></div>
+        <div class="tctrack"><div class="tcfill" data-trial-fill></div></div>
+        <p class="tc-note">We warn you 3 days before the first charge.</p>
+      </div>
+    </div>
+    <div class="filmwrap rv" aria-hidden="true">
+      <video class="hero-film" autoplay muted loop playsinline preload="metadata" poster="mise-kitchen.jpg"><source src="films/mise-film.mp4" type="video/mp4"></video>
+      <div class="badge" id="b1"><span class="pulse"></span><b>08:15</b>&nbsp;&nbsp;Morning brief</div>
+      <div class="badge" id="b2">Panic spend&nbsp;&nbsp;<b class="rd">−CA$86.40</b>&nbsp;&nbsp;this week</div>
+      <div class="badge" id="b3"><b>CA$248.00</b>&nbsp;&nbsp;<span class="rd">ON HOLD</span>&nbsp;&nbsp;awaiting owner</div>
+      <div class="badge" id="b4">POS&nbsp;&nbsp;<b>Clover</b>&nbsp;&nbsp;connected</div>
     </div>
   </div>
 </section>
@@ -857,84 +1186,10 @@ header .nav-cta{background:#F2F4F7;color:#0A0C0F;border-color:#F2F4F7}
       </div>
       <p class="tnote">Empty until a pilot result can fill every box.</p>
     </div>
-    <style>
-      /* Product screens: a band in the page's own panel language (surface,
-         hairline, squared corner, page shadow) holding three device frames.
-         The honesty note runs as the section intro, not a footnote. */
-      .psx-strip{margin-top:64px}
-      .psx-band{background:var(--surface);border:1px solid var(--line);border-radius:2px;box-shadow:var(--shadow);padding:clamp(30px,4.5vw,52px) clamp(22px,4.5vw,56px) clamp(36px,4.5vw,58px)}
-      .psx-eyebrow{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:var(--grey);display:flex;align-items:center;gap:14px;margin-bottom:18px}
-      .psx-eyebrow::before{content:"";width:36px;height:1px;background:var(--grey);flex:0 0 36px}
-      .psx-intro{font-size:16px;line-height:1.65;color:var(--grey);max-width:66ch}
-      .psx-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,3.4vw,40px);max-width:920px;margin:46px auto 0}
-      .psx-card{margin:0}
-      .psx-phone{position:relative;background:#0B0D10;border-radius:38px;padding:11px;aspect-ratio:9/19;box-shadow:0 26px 50px rgba(5,7,10,.26),0 5px 16px rgba(5,7,10,.16),inset 0 0 0 1px rgba(255,255,255,.09)}
-      [data-theme="dark"] .psx-phone{box-shadow:0 26px 50px rgba(0,0,0,.55),0 5px 16px rgba(0,0,0,.42),inset 0 0 0 1px rgba(255,255,255,.1)}
-      .psx-phone::before{content:"";position:absolute;z-index:2;top:19px;left:50%;transform:translateX(-50%);width:7px;height:7px;border-radius:50%;background:#0B0D10;box-shadow:inset 0 0 2px rgba(255,255,255,.4)}
-      .psx-phone::after{content:"";position:absolute;right:-2px;top:120px;width:3px;height:58px;border-radius:2px;background:#242932}
-      .psx-phone img{display:block;width:100%;height:100%;object-fit:cover;object-position:top center;border-radius:27px;background:#0B0E13}
-      .psx-card figcaption,.psx-wide figcaption{margin-top:20px;font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--grey);line-height:1.75;text-align:center}
-      .psx-card figcaption b,.psx-wide figcaption b{display:block;color:var(--ink);font-weight:600;font-size:11px;letter-spacing:.22em;margin-bottom:3px}
-      .psx-wide{max-width:920px;margin:54px auto 0}
-      .psx-browser{position:relative;background:#0B0D10;border-radius:24px;padding:11px;box-shadow:0 26px 50px rgba(5,7,10,.26),0 5px 16px rgba(5,7,10,.16),inset 0 0 0 1px rgba(255,255,255,.09)}
-      [data-theme="dark"] .psx-browser{box-shadow:0 26px 50px rgba(0,0,0,.55),0 5px 16px rgba(0,0,0,.42),inset 0 0 0 1px rgba(255,255,255,.1)}
-      .psx-chrome{position:relative;display:flex;align-items:center;gap:7px;height:26px;margin:0 6px 10px}
-      .psx-dot{width:9px;height:9px;border-radius:50%;background:#2A2F38;flex:0 0 9px}
-      .psx-url{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:#9AA3AF;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.07);padding:4px 18px;border-radius:999px;white-space:nowrap}
-      .psx-browser img{display:block;width:100%;height:auto;border-radius:13px;background:#0B0E13}
-      .psx-fine{margin-top:36px;font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--grey);text-align:center}
-      @media(max-width:900px){
-        .psx-grid{grid-template-columns:1fr;max-width:300px;gap:44px;margin-top:38px}
-        .psx-band{padding:30px 20px 40px}
-        .psx-wide{margin-top:42px}
-      }
-    </style>
-    <div class="psx-strip">
-      <div class="psx-band">
-        <div class="psx-eyebrow">Product screens</div>
-        <p class="psx-intro">The three screens the day runs on: the morning brief, the invoice workbench, and the guided count.</p>
-        <div class="psx-grid">
-          <figure class="psx-card">
-            <div class="psx-phone"><img src="screens/morning-brief.png" alt="Mise design screen: morning brief, the floor home" loading="lazy"></div>
-            <figcaption><b>Morning brief</b>The floor home: the day in five to ten minutes</figcaption>
-          </figure>
-          <figure class="psx-card">
-            <div class="psx-phone"><img src="screens/invoice-workbench.png" alt="Mise design screen: invoice verification workbench" loading="lazy"></div>
-            <figcaption><b>Invoice workbench</b>Every invoice checked, three passes</figcaption>
-          </figure>
-          <figure class="psx-card">
-            <div class="psx-phone"><img src="screens/guided-count.png" alt="Mise design screen: guided critical count" loading="lazy"></div>
-            <figcaption><b>Guided count</b>A short count of only the items that matter</figcaption>
-          </figure>
-        </div>
-        <figure class="psx-wide">
-          <div class="psx-browser">
-            <div class="psx-chrome"><span class="psx-dot"></span><span class="psx-dot"></span><span class="psx-dot"></span><span class="psx-url">mise.antigrav.si</span></div>
-            <img src="screens/desktop-brief.jpg" alt="Mise design screen: morning brief on desktop, the owner's desk view" loading="lazy">
-          </div>
-          <figcaption><b>Morning brief — desktop</b>The owner's desk view: the same morning, on the big screen</figcaption>
-        </figure>
-        <p class="psx-fine">Product screens · Sample data throughout</p>
-      </div>
-    </div>
   </div>
 </section>
 
-<!-- ============ FEATURES (complete list, from the canonical scope) ============ -->
-<style>
-  /* Complete feature list: text-led, in the page's own language. Group
-     labels in the eyebrow pattern; items as hairline rows (the plainblock
-     list pattern) with the feature name in ink and one plain sentence in
-     grey. No cards, no icons. */
-  .ftx-groups{margin-top:14px}
-  .ftx-group{margin-top:52px}
-  .ftx-gname{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:var(--grey);display:flex;align-items:center;gap:14px;margin-bottom:10px}
-  .ftx-gname::before{content:"";width:36px;height:1px;background:var(--grey);flex:0 0 36px}
-  .ftx-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(32px,4.5vw,56px)}
-  .ftx-list li{font-size:14.5px;line-height:1.6;color:var(--grey);padding:11px 0;border-bottom:1px solid var(--line)}
-  .ftx-list li b{font-family:var(--sg);font-weight:600;color:var(--ink);margin-right:8px}
-  @media(max-width:900px){.ftx-list{grid-template-columns:1fr}.ftx-group{margin-top:42px}}
-</style>
+<!-- ============ SPECIFICATIONS (2026-11-24 whole-page rebuild: the robotics spec-sheet standard) ============ -->
 <section id="features">
   <div class="wrap">
     <div class="eyebrow rv">Everything in Mise</div>
@@ -1030,6 +1285,37 @@ header .nav-cta{background:#F2F4F7;color:#0A0C0F;border-color:#F2F4F7}
     </div>
   </div>
 </section>
+<section id="specs">
+  <div class="wrap">
+    <div class="eyebrow rv">Specifications</div>
+    <h2 class="rv">The specifications.</h2>
+    <p class="lede rv">No adjectives. What Mise reads, what it does, and what it needs, row by row. Every row can be checked against the product.</p>
+    <table class="spectable rv">
+      <tr><th scope="row">Morning brief</th><td>Every day at 08:15. What could run out tonight, what yesterday cost you, and what needs a decision.</td></tr>
+      <tr><th scope="row">The count</th><td>About 2 minutes, flagged items only. Cases, packs and loose are counted separately, and Mise does the adding up.</td></tr>
+      <tr><th scope="row">Your time, all day</th><td>5 to 10 minutes, from the brief to the approved order. Longer than that is treated as a fault, not a feature.</td></tr>
+      <tr><th scope="row">Sales in</th><td>Item by item from Clover, through a read only authorisation you grant on a call. You can revoke it in Clover at any time.</td></tr>
+      <tr><th scope="row">Invoices in</th><td>Supplier invoices you upload, or forward by email. Each one is checked three ways: against the order, against the delivery, and against the agreed price.</td></tr>
+      <tr><th scope="row">Orders out</th><td>One proposed order at a time. Nothing is sent without your approval of the exact contents. Change a line and it needs a fresh approval, and a retry never sends it twice.</td></tr>
+      <tr><th scope="row">Cutoffs and minimums</th><td>A live countdown to each supplier&rsquo;s cutoff, and a bar showing how close the order sits to that supplier&rsquo;s minimum.</td></tr>
+      <tr><th scope="row">The money math</th><td>Worked out exactly, and the same way every time. The assistant suggests reasons for a gap. It never works out the money.</td></tr>
+      <tr><th scope="row">Works offline</th><td>Counts are kept on the device and sent when the connection returns. Nothing is lost, and nothing is counted twice.</td></tr>
+      <tr><th scope="row">Runs on</th><td>Phone and desktop, in the browser. The pilot needs no install and no new hardware.</td></tr>
+      <tr><th scope="row">Languages</th><td>English and French Canadian.</td></tr>
+      <tr><th scope="row">Taxes</th><td>GST and HST are handled inside the numbers.</td></tr>
+      <tr><th scope="row">Your money</th><td>Mise never holds it. You pay your suppliers, and marketplace providers, directly.</td></tr>
+    </table>
+
+    <div class="dayhead rv">A day with Mise</div>
+    <div class="tl rv">
+      <div class="row"><span class="tm">Overnight</span><span>Yesterday&rsquo;s sales come in from the till. Invoices you forwarded are read, and checked against what was agreed.</span></div>
+      <div class="row"><span class="tm">08:15</span><span>The brief lands: what could run out tonight, what yesterday cost you, and the one order that needs you.</span></div>
+      <div class="row"><span class="tm">Morning</span><span>The count. About two minutes, flagged items only.</span></div>
+      <div class="row"><span class="tm">Before cutoff</span><span>You approve the order, or change it and approve the change. The countdown runs the whole time.</span></div>
+      <div class="row"><span class="tm">The rush</span><span>Tonight&rsquo;s rush runs on what the morning caught.</span></div>
+    </div>
+  </div>
+</section>
 
 <!-- ============ SETUP (Stage 5; F11: the store enters its own data, walked through together) ============ -->
 <section id="setup">
@@ -1099,6 +1385,130 @@ header .nav-cta{background:#F2F4F7;color:#0A0C0F;border-color:#F2F4F7}
     </div>
 
     <p class="fwdline rv">The first step is a 15-minute call. <a href="#fit">Check your fit first<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15"/><path d="M13 6l6 6-6 6"/></svg></a></p>
+  </div>
+</section>
+
+<!-- ============ TRUST AND DATA (2026-11-24 whole-page rebuild: the Anthropic / DeepMind standard) ============ -->
+<section id="trust">
+  <div class="wrap">
+    <div class="eyebrow rv">Trust and data</div>
+    <h2 class="rv">Your store. Your records. Stated plainly.</h2>
+    <p class="lede rv">What Mise can see, what it can never do, and what happens to your records, in plain words, before you sign anything.</p>
+    <div class="duo">
+      <div class="plainblock rv">
+        <h4>Access, granted by you</h4>
+        <ul>
+          <li>Clover access is read only, granted by you inside Clover on a call together. Nobody hands over a login, ever.</li>
+          <li>You can revoke that access in Clover at any time. Revoking stops the sales feed, and Mise says so instead of guessing.</li>
+          <li>Support sees what the owner sees and changes nothing, only when you ask, and only for the time you agree. Emergency access is declared to the owner the moment it happens.</li>
+        </ul>
+      </div>
+      <div class="plainblock rv">
+        <h4>Your records</h4>
+        <ul>
+          <li>Your store&rsquo;s records stay yours, and stay exportable for twelve months after you leave, with a warning before anything is deleted.</li>
+          <li>Every number shows its work: one tap shows the invoice photo, the count record, and who entered it.</li>
+          <li>One exception, stated openly: grouped benchmark numbers, built from many stores with no store named, are Mise&rsquo;s and may be licensed. Your raw records are never sold.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="duo">
+      <div class="plainblock rv">
+        <h4>The approval boundary</h4>
+        <ul>
+          <li>Mise never sends an order without a person approving the exact contents first.</li>
+          <li>Mise never disputes a charge on its own. It prepares the evidence pack, and a person says send.</li>
+          <li>The assistant explains numbers and suggests reasons. It never works out the money, and it never approves anything.</li>
+          <li>Mise is not your accounting system. It checks, reconciles, and prepares a month-end pack. Your books stay the record.</li>
+        </ul>
+      </div>
+      <div class="plainblock rv">
+        <h4>What Mise does not do yet</h4>
+        <ul>
+          <li>Connect to Toast. It is not connected, and no date is promised.</li>
+          <li>Connect to Uber Eats, DoorDash or SkipTheDishes. Delivery sales do not flow in yet.</li>
+          <li>Take a spoken count. The count is tapped in today. Voice is a later step, and when it lands it records; it never approves.</li>
+          <li>Run in India. India opens with its own launch, and its own pricing.</li>
+          <li>Sit in an app store. The pilot runs in the browser, on phone and desktop.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRICING (2026-11-24: public pricing, founder order; ladder retired, competitor level grading) ============ -->
+<section id="pricing">
+  <div class="wrap">
+    <div class="eyebrow rv">Pricing</div>
+    <h2 class="rv">The price, in plain sight.</h2>
+    <p class="lede rv">Priced per location, in plain sight, graded against the back office tools stores already pay for. Three tiers, and the difference is depth, not a cut down product. Nothing is charged on this page, and no card is taken here.</p>
+    <div class="mktoggle rv" role="group" aria-label="Choose your market">
+      <span class="mktlab">Market</span>
+      <button type="button" class="mktbtn" data-mkt="ca" aria-pressed="true">Canada (CA$)</button>
+      <button type="button" class="mktbtn" data-mkt="us" aria-pressed="false">United States (US$)</button>
+    </div>
+    <div class="mktoggle rv" role="group" aria-label="Choose billing period" style="margin-top:-14px">
+      <span class="mktlab">Billing</span>
+      <button type="button" class="mktbtn" data-bill="mo" aria-pressed="true">Monthly</button>
+      <button type="button" class="mktbtn" data-bill="yr" aria-pressed="false">Yearly, 10% off</button>
+    </div>
+    <p class="smallprint rv" style="margin-bottom:26px">India pricing opens with the India launch.</p>
+    <p class="trialstrip rv"><b>Every tier starts with 14 days free.</b> A card is saved when a real trial starts, charged only when the trial ends, and you get a warning 3 days before the first charge. Pay yearly and take 10% off any tier. All fees are non-refundable.</p>
+    <div class="pricegrid tiers rv">
+      <div class="pricecard">
+        <div class="pk">Start</div>
+        <div class="pfig" data-ca="CA$349" data-us="US$249" data-ca-a="CA$314.10" data-us-a="US$224.10">CA$349</div>
+        <div class="punit" data-unit-mo="per location, per month" data-unit-yr="per location, per month, billed yearly">per location, per month</div>
+        <p class="psave" hidden data-ca-a="You save CA$418.80 a year" data-us-a="You save US$298.80 a year"></p>
+        <p class="pdesc">The daily loop, covered. For a store that wants the morning check and nothing it does not use yet.</p>
+        <p class="pinc">What is included</p>
+        <ul class="plist"><li>Morning brief</li><li>The 2 minute count</li><li>Invoice checking</li><li>Savings ledger</li></ul>
+        <button type="button" class="doorbtn solid" data-plan-start="start">Start your trial</button>
+      </div>
+      <div class="pricecard popular">
+        <div class="pk">Growth · Most popular</div>
+        <div class="pfig" data-ca="CA$479" data-us="US$349" data-ca-a="CA$431.10" data-us-a="US$314.10">CA$479</div>
+        <div class="punit" data-unit-mo="per location, per month" data-unit-yr="per location, per month, billed yearly">per location, per month</div>
+        <p class="psave" hidden data-ca-a="You save CA$574.80 a year" data-us-a="You save US$418.80 a year"></p>
+        <p class="pdesc">Everything in Start, plus the working tools a busy store reaches for every day.</p>
+        <p class="pinc">Everything in Start, plus</p>
+        <ul class="plist"><li>Order approval, with cutoff and minimum order handling</li><li>Performance and insights</li><li>Items and recipes mapping</li><li>Team and roles</li></ul>
+        <button type="button" class="doorbtn solid" data-plan-start="growth">Start your trial</button>
+      </div>
+      <div class="pricecard">
+        <div class="pk">Scale</div>
+        <div class="pfig" data-ca="CA$679" data-us="US$499" data-ca-a="CA$611.10" data-us-a="US$449.10">CA$679</div>
+        <div class="punit" data-unit-mo="per location, per month" data-unit-yr="per location, per month, billed yearly">per location, per month</div>
+        <p class="psave" hidden data-ca-a="You save CA$814.80 a year" data-us-a="You save US$598.80 a year"></p>
+        <p class="pdesc">Everything in Growth, plus the views and tracking that groups and multi location owners need.</p>
+        <p class="pinc">Everything in Growth, plus</p>
+        <ul class="plist"><li>Multi location views</li><li>Payouts and statements</li><li>Supplier dispute and credits tracking</li><li>Priority help</li></ul>
+        <button type="button" class="doorbtn solid" data-plan-start="scale">Start your trial</button>
+      </div>
+    </div>
+    <div class="benchstrip rv">
+      <h4>Priced against the tools stores already pay for</h4>
+      <p>Back office tools like MarketMan (from US$249 a month) and MarginEdge (US$350 a month per location) do the job Mise is graded against, and Mise sits in that same band.</p>
+      <p>Till systems are a different job: POS plans from Square and Clover run US$49 to US$149 a month per location. Mise works beside your till, not instead of it.</p>
+    </div>
+    <div class="pricefaq rv">
+      <div class="qa">
+        <button type="button" class="qhead" aria-expanded="false">What does per location mean?<span class="qmark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9.5l6 6 6-6"/></svg></span></button>
+        <div class="qa-a"><div class="qa-in">Each store is one location, and the price covers that store on its tier: its brief, its counts, its invoices and its team. A store with one address pays for one location.</div></div>
+      </div>
+      <div class="qa">
+        <button type="button" class="qhead" aria-expanded="false">What if I have more than one location?<span class="qmark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9.5l6 6 6-6"/></svg></span></button>
+        <div class="qa-a"><div class="qa-in">Each location is priced the same way, on the tier that location uses. Two locations pay the per location price twice. There is no separate multi location price, and no volume discount is promised. The Scale tier adds the views that let you run them together.</div></div>
+      </div>
+      <div class="qa">
+        <button type="button" class="qhead" aria-expanded="false">Are the fees refundable?<span class="qmark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9.5l6 6 6-6"/></svg></span></button>
+        <div class="qa-a"><div class="qa-in">No. All fees are non-refundable, monthly and yearly alike. The trial is the time to judge: 14 days free on every tier, and you can stop before it ends and pay nothing.</div></div>
+      </div>
+      <div class="qa">
+        <button type="button" class="qhead" aria-expanded="false">Which currency do I pay in?<span class="qmark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9.5l6 6 6-6"/></svg></span></button>
+        <div class="qa-a"><div class="qa-in">Canada pays in Canadian dollars (CA$). The United States pays in US dollars (US$). Use the market switch above and every figure in this section follows it. India pricing opens with the India launch.</div></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1180,7 +1590,27 @@ header .nav-cta{background:#F2F4F7;color:#0A0C0F;border-color:#F2F4F7}
     </div>
 
     <p class="smallprint rv"><b style="color:var(--ink)">Suppliers:</b> your supplier list is built with you, from your real invoices, during setup. There is no supplier database to match against, and no match is promised.</p>
-    <p class="smallprint rv">Built for the United States and Canada, with India next. Founding terms are explained whole on the call: in Canada, in Canadian dollars; in the United States, in US dollars. Mise works in English and French Canadian. This page is also available in French: <a href="mise-fr.html" hreflang="fr-CA">Mise en français</a>.</p>
+    <p class="smallprint rv">Built for the United States and Canada, with India next. The full pricing is published on this page, in the <a href="#pricing">Pricing section</a>: Canada pays in Canadian dollars (CA$), the United States in US dollars (US$), and India pricing opens with the India launch. Mise works in English and French Canadian. This page is also available in French: <a href="mise-fr.html" hreflang="fr-CA">Mise en français</a>.</p>
+  </div>
+</section>
+
+<!-- ============ COMPARISON (2026-11-24 whole-page rebuild: the Toast / Square standard, facts only) ============ -->
+<section id="compare">
+  <div class="wrap">
+    <div class="eyebrow rv">Side by side</div>
+    <h2 class="rv">Mise beside the names you know.</h2>
+    <p class="lede rv">What each one is, how it charges, and whether you can try it before you buy. Facts from each company&rsquo;s own public pages, checked 23 November 2026.</p>
+    <div class="cmpwrap rv">
+      <table class="cmptable">
+        <tr><th scope="col"><span style="position:absolute;left:-9999px">Measure</span></th><th scope="col">Mise</th><th scope="col">Clover</th><th scope="col">Uber Eats</th><th scope="col">DoorDash</th></tr>
+        <tr><th scope="row">The job</th><td class="us">The back office check: counts, invoices, orders</td><td>Point of sale</td><td>Delivery orders</td><td>Delivery orders</td></tr>
+        <tr><th scope="row">Try it first</th><td class="us">A sample workspace you can run on this page</td><td>No public demo. A consultant visit, booked through a form</td><td>No public demo. The dashboard sits behind sign in</td><td>No public demo. A webinar, behind a form</td></tr>
+        <tr><th scope="row">How it charges</th><td class="us">A flat monthly price per location</td><td>Monthly software plans</td><td>Commission on each order</td><td>Commission on each order</td></tr>
+        <tr><th scope="row">The published price</th><td class="us">From CA$349 a month per location, in the Pricing section above</td><td>Software from US$0 to US$89.95 a month, plus per device fees</td><td>15 to 30 percent per order in Canada</td><td>20 to 29 percent per order in Canada</td></tr>
+        <tr><th scope="row">Free trial</th><td class="us">14 days free</td><td>None found</td><td>None found</td><td>Up to 30 days at 0 percent commission</td></tr>
+      </table>
+    </div>
+    <p class="smallprint rv" style="margin-top:22px">Toast and Square are point of sale systems, like Clover, and both publish their monthly plan prices on their own pages. Mise works beside the till, not instead of it, whichever till you run. Where a cell says none found, it means none was found on that company&rsquo;s public pages on the check date.</p>
   </div>
 </section>
 
@@ -1189,7 +1619,7 @@ header .nav-cta{background:#F2F4F7;color:#0A0C0F;border-color:#F2F4F7}
   <div class="wrap">
     <div class="eyebrow rv">The walkthrough</div>
     <h2 class="rv">Run the check with your own hands.</h2>
-    <p class="lede rv">The demo is the routine, on a sample store. Four steps, in the order the product runs them. It is a walkthrough, not a trial: no account, no card, nothing to install.</p>
+    <p class="lede rv">Run it right here on this page. The demo workspace below is the routine on a sample store: the brief, the count, the invoice check and the order, in the order the product runs them, with a guided tour if you want a hand. It is a walkthrough, not a trial: no account, no card, nothing to install. The hosted demo stays open as a second door.</p>
     <p class="sampleline rv" id="sampleline">Sample store · A quick-service kitchen</p>
     <div class="walksteps">
       <div class="ws rv"><div class="n">STEP 1</div><h4>The morning brief</h4><p>See the day the way the operator sees it at 08:15.</p></div>
@@ -1226,8 +1656,9 @@ header .nav-cta{background:#F2F4F7;color:#0A0C0F;border-color:#F2F4F7}
     </div>
 
     <div class="doorblock rv">
-      <a class="cta" id="doorlink" href="https://demo.mise.antigrav.si">Start the walkthrough</a>
-      <p class="doorfail">If the walkthrough does not open, or loads blank, do not fight it. Book the call and we run the same check live, on one of your invoices.</p>
+      <a class="cta" href="#workspace">Run it right here on this page</a>
+      <p style="margin-top:18px"><a class="cta ghost" id="doorlink" href="https://demo.mise.antigrav.si">Open the hosted demo instead</a></p>
+      <p class="doorfail">If either walkthrough does not open, or loads blank, do not fight it. Book the call and we run the same check live, on one of your invoices.</p>
     </div>
 
     <div class="exitblock rv">
@@ -1240,6 +1671,383 @@ header .nav-cta{background:#F2F4F7;color:#0A0C0F;border-color:#F2F4F7}
     </div>
   </div>
 </section>
+
+<!-- ============ DEMO WORKSPACE (2026-11-23: competitor demo learnings build) ============ -->
+<section id="workspace">
+  <div class="wrap">
+    <div class="eyebrow rv">The demo workspace</div>
+    <h2 class="rv">Run it right here on this page.</h2>
+    <p class="lede rv">This is the sample store workspace, built into this page. Click through every screen a store sees each day. Take the guided tour first if you want a hand. Nothing here is your real account, and nothing you type leaves this page.</p>
+    <div class="rv" style="margin-top:26px;display:flex;gap:12px;flex-wrap:wrap">
+      <button type="button" class="doorbtn solid" id="wsTourStart2">Take the guided tour</button>
+      <button type="button" class="doorbtn" data-open-signin>Sign in to the demo workspace</button>
+      <button type="button" class="doorbtn" data-open-trial>Start your trial setup</button>
+    </div>
+
+    <div class="ws-shell rv" id="wsShell">
+      <div class="ws-head">
+        <span class="ws-store" data-store-name>Northline Burgers</span>
+        <span class="pill ok">Sample store</span>
+        <button type="button" class="pill ok" id="storeStatusBtn" aria-pressed="false" title="Pause or resume the store">Store open</button>
+        <span class="ws-user" id="wsUser">Signed in as a guest. Sign in above to see your name here.</span>
+        <span style="flex:1"></span>
+        <button type="button" class="doorbtn small" id="wsTourStart">Take the guided tour</button>
+      </div>
+      <div class="ws-banner" id="wsBanner" hidden>This is the sample store demo, not your live account. Your real pilot starts on the booked call.</div>
+      <div style="padding:16px 24px 0">
+        <div class="trialchip" id="trialChipWs" hidden>
+          <div class="tc-top"><span class="tc-big" data-trial-text>Trial day 1 of 14</span><span class="pill ok">Clock running</span></div>
+          <div class="tctrack"><div class="tcfill" data-trial-fill></div></div>
+          <p class="tc-note">We warn you 3 days before the first charge. A card is saved when a real trial starts on the call, and it is charged only when the trial ends.</p>
+        </div>
+      </div>
+      <div class="ws-grid">
+        <nav class="ws-nav" aria-label="Demo workspace screens" id="wsNav">
+          <button type="button" class="ws-tab active" data-ws-tab="brief" aria-selected="true">Morning brief</button>
+          <button type="button" class="ws-tab" data-ws-tab="count" aria-selected="false">Count</button>
+          <button type="button" class="ws-tab" data-ws-tab="order" aria-selected="false">Order approval</button>
+          <button type="button" class="ws-tab" data-ws-tab="invoices" aria-selected="false">Invoices</button>
+          <button type="button" class="ws-tab" data-ws-tab="performance" aria-selected="false">Performance</button>
+          <button type="button" class="ws-tab" data-ws-tab="items" aria-selected="false">Items and recipes</button>
+          <button type="button" class="ws-tab" data-ws-tab="savings" aria-selected="false">Savings</button>
+          <button type="button" class="ws-tab" data-ws-tab="team" aria-selected="false">Team and roles</button>
+          <button type="button" class="ws-tab" data-ws-tab="settings" aria-selected="false">Settings</button>
+          <button type="button" class="ws-tab" data-ws-tab="help" aria-selected="false">Help</button>
+        </nav>
+        <div class="ws-main" id="wsMain">
+          <!-- BRIEF -->
+          <div class="ws-panel active" data-ws-panel="brief">
+            <div class="skel" data-skel><div class="sk w40"></div><div class="sk"></div><div class="sk w70"></div><div class="sk"></div></div>
+            <div data-ws-content hidden>
+              <h3>Morning brief, 08:15</h3>
+              <p class="wsub">What could run out today, what yesterday cost you, and the one order that needs you. Stock clocks sit on every flagged item, so you see the days left, not just a warning.</p>
+              <h4 style="font-family:var(--sg);font-size:17px;margin:4px 0 10px">Your store at a glance</h4>
+              <div class="glance">
+                <div class="gstat"><span class="gl">Sales so far today</span><span class="gv">CA$642.80</span></div>
+                <div class="gstat"><span class="gl">Orders</span><span class="gv">38</span></div>
+                <div class="gstat"><span class="gl">Average bill</span><span class="gv">CA$16.92</span></div>
+                <div class="gstat"><span class="gl">Next payout</span><span class="gv" id="glancePayout">Friday</span></div>
+              </div>
+              <h4 style="font-family:var(--sg);font-size:17px;margin:4px 0 6px">Priorities</h4>
+              <p style="font-size:13.5px;color:var(--grey);margin-bottom:8px">The most important action first. The rest can wait until these are done.</p>
+              <div id="briefPriorities" style="margin-bottom:18px"></div>
+              <h4 style="font-family:var(--sg);font-size:17px;margin:4px 0 6px">Running low</h4>
+              <div id="briefItems"></div>
+              <div class="wsrow"><span>Yesterday, money leaked</span><b data-leak-line>CA$0.00</b></div>
+              <p style="font-size:13.5px;color:var(--grey);padding:10px 2px" data-evidence-line>Evidence line loads with your store.</p>
+              <div class="wsrow"><span>Panic spend this week</span><b data-panic-line>CA$0.00</b></div>
+              <div class="wsrow"><span>Prep list and opening checklist</span><span class="pill ok">Ready</span></div>
+            </div>
+          </div>
+          <!-- COUNT -->
+          <div class="ws-panel" data-ws-panel="count">
+            <div class="skel" data-skel><div class="sk w40"></div><div class="sk"></div><div class="sk w70"></div></div>
+            <div data-ws-content hidden>
+              <h3>The 2 minute count</h3>
+              <p class="wsub">Count the flagged items only. Tap in cases, packs and loose pieces. Mise does the maths. You never add anything up in your head.</p>
+              <div class="track" role="progressbar" aria-label="Count progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="countTrack"><div class="fill" id="countFill" style="width:0"></div></div>
+              <p style="font-size:13.5px;color:var(--grey);margin:8px 0 18px" id="countProgressText">0 of 3 items counted</p>
+              <div id="countItems"></div>
+              <button type="button" class="doorbtn solid" id="countDone" disabled>Finish the count</button>
+              <p class="okline" id="countDoneLine"><span>Count saved. The brief now works from these numbers, and the order below was rebuilt from them.</span></p>
+            </div>
+          </div>
+          <!-- ORDER -->
+          <div class="ws-panel" data-ws-panel="order">
+            <div class="skel" data-skel><div class="sk w40"></div><div class="sk"></div><div class="sk w70"></div></div>
+            <div data-ws-content hidden>
+              <h3>Order approval</h3>
+              <p class="wsub">Mise drafts the order from the count. A person approves it. Nothing is sent before that tap.</p>
+              <div class="wsrow"><span>Supplier cutoff today, 4:00 PM</span><b id="cutoffClock">Counting down</b></div>
+              <div class="wsrow"><span>Order total</span><b class="bigfig" id="orderTotal">CA$248.00</b></div>
+              <div>
+                <div style="display:flex;justify-content:space-between;font-size:13px;color:var(--grey)"><span>Supplier minimum, CA$200.00</span><span id="minText">Minimum met</span></div>
+                <div class="track"><div class="fill" id="minFill" style="width:100%"></div></div>
+              </div>
+              <div id="orderLines" style="margin-top:14px"></div>
+              <p class="okline" id="orderChangedLine"><span>Order changed. Changed contents need a fresh approval, so the Approve button is live again and nothing has been sent.</span></p>
+              <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:20px">
+                <button type="button" class="doorbtn solid" id="orderApprove">Approve and send</button>
+                <button type="button" class="doorbtn" id="orderChange">Change quantities</button>
+                <button type="button" class="doorbtn" id="orderWarn">Preview the no reply warning</button>
+              </div>
+              <div id="orderState" style="margin-top:20px">
+                <div class="wsrow"><span>Order state</span><span class="pill" id="orderStatePill">Waiting for your approval</span></div>
+              </div>
+              <div class="errbox" id="orderWarnBox" hidden><b>No reply warning.</b> The supplier has not confirmed 30 minutes after sending. Mise flags it here and in the brief, and the order is never sent twice. Call the supplier, or wait: the flag clears the moment they confirm. <button type="button" class="doorbtn small" id="orderWarnClear" style="margin-left:10px">Clear the preview</button></div>
+            </div>
+          </div>
+          <!-- INVOICES -->
+          <div class="ws-panel" data-ws-panel="invoices">
+            <div class="skel" data-skel><div class="sk w40"></div><div class="sk"></div><div class="sk w70"></div></div>
+            <div data-ws-content hidden>
+              <h3>Invoices, checked line by line</h3>
+              <p class="wsub">The invoice on the left, what Mise read on the right. You confirm or correct. One line below is flagged because the printed quantity and the handwritten quantity do not match.</p>
+              <div class="statebox" id="invEmpty">
+                <div class="sb-t">No invoice loaded yet</div>
+                <p>This is the empty state. A fresh workspace looks like this until the first invoice lands.</p>
+                <p style="margin-top:14px"><button type="button" class="doorbtn solid" id="invLoad">Load the sample invoice</button></p>
+              </div>
+              <div id="invBody" hidden>
+                <div class="invsplit">
+                  <div class="paper" aria-label="Sample invoice, shown like a photo of the paper">
+                    <div class="phead">Sample invoice · Harbourline Foods · Photo view</div>
+                    <div class="pline"><span>Whole milk, 4L case</span><span>12 × $14.00</span></div>
+                    <div class="pline"><span>Cheese slices, case</span><span>6 × $31.50</span></div>
+                    <div class="pline"><span>Burger buns, case of 48</span><span>Printed 8, by hand <span class="hand">5</span></span></div>
+                    <div class="pline"><span>Frying oil, 16 L</span><span>4 × $41.75</span></div>
+                    <div class="pline"><span><b>Total</b></span><span><b>$671.00</b></span></div>
+                  </div>
+                  <div class="parsed">
+                    <div class="wsrow"><span>Whole milk, 4L case</span><span class="pill ok">Price matches</span></div>
+                    <div class="wsrow"><span>Cheese slices, case</span><span class="pill ok">Price matches</span></div>
+                    <div class="wsrow"><span>Burger buns, case of 48</span><span class="pill flag" id="bunPill">Low confidence</span></div>
+                    <p style="font-size:13.5px;color:var(--grey);padding:8px 2px" id="bunNote">Printed quantity says 8. The handwriting on the delivery note says 5. Which one arrived?</p>
+                    <div style="display:flex;gap:10px;flex-wrap:wrap;padding:6px 2px 12px">
+                      <button type="button" class="doorbtn small solid" id="bunConfirm">Confirm 8 arrived</button>
+                      <button type="button" class="doorbtn small" id="bunCorrect">Correct to 5</button>
+                    </div>
+                    <div class="wsrow"><span>Frying oil, 16 L</span><span class="pill ok">Price matches</span></div>
+                    <p class="okline" id="bunDone"><span>Saved. The count and the savings ledger now use the number you picked.</span></p>
+                  </div>
+                </div>
+              </div>
+              <div class="uploadbox">
+                <b style="font-size:15px">Try it with your own invoice file</b>
+                <p style="font-size:13.5px;color:var(--grey);margin-top:6px">Pick a file and watch how the check runs. Honest note: this page does not read your file. The result shown after the steps is the sample result above, labelled as a sample. Real reading happens in the pilot, on the call setup.</p>
+                <p style="margin-top:12px"><input type="file" id="invFile" aria-label="Pick an invoice file to preview the check steps"></p>
+                <p class="stageline" id="invFileName" aria-live="polite"></p>
+                <div class="spinner" id="invSpinner" aria-hidden="true"></div>
+                <p class="stageline" id="invStage" aria-live="polite"></p>
+                <div class="errbox" id="invSampleResult" hidden><b>Sample result.</b> 4 lines read, 3 prices match, 1 line needs your eyes (burger buns, printed 8, handwritten 5). This result comes from the sample invoice, not from your file.</div>
+              </div>
+            </div>
+          </div>
+          <!-- PERFORMANCE -->
+          <div class="ws-panel" data-ws-panel="performance">
+            <div class="skel" data-skel><div class="sk w40"></div><div class="sk"></div><div class="sk w70"></div></div>
+            <div data-ws-content hidden>
+              <h3>Performance</h3>
+              <p class="wsub">Your store at a glance. Pick a measure and a date range. The chart redraws from the sample numbers.</p>
+              <div class="segchips" role="group" aria-label="Pick a measure">
+                <button type="button" class="segchip" data-metric="sales" aria-pressed="true">Sales</button>
+                <button type="button" class="segchip" data-metric="orders" aria-pressed="false">Orders</button>
+                <button type="button" class="segchip" data-metric="bill" aria-pressed="false">Average bill</button>
+              </div>
+              <div class="segchips" role="group" aria-label="Pick a date range">
+                <button type="button" class="segchip" data-range="today" aria-pressed="false">Today</button>
+                <button type="button" class="segchip" data-range="yesterday" aria-pressed="false">Yesterday</button>
+                <button type="button" class="segchip" data-range="7d" aria-pressed="true">Last 7 days</button>
+                <button type="button" class="segchip" data-range="12w" aria-pressed="false">Last 12 weeks</button>
+              </div>
+              <p style="font-size:14px;color:var(--grey)"><span id="perfLabel">Sales, last 7 days</span>: <b style="color:var(--ink)" id="perfTotal">CA$9,412</b></p>
+              <div class="barchart" id="perfChart" role="img" aria-label="Bar chart of the picked measure over the picked range, sample numbers"></div>
+              <div class="barlabels" id="perfLabels" aria-hidden="true"></div>
+              <h4 style="font-family:var(--sg);font-size:17px;margin:26px 0 6px">Operations issues</h4>
+              <div class="wsrow"><span>Orders missed</span><span class="pill flag">2 this week</span></div>
+              <div class="wsrow"><span>Orders made wrong</span><span class="pill flag">1 this week</span></div>
+              <div class="wsrow"><span>Closed early</span><span class="pill">1 night, Friday</span></div>
+              <div style="margin-top:22px">
+                <div class="wsrow" id="feedRow"><span>Live sales feed</span><span class="pill ok" id="feedPill">Connected</span></div>
+                <p style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap"><button type="button" class="doorbtn small" id="feedBreak">Preview a feed error</button></p>
+                <div class="errbox" id="feedError" hidden><b>The feed stopped.</b> This is the error state. Sales after 2:40 PM are not in yet, and the chart says so instead of guessing. <button type="button" class="doorbtn small" id="feedRetry" style="margin-left:10px">Retry the feed</button></div>
+              </div>
+            </div>
+          </div>
+          <!-- ITEMS -->
+          <div class="ws-panel" data-ws-panel="items">
+            <div class="skel" data-skel><div class="sk w40"></div><div class="sk"></div><div class="sk w70"></div></div>
+            <div data-ws-content hidden>
+              <h3>Items and recipes</h3>
+              <p class="wsub">Every item on your shelves, matched to the name your till uses. One tap links a match. Nothing is linked behind your back.</p>
+              <div class="wsrow"><span>Whole milk, 4L case</span><span class="pill ok">Mapped to till</span></div>
+              <div class="wsrow"><span>Cheese slices, case</span><span class="pill ok">Mapped to till</span></div>
+              <div class="wsrow"><span>Burger buns, case of 48</span><span class="pill ok">Mapped to till</span></div>
+              <div class="wsrow"><span>Paneer, 5 kg block</span><span class="pill flag" id="mapPill">Not mapped</span></div>
+              <p style="font-size:13.5px;color:var(--grey);padding:8px 2px" id="mapNote">Your till calls it <b style="color:var(--ink)">PNR BLK 5KG</b>. Same weight, same supplier. Link them?</p>
+              <div style="display:flex;gap:10px;flex-wrap:wrap;padding:4px 2px 10px" id="mapBtns">
+                <button type="button" class="doorbtn small solid" id="mapLink">Link them</button>
+                <button type="button" class="doorbtn small" id="mapNot">Not this one</button>
+              </div>
+              <div class="wsrow"><span>Classic burger recipe</span><span class="pill ok">Costed from real prices</span></div>
+              <div class="wsrow"><span>Paneer wrap recipe</span><span class="pill">Waits on the link above</span></div>
+            </div>
+          </div>
+          <!-- SAVINGS -->
+          <div class="ws-panel" data-ws-panel="savings">
+            <div class="skel" data-skel><div class="sk w40"></div><div class="sk"></div><div class="sk w70"></div></div>
+            <div data-ws-content hidden>
+              <h3>Savings</h3>
+              <p class="wsub">The ledger of what the check caught. Every line names the invoice or the order it came from.</p>
+              <p style="font-size:15px">Mise found you <b class="bigfig" style="font-size:24px">CA$214.60</b> this month</p>
+              <div>
+                <div style="display:flex;justify-content:space-between;font-size:13px;color:var(--grey);margin-top:14px"><span>Month so far</span><span id="savingsMonthText">In progress</span></div>
+                <div class="track"><div class="fill" id="savingsFill" style="width:40%"></div></div>
+              </div>
+              <div style="margin-top:16px">
+                <div class="wsrow"><span>Price charged over the agreed price, caught on invoice 0417</span><b>CA$96.40</b></div>
+                <div class="wsrow"><span>Order cut before it was sent twice, Friday</span><b>CA$74.20</b></div>
+                <div class="wsrow"><span>Waste flagged in the count, soft cheese</span><b>CA$44.00</b></div>
+              </div>
+              <h4 style="font-family:var(--sg);font-size:17px;margin:26px 0 6px">Payouts and statements</h4>
+              <div class="wsrow"><span>Next payout</span><b id="payoutNext">Friday, CA$1,284.60 (sample)</b></div>
+              <div class="wsrow"><span>Payout rhythm</span><span>Weekly, every Friday, or daily if you prefer. You pick on the setup call, and you can change it later in Settings.</span></div>
+              <div class="wsrow"><span data-stmt-label="0">Last month statement</span><button type="button" class="doorbtn small" data-stmt>Download</button></div>
+              <div class="wsrow"><span data-stmt-label="1">The month before statement</span><button type="button" class="doorbtn small" data-stmt>Download</button></div>
+              <p class="honestline" id="stmtNote" hidden>Sample statement. Real statements live in your account.</p>
+              <p style="font-size:13.5px;color:var(--grey);margin-top:14px">Sample ledger. On day 30 of a real pilot, this page becomes the written proof report, worked from your own records.</p>
+            </div>
+          </div>
+          <!-- TEAM -->
+          <div class="ws-panel" data-ws-panel="team">
+            <div class="skel" data-skel><div class="sk w40"></div><div class="sk"></div><div class="sk w70"></div></div>
+            <div data-ws-content hidden>
+              <h3>Team and roles</h3>
+              <p class="wsub">Who can see and do what. The owner holds the money doors. The floor team gets a PIN, not a password.</p>
+              <div style="overflow-x:auto">
+              <table class="roletable">
+                <tr><th scope="col">Role</th><th scope="col">Can see</th><th scope="col">Can do</th><th scope="col">Cannot</th></tr>
+                <tr><td><b>Admin</b> (owner)</td><td>Everything, plus payments and tax</td><td>Approve any order, add and remove people, change settings</td><td>Nothing held back</td></tr>
+                <tr><td><b>Manager</b></td><td>Brief, counts, invoices, performance, savings</td><td>Approve orders up to the CA$200 limit, run counts, correct invoices</td><td>Payments, tax, adding Admins</td></tr>
+                <tr><td><b>Staff</b></td><td>Brief, counts, their own tasks</td><td>Run the count, mark prep done</td><td>Orders, payments, settings, team</td></tr>
+                <tr><td><b>Floor PIN</b></td><td>The count screen only, on the shared device</td><td>Enter counts with a 4 digit PIN</td><td>Everything else stays locked</td></tr>
+              </table>
+              </div>
+              <form id="inviteForm" novalidate style="margin-top:22px">
+                <div class="fld" style="max-width:440px"><label for="inviteEmail">Add a person by email</label><input type="email" id="inviteEmail" placeholder="Work email" autocomplete="off"></div>
+                <button type="submit" class="doorbtn small">Add to the team list</button>
+                <p style="font-size:12.5px;color:var(--grey);margin-top:10px">Demo only. Nothing is sent from this page. In the pilot, this sends an invite email.</p>
+              </form>
+              <div id="inviteList" style="margin-top:8px"></div>
+            </div>
+          </div>
+          <!-- SETTINGS -->
+          <div class="ws-panel" data-ws-panel="settings">
+            <div class="skel" data-skel><div class="sk w40"></div><div class="sk"></div><div class="sk w70"></div></div>
+            <div data-ws-content hidden>
+              <h3>Settings</h3>
+              <p class="wsub">The store basics. Flip a switch and watch the state text change. That is exactly what the store team sees.</p>
+              <div class="wsrow"><span>Store hours</span><b>Mon to Sun, 10:00 AM to 10:00 PM</b></div>
+              <div class="wsrow"><span>Holiday hours</span><b>Dec 25, closed. Set in November.</b></div>
+              <div class="togglerow"><span>Prep time <b id="prepText" style="margin-left:8px">15 min</b></span><span style="display:flex;gap:8px"><button type="button" class="doorbtn small" id="prepDown" aria-label="Cut prep time by 5 minutes">Minus 5</button><button type="button" class="doorbtn small" id="prepUp" aria-label="Add 5 minutes of prep time">Plus 5</button></span></div>
+              <div class="togglerow"><span>Busy mode <span class="pill" id="busyPill" style="margin-left:8px">Off. Normal pace</span></span><button type="button" class="switch" id="busySwitch" role="switch" aria-checked="false" aria-label="Busy mode"></button></div>
+              <div class="togglerow"><span>Pause new orders <span class="pill" id="pausePill" style="margin-left:8px">Off. Orders open</span></span><button type="button" class="switch" id="pauseSwitch" role="switch" aria-checked="false" aria-label="Pause new orders"></button></div>
+              <p style="font-size:13.5px;color:var(--grey);margin-top:16px">Busy mode adds prep time and tells customers the wait is longer. Pausing stops new orders until you switch it back. Both are one tap in a rush, the same lesson the delivery apps teach.</p>
+            </div>
+          </div>
+          <!-- HELP -->
+          <div class="ws-panel" data-ws-panel="help">
+            <div class="skel" data-skel><div class="sk w40"></div><div class="sk"></div><div class="sk w70"></div></div>
+            <div data-ws-content hidden>
+              <h3>Help</h3>
+              <p class="wsub">Search the questions on this page, or reach a person. No ticket maze.</p>
+              <div class="fld" style="max-width:460px"><label for="helpSearch">Search questions</label><input type="search" id="helpSearch" placeholder="Try: trial, Clover, cost, data"></div>
+              <p style="font-size:13.5px;color:var(--grey)" id="helpNoMatch" hidden>No question matches that word. Try trial, cost, Clover or data, or reach a person below.</p>
+              <div id="helpFaq">
+                <div class="qa" data-helpqa><button type="button" class="qhead" aria-expanded="false">How does the trial work?<span class="qmark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9.5l6 6 6-6"/></svg></span></button><div class="qa-a"><div class="qa-in">The pilot opens with a 14-day trial. A card is saved when the trial starts and is charged only when the trial ends, and you get a warning three days before the first charge. The 14 days include the whole workspace. You can change your mind and stop at any point during the trial, and there is no contract. Plan or store details can be changed during the trial on the booked call.</div></div></div>
+                <div class="qa" data-helpqa><button type="button" class="qhead" aria-expanded="false">What does it cost?<span class="qmark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9.5l6 6 6-6"/></svg></span></button><div class="qa-a"><div class="qa-in">Pricing is per location, in three tiers, published on this page in the <a href="#pricing">Pricing section</a>. In Canada: Start CA$349, Growth CA$479 and Scale CA$679 per month, per location, and every tier starts with 14 days free. Nothing is charged on this page, and no card is taken here.</div></div></div>
+                <div class="qa" data-helpqa><button type="button" class="qhead" aria-expanded="false">How do I connect Clover?<span class="qmark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9.5l6 6 6-6"/></svg></span></button><div class="qa-a"><div class="qa-in">On a call together, you tap one authorisation inside your own Clover account. It grants Mise read only access. Nobody hands over a login, and you can revoke it in Clover at any time.</div></div></div>
+                <div class="qa" data-helpqa><button type="button" class="qhead" aria-expanded="false">What happens to my data?<span class="qmark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9.5l6 6 6-6"/></svg></span></button><div class="qa-a"><div class="qa-in">Your store records stay yours. The data rights terms are given in writing before any trial starts, and your records stay exportable for twelve months after you leave.</div></div></div>
+              </div>
+              <div class="wsrow" style="margin-top:20px"><span>Talk to a person</span><span><a class="textlink" style="margin-top:0" href="#book">Book a call</a> and Alex calls you at the booked time</span></div>
+              <div class="wsrow"><span>Email</span><a href="mailto:hello@antigrav.si">hello@antigrav.si</a></div>
+              <div class="wsrow"><span>Support for stores with Mise</span><a href="mailto:support@antigrav.si">support@antigrav.si</a></div>
+            </div>
+          </div>
+
+          <!-- GUIDED TOUR CARD -->
+          <div class="tourcard" id="tourCard" hidden role="dialog" aria-label="Guided tour">
+            <div class="tt" id="tourTitle">Welcome to your workspace</div>
+            <p id="tourText">This tour walks every screen in about a minute.</p>
+            <div class="tourdots" id="tourDots" aria-hidden="true"></div>
+            <div class="tournav">
+              <button type="button" class="doorbtn small" id="tourBack">Back</button>
+              <button type="button" class="doorbtn small solid" id="tourNext">Next</button>
+              <button type="button" class="doorbtn small" id="tourSkip">Skip the tour</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="smallprint rv" style="margin-top:22px">Prefer the full screen walkthrough? The second door is the hosted demo: <a href="https://demo.mise.antigrav.si" id="wsDemoLink">demo.mise.antigrav.si</a>. If it does not open, the workspace above is the same check, and the call runs it live on one of your invoices.</p>
+  </div>
+</section>
+
+<!-- ============ ACADEMY / LEARN (2026-11-23: Uber Academy lesson, no sign in) ============ -->
+<section id="learn">
+  <div class="wrap">
+    <div class="eyebrow rv">Learn · The Academy</div>
+    <h2 class="rv">Learn the day before you live it.</h2>
+    <p class="lede rv">Short lessons, in plain words, grouped the way a store learns: getting started, running the day, growing. No sign in. Open one and read it in place.</p>
+    <div class="learntools rv">
+      <div class="fld"><label for="learnSearch">Search the lessons</label><input type="search" id="learnSearch" placeholder="Try: count, invoice, team, money"></div>
+      <div class="segchips" role="group" aria-label="Filter lessons by topic" style="margin-bottom:0">
+        <button type="button" class="segchip" data-learn-topic="start" aria-pressed="false">Getting started</button>
+        <button type="button" class="segchip" data-learn-topic="count" aria-pressed="false">Count</button>
+        <button type="button" class="segchip" data-learn-topic="orders" aria-pressed="false">Orders</button>
+        <button type="button" class="segchip" data-learn-topic="invoices" aria-pressed="false">Invoices</button>
+        <button type="button" class="segchip" data-learn-topic="team" aria-pressed="false">Team</button>
+        <button type="button" class="segchip" data-learn-topic="money" aria-pressed="false">Money</button>
+      </div>
+      <p style="font-size:13.5px;color:var(--grey);margin-top:12px" id="learnNoMatch" hidden>No lesson matches that yet. Try a shorter word.</p>
+    </div>
+    <div class="lessongroups">
+      <div class="lg rv">
+        <h4>Getting started</h4>
+        <div class="qa" data-topic="start" data-keys="day one tools phone tablet till invoice kit begin"><button type="button" class="qhead" aria-expanded="false">Day 1: your tools<span class="qmark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9.5l6 6 6-6"/></svg></span></button><div class="qa-a"><div class="qa-in"><ol><li>Your phone or tablet, with the workspace signed in.</li><li>Your till, connected read only.</li><li>One recent supplier invoice, paper or photo.</li><li>Ten minutes at 08:15. That is the whole kit.</li></ol></div></div></div>
+        <div class="qa" data-topic="start count" data-keys="setup set up steps connect pos clover recipes stock count handy"><button type="button" class="qhead" aria-expanded="false">Set up in four steps<span class="qmark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9.5l6 6 6-6"/></svg></span></button><div class="qa-a"><div class="qa-in"><ol><li>Connect your POS with one tap inside Clover, on a call together.</li><li>Add your recipes, as they stand today.</li><li>Enter your stock with us beside you, item by item.</li><li>Run a first ten item count when it suits you. Briefs start the next morning.</li></ol><p style="margin:10px 0 6px"><b>Have these handy</b></p><ul><li>Your Clover account, so you can authorise read only access on the call.</li><li>One recent supplier invoice.</li><li>Your store hours.</li><li>The name of the person who counts.</li></ul></div></div></div>
+        <div class="qa" data-topic="start team count" data-keys="checklist first seven hours pos invoice recipes count limit team"><button type="button" class="qhead" aria-expanded="false">The 7 things to do first<span class="qmark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9.5l6 6 6-6"/></svg></span></button><div class="qa-a"><div class="qa-in"><p style="margin-bottom:6px">Tick them off. Your ticks are saved on this device.</p><ul class="checklist" id="firstSeven">
+          <li><input type="checkbox" data-academy-check="hours"><span>Set your store hours, so the brief knows your day.</span></li>
+          <li><input type="checkbox" data-academy-check="pos"><span>Connect your POS, read only, inside Clover.</span></li>
+          <li><input type="checkbox" data-academy-check="invoice"><span>Send one recent supplier invoice.</span></li>
+          <li><input type="checkbox" data-academy-check="recipes"><span>Add your recipes, as they stand.</span></li>
+          <li><input type="checkbox" data-academy-check="count"><span>Run the first ten item count.</span></li>
+          <li><input type="checkbox" data-academy-check="limit"><span>Set your manager approval limit.</span></li>
+          <li><input type="checkbox" data-academy-check="team"><span>Add your team, with roles and floor PINs.</span></li>
+        </ul></div></div></div>
+      </div>
+      <div class="lg rv">
+        <h4>Run the day</h4>
+        <div class="qa" data-topic="count orders" data-keys="morning brief stock clock flagged order approve day"><button type="button" class="qhead" aria-expanded="false">Your first morning brief<span class="qmark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9.5l6 6 6-6"/></svg></span></button><div class="qa-a"><div class="qa-in"><ol><li>Open the brief at 08:15. Read the flagged items first.</li><li>Each flag carries a stock clock: the days left, in plain numbers.</li><li>Check what yesterday cost you. Every number shows its evidence line.</li><li>Approve the one order, or change it and approve the change.</li></ol></div></div></div>
+        <div class="qa" data-topic="orders" data-keys="approve order approval limit supplier cutoff sent"><button type="button" class="qhead" aria-expanded="false">Approving an order<span class="qmark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9.5l6 6 6-6"/></svg></span></button><div class="qa-a"><div class="qa-in"><ol><li>Mise drafts the order from the count, before the supplier cutoff.</li><li>Over your manager limit, it waits for the owner.</li><li>Change any line and it needs a fresh approval. Nothing is ever sent twice.</li><li>No supplier reply in 30 minutes raises a warning, never a resend.</li></ol></div></div></div>
+        <div class="qa" data-topic="invoices" data-keys="invoice wrong price confirm correct supplier low confidence"><button type="button" class="qhead" aria-expanded="false">When an invoice looks wrong<span class="qmark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9.5l6 6 6-6"/></svg></span></button><div class="qa-a"><div class="qa-in"><ol><li>Open the invoice. The paper sits on the left, the reading on the right.</li><li>Low confidence lines are flagged, with the reason in plain words.</li><li>Confirm what arrived, or correct the number. Your pick is what the count uses.</li><li>A price that breaks the agreed price goes to the supplier by email, with the evidence attached.</li></ol></div></div></div>
+      </div>
+      <div class="lg rv">
+        <h4>Grow</h4>
+        <div class="qa" data-topic="money" data-keys="savings money ledger proof report found payout"><button type="button" class="qhead" aria-expanded="false">Reading your savings<span class="qmark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9.5l6 6 6-6"/></svg></span></button><div class="qa-a"><div class="qa-in"><ol><li>Open Savings. The top line is what the check found this month.</li><li>Every dollar names its invoice or its order. No line stands alone.</li><li>On day 30 the same page becomes your written proof report.</li></ol></div></div></div>
+        <div class="qa" data-topic="team" data-keys="team roles admin manager staff pin invite people"><button type="button" class="qhead" aria-expanded="false">Adding your team<span class="qmark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9.5l6 6 6-6"/></svg></span></button><div class="qa-a"><div class="qa-in"><ol><li>Admins hold payments, tax and people. Keep that list short.</li><li>Managers approve orders up to the limit you set.</li><li>Staff and floor PINs cover the count and the prep list, nothing else.</li><li>Add a person by email invite, from Team and roles in the workspace.</li></ol></div></div></div>
+      </div>
+    </div>
+
+    <!-- Setup guide: the path after joining (Clover 3 steps lesson) -->
+    <div style="margin-top:64px" class="rv">
+      <div class="eyebrow">After you join</div>
+      <h2 style="font-size:clamp(26px,3.4vw,40px)">From joined to your first brief, in three steps.</h2>
+      <div class="steps steps3">
+        <div class="step"><div class="n">STEP 01</div><h4>Activate</h4>
+          <div class="srow"><b>The welcome email</b>A sign in link lands in your inbox, the way the delivery apps invite a store.</div>
+          <div class="srow"><b>You do</b>Sign in and confirm your store details: name, address, hours.</div>
+          <div class="srow"><b>Done when</b>Your store shows in the workspace with your name on it.</div>
+        </div>
+        <div class="step"><div class="n">STEP 02</div><h4>Set up your store</h4>
+          <div class="srow"><b>Connect</b>Your POS, read only, with one tap inside Clover on a call.</div>
+          <div class="srow"><b>Send</b>Your first invoices, by upload or by forwarding the email.</div>
+          <div class="srow"><b>Count</b>Your opening count, ten flagged items, two minutes.</div>
+        </div>
+        <div class="step"><div class="n">STEP 03</div><h4>Start</h4>
+          <div class="srow"><b>First brief</b>Your first 08:15 brief arrives the next morning.</div>
+          <div class="srow"><b>First order</b>Drafted from your count, approved by you, before the cutoff.</div>
+          <div class="srow"><b>Done when</b>The routine runs without us on the line.</div>
+        </div>
+      </div>
+      <div class="filmstill">
+        <video muted loop playsinline preload="metadata" poster="mise-kitchen.jpg" aria-label="The Mise morning routine film, the same film shown at the top of this page"><source src="films/mise-film.mp4" type="video/mp4"></video>
+        <div class="figcap">The morning routine film, the same film that plays at the top of this page. No separate demo video exists yet, and this panel does not pretend to be one.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <!-- ============ QUESTIONS (Stage 8; E39 to E45, doubt order) ============ -->
 <section id="questions">
@@ -1261,11 +2069,11 @@ header .nav-cta{background:#F2F4F7;color:#0A0C0F;border-color:#F2F4F7}
       </div>
       <div class="qa">
         <button type="button" class="qhead" aria-expanded="false">What does it cost?<span class="qmark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9.5l6 6 6-6"/></svg></span></button>
-        <div class="qa-a"><div class="qa-in">Pricing is per location, and it is explained whole on the 15-minute call, in your own invoice numbers: what it costs, what it has to save, and the terms, in the same order for every store at the same stage. In Canada the terms are in Canadian dollars; in the United States, in US dollars. Nothing is charged on this page, and no card is taken here.</div></div>
+        <div class="qa-a"><div class="qa-in">Pricing is per location, in three tiers, and it is published on this page, in the <a href="#pricing">Pricing section</a>. In Canada: Start CA$349 per month, Growth CA$479 per month, Scale CA$679 per month. In the United States: US$249, US$349 and US$499 a month. Every tier starts with 14 days free. India pricing opens with the India launch. Nothing is charged on this page, and no card is taken here.</div></div>
       </div>
       <div class="qa">
         <button type="button" class="qhead" aria-expanded="false">How does the trial work?<span class="qmark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9.5l6 6 6-6"/></svg></span></button>
-        <div class="qa-a"><div class="qa-in">The pilot opens with a 14-day trial. A card is saved when the trial starts and is charged only when the trial ends, and you get a warning three days before the first charge. The data rights terms land in writing before the trial starts, so nothing about the card or your records is a surprise.</div></div>
+        <div class="qa-a"><div class="qa-in">The pilot opens with a 14-day trial. A card is saved when the trial starts and is charged only when the trial ends, and you get a warning three days before the first charge. The 14 days include the whole workspace: the morning brief, the count, order approval, invoice checks and the savings ledger. You can change your mind and stop at any point during the trial, and there is no contract, so nothing ties you in afterwards. If you want to change your plan or your store details during the trial, say so on the booked call and they are changed there. The data rights terms land in writing before the trial starts, so nothing about the card or your records is a surprise.</div></div>
       </div>
       <div class="qa">
         <button type="button" class="qhead" aria-expanded="false">What if it does not save more than it costs?<span class="qmark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9.5l6 6 6-6"/></svg></span></button>
@@ -1274,6 +2082,10 @@ header .nav-cta{background:#F2F4F7;color:#0A0C0F;border-color:#F2F4F7}
       <div class="qa">
         <button type="button" class="qhead" aria-expanded="false">What happens to my data?<span class="qmark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9.5l6 6 6-6"/></svg></span></button>
         <div class="qa-a"><div class="qa-in">The details you send in the form are used to answer your request and run your pilot, and nothing else. Your store&rsquo;s records stay yours. The data rights terms are given in writing before any trial starts, and before a card is saved, so you can read them before anything begins. Support, when you ask for it, sees what the owner sees and changes nothing: access is read only, agreed with you, and time-boxed, and emergency access is declared to the owner at the moment it happens. Every company that touches your invoices is named in those terms, including the service that reads them.</div></div>
+      </div>
+      <div class="qa">
+        <button type="button" class="qhead" aria-expanded="false">Can Mise send an order, or dispute a charge, without asking me?<span class="qmark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9.5l6 6 6-6"/></svg></span></button>
+        <div class="qa-a"><div class="qa-in">No. Mise drafts the order, and a person approves the exact contents before anything is sent. Change a line and the approval starts again. Disputes work the same way: Mise builds the evidence pack, the flagged lines, the agreed price and the receiving record, and it goes to the supplier only when you say send. The full statement sits in the <a href="#trust">Trust and data section</a>.</div></div>
       </div>
     </div>
     <p class="fwdline rv">One more thing decides most calls: the biggest problem field in the form below. <a href="#book">Book a call<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15"/><path d="M13 6l6 6-6 6"/></svg></a></p>
@@ -1429,7 +2241,7 @@ header .nav-cta{background:#F2F4F7;color:#0A0C0F;border-color:#F2F4F7}
     <div class="leavelines rv">
       <div class="ll"><b>Cancelling</b> is exactly as easy as signing up. There is no retention maze and no call you have to sit through to leave. Fees are non-refundable, and that is stated in the contract before you sign.</div>
       <div class="ll"><b>Your records on exit</b> stay yours and stay exportable for twelve months after you leave, with a warning before anything is deleted. Come back inside the year and everything is restored exactly as you left it.</div>
-      <div class="ll"><b>Coming back</b> is on the intro terms of the day you return, never a worse rung for having left. Founding terms are not promised on a return; they belong to the cohort that stayed.</div>
+      <div class="ll"><b>Coming back</b> is as plain as leaving: write to us, and we set you up again on the pricing published on this page at the time. Nothing beyond what is published there is promised in advance.</div>
       <div class="ll"><b>Marketing emails</b> end with one click or one reply. The words are the same in every footer: unsubscribe at any time.</div>
     </div>
   </div>
@@ -1446,13 +2258,165 @@ header .nav-cta{background:#F2F4F7;color:#0A0C0F;border-color:#F2F4F7}
       <div class="desk"><div class="dk">Media &amp; press</div><a href="mailto:creatives@antigrav.si">creatives@antigrav.si</a></div>
       <div class="desk"><div class="dk">Investors</div><a href="mailto:endowing@antigrav.si">endowing@antigrav.si</a></div>
     </div>
+    <div class="footdoors">
+      <button type="button" data-open-signin>Sign in</button>
+      <button type="button" data-open-trial>Start trial</button>
+      <a href="#pricing">Pricing</a>
+      <a href="#specs">Specifications</a>
+      <a href="#trust">Trust and data</a>
+      <a href="#compare">How Mise compares</a>
+      <a href="#learn">Learn (Academy)</a>
+      <a href="#workspace">Help</a>
+      <button type="button" data-resume-door data-resume-open hidden>Continue your trial setup</button>
+      <button type="button" id="wsEnterBtn">Sign in to the demo workspace</button>
+      <a href="#book">Start a change of store details</a>
+    </div>
     <p class="footmanage">Booked a call and need to move it? Your confirmation email carries the link, or write to <a href="mailto:hello@antigrav.si">hello@antigrav.si</a>.</p>
-    <div class="parent">Built by <a href="https://antigrav.si">Antigravity Analytics</a> · United States and Canada, India next · Toronto · Montreal · Vancouver<br><a href="/enterprise">Enterprise</a> · <a href="/trust">Trust &amp; security</a><br><span style="font-size:11px">Privacy-first analytics by Simple Analytics: no cookies, no personal data, honors Do Not Track.</span></div>
+    <div class="parent">Built by <a href="https://antigrav.si">Antigravity Analytics</a> · United States and Canada, India next · Toronto · Montreal · Vancouver<br><span style="font-size:11px">Privacy-first analytics by Simple Analytics: no cookies, no personal data, honors Do Not Track.</span></div>
   </div>
   <div style="text-align:center;margin-top:36px"><img src="/nvidia-inception-badge.svg" alt="NVIDIA Inception program member badge" style="width:170px;max-width:60vw;height:auto" loading="lazy"><div style="font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--grey);margin-top:10px">Built by an NVIDIA Inception program member</div></div>
   <div style="text-align:center;margin-top:28px"><a href="https://cartesia.ai" target="_blank" rel="noopener" aria-label="Cartesia" style="display:inline-block;background:#FFFFFF;border:1px solid var(--line);border-radius:8px;padding:12px 14px;line-height:0"><span style="display:block;width:min(148px,60vw);aspect-ratio:7/1"><img src="/cartesia-wordmark.svg" alt="Cartesia logo" style="width:100%;height:100%;display:block" loading="lazy"></span></a><div style="font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--grey);margin-top:10px">Cartesia Startups Grant recipient</div></div>
   <div class="giant" aria-hidden="true">MISE</div>
 </footer>
+<!-- ============ SIGN IN PANEL (2026-11-23 demo learnings build) ============ -->
+<div class="panelwrap" id="signinPanel" hidden>
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="signinTitle">
+    <button type="button" class="sheetclose" data-close-panel aria-label="Close the sign in panel">×</button>
+    <h3 id="signinTitle">Sign in</h3>
+    <p class="ssub">One field, the way the delivery apps do it. On this page, signing in opens the sample store workspace with your name on it. It does not create a real account.</p>
+    <form id="signinForm" novalidate>
+      <div class="fld" id="signinFld">
+        <label for="signinId">Email or phone</label>
+        <input type="text" id="signinId" autocomplete="username" placeholder="you@yourstore.com or your phone number">
+        <p class="ferr" role="alert" id="signinErr">Enter a valid email, or a phone number with at least 7 digits.</p>
+      </div>
+      <button type="submit" class="doorbtn solid" style="width:100%">Continue</button>
+    </form>
+    <div class="divider">Or</div>
+    <button type="button" class="googlebtn" id="googleBtn">Continue with Google</button>
+    <p style="font-size:12.5px;color:var(--grey);margin-top:10px">On this page the Google button opens the same sample workspace, so you can see the door work. A real sign in connects during pilot setup.</p>
+    <p class="altline"><button type="button" id="forgotToggle">Forgot your access?</button></p>
+    <div class="forgotbox" id="forgotBox" hidden>
+      <form id="forgotForm" novalidate>
+        <div class="fld" style="margin-bottom:12px"><label for="forgotEmail">Email on the account</label><input type="email" id="forgotEmail" autocomplete="email" placeholder="you@yourstore.com"></div>
+        <button type="submit" class="doorbtn" id="forgotSend" disabled>Send the sign in link</button>
+      </form>
+      <p class="okline" id="forgotDone"><span>Link on its way in a real account. On this page nothing is sent: this is the sample door, working the way the real one will.</span></p>
+    </div>
+    <p class="altline">New here? <button type="button" data-open-trial>Start your trial</button></p>
+    <p class="altline">Already booked? <a href="#book">Manage your call</a></p>
+  </div>
+</div>
+
+<!-- ============ TRIAL SETUP PANEL (2026-11-23: Uber 3 step rail + Clover gated Next) ============ -->
+<div class="panelwrap" id="trialPanel" hidden>
+  <div class="sheet wide" role="dialog" aria-modal="true" aria-labelledby="trialTitle">
+    <button type="button" class="sheetclose" data-close-panel aria-label="Close the trial setup panel">×</button>
+    <h3 id="trialTitle">Start your trial setup</h3>
+    <p class="ssub">Three steps. Your progress saves on this device as you go, so you can leave and pick it up where you left off.</p>
+    <div class="trialgrid">
+      <div class="rail" aria-label="Trial setup progress">
+        <div class="rstep now" data-rail="1"><span class="rn">Step 1 of 3</span>Tell us about your store</div>
+        <div class="rstep" data-rail="2"><span class="rn">Step 2 of 3</span>Get your store ready</div>
+        <div class="rstep" data-rail="3"><span class="rn">Step 3 of 3</span>Start your morning brief</div>
+        <p style="font-size:12.5px;color:var(--grey);margin-top:16px">Step 2 covers how you get sales, how invoices come in, and your opening count. Step 3 shows the whole setup back to you before anything starts.</p>
+        <div class="handybox"><b>Have these handy</b><ul><li>Your Clover account, open on the call, to authorise read only access</li><li>One recent supplier invoice</li><li>Your store hours</li><li>The name of the person who counts</li></ul></div>
+      </div>
+      <div>
+        <form id="trialForm" novalidate>
+          <div class="tstep" data-tstep="1">
+            <div class="frow2">
+              <div class="fld"><label for="tf-first">First name</label><input type="text" id="tf-first" data-tf="first" autocomplete="given-name"><p class="ferr" role="alert"></p></div>
+              <div class="fld"><label for="tf-last">Last name</label><input type="text" id="tf-last" data-tf="last" autocomplete="family-name"><p class="ferr" role="alert"></p></div>
+            </div>
+            <div class="frow2">
+              <div class="fld"><label for="tf-email">Work email</label><input type="email" id="tf-email" data-tf="email" autocomplete="email"><p class="ferr" role="alert"></p></div>
+              <div class="fld"><label for="tf-phone">Phone <span class="opt">(optional)</span></label><input type="tel" id="tf-phone" data-tf="phone" autocomplete="tel"><p class="ferr" role="alert"></p></div>
+            </div>
+            <div class="fld"><label for="tf-store">Store name</label><input type="text" id="tf-store" data-tf="store" autocomplete="organization"><p class="ferr" role="alert"></p></div>
+            <div class="frow2">
+              <div class="fld"><label for="tf-type">Business type</label><select id="tf-type" data-tf="type"><option value="">Pick one</option><option>Quick service</option><option>Full service</option><option>Coffee shop</option><option>Food truck</option><option>Franchise location</option><option>Other food business</option></select><p class="ferr" role="alert"></p></div>
+              <div class="fld"><label for="tf-cuisine">Cuisine</label><select id="tf-cuisine" data-tf="cuisine"><option value="">Pick one</option><option>Burgers</option><option>Pizza</option><option>Indian</option><option>Coffee and bakery</option><option>Mexican</option><option>Sushi</option><option>Mixed menu</option><option>Other</option></select><p class="ferr" role="alert"></p></div>
+            </div>
+            <div class="frow2">
+              <div class="fld"><label for="tf-address">Store address <span class="opt">(optional for now)</span></label><input type="text" id="tf-address" data-tf="address" autocomplete="street-address"></div>
+              <div class="fld"><label for="tf-loc">Locations</label><input type="number" id="tf-loc" data-tf="loc" min="1" step="1" value="1"><p class="ferr" role="alert"></p></div>
+            </div>
+            <p style="font-size:13px;color:var(--grey)">Press Next when you are ready. If a field is missing or wrong, the message sits under that field, and you stay on this step until it is fixed. That is deliberate: a half named store cannot be set up.</p>
+            <div class="stepnav"><button type="button" class="doorbtn solid gated" id="trialNext1">Next: get your store ready</button></div>
+          </div>
+          <div class="tstep" data-tstep="2" hidden>
+            <div class="fld" style="margin-bottom:6px"><label>How do you get sales?</label></div>
+            <div class="choicerow" role="radiogroup" aria-label="How do you get sales">
+              <label class="choice"><input type="radio" name="tf-pos" value="Clover"><span><b>Clover</b><span>Connects today, read only, with one tap on the setup call.</span></span></label>
+              <label class="choice"><input type="radio" name="tf-pos" value="Square"><span><b>Square</b><span>Not connected yet. Pick it and the call starts from that fact, plainly.</span></span></label>
+              <label class="choice"><input type="radio" name="tf-pos" value="TouchBistro"><span><b>TouchBistro</b><span>Not connected yet. Pick it and the call starts from that fact, plainly.</span></span></label>
+              <label class="choice"><input type="radio" name="tf-pos" value="Paper invoices only"><span><b>Paper invoices only</b><span>No till link. The check runs from invoices and counts alone.</span></span></label>
+            </div>
+            <div class="fld" style="margin-bottom:6px"><label>How do invoices come in?</label></div>
+            <div class="choicerow" role="radiogroup" aria-label="How invoices come in">
+              <label class="choice"><input type="radio" name="tf-intake" value="Upload a photo or file"><span><b>Upload</b><span>Photo or file, dropped into the workspace.</span></span></label>
+              <label class="choice"><input type="radio" name="tf-intake" value="Forward by email"><span><b>Email forward</b><span>Forward the supplier email and the invoice is read from it.</span></span></label>
+            </div>
+            <div class="fld" style="margin-bottom:6px"><label>Your opening count</label></div>
+            <div class="choicerow" role="radiogroup" aria-label="Your opening count">
+              <label class="choice"><input type="radio" name="tf-count" value="Done for you on a call"><span><b>Done with you on a call</b><span>We stay on the line while you count the flagged items.</span></span></label>
+              <label class="choice"><input type="radio" name="tf-count" value="Do the 2 minute count now"><span><b>Do the 2 minute count now</b><span>Try it in the workspace on the sample store first.</span></span></label>
+            </div>
+            <p class="formerr" id="trialStep2Err" role="alert">Pick one answer in each group to continue.</p>
+            <div class="stepnav"><button type="button" class="doorbtn" id="trialBack2">Back</button><button type="button" class="doorbtn solid gated" id="trialNext2">Next: start your morning brief</button></div>
+          </div>
+          <div class="tstep" data-tstep="3" hidden>
+            <h4 style="font-family:var(--sg);font-size:19px;margin-bottom:10px">Your setup, back to you</h4>
+            <div class="wsrow"><span>Store</span><b data-sum="store">Not set</b></div>
+            <div class="wsrow"><span>Sales come from</span><b data-sum="pos">Not set</b></div>
+            <div class="wsrow"><span>Invoices come in by</span><b data-sum="intake">Not set</b></div>
+            <div class="wsrow"><span>Opening count</span><b data-sum="count">Not set</b></div>
+            <div class="wsrow"><span>Plan</span><b data-sum="plan">Growth, CA$479 per month</b></div>
+            <div class="wsrow"><span>Trial</span><b>14 days. Card saved at the real start, charged only at the end, warning 3 days before.</b></div>
+            <div class="wsrow"><span>Go live</span><b>Your first brief lands tomorrow at 8:15</b></div>
+            <div class="honestline"><b>The trial, in full</b><ul class="termslist"><li>All 14 days include the whole workspace: the morning brief, the count, order approval, invoice checks and savings.</li><li>You can change your mind and stop at any point during the trial. Stop before day 14 ends and nothing is charged.</li><li>There is no contract, and nothing ties you in after the trial.</li><li>The saved card is charged only on the day the trial ends, and we warn you 3 days before that day.</li><li>Plan or store details can be changed during the trial: raise it on the booked call and it is changed there.</li></ul></div>
+            <p class="honestline">Honest note: on this page, starting the trial sets up the sample workspace and starts the trial clock you can see. It sends nothing and creates no real account. A real pilot starts on the booked call, with the terms in writing first.</p>
+            <div class="stepnav"><button type="button" class="doorbtn" id="trialBack3">Back</button><button type="button" class="doorbtn solid" id="trialStart">Start trial and open the workspace</button></div>
+          </div>
+        </form>
+        <div id="trialDone" hidden>
+          <h4 style="font-family:var(--sg);font-size:19px;margin-bottom:10px">Setup finished</h4>
+          <p style="font-size:15px;margin-bottom:8px">Your sample workspace is ready, and the trial clock is running at the top of it.</p>
+          <p style="font-size:15px;margin-bottom:18px"><b>Your first brief lands tomorrow at 8:15.</b></p>
+          <div class="stepnav"><button type="button" class="doorbtn solid" id="trialDoneOpen">Open your workspace</button></div>
+          <p class="honestline">On this page that brief is the sample store brief inside the workspace. A real pilot brief is built from your own store, set up on the booked call.</p>
+        </div>
+        <div class="summarybar" aria-label="Your setup so far">
+          <span><b>Store</b><span data-sum="store">Not set</span></span>
+          <span><b>POS</b><span data-sum="pos">Not set</span></span>
+          <span><b>Intake</b><span data-sum="intake">Not set</span></span>
+          <span><b>Plan</b><span data-sum="plan">Growth, CA$479 per month</span></span>
+          <span><b>Trial</b>14 days</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ ASK MISE ASSISTANT (2026-11-23: Clover Agent lesson, answered from this page) ============ -->
+<button type="button" id="askBtn" aria-expanded="false" aria-controls="askPanel">Ask Mise</button>
+<div class="askpanel" id="askPanel" role="dialog" aria-label="Ask Mise assistant">
+  <div class="ap-head"><b>Ask Mise</b><button type="button" class="sheetclose" style="position:static" id="askClose" aria-label="Close the assistant">×</button></div>
+  <div class="asklog" id="askLog">
+    <div class="askmsg">Ask me about setup, the trial, connecting Clover, or getting a person. I answer from this page only.</div>
+  </div>
+  <div class="askchips">
+    <button type="button" class="askchip" data-ask="setup">How does setup work?</button>
+    <button type="button" class="askchip" data-ask="cost">What does the trial cost?</button>
+    <button type="button" class="askchip" data-ask="clover">How do I connect Clover?</button>
+    <button type="button" class="askchip" data-ask="human">Talk to a human</button>
+  </div>
+  <form class="askform" id="askForm"><input type="text" id="askInput" placeholder="Type your question" aria-label="Type your question" autocomplete="off"><button type="submit">Ask</button></form>
+  <p class="asknote">Answers here come from this page. For your store&rsquo;s numbers, book the call.</p>
+</div>
+
+
 <div class="stickybar" id="stickybar" aria-hidden="true">
   <a class="cta" href="#book">Book a call</a>
   <a class="cta ghost" href="#routine">The routine</a>
@@ -1669,5 +2633,855 @@ window.MISE_FORM_CONFIG = {
 <script>
 (function(){function send(m){try{if(window.sa_event)window.sa_event('web_vital_'+m.name.toLowerCase(),{value:Math.round(m.value*1000)/1000,rating:m.rating});}catch(e){}}function wire(){if(!window.webVitals)return;webVitals.onLCP(send);webVitals.onINP(send);webVitals.onCLS(send);}if(document.readyState==='complete')wire();else window.addEventListener('load',wire);})();
 </script>
+<script id="mise-demo-js">
+/* Demo learnings build (2026-11-23): doors, segment switcher, sign in and trial
+   panels, demo workspace, guided tour, clocks, assistant, academy ticks.
+   Everything runs on this page. Nothing is sent anywhere. Sample data only. */
+(function(){
+"use strict";
+function $(s,c){return (c||document).querySelector(s)}
+function $$(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))}
+function store(k,v){try{if(v===null)localStorage.removeItem(k);else localStorage.setItem(k,v)}catch(e){}}
+function read(k){try{return localStorage.getItem(k)}catch(e){return null}}
+function readJSON(k){try{var v=localStorage.getItem(k);return v?JSON.parse(v):null}catch(e){return null}}
+function storeJSON(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+var EMAIL_RE=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+function money(n){return "CA$"+n.toFixed(2)}
+
+/* ================= SEGMENTS (Clover customize lesson) ================= */
+var SEGMENTS={
+  quick:{label:"Quick service",store:"Northline Burgers",hero:"a quick-service kitchen before the Friday rush",
+    items:[
+      {name:"Cheese slices",days:1,perCase:288,perPack:24,unit:"slices"},
+      {name:"Burger buns",days:2,perCase:96,perPack:12,unit:"buns"},
+      {name:"Whole milk, 4L",days:1,perCase:4,perPack:2,unit:"jugs"}],
+    leak:86.40,evidence:"Evidence: invoice 0417 charged whole milk at $15.75 against an agreed $14.00, and the count found 2.4 kg of soft cheese unlogged.",
+    panic:"CA$86.40 in rush top up buys this week"},
+  full:{label:"Full service",store:"Harbour Table",hero:"a full service dining room before the dinner seating",
+    items:[
+      {name:"Salmon portions",days:1,perCase:40,perPack:10,unit:"portions"},
+      {name:"Fresh herbs",days:1,perCase:30,perPack:10,unit:"bunches"},
+      {name:"Butter blocks",days:3,perCase:24,perPack:6,unit:"blocks"}],
+    leak:132.75,evidence:"Evidence: the fish invoice priced salmon 9 percent over the agreed price, and Friday prep logged no waste for two spoiled trays.",
+    panic:"CA$132.75 in rush top up buys this week"},
+  multi:{label:"Multi location",store:"Northline Burgers, Location 3 of 5",hero:"one location of five, checked the same way as every other",
+    items:[
+      {name:"Cheese slices",days:2,perCase:288,perPack:24,unit:"slices"},
+      {name:"Burger buns",days:1,perCase:96,perPack:12,unit:"buns"},
+      {name:"Cola syrup",days:4,perCase:4,perPack:1,unit:"boxes"}],
+    leak:64.10,evidence:"Evidence: this location paid a rush price for buns that Location 2 had in surplus, and one delivery was counted at two stores.",
+    panic:"CA$64.10 in rush top up buys this week"},
+  coffee:{label:"Coffee shop",store:"Corner Cup Coffee",hero:"a coffee shop before the morning line forms",
+    items:[
+      {name:"Whole milk, 4L",days:1,perCase:4,perPack:2,unit:"jugs"},
+      {name:"Coffee beans",days:3,perCase:6,perPack:1,unit:"1 kg bags"},
+      {name:"Croissants",days:1,perCase:48,perPack:12,unit:"pieces"}],
+    leak:41.25,evidence:"Evidence: the dairy invoice rounded milk up on 11 lines this month, and the bean count ran ahead of what the grinder logs show.",
+    panic:"CA$41.25 in rush top up buys this week"},
+  truck:{label:"Food truck",store:"Rolling Smoke",hero:"a food truck before the lunch park fills up",
+    items:[
+      {name:"Brisket",days:2,perCase:15,perPack:5,unit:"kg"},
+      {name:"Burger buns",days:1,perCase:96,perPack:12,unit:"buns"},
+      {name:"Paper trays",days:4,perCase:500,perPack:100,unit:"trays"}],
+    leak:58.90,evidence:"Evidence: the meat invoice charged brisket at the weekend price on a weekday delivery, and the tray count missed a case in the van.",
+    panic:"CA$58.90 in rush top up buys this week"}
+};
+var segKey=read("mise-demo-segment")||"quick";
+if(!SEGMENTS[segKey])segKey="quick";
+function currentSeg(){return SEGMENTS[segKey]}
+
+function applySegment(key,announce){
+  segKey=key; store("mise-demo-segment",key);
+  var seg=currentSeg();
+  $$(".segbtn").forEach(function(b){b.setAttribute("aria-pressed",b.getAttribute("data-seg")===key?"true":"false")});
+  var hs=$("#herosample");
+  if(hs)hs.innerHTML="Sample store: <b>"+seg.store+"</b>, "+seg.hero+". The workspace, the brief and the count below all run on this store.";
+  var sl=$("#sampleline");
+  if(sl)sl.textContent="Sample store · "+seg.store+" · "+seg.label;
+  $$("[data-store-name]").forEach(function(el){el.textContent=seg.store});
+  var segField=document.querySelector('input[name="mise_segment"]');
+  if(segField)segField.value=seg.label;
+  renderBrief(); renderCount();
+  if(announce){var w=$("#wsShell"); if(w)w.scrollIntoView({behavior:"smooth",block:"start"});}
+}
+$$(".segbtn").forEach(function(b){b.addEventListener("click",function(){applySegment(b.getAttribute("data-seg"),false);});});
+
+/* ================= TRIAL CLOCK ================= */
+function trialStartDate(){
+  var v=read("mise-trial-start");
+  if(v){var d=new Date(v); if(!isNaN(d.getTime()))return d;}
+  return null;
+}
+function startTrialClock(){
+  if(!trialStartDate()){store("mise-trial-start",new Date().toISOString());}
+  renderTrialClock();
+}
+function renderTrialClock(){
+  var start=trialStartDate(); if(!start)return;
+  var now=new Date();
+  var day=Math.floor((now-start)/86400000)+1;
+  var chips=[$("#trialChipHero"),$("#trialChipWs")];
+  chips.forEach(function(chip){
+    if(!chip)return; chip.hidden=false;
+    var textEl=$("[data-trial-text]",chip), fillEl=$("[data-trial-fill]",chip);
+    if(day>14){
+      if(textEl)textEl.textContent="Trial ended. Day 14 of 14 has passed";
+      if(fillEl)fillEl.style.width="100%";
+    }else{
+      var left=14-day;
+      if(textEl)textEl.textContent="Trial day "+day+" of 14, "+left+" day"+(left===1?"":"s")+" left";
+      if(fillEl)fillEl.style.width=Math.round(day/14*100)+"%";
+    }
+  });
+}
+
+/* ================= PANELS (sign in / trial) ================= */
+var lastFocus=null;
+function openPanel(id){
+  var p=$(id); if(!p)return;
+  lastFocus=document.activeElement;
+  p.hidden=false; document.body.style.overflow="hidden";
+  var f=p.querySelector("input,select,button.sheetclose"); if(f)f.focus();
+}
+function closePanels(){
+  ["#signinPanel","#trialPanel"].forEach(function(id){var p=$(id); if(p)p.hidden=true;});
+  document.body.style.overflow="";
+  if(lastFocus&&lastFocus.focus)lastFocus.focus();
+}
+$$("[data-close-panel]").forEach(function(b){b.addEventListener("click",closePanels);});
+["#signinPanel","#trialPanel"].forEach(function(id){
+  var p=$(id); if(p)p.addEventListener("click",function(e){if(e.target===p)closePanels();});
+});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")closePanels();});
+function bindOpeners(){
+  $$("[data-open-signin]").forEach(function(b){if(b.__bound)return;b.__bound=1;b.addEventListener("click",function(){closePanels();openPanel("#signinPanel");});});
+  $$("[data-open-trial]").forEach(function(b){if(b.__bound)return;b.__bound=1;b.addEventListener("click",function(){closePanels();openTrial();});});
+}
+
+/* ================= WORKSPACE ENTRY ================= */
+var wsEntered=false, wsInitDone=false;
+function enterWorkspace(name){
+  store("mise-ws-name",name||"guest");
+  var banner=$("#wsBanner"); if(banner)banner.hidden=false;
+  var user=$("#wsUser");
+  if(user)user.textContent=name?("Signed in as "+name+". This is the sample store, not your live account."): "Signed in as a guest. This is the sample store, not your live account.";
+  startTrialClock();
+  initWorkspace();
+  wsEntered=true;
+  var shell=$("#wsShell");
+  if(shell)shell.scrollIntoView({behavior:"smooth",block:"start"});
+  if(!read("mise-tour-done")){setTimeout(function(){startTour();},700);}
+}
+function nameFromId(id){
+  if(EMAIL_RE.test(id)){var part=id.split("@")[0].replace(/[._-]+/g," ").trim(); return part?part.charAt(0).toUpperCase()+part.slice(1):"there";}
+  return "there";
+}
+
+/* sign in form */
+var signinForm=$("#signinForm");
+if(signinForm)signinForm.addEventListener("submit",function(e){
+  e.preventDefault();
+  var input=$("#signinId"), fld=$("#signinFld"), v=(input.value||"").trim();
+  var digits=v.replace(/\D/g,"");
+  var ok=EMAIL_RE.test(v)||digits.length>=7;
+  var serr=$("#signinErr");
+  if(serr)serr.textContent=!v?"This field is required":(v.indexOf("@")>-1?"Please enter a valid email address":"Please enter a valid email address, or a phone number with at least 7 digits");
+  fld.classList.toggle("invalid",!ok);
+  if(!ok){input.focus();return;}
+  closePanels();
+  enterWorkspace(nameFromId(v));
+});
+var signinInputEl=$("#signinId");
+if(signinInputEl)signinInputEl.addEventListener("input",function(){var f=$("#signinFld"); if(f)f.classList.remove("invalid");});
+var googleBtn=$("#googleBtn");
+if(googleBtn)googleBtn.addEventListener("click",function(){closePanels();enterWorkspace("there");});
+var forgotToggle=$("#forgotToggle"), forgotBox=$("#forgotBox");
+if(forgotToggle)forgotToggle.addEventListener("click",function(){forgotBox.hidden=!forgotBox.hidden; if(!forgotBox.hidden)$("#forgotEmail").focus();});
+var forgotEmail=$("#forgotEmail"), forgotSend=$("#forgotSend");
+if(forgotEmail)forgotEmail.addEventListener("input",function(){forgotSend.disabled=!EMAIL_RE.test((forgotEmail.value||"").trim());});
+var forgotForm=$("#forgotForm");
+if(forgotForm)forgotForm.addEventListener("submit",function(e){e.preventDefault(); if(forgotSend.disabled)return; $("#forgotDone").classList.add("show");});
+
+/* ================= TRIAL FLOW ================= */
+var trialStep=1;
+function trialData(){
+  var d=readJSON("mise-trial-progress")||{};
+  return d;
+}
+function saveTrial(patch){
+  var d=trialData();
+  for(var k in patch)d[k]=patch[k];
+  d.step=trialStep; d.updated=Date.now();
+  storeJSON("mise-trial-progress",d);
+  updateResumeDoors(); updateSummary();
+}
+function collectStep1(){
+  var d={};
+  $$("[data-tf]").forEach(function(el){d[el.getAttribute("data-tf")]=(el.value||"").trim();});
+  return d;
+}
+function step1Valid(d){
+  return !!(d.first&&d.last&&EMAIL_RE.test(d.email||"")&&d.store&&d.type&&d.cuisine&&(!d.loc||(+d.loc>=1)));
+}
+function step2Valid(d){
+  return !!(d.pos&&d.intake&&d.count);
+}
+function updateSummary(){
+  var d=trialData();
+  var map={store:d.store||"Not set",pos:d.pos||"Not set",intake:d.intake||"Not set",count:d.count||"Not set",plan:planLabel(d)};
+  $$("[data-sum]").forEach(function(el){var k=el.getAttribute("data-sum"); if(map[k]!==undefined)el.textContent=map[k];});
+  var n1=$("#trialNext1"); if(n1)n1.classList.toggle("gated",!step1Valid(collectStep1()));
+  var n2=$("#trialNext2"); if(n2)n2.classList.toggle("gated",!step2Valid(d));
+  var se=$("#trialStep2Err"); if(se&&step2Valid(d))se.classList.remove("show");
+}
+function showTrialStep(n){
+  trialStep=n;
+  $$("[data-tstep]").forEach(function(s){s.hidden=+s.getAttribute("data-tstep")!==n;});
+  $$("[data-rail]").forEach(function(r){
+    var rn=+r.getAttribute("data-rail");
+    r.classList.toggle("now",rn===n); r.classList.toggle("done",rn<n);
+  });
+  updateSummary();
+}
+function restoreTrial(){
+  var doneEl=$("#trialDone"); if(doneEl)doneEl.hidden=true;
+  var formEl=$("#trialForm"); if(formEl)formEl.hidden=false;
+  var sbEl=document.querySelector(".summarybar"); if(sbEl)sbEl.style.display="";
+  var d=trialData();
+  $$("[data-tf]").forEach(function(el){
+    var k=el.getAttribute("data-tf"); if(d[k]!==undefined&&d[k]!==null)el.value=d[k];
+  });
+  ["pos","intake","count"].forEach(function(name){
+    if(d[name]){var r=document.querySelector('input[name="tf-'+name+'"][value="'+d[name]+'"]'); if(r)r.checked=true;}
+  });
+  showTrialStep(d.step&&d.step>=1&&d.step<=3?d.step:1);
+}
+function openTrial(){openPanel("#trialPanel"); restoreTrial();}
+$$("[data-tf]").forEach(function(el){
+  function onEdit(){saveTrial(collectStep1()); var w=el.closest?el.closest(".fld"):null; if(w&&w.classList.contains("invalid"))markField(el);}
+  el.addEventListener("input",onEdit);
+  el.addEventListener("change",onEdit);
+});
+$$('input[name="tf-pos"],input[name="tf-intake"],input[name="tf-count"]').forEach(function(r){
+  r.addEventListener("change",function(){
+    var patch={};
+    patch[r.name.replace("tf-","")]=r.value;
+    saveTrial(patch);
+  });
+});
+/* per-field inline validation (DoorDash hero form lesson): the message sits
+   under the exact field that is wrong, shown on attempted Next or submit.
+   Next stays gated: it never advances while a field is wrong. */
+function fieldError(el){
+  var k=el.getAttribute("data-tf"), v=(el.value||"").trim();
+  if(k==="first"||k==="last"||k==="store"||k==="type"||k==="cuisine")return v?"":"This field is required";
+  if(k==="email"){if(!v)return "This field is required"; return EMAIL_RE.test(v)?"":"Please enter a valid email address";}
+  if(k==="phone"){if(!v)return ""; return v.replace(/\D/g,"").length>=7?"":"Please enter a valid phone number, or leave this field blank";}
+  if(k==="loc"){if(!v)return "This field is required"; return (+v>=1)?"":"Please enter 1 or more";}
+  return "";
+}
+function markField(el){
+  var msg=fieldError(el), wrap=el.closest?el.closest(".fld"):null;
+  if(wrap){wrap.classList.toggle("invalid",!!msg); var f=wrap.querySelector(".ferr"); if(f)f.textContent=msg;}
+  return !msg;
+}
+function validateStep1(){
+  var allOk=true, firstBad=null;
+  $$("[data-tf]").forEach(function(el){
+    if(el.getAttribute("data-tf")==="address")return;
+    if(!markField(el)){allOk=false; if(!firstBad)firstBad=el;}
+  });
+  return {ok:allOk,first:firstBad};
+}
+var trialFormEl=$("#trialForm");
+if(trialFormEl)trialFormEl.addEventListener("submit",function(e){
+  e.preventDefault();
+  if(trialStep===1){
+    var r=validateStep1();
+    if(r.ok){saveTrial(collectStep1()); showTrialStep(2); saveTrial({});}
+    else if(r.first)r.first.focus();
+  }
+});
+var tn1=$("#trialNext1"); if(tn1)tn1.addEventListener("click",function(){
+  var res=validateStep1();
+  if(!res.ok){if(res.first)res.first.focus(); return;}
+  saveTrial(collectStep1()); showTrialStep(2); saveTrial({});
+});
+var tb2=$("#trialBack2"); if(tb2)tb2.addEventListener("click",function(){showTrialStep(1);});
+var tn2=$("#trialNext2"); if(tn2)tn2.addEventListener("click",function(){
+  if(!step2Valid(trialData())){var e2=$("#trialStep2Err"); if(e2)e2.classList.add("show"); return;}
+  showTrialStep(3); saveTrial({});
+});
+var tb3=$("#trialBack3"); if(tb3)tb3.addEventListener("click",function(){showTrialStep(2);});
+var tStart=$("#trialStart");
+if(tStart)tStart.addEventListener("click",function(){
+  saveTrial({complete:true});
+  startTrialClock();
+  var form=$("#trialForm"); if(form)form.hidden=true;
+  var sb=document.querySelector(".summarybar"); if(sb)sb.style.display="none";
+  var done=$("#trialDone"); if(done)done.hidden=false;
+  $$("[data-rail]").forEach(function(r){r.classList.remove("now"); if(+r.getAttribute("data-rail")<=3)r.classList.add("done");});
+});
+var tdOpen=$("#trialDoneOpen");
+if(tdOpen)tdOpen.addEventListener("click",function(){
+  var d=trialData();
+  closePanels();
+  enterWorkspace(d.first||"there");
+});
+function updateResumeDoors(){
+  var d=trialData();
+  var has=!!(d.updated&&!d.complete&&(d.first||d.store||d.email||d.pos));
+  $$("[data-resume-door]").forEach(function(el){el.hidden=!has;});
+}
+$$("[data-resume-open]").forEach(function(b){b.addEventListener("click",function(){openTrial();});});
+
+/* ================= WORKSPACE ================= */
+var openedTabs={};
+function showWsTab(key){
+  $$(".ws-tab").forEach(function(t){
+    var on=t.getAttribute("data-ws-tab")===key;
+    t.classList.toggle("active",on); t.setAttribute("aria-selected",on?"true":"false");
+  });
+  $$("[data-ws-panel]").forEach(function(p){p.classList.toggle("active",p.getAttribute("data-ws-panel")===key);});
+  if(!openedTabs[key]){
+    openedTabs[key]=true;
+    var panel=$('[data-ws-panel="'+key+'"]');
+    if(panel){
+      var sk=$("[data-skel]",panel), content=$("[data-ws-content]",panel);
+      if(sk&&content){sk.classList.add("show"); content.hidden=true;
+        setTimeout(function(){sk.classList.remove("show"); content.hidden=false;},650);
+      }
+    }
+  }
+}
+$$(".ws-tab").forEach(function(t){t.addEventListener("click",function(){initWorkspace(); showWsTab(t.getAttribute("data-ws-tab"));});});
+
+function renderBrief(){
+  var seg=currentSeg(), box=$("#briefItems"); if(!box)return;
+  box.innerHTML="";
+  seg.items.forEach(function(it){
+    var row=document.createElement("div"); row.className="wsrow";
+    var pillCls=it.days<=1?"pill flag":"pill";
+    row.innerHTML="<span>"+it.name+"</span><span class='"+pillCls+"'>"+it.days+" day"+(it.days===1?"":"s")+" left</span>";
+    box.appendChild(row);
+  });
+  var leak=$("[data-leak-line]"); if(leak)leak.textContent=money(seg.leak)+" found on paper, not in the till";
+  var ev=$("[data-evidence-line]"); if(ev)ev.textContent=seg.evidence;
+  var panic=$("[data-panic-line]"); if(panic)panic.textContent=seg.panic;
+  var pr=$("#briefPriorities");
+  if(pr){
+    pr.innerHTML="";
+    var first=seg.items[0];
+    var rows=[
+      {t:"Count "+first.name+" first: "+first.days+" day"+(first.days===1?"":"s")+" left on its stock clock",pill:"Do first",cls:"pill flag"},
+      {t:"Approve the order before the 4:00 PM supplier cutoff",pill:"Before 4 PM",cls:"pill"},
+      {t:"Answer the flagged invoice line: burger buns, printed 8, by hand 5",pill:"Needs your eyes",cls:"pill flag"}
+    ];
+    rows.forEach(function(r,i){
+      var row=document.createElement("div"); row.className="wsrow";
+      row.innerHTML="<span><b>"+(i+1)+".</b> "+r.t+"</span><span class='"+r.cls+"'>"+r.pill+"</span>";
+      pr.appendChild(row);
+    });
+  }
+}
+
+/* count */
+var countState={};
+function renderCount(){
+  var seg=currentSeg(), box=$("#countItems"); if(!box)return;
+  box.innerHTML=""; countState={};
+  seg.items.forEach(function(it,idx){
+    countState[idx]={c:0,p:0,l:0};
+    var wrap=document.createElement("div"); wrap.className="countitem";
+    var pillCls=it.days<=1?"pill flag":"pill";
+    var html="<div class='ci-head'><span class='ci-name'>"+it.name+"</span><span class='"+pillCls+"'>Stock clock: "+it.days+" day"+(it.days===1?"":"s")+" left</span></div>";
+    html+="<div class='countgrid'>";
+    [["c","Cases","1 case = "+it.perCase+" "+it.unit],["p","Packs","1 pack = "+it.perPack+" "+it.unit],["l","Loose","Single "+it.unit]].forEach(function(kind){
+      html+="<div class='stepper'><span class='sl2'>"+kind[1]+"</span><div class='srow3'><button type='button' data-count-btn data-idx='"+idx+"' data-kind='"+kind[0]+"' data-dir='-1' aria-label='Take one away'>-</button><span class='sv' data-count-val='"+idx+"-"+kind[0]+"'>0</span><button type='button' data-count-btn data-idx='"+idx+"' data-kind='"+kind[0]+"' data-dir='1' aria-label='Add one'>+</button></div><div class='snote'>"+kind[2]+"</div></div>";
+    });
+    html+="</div><p class='ci-total'>On the shelf: <b data-count-total='"+idx+"'>0 "+it.unit+"</b>. Mise adds it up, not you.</p>";
+    wrap.innerHTML=html;
+    box.appendChild(wrap);
+  });
+  updateCountProgress();
+  var done=$("#countDone"); if(done)done.disabled=true;
+  var dl=$("#countDoneLine"); if(dl)dl.classList.remove("show");
+}
+function updateCountProgress(){
+  var seg=currentSeg(), touched=0;
+  seg.items.forEach(function(it,idx){
+    var st=countState[idx]||{c:0,p:0,l:0};
+    var total=st.c*it.perCase+st.p*it.perPack+st.l;
+    var el=document.querySelector("[data-count-total='"+idx+"']");
+    if(el)el.textContent=total+" "+it.unit;
+    if(st.c+st.p+st.l>0)touched++;
+  });
+  var pct=Math.round(touched/seg.items.length*100);
+  var fill=$("#countFill"); if(fill)fill.style.width=pct+"%";
+  var track=$("#countTrack"); if(track)track.setAttribute("aria-valuenow",pct);
+  var txt=$("#countProgressText"); if(txt)txt.textContent=touched+" of "+seg.items.length+" items counted";
+  var done=$("#countDone"); if(done)done.disabled=touched<seg.items.length;
+}
+document.addEventListener("click",function(e){
+  var b=e.target&&e.target.closest?e.target.closest("[data-count-btn]"):null;
+  if(!b)return;
+  var idx=b.getAttribute("data-idx"), kind=b.getAttribute("data-kind"), dir=+b.getAttribute("data-dir");
+  if(!countState[idx])countState[idx]={c:0,p:0,l:0};
+  countState[idx][kind]=Math.max(0,countState[idx][kind]+dir);
+  var val=document.querySelector("[data-count-val='"+idx+"-"+kind+"']");
+  if(val)val.textContent=countState[idx][kind];
+  updateCountProgress();
+});
+var countDoneBtn=$("#countDone");
+if(countDoneBtn)countDoneBtn.addEventListener("click",function(){
+  $("#countDoneLine").classList.add("show");
+  countDoneBtn.disabled=true; countDoneBtn.textContent="Count finished";
+});
+
+/* order */
+var orderLines=[
+  {name:"Burger buns, case of 48",qty:2,price:62.00},
+  {name:"Whole milk, 4L case",qty:3,price:24.00},
+  {name:"Soft cheese, bulk block",qty:1,price:52.00}
+];
+var orderEditable=false, orderSent=false;
+function orderTotalCalc(){return orderLines.reduce(function(s,l){return s+l.qty*l.price},0)}
+function renderOrder(){
+  var box=$("#orderLines"); if(!box)return;
+  box.innerHTML="";
+  orderLines.forEach(function(l,idx){
+    var row=document.createElement("div"); row.className="wsrow";
+    var right;
+    if(orderEditable){
+      right="<span style='display:flex;gap:8px;align-items:center'><button type='button' class='doorbtn small' data-order-btn data-idx='"+idx+"' data-dir='-1' aria-label='One less'>-</button><b>"+l.qty+"</b><button type='button' class='doorbtn small' data-order-btn data-idx='"+idx+"' data-dir='1' aria-label='One more'>+</button><span>"+money(l.qty*l.price)+"</span></span>";
+    }else{
+      right="<span><b>"+l.qty+" × </b>"+money(l.price)+" = <b>"+money(l.qty*l.price)+"</b></span>";
+    }
+    row.innerHTML="<span>"+l.name+"</span>"+right;
+    box.appendChild(row);
+  });
+  var total=orderTotalCalc();
+  var tEl=$("#orderTotal"); if(tEl)tEl.textContent=money(total);
+  var pct=Math.min(100,Math.round(total/200*100));
+  var fill=$("#minFill"); if(fill){fill.style.width=pct+"%"; fill.classList.toggle("flag",total<200);}
+  var mt=$("#minText"); if(mt)mt.textContent=total>=200?"Minimum met":"Below the minimum by "+money(200-total);
+}
+document.addEventListener("click",function(e){
+  var b=e.target&&e.target.closest?e.target.closest("[data-order-btn]"):null;
+  if(!b)return;
+  var idx=+b.getAttribute("data-idx");
+  orderLines[idx].qty=Math.max(0,orderLines[idx].qty+ +b.getAttribute("data-dir"));
+  orderSent=false;
+  setOrderState("Waiting for your approval","");
+  $("#orderChangedLine").classList.add("show");
+  var ap=$("#orderApprove"); if(ap)ap.disabled=false;
+  renderOrder();
+});
+function setOrderState(text,cls){
+  var pill=$("#orderStatePill"); if(!pill)return;
+  pill.textContent=text; pill.className="pill "+(cls||"");
+}
+var orderChangeBtn=$("#orderChange");
+if(orderChangeBtn)orderChangeBtn.addEventListener("click",function(){
+  orderEditable=!orderEditable;
+  orderChangeBtn.textContent=orderEditable?"Done changing":"Change quantities";
+  renderOrder();
+});
+var orderApproveBtn=$("#orderApprove");
+if(orderApproveBtn)orderApproveBtn.addEventListener("click",function(){
+  if(orderTotalCalc()<200){setOrderState("Held: under the supplier minimum","flag"); return;}
+  orderSent=true; orderEditable=false;
+  if(orderChangeBtn)orderChangeBtn.textContent="Change quantities";
+  $("#orderChangedLine").classList.remove("show");
+  setOrderState("Sent to the supplier","");
+  orderApproveBtn.disabled=true;
+  renderOrder();
+  setTimeout(function(){if(orderSent)setOrderState("Acknowledged by the supplier","ok");},1400);
+});
+var orderWarnBtn=$("#orderWarn");
+if(orderWarnBtn)orderWarnBtn.addEventListener("click",function(){$("#orderWarnBox").hidden=false; setOrderState("No reply after 30 minutes","flag");});
+var orderWarnClear=$("#orderWarnClear");
+if(orderWarnClear)orderWarnClear.addEventListener("click",function(){$("#orderWarnBox").hidden=true; setOrderState(orderSent?"Acknowledged by the supplier":"Waiting for your approval",orderSent?"ok":"");});
+function tickCutoff(){
+  var el=$("#cutoffClock"); if(!el)return;
+  var now=new Date(), cutoff=new Date(now.getFullYear(),now.getMonth(),now.getDate(),16,0,0);
+  var label="Cutoff in ";
+  if(now>cutoff){cutoff.setDate(cutoff.getDate()+1); label="Next cutoff in ";}
+  var ms=cutoff-now, h=Math.floor(ms/3600000), m=Math.floor(ms%3600000/60000), s=Math.floor(ms%60000/1000);
+  function p(n){return (n<10?"0":"")+n}
+  el.textContent=label+h+":"+p(m)+":"+p(s);
+}
+
+/* invoices */
+var invLoadBtn=$("#invLoad");
+if(invLoadBtn)invLoadBtn.addEventListener("click",function(){
+  var empty=$("#invEmpty"), body=$("#invBody");
+  invLoadBtn.disabled=true; invLoadBtn.textContent="Reading the sample invoice";
+  setTimeout(function(){empty.hidden=true; body.hidden=false;},900);
+});
+function bunResolve(text){
+  var pill=$("#bunPill"); if(pill){pill.textContent="Checked by you"; pill.className="pill ok";}
+  var note=$("#bunNote"); if(note)note.textContent=text;
+  $("#bunDone").classList.add("show");
+  var bc=$("#bunConfirm"), bx=$("#bunCorrect"); if(bc)bc.disabled=true; if(bx)bx.disabled=true;
+}
+var bunConfirm=$("#bunConfirm"); if(bunConfirm)bunConfirm.addEventListener("click",function(){bunResolve("You confirmed 8 arrived. The printed number stands, and your tap is on the record.");});
+var bunCorrect=$("#bunCorrect"); if(bunCorrect)bunCorrect.addEventListener("click",function(){bunResolve("You corrected it to 5. The printed 8 is kept on the record beside your 5, so the supplier sees both.");});
+var invFile=$("#invFile");
+if(invFile)invFile.addEventListener("change",function(){
+  var f=invFile.files&&invFile.files[0];
+  var nameEl=$("#invFileName"), stageEl=$("#invStage"), spin=$("#invSpinner"), result=$("#invSampleResult");
+  if(!f)return;
+  result.hidden=true; spin.classList.remove("show"); stageEl.textContent="";
+  nameEl.textContent="File picked: "+f.name+". This page does not read your file. Watch the steps the real check runs.";
+  setTimeout(function(){spin.classList.add("show");},1000);
+  setTimeout(function(){stageEl.textContent="Step 1 of 3: Reading the invoice";},2100);
+  setTimeout(function(){stageEl.textContent="Step 2 of 3: Pulling the lines out";},3200);
+  setTimeout(function(){stageEl.textContent="Step 3 of 3: Checking prices against what was agreed";},4300);
+  setTimeout(function(){spin.classList.remove("show"); stageEl.textContent="Steps done. Here is the sample result:"; result.hidden=false;
+    var empty=$("#invEmpty"), body=$("#invBody"); if(empty&&body&&!empty.hidden){empty.hidden=true; body.hidden=false;}
+  },5400);
+});
+
+/* performance */
+var PERF={
+  sales:{label:"Sales",fmt:function(v){return "CA$"+Math.round(v).toLocaleString("en-CA")},
+    today:[420,510,610,540,480,590,505],yesterday:[450,530,580,620,560,505,540],"7d":[1180,1240,1310,1420,1690,1380,1192],"12w":[8200,8600,9100,8800,9400,9900,10200,9800,10600,11200,10900,11500]},
+  orders:{label:"Orders",fmt:function(v){return ""+Math.round(v)},
+    today:[32,41,48,39,36,44,38],yesterday:[35,42,45,49,43,38,40],"7d":[88,94,101,112,138,104,92],"12w":[610,640,680,660,705,740,760,735,790,820,805,845]},
+  bill:{label:"Average bill",fmt:function(v){return "CA$"+v.toFixed(2)},
+    today:[18.4,19.1,17.8,20.2,18.9,19.6,18.2],yesterday:[18.8,19.4,18.1,19.9,18.5,19.2,18.7],"7d":[18.9,19.3,18.7,20.1,19.5,18.8,19.2],"12w":[18.2,18.6,19.0,18.8,19.4,19.8,19.5,20.0,19.7,20.2,19.9,20.4]}
+};
+var perfMetric="sales", perfRange="7d";
+function renderPerf(){
+  var d=PERF[perfMetric], vals=d[perfRange];
+  var chart=$("#perfChart"), labels=$("#perfLabels"); if(!chart)return;
+  var max=Math.max.apply(null,vals);
+  chart.innerHTML=""; labels.innerHTML="";
+  var rangeNames={today:["8 AM","10 AM","12 PM","2 PM","4 PM","6 PM","8 PM"],yesterday:["8 AM","10 AM","12 PM","2 PM","4 PM","6 PM","8 PM"],"7d":["Mon","Tue","Wed","Thu","Fri","Sat","Sun"],"12w":["W1","W2","W3","W4","W5","W6","W7","W8","W9","W10","W11","W12"]};
+  vals.forEach(function(v,i){
+    var bc=document.createElement("div"); bc.className="bc"; bc.style.height=Math.max(4,Math.round(v/max*100))+"%";
+    bc.innerHTML="<span>"+d.fmt(v)+"</span>";
+    chart.appendChild(bc);
+    var lb=document.createElement("span"); lb.textContent=rangeNames[perfRange][i]||""; labels.appendChild(lb);
+  });
+  var total=vals.reduce(function(s,v){return s+v},0);
+  var rangeLabel={today:"today so far",yesterday:"yesterday","7d":"last 7 days","12w":"last 12 weeks"}[perfRange];
+  var lab=$("#perfLabel"); if(lab)lab.textContent=d.label+", "+rangeLabel;
+  var tot=$("#perfTotal"); if(tot)tot.textContent=perfMetric==="bill"?("Average "+d.fmt(total/vals.length)):"Total "+d.fmt(total);
+}
+$$("[data-metric]").forEach(function(b){b.addEventListener("click",function(){perfMetric=b.getAttribute("data-metric"); $$("[data-metric]").forEach(function(x){x.setAttribute("aria-pressed",x===b?"true":"false")}); renderPerf();});});
+$$("[data-range]").forEach(function(b){b.addEventListener("click",function(){perfRange=b.getAttribute("data-range"); $$("[data-range]").forEach(function(x){x.setAttribute("aria-pressed",x===b?"true":"false")}); renderPerf();});});
+var feedBreak=$("#feedBreak");
+if(feedBreak)feedBreak.addEventListener("click",function(){$("#feedError").hidden=false; var p=$("#feedPill"); p.textContent="Stopped at 2:40 PM"; p.className="pill flag";});
+var feedRetry=$("#feedRetry");
+if(feedRetry)feedRetry.addEventListener("click",function(){$("#feedError").hidden=true; var p=$("#feedPill"); p.textContent="Connected"; p.className="pill ok";});
+
+/* items mapping */
+var mapLink=$("#mapLink"), mapNot=$("#mapNot");
+function mapDone(text,ok){
+  var pill=$("#mapPill"); if(pill){pill.textContent=ok?"Mapped to till":"Left unmapped"; pill.className="pill "+(ok?"ok":"");}
+  var note=$("#mapNote"); if(note)note.textContent=text;
+  var btns=$("#mapBtns"); if(btns)btns.style.display="none";
+}
+if(mapLink)mapLink.addEventListener("click",function(){mapDone("Linked. PNR BLK 5KG on the till is now Paneer, 5 kg block on the shelf, and the paneer wrap recipe can be costed.",true);});
+if(mapNot)mapNot.addEventListener("click",function(){mapDone("Left unmapped, on your say so. Mise will ask again only if that till name shows up on a new invoice.",false);});
+
+/* savings month bar */
+function nextFridayName(){
+  var names=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+  var d=new Date(), add=(5-d.getDay()+7)%7;
+  return names[(d.getDay()+add)%7];
+}
+function renderSavings(){
+  var now=new Date(), days=new Date(now.getFullYear(),now.getMonth()+1,0).getDate();
+  var pct=Math.round(now.getDate()/days*100);
+  var fill=$("#savingsFill"); if(fill)fill.style.width=pct+"%";
+  var txt=$("#savingsMonthText"); if(txt)txt.textContent="Day "+now.getDate()+" of "+days+" in the month";
+  var gp=$("#glancePayout"); if(gp)gp.textContent=nextFridayName();
+  var pn=$("#payoutNext"); if(pn)pn.textContent=nextFridayName()+", CA$1,284.60 (sample)";
+}
+/* payouts and statements (DoorDash Financials lesson): statement buttons show
+   the honest demo note, they never download a fake file */
+$$("[data-stmt]").forEach(function(b){b.addEventListener("click",function(){var n=$("#stmtNote"); if(n)n.hidden=false;});});
+(function(){
+  var months=["January","February","March","April","May","June","July","August","September","October","November","December"];
+  var now=new Date();
+  $$("[data-stmt-label]").forEach(function(el,i){
+    var d=new Date(now.getFullYear(),now.getMonth()-1-i,1);
+    el.textContent=months[d.getMonth()]+" "+d.getFullYear()+" statement";
+  });
+})();
+
+/* team invite */
+var inviteForm=$("#inviteForm");
+if(inviteForm)inviteForm.addEventListener("submit",function(e){
+  e.preventDefault();
+  var input=$("#inviteEmail"), v=(input.value||"").trim();
+  if(!EMAIL_RE.test(v)){input.focus(); input.style.borderColor="var(--red)"; return;}
+  input.style.borderColor="";
+  var row=document.createElement("div"); row.className="wsrow";
+  row.innerHTML="<span>"+v+"</span><span class='pill'>Invited as Staff, demo only</span>";
+  $("#inviteList").appendChild(row);
+  input.value="";
+});
+
+/* settings */
+var prep=15;
+function renderPrep(){var el=$("#prepText"); if(el)el.textContent=prep+" min";}
+var prepUp=$("#prepUp"), prepDown=$("#prepDown");
+if(prepUp)prepUp.addEventListener("click",function(){prep=Math.min(60,prep+5); renderPrep();});
+if(prepDown)prepDown.addEventListener("click",function(){prep=Math.max(5,prep-5); renderPrep();});
+function bindSwitch(id,pillId,onText,offText,onToggle){
+  var sw=$(id); if(!sw)return;
+  sw.addEventListener("click",function(){
+    var on=sw.getAttribute("aria-checked")!=="true";
+    sw.setAttribute("aria-checked",on?"true":"false");
+    var pill=$(pillId); if(pill){pill.textContent=on?onText:offText; pill.className="pill "+(on?"flag":"");}
+    if(onToggle)onToggle(on);
+  });
+}
+bindSwitch("#busySwitch","#busyPill","On. Prep time stretched, customers told","Off. Normal pace");
+/* store status (DoorDash portal lesson): the header pill and the Settings
+   pause switch are one state, kept in sync both ways */
+function setStoreBtn(on){
+  var btn=$("#storeStatusBtn"); if(!btn)return;
+  btn.textContent=on?"Store paused":"Store open";
+  btn.className="pill "+(on?"flag":"ok");
+  btn.setAttribute("aria-pressed",on?"true":"false");
+}
+bindSwitch("#pauseSwitch","#pausePill","On. No new orders until you switch back","Off. Orders open",setStoreBtn);
+var storeStatusBtn=$("#storeStatusBtn");
+if(storeStatusBtn)storeStatusBtn.addEventListener("click",function(){
+  var on=storeStatusBtn.getAttribute("aria-pressed")!=="true";
+  setStoreBtn(on);
+  var sw=$("#pauseSwitch"); if(sw)sw.setAttribute("aria-checked",on?"true":"false");
+  var pill=$("#pausePill"); if(pill){pill.textContent=on?"On. No new orders until you switch back":"Off. Orders open"; pill.className="pill "+(on?"flag":"");}
+});
+
+/* help search */
+var helpSearch=$("#helpSearch");
+if(helpSearch)helpSearch.addEventListener("input",function(){
+  var q=(helpSearch.value||"").trim().toLowerCase(), any=false;
+  $$("[data-helpqa]").forEach(function(qa){
+    var hit=!q||qa.textContent.toLowerCase().indexOf(q)>-1;
+    qa.style.display=hit?"":"none"; if(hit)any=true;
+  });
+  var nm=$("#helpNoMatch"); if(nm)nm.hidden=any;
+});
+
+/* ================= GUIDED TOUR ================= */
+var TOUR=[
+  {tab:"brief",title:"Start with the morning brief",text:"Every day at 08:15, this screen shows what could run out, with a stock clock on each item, and what yesterday cost you, with the evidence under the number."},
+  {tab:"count",title:"Then the 2 minute count",text:"Count only the flagged items. Cases, packs and loose pieces, tapped in with big buttons. Mise does the maths and rebuilds the order from your count."},
+  {tab:"order",title:"Approve the order before the cutoff",text:"The draft order sits here with a live countdown to the 4 PM supplier cutoff and a bar for the supplier minimum. Change anything and it needs a fresh approval."},
+  {tab:"invoices",title:"Check invoices side by side",text:"The paper on the left, the reading on the right. Low confidence lines are flagged with the reason, and you confirm or correct. Nothing is taken on trust."},
+  {tab:"performance",title:"Watch the store in Performance",text:"Sales, orders and average bill, by today, yesterday, 7 days or 12 weeks. Issues like missed and wrong orders sit under the chart, not hidden from it."},
+  {tab:"savings",title:"See what the check saved",text:"The savings ledger names the invoice or order behind every dollar. On day 30, this becomes your written proof report."},
+  {tab:"settings",title:"Run the day from Settings",text:"Hours, holiday hours, prep time, busy mode and pause orders. The same one tap switches a store uses in a rush. That is the tour. The rest of the screens work the way these did."}
+];
+var tourIdx=-1;
+function tourDotsRender(){
+  var box=$("#tourDots"); if(!box)return; box.innerHTML="";
+  TOUR.forEach(function(s,i){var d=document.createElement("i"); if(i===tourIdx)d.className="on"; box.appendChild(d);});
+}
+function tourShow(i){
+  tourIdx=i;
+  var step=TOUR[i];
+  showWsTab(step.tab);
+  $$(".ws-tab").forEach(function(t){t.classList.toggle("tourhl",t.getAttribute("data-ws-tab")===step.tab);});
+  $("#tourTitle").textContent="Step "+(i+1)+" of "+TOUR.length+": "+step.title;
+  $("#tourText").textContent=step.text;
+  $("#tourBack").disabled=i===0;
+  $("#tourNext").textContent=i===TOUR.length-1?"Finish the tour":"Next";
+  tourDotsRender();
+}
+function startTour(){
+  initWorkspace();
+  $("#tourCard").hidden=false;
+  tourShow(0);
+  var shell=$("#wsShell"); if(shell)shell.scrollIntoView({behavior:"smooth",block:"start"});
+}
+function endTour(){
+  $("#tourCard").hidden=true;
+  $$(".ws-tab").forEach(function(t){t.classList.remove("tourhl");});
+  store("mise-tour-done","1");
+}
+var tN=$("#tourNext"); if(tN)tN.addEventListener("click",function(){if(tourIdx>=TOUR.length-1)endTour(); else tourShow(tourIdx+1);});
+var tB=$("#tourBack"); if(tB)tB.addEventListener("click",function(){if(tourIdx>0)tourShow(tourIdx-1);});
+var tS=$("#tourSkip"); if(tS)tS.addEventListener("click",endTour);
+["#wsTourStart","#wsTourStart2"].forEach(function(id){var b=$(id); if(b)b.addEventListener("click",startTour);});
+
+/* lazy workspace init: heavy bits render on first open, not on page load */
+var wsLazyDone=false;
+function initWorkspace(){
+  if(wsLazyDone)return; wsLazyDone=true;
+  renderOrder(); renderPerf(); renderSavings(); renderPrep(); tickCutoff();
+  setInterval(tickCutoff,1000);
+  var panel=$('[data-ws-panel="brief"]');
+  if(panel&&!openedTabs["brief"]){
+    openedTabs["brief"]=true;
+    var sk=$("[data-skel]",panel), content=$("[data-ws-content]",panel);
+    if(sk&&content){sk.classList.add("show"); content.hidden=true;
+      setTimeout(function(){sk.classList.remove("show"); content.hidden=false;},650);}
+  }
+}
+/* offer the workspace when it scrolls into view, without forcing entry */
+if("IntersectionObserver" in window){
+  var wsShellEl=$("#wsShell");
+  if(wsShellEl){var wio=new IntersectionObserver(function(es){if(es[0].isIntersecting){initWorkspace(); wio.disconnect();}},{threshold:.15}); wio.observe(wsShellEl);}
+}
+var wsEnterBtn=$("#wsEnterBtn");
+if(wsEnterBtn)wsEnterBtn.addEventListener("click",function(){enterWorkspace("");});
+
+/* ================= ASSISTANT ================= */
+var ANSWERS={
+  setup:"Setup has four steps, done with you at your pace. One: connect your POS, one tap inside Clover on a call, read only. Two: add your recipes as they stand. Three: enter your stock with us beside you. Four: a first ten item count when it suits you. Briefs start the next morning. The Academy on this page walks each step.",
+  cost:"The price is per location, in three tiers, published in the Pricing section of this page. In Canada: Start CA$349 a month, Growth CA$479 a month, and Scale CA$679 a month, per location. Every tier starts with 14 days free: a card is saved when a real trial starts, charged only when the trial ends, with a warning 3 days before. Pay yearly and take 10% off any tier. All fees are non-refundable. Nothing is charged on this page.",
+  clover:"On a call together, you tap one authorisation inside your own Clover account. It grants Mise read only access to your sales. Nobody hands over a login, and you can revoke it in Clover at any time. Square and TouchBistro are not connected yet, and the fit check on this page says so plainly.",
+  human:"A person is one tap away. Book a call with the button at the top of this page and Alex calls you at the booked time, or email hello@antigrav.si with your name, your store and two times that suit you.",
+  count:"The count covers ten flagged items, not the whole store. Tap cases, packs and loose pieces in the workspace above and Mise does the maths. It takes about two minutes in the walk-in.",
+  invoice:"Send invoices by upload or by forwarding the supplier email. Mise reads each line, checks the price against what was agreed, and flags low confidence lines for you to confirm or correct. Try it in the Invoices screen of the workspace above.",
+  trial:"The pilot opens with a 14-day trial. A card is saved when the trial starts and is charged only when the trial ends, and you get a warning 3 days before the first charge. Once you start the trial setup on this page, a clock at the top of the workspace shows the day you are on and the days left.",
+  default:"I answer from this page only, and that one is not on it. A person can help: book a call at the top of this page, or email hello@antigrav.si. For your store numbers, the call is the place."
+};
+function askAnswer(key){
+  if(ANSWERS[key])return ANSWERS[key];
+  var q=(key||"").toLowerCase();
+  if(/setup|start|join|onboard/.test(q))return ANSWERS.setup;
+  if(/trial/.test(q))return ANSWERS.trial;
+  if(/cost|price|pay|charge|much/.test(q))return ANSWERS.cost;
+  if(/clover|pos|square|touchbistro|connect/.test(q))return ANSWERS.clover;
+  if(/human|person|call|phone|talk|speak/.test(q))return ANSWERS.human;
+  if(/count|stock/.test(q))return ANSWERS.count;
+  if(/invoice|bill|supplier/.test(q))return ANSWERS.invoice;
+  return ANSWERS.default;
+}
+var askPanel=$("#askPanel"), askBtn=$("#askBtn"), askLog=$("#askLog");
+function askSay(text,me){
+  var d=document.createElement("div"); d.className="askmsg"+(me?" me":""); d.textContent=text;
+  askLog.appendChild(d); askLog.scrollTop=askLog.scrollHeight;
+}
+function askOpen(open){
+  askPanel.classList.toggle("open",open);
+  askBtn.setAttribute("aria-expanded",open?"true":"false");
+  if(open)$("#askInput").focus();
+}
+if(askBtn)askBtn.addEventListener("click",function(){askOpen(!askPanel.classList.contains("open"));});
+var askClose=$("#askClose"); if(askClose)askClose.addEventListener("click",function(){askOpen(false);});
+$$("[data-ask]").forEach(function(chip){
+  chip.addEventListener("click",function(){
+    askSay(chip.textContent,true);
+    askSay(askAnswer(chip.getAttribute("data-ask")),false);
+  });
+});
+var askForm=$("#askForm");
+if(askForm)askForm.addEventListener("submit",function(e){
+  e.preventDefault();
+  var input=$("#askInput"), v=(input.value||"").trim();
+  if(!v)return;
+  askSay(v,true); input.value="";
+  askSay(askAnswer(v),false);
+});
+
+/* ================= ACADEMY SEARCH + TOPIC CHIPS (DoorDash Learning Center lesson) ================= */
+var learnQuery="", learnTopic="";
+function applyLearnFilter(){
+  var anyVisible=false;
+  $$("#learn .lessongroups .qa").forEach(function(qa){
+    var head=qa.querySelector(".qhead");
+    var title=head?head.textContent.toLowerCase():"";
+    var keys=(qa.getAttribute("data-keys")||"").toLowerCase();
+    var topics=(qa.getAttribute("data-topic")||"").split(/\s+/);
+    var hitQ=!learnQuery||title.indexOf(learnQuery)>-1||keys.indexOf(learnQuery)>-1;
+    var hitT=!learnTopic||topics.indexOf(learnTopic)>-1;
+    var show=hitQ&&hitT;
+    qa.style.display=show?"":"none";
+    if(show)anyVisible=true;
+  });
+  $$("#learn .lessongroups .lg").forEach(function(lg){
+    var any=false;
+    $$(".qa",lg).forEach(function(qa){if(qa.style.display!=="none")any=true;});
+    lg.style.display=any?"":"none";
+  });
+  var nm=$("#learnNoMatch"); if(nm)nm.hidden=anyVisible;
+}
+var learnSearchEl=$("#learnSearch");
+if(learnSearchEl)learnSearchEl.addEventListener("input",function(){learnQuery=(learnSearchEl.value||"").trim().toLowerCase(); applyLearnFilter();});
+$$("[data-learn-topic]").forEach(function(chip){
+  chip.addEventListener("click",function(){
+    var t=chip.getAttribute("data-learn-topic");
+    learnTopic=(learnTopic===t)?"":t;
+    $$("[data-learn-topic]").forEach(function(c){c.setAttribute("aria-pressed",c.getAttribute("data-learn-topic")===learnTopic?"true":"false");});
+    applyLearnFilter();
+  });
+});
+
+/* ================= ACADEMY TICKS ================= */
+var checks=readJSON("mise-academy-checks")||{};
+$$("[data-academy-check]").forEach(function(box){
+  var k=box.getAttribute("data-academy-check");
+  box.checked=!!checks[k];
+  box.addEventListener("change",function(){checks[k]=box.checked; storeJSON("mise-academy-checks",checks);});
+});
+
+/* ================= PUBLIC PRICING (2026-11-24: founder order, ladder retired, competitor level grading) =================
+   Figures live in the Pricing section markup (data-ca / data-us). The toggle
+   swaps every figure. Card buttons preselect the tier in the trial state
+   (the DoorDash anti-lesson: its plan buttons opened a generic form). */
+var PLAN_LABELS={
+  start:{ca:"Start, CA$349 per month",us:"Start, US$249 per month",ca_a:"Start, CA$314.10 per month billed yearly",us_a:"Start, US$224.10 per month billed yearly"},
+  growth:{ca:"Growth, CA$479 per month",us:"Growth, US$349 per month",ca_a:"Growth, CA$431.10 per month billed yearly",us_a:"Growth, US$314.10 per month billed yearly"},
+  scale:{ca:"Scale, CA$679 per month",us:"Scale, US$499 per month",ca_a:"Scale, CA$611.10 per month billed yearly",us_a:"Scale, US$449.10 per month billed yearly"}
+};
+function planLabel(d){
+  var t=PLAN_LABELS[d.plan||"growth"]||PLAN_LABELS.growth;
+  var k=(d.planmarket==="us"?"us":"ca")+(d.billing==="yr"?"_a":"");
+  return t[k];
+}
+var pricingMarket=read("mise-pricing-market")==="us"?"us":"ca";
+var pricingBilling=read("mise-pricing-billing")==="yr"?"yr":"mo";
+function renderPricing(){
+  store("mise-pricing-market",pricingMarket);
+  store("mise-pricing-billing",pricingBilling);
+  $$("[data-mkt]").forEach(function(b){b.setAttribute("aria-pressed",b.getAttribute("data-mkt")===pricingMarket?"true":"false");});
+  $$("[data-bill]").forEach(function(b){b.setAttribute("aria-pressed",b.getAttribute("data-bill")===pricingBilling?"true":"false");});
+  var suf=pricingBilling==="yr"?"-a":"";
+  $$("#pricing .pfig").forEach(function(el){el.textContent=el.getAttribute("data-"+pricingMarket+suf);});
+  $$("#pricing .punit").forEach(function(el){el.textContent=el.getAttribute(pricingBilling==="yr"?"data-unit-yr":"data-unit-mo");});
+  $$("#pricing .psave").forEach(function(el){
+    if(pricingBilling==="yr"){el.textContent=el.getAttribute("data-"+pricingMarket+"-a"); el.hidden=false;}
+    else el.hidden=true;
+  });
+}
+function applyMarket(m){pricingMarket=m; renderPricing();}
+$$("[data-bill]").forEach(function(b){b.addEventListener("click",function(){pricingBilling=b.getAttribute("data-bill"); renderPricing();});});
+$$("[data-mkt]").forEach(function(b){b.addEventListener("click",function(){applyMarket(b.getAttribute("data-mkt"));});});
+$$("[data-plan-start]").forEach(function(b){
+  b.addEventListener("click",function(){
+    saveTrial({plan:b.getAttribute("data-plan-start"),planmarket:pricingMarket,billing:pricingBilling});
+    closePanels(); openTrial();
+  });
+});
+applyMarket(pricingMarket);
+
+/* ================= INIT ================= */
+bindOpeners();
+applySegment(segKey,false);
+updateResumeDoors();
+renderTrialClock();
+if(read("mise-ws-name")){
+  var banner=$("#wsBanner"); if(banner)banner.hidden=false;
+}
+})();
+</script>
+<script>
+/* Whole-page rebuild (2026-11-24): reduced motion also stops the hero film, not only CSS motion. */
+if(window.matchMedia("(prefers-reduced-motion: reduce)").matches){
+  var hv=document.querySelector(".hero-film");
+  if(hv){hv.removeAttribute("autoplay");try{hv.pause();}catch(e){}}
+}
+</script>
+
 </body>
 </html>
